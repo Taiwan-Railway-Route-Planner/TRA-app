@@ -1,8 +1,8 @@
 <template>
     <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
+        <ActionBar title="Welcome to NativeScript-Vue!"></ActionBar>
         <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
+            <Label class="message" :text="msg" col="0" row="0"></Label>
         </GridLayout>
     </Page>
 </template>
