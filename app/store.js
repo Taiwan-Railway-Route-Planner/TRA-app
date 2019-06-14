@@ -4,15 +4,13 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    language: null
-  },
-  mutations: {
-    updateLanguage(state, newLanguage) {
-      state.language = newLanguage;
+    state: {
+        language: null
     },
-  },
-  actions: {
-
-  }
+    mutations: {
+        updateLanguage(state, newLanguage) {
+            state.language = newLanguage;
+        },
+    },
+    actions: {}
 });
