@@ -1,5 +1,7 @@
 <template>
-    
+    <Page actionBarHidden="true">
+
+    </Page>
 </template>
 
 <script>
