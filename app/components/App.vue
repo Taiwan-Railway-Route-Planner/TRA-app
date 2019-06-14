@@ -7,7 +7,7 @@
             <FlexboxLayout dock="center" class="menu-center">
                 <FlexboxLayout class="menu-center-title">
                     <Label text="Choose your language"></Label>
-                    <Label text="九芎湖"></Label>
+                    <Label text="選擇"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-center-image">
                     <FlexboxLayout @tap="navigateTo('ZH')">
