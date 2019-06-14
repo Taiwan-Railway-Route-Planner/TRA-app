@@ -1,5 +1,5 @@
 <template>
-    <Page class="page" actionBarHidden="true">
+    <Page actionBarHidden="true">
         <DockLayout>
             <FlexboxLayout dock="top" class="menu-top-title">
                 <Label text="Taiwan rail"></Label>
@@ -27,15 +27,20 @@
     import zhStationSelect from "./Select/zhStationSelect"
 
     export default {
-        async created() {
+        created() {
+            console.log(this.$store.state.language);
             switch (this.$store.state.language) {
                 case null:
+                    console.log("Navigate to nowhere");
                     break;
                 case "ZH":
+                    console.log("Navigate to station zh");
                     this.$navigateTo(zhStationSelect);
                     break;
-                case "en":
+                case "EN":
+                    console.log("Navigate to station eng");
                     this.$navigateTo(enStationSelect);
+                    console.log("I can't be logged");
                     break;
             }
         },
