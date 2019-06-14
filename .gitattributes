@@ -2,4 +2,6 @@
 * text=auto
 
 app/App_Resources/* linguist-vendored
-types linguist-vendored
+types/* linguist-vendored
+package-lock.json linguist-vendored
+package.json linguist-vendored
