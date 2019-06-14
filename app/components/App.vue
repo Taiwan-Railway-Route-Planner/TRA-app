@@ -23,7 +23,8 @@
 </template>
 
 <script>
-    import handle from "../assets/js/Vue/Menu/handle"
+    import enStationSelect from "./Select/enStationSelect"
+    import zhStationSelect from "./Select/zhStationSelect"
 
     export default {
         async created() {
@@ -31,10 +32,10 @@
                 case null:
                     break;
                 case "ZH":
-
+                    this.$navigateTo(zhStationSelect);
                     break;
                 case "en":
-
+                    this.$navigateTo(enStationSelect);
                     break;
             }
         },
@@ -43,7 +44,12 @@
         },
         methods: {
             navigateTo: function (language) {
-
+                this.$store.commit('updateLanguage',language);
+                if (language === 'ZH'){
+                    this.$navigateTo(zhStationSelect);
+                } else {
+                    this.$navigateTo(enStationSelect);
+                }
             }
         }
     }
