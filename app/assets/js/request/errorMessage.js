@@ -2,7 +2,7 @@
  Created by svend on 14/06/2019.
  **/
 
-export default (function () {
+module.exports = (function () {
 
     const messages = {
         eng: {

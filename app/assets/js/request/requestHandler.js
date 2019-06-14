@@ -5,7 +5,7 @@
 const getStations = require("./Get/GetStations/requestForTheStations");
 const getRoute = require("./Get/GetRoute/RequestForTheRoute");
 
-export default (function () {
+module.exports = (function () {
 
     const request = {
         stations: getStations.getTheInformation,
