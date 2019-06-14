@@ -2,3 +2,4 @@
 * text=auto
 
 app/App_Resources/* linguist-vendored
+types linguist-vendored
