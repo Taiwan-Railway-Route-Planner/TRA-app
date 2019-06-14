@@ -5,10 +5,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-
+    language: null
   },
   mutations: {
-
+    updateLanguage(state, newLanguage) {
+      state.language = newLanguage;
+    },
   },
   actions: {
 
