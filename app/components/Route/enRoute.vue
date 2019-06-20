@@ -1,12 +1,19 @@
 <template>
-    <Page actionBarHidden="true">
+    <Page actionbarhidden="true">
 
     </Page>
 </template>
 
 <script>
     export default {
-        name: "enRoute"
+        created(){
+        },
+        data() {
+            return {}
+        },
+        methods: {
+
+        }
     }
 </script>
 
