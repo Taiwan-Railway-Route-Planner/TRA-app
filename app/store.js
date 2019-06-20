@@ -17,13 +17,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        language: null
+        language: null,
+        stations: null
     },
     plugins: [NSVuexPersistent],
     mutations: {
         updateLanguage(state, newLanguage) {
             state.language = newLanguage;
         },
+        updateStation(state, newStations){
+            state.stations = newStations;
+        }
     },
     actions: {}
 });
