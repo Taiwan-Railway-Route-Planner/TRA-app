@@ -4,6 +4,7 @@
 
 const getStationDetails = require("./getStationDetails");
 const language = require("./language");
+const moment = require('moment');
 
 export default (function () {
 
@@ -17,13 +18,20 @@ export default (function () {
     function loadLanguage(_self) {
         if (_self.$store.state.language === 'EN'){
             _self.data = language.language.en;
+            setTime(_self, 'en');
         } else {
             _self.data = language.language.zh;
+            setTime(_self, 'zh-tw');
         }
     }
 
     function setHintText(_self){
         _self.data.searchBar.hintText.now = _self.data.searchBar.hintText.startStation;
+    }
+
+    function setTime(_self, timeLanguage){
+        moment.locale(timeLanguage);
+        _self.data.routeDetails.time.hint = moment().format('llll');
     }
 
     async function loadStationDetails(_self) {
