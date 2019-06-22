@@ -34,8 +34,8 @@ module.exports = (function () {
             searchBar: {
                 hintText: {
                     now: '',
-                    startStation:  '選擇出進的站',
-                    endStation: '選擇入境抵達的站'
+                    startStation:  '選擇離開的車站',
+                    endStation: '選擇抵達的車站'
                 },
                 search: null
             },
@@ -45,12 +45,12 @@ module.exports = (function () {
             routeDetails: {
                 departure: {
                     details: {},
-                    hint: '選擇那一站',
+                    hint: '選擇哪一站',
                     label: '從'
                 },
                 arrival: {
                     details: {},
-                    hint: '選擇那一站',
+                    hint: '選擇哪一站',
                     label: '去'
                 }
             }
