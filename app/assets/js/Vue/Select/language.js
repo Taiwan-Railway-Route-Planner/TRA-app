@@ -27,6 +27,12 @@ module.exports = (function () {
                     details: {},
                     hint: 'Select station',
                     label: 'To'
+                },
+                time: {
+                    label: 'Time',
+                    hint: '',
+                    date: '',
+                    time: ''
                 }
             }
         },
@@ -52,6 +58,12 @@ module.exports = (function () {
                     details: {},
                     hint: '選擇哪一站',
                     label: '去'
+                },
+                time: {
+                    label: '時間',
+                    hint: '',
+                    date: '',
+                    time: ''
                 }
             }
         }
