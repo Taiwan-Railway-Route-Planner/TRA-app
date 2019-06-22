@@ -6,14 +6,16 @@ module.exports = (function () {
 
     let language = {
         en: {
-            stationInfo: null,
             searchBar: {
                 hintText: {
                     now: '',
                     startStation:  'Choose your departure station',
                     endStation: 'Choose your arrival station'
                 },
-                search: null
+                search: ''
+            },
+            resultDetails: {
+                stations: []
             },
             routeDetails: {
                 departure: {},
@@ -21,7 +23,6 @@ module.exports = (function () {
             }
         },
         zh: {
-            stationInfo: null,
             searchBar: {
                 hintText: {
                     now: '',
@@ -29,6 +30,9 @@ module.exports = (function () {
                     endStation: ''
                 },
                 search: null
+            },
+            resultDetails: {
+                stations: []
             },
             routeDetails: {
                 departure: {},
