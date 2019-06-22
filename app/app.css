@@ -1,5 +1,6 @@
-Label {
+Label, TextField, SearchBar {
     font-family: 'Raleway', Raleway-Regular;
+    font-size: 16;
 }
 
 .far {
@@ -15,4 +16,8 @@ Label {
 .fas {
     font-family: 'Font Awesome 5 Free', fa-solid-900;
     font-size: 40em;
+}
+
+TextField{
+    background-color: transparent;
 }
