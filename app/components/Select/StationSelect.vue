@@ -21,32 +21,39 @@
                 </FlexboxLayout>
             </DockLayout>
             <DockLayout class="routeDetails" v-show="!search">
-                <StackLayout dock="top" class="topRouteDetails">
-                    <StackLayout v-if="$store.state.language === 'EN'">
-                        <FlexboxLayout class="InfoDetails">
-                            <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
-                                <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
+                <FlexboxLayout class="mainMenu">
+                    <Label class="title" text="TRA Route Planner"></Label>
+                    <StackLayout dock="top" class="topRouteDetails">
+                        <StackLayout v-if="$store.state.language === 'EN'">
+                            <FlexboxLayout class="InfoDetails">
+                                <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
+                                    <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
+                                    <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                </FlexboxLayout>
+                                <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
+                                    <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
+                                    <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                                </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
-                                <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                        </StackLayout>
+                        <StackLayout v-else>
+                            <FlexboxLayout class="InfoDetails">
+                                <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
+                                    <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
+                                    <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                </FlexboxLayout>
+                                <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
+                                    <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
+                                    <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                                </FlexboxLayout>
                             </FlexboxLayout>
-                        </FlexboxLayout>
+                            <FlexboxLayout class="InfoDetails timeDetails">
+                                <Label :text="data.routeDetails.time.label"></Label>
+                                <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
+                            </FlexboxLayout>
+                        </StackLayout>
                     </StackLayout>
-                    <StackLayout v-else>
-                        <FlexboxLayout class="InfoDetails">
-                            <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
-                                <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.站名" :hint="data.routeDetails.departure.hint"></TextField>
-                            </FlexboxLayout>
-                            <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
-                                <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
-                            </FlexboxLayout>
-                        </FlexboxLayout>
-                    </StackLayout>
-                </StackLayout>
+                </FlexboxLayout>
             </DockLayout>
         </DockLayout>
     </Page>
@@ -83,7 +90,7 @@
                 //TODO filter departure or arrival station
             },
             onItemTap: function (event) {
-                if(this.departureOrArrival){
+                if (this.departureOrArrival) {
                     this.data.routeDetails.departure.details = event.item;
                 } else {
                     this.data.routeDetails.arrival.details = event.item;
@@ -93,17 +100,31 @@
             showSearch: function (departureOrArrival) {
                 this.search = true;
                 this.departureOrArrival = departureOrArrival;
-                if (departureOrArrival){
+                if (departureOrArrival) {
                     this.data.searchBar.hintText.now = this.data.searchBar.hintText.startStation;
                 } else {
                     this.data.searchBar.hintText.now = this.data.searchBar.hintText.endStation;
                 }
+            },
+            showTime: function () {
+
             }
         }
     }
 </script>
 
 <style scoped>
+
+    .mainMenu{
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 25;
+        color: #ffffff;
+        align-self: center;
+        margin-top: 5%;
+    }
 
     .searchBar {
         width: 100%;
@@ -116,7 +137,7 @@
         flex: 0 1 auto;
     }
 
-    .listView{
+    .listView {
         height: 100%;
     }
 
@@ -130,7 +151,7 @@
         flex: 1 1 auto;
     }
 
-    .routeDetails{
+    .routeDetails {
         background-color: #1a0dab;
     }
 
@@ -170,6 +191,12 @@
         background-color: white;
         width: 90%;
         padding: 12 4;
+    }
+
+    .topRouteDetails .timeDetails {
+        margin-top: 5%;
+        flex-direction: row;
+        justify-content: center;
     }
 
 </style>
