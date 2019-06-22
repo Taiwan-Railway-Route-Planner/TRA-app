@@ -15,10 +15,10 @@ export default (function () {
     };
 
     function loadLanguage(_self) {
-        if (_self.$store.state.language === 'ZH'){
-            _self.data = language.language.zh;
-        } else {
+        if (_self.$store.state.language === 'EN'){
             _self.data = language.language.en;
+        } else {
+            _self.data = language.language.zh;
         }
     }
 
