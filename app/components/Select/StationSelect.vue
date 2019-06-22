@@ -27,13 +27,14 @@
 
     export default {
         async created() {
-            console.log("hey");
             await handle.setUpSelectVue(this);
         },
         data() {
             return {
                 data: null,
-                filteredStations: []
+                filteredStations: [],
+                departureSearch: null,
+                search: false
             }
         },
         methods: {
@@ -62,7 +63,7 @@
 
     .searchBar {
         width: 100%;
-        margin-top: 2%;
+        margin-top: 1%;
         display: flex;
         flex-flow: column;
     }
@@ -74,6 +75,7 @@
     .listView Label {
         padding-top: 4%;
         font-size: 18;
+        padding-left: 15%;
     }
 
     .listGroup {
