@@ -61,6 +61,7 @@
 
 <script>
     import handle from "../../assets/js/Vue/Select/handle"
+    import timeModal from "../modals/timeModal"
 
     export default {
         async created() {
@@ -107,7 +108,12 @@
                 }
             },
             showTime: function () {
-
+                this.$showModal(timeModal, {
+                        props: {
+                            time: this.data.routeDetails.time
+                        }
+                    }
+                );
             }
         }
     }
