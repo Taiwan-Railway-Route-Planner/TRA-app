@@ -40,7 +40,14 @@ module.exports = (function () {
                             second: 'ARRIVAL',
                         },
                         center: {
-                            button: 'Now'
+                            button: 'Now',
+                            date: {
+                                actual: '',
+                            }
+                        },
+                        bottom: {
+                            leftBtn: 'DISCARD',
+                            rightBtn: 'CONFIRM',
                         }
                     }
                 }
@@ -81,7 +88,14 @@ module.exports = (function () {
                             second: 'ARRIVAL',
                         },
                         center: {
-                            button: 'Now'
+                            button: 'Now',
+                            date: {
+                                actual: '',
+                            }
+                        },
+                        bottom: {
+                            leftBtn: 'DISCARD',
+                            rightBtn: 'CONFIRM',
                         }
                     }
                 }
