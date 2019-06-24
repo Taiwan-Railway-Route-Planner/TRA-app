@@ -15,7 +15,7 @@ Label, TextField, SearchBar, Button {
 
 .fas {
     font-family: 'Font Awesome 5 Free', fa-solid-900;
-    font-size: 40em;
+    font-size: 25;
 }
 
 TextField{
