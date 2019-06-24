@@ -43,7 +43,7 @@ module.exports = (function () {
                     startStation:  '選擇離開的車站',
                     endStation: '選擇抵達的車站'
                 },
-                search: null
+                search: ''
             },
             resultDetails: {
                 stations: []
