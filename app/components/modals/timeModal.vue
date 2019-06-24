@@ -13,7 +13,7 @@
         <FlexboxLayout dock="center" class="timeSettings">
             <!--<DatePicker v-model="selectedDate" @dateChange="dateChange" :minDate="minDate"></DatePicker>-->
             <FlexboxLayout class="timeSelect">
-                <TimePicker v-model="selectedTime" @timeChange="timeChange"></TimePicker>
+                <TimePicker :hour="selectedTime.hour" :minute="selectedTime.minute" @timeChange="timeChange"></TimePicker>
                 <FlexboxLayout class="now">
                     <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"></Button>
                 </FlexboxLayout>
@@ -41,14 +41,20 @@
     export default {
         props: ['time'],
         created: function() {
+            this.selectedTime.hour = moment().format('h');
+            this.selectedTime.minute = moment().format('m');
+            console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             moment().locale(this.$props.time.local);
             this.selectedDate = moment().format('L');
             this.$props.time.modal.center.date.actual = moment().format('llll').replace(moment().format('LT'), '').replace('一', '');
-        },
+            },
         data (){
             return {
                 selectedDate: '',
-                selectedTime: '',
+                selectedTime: {
+                    hour: '12',
+                    minute: '25'
+                },
                 minDate: '01-01-2019',
                 maxDate: '01-01-2020',
                 departureTimeOrArrivalTime: true
@@ -59,22 +65,25 @@
                 console.log('this.selectedDate', this.selectedDate);
             },
             timeChange: function () {
-                console.log('this.selectedTime', this.selectedTime);
+                console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             },
             setTimeToNow: function() {
-
+                console.log(moment().format('h'), moment().format('m'));
+                this.selectedTime.hour = moment().format('h');
+                this.selectedTime.minute = moment().format('m');
+                console.log("huuuh???");
             },
             previousDay: function () {
-                
+
             },
             nextDay: function () {
-                
+
             },
             modalCalender: function () {
-                
+
             },
             discard: function () {
-                
+
             },
             confirm: function () {
 
