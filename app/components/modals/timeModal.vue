@@ -1,13 +1,199 @@
 <template>
-    
+    <DockLayout class="modal">
+        <FlexboxLayout dock="top" class="departureOrArrival">
+            <FlexboxLayout class="smaller-departureOrArrival">
+                <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""></Label>
+                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout dock="bottom" class="confirmOrDiscard">
+            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
+            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout dock="center" class="timeSettings">
+            <!--<DatePicker v-model="selectedDate" @dateChange="dateChange" :minDate="minDate"></DatePicker>-->
+            <FlexboxLayout class="timeSelect">
+                <TimePicker v-model="selectedTime" @timeChange="timeChange"></TimePicker>
+                <FlexboxLayout class="now">
+                    <Button class="btn btn-sq btn-wt" :text="$props.time.modal.center.button"></Button>
+                </FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout class="dateTimeSelect">
+                <FlexboxLayout class="dateTimeNav">
+                    <Label class="fas" @tap="previousDay" :text="'\uf053' | unescape"></Label>
+                    <FlexboxLayout class="timeStamp">
+                        <Label class="" @tap="modalCalender" :text="$props.time.modal.center.date.actual"></Label>
+                    </FlexboxLayout>
+                    <Label class="fas" @tap="nextDay" :text="'\uf054' | unescape"></Label>
+                </FlexboxLayout>
+                <FlexboxLayout class="calenderView">
+                    <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"></Button>
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </DockLayout>
 </template>
 
 <script>
+    import moment from "moment"
+
     export default {
-        name: "timeModal"
+        props: ['time'],
+        created: function() {
+            moment().locale(this.$props.time.local);
+            this.selectedDate = moment().format('L');
+            this.$props.time.modal.center.date.actual = moment().format('llll').replace(moment().format('LT'), '').replace('一', '');
+        },
+        data (){
+            return {
+                selectedDate: '',
+                selectedTime: '',
+                minDate: '01-01-2019',
+                maxDate: '01-01-2020',
+                departureTimeOrArrivalTime: true
+            }
+        },
+        methods: {
+            dateChange: function() {
+                console.log('this.selectedDate', this.selectedDate);
+            },
+            timeChange: function () {
+                console.log('this.selectedTime', this.selectedTime);
+            },
+            previousDay: function () {
+                
+            },
+            nextDay: function () {
+                
+            },
+            modalCalender: function () {
+                
+            },
+            discard: function () {
+                
+            },
+            confirm: function () {
+
+            }
+        }
     }
 </script>
 
 <style scoped>
+
+    .modal {
+        backgroud-color: white;
+        height: 400;
+        width: 300;
+        text-align: left;
+        color: #000;
+    }
+
+    .timeSettings{
+        flex-direction: column;
+        width: 100%;
+        height: 60%;
+    }
+
+    .timeSettings .timeSelect{
+        flex-direction: row;
+        align-self: center;
+        margin-bottom: -20;
+        padding-top: -20;
+    }
+
+    .timeSettings .timeSelect TimePicker{
+        width: 80%;
+    }
+
+    .timeSettings .timeSelect .now{
+        flex-direction: column;
+        align-self: center;
+        width: 20%;
+    }
+
+    .timeSettings .dateTimeSelect{
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        margin-left: 10;
+    }
+
+    .timeSettings .dateTimeSelect .dateTimeNav{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .timeSettings .dateTimeSelect .dateTimeNav .fas{
+        color: #1a0dab;
+    }
+
+    .timeSettings .dateTimeSelect .dateTimeNav .timeStamp{
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .timeSettings .dateTimeSelect .calenderView{
+        width: 20%;
+    }
+
+    .timeSettings .dateTimeSelect .calenderView .far{
+        font-size: 20;
+    }
+
+    .departureOrArrival{
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .departureOrArrival .smaller-departureOrArrival{
+        width: 80%;
+        border-bottom-width: 3px;
+        border-bottom-color: #D3D3D3;
+        border-bottom-style: solid;
+        text-align: center;
+    }
+
+    .departureOrArrival .smaller-departureOrArrival .topLabel{
+        width: 50%;
+        font-size: 18;
+        padding-top: 15;
+        padding-bottom: 15;
+    }
+
+    .departureOrArrival .smaller-departureOrArrival .active{
+        border-bottom-width: 6px;
+        border-bottom-color: #1a0dab;
+        border-bottom-style: solid;
+    }
+
+    .confirmOrDiscard{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .confirmOrDiscard Label{
+        font-size: 18;
+        margin: 8;
+        margin-bottom: 10;
+    }
+
+    .confirmOrDiscard .btn{
+        padding: 6;
+    }
+
+    .confirmOrDiscard .discardBtn{
+        border-width: 1px;
+        border-color: #1a0dab;
+        border-style: solid;
+        color: #1a0dab;
+        background-color: #fff;
+    }
+
+    .confirmOrDiscard .confirmBtn{
+        color: #fff;
+    }
 
 </style>
