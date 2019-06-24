@@ -15,7 +15,7 @@
             <FlexboxLayout class="timeSelect">
                 <TimePicker v-model="selectedTime" @timeChange="timeChange"></TimePicker>
                 <FlexboxLayout class="now">
-                    <Button class="btn btn-sq btn-wt" :text="$props.time.modal.center.button"></Button>
+                    <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"></Button>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout class="dateTimeSelect">
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-    
+
     import moment from "moment"
 
     export default {
@@ -60,6 +60,9 @@
             },
             timeChange: function () {
                 console.log('this.selectedTime', this.selectedTime);
+            },
+            setTimeToNow: function() {
+
             },
             previousDay: function () {
                 
