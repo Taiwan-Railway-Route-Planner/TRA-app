@@ -1,4 +1,4 @@
-Label, TextField, SearchBar {
+Label, TextField, SearchBar, Button {
     font-family: 'Raleway', Raleway-Regular;
     font-size: 16;
 }
@@ -20,4 +20,23 @@ Label, TextField, SearchBar {
 
 TextField{
     background-color: transparent;
+}
+
+.btn{
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: normal;
+    vertical-align: middle;
+    border: 1 solid transparent;
+    background-color: #1a0dab;
+}
+
+.btn-sq{
+    padding: 6;
+}
+
+.btn-wt{
+    color: #fff;
+    z-index: 0;
 }
