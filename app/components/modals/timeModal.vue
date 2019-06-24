@@ -40,15 +40,15 @@
 
     export default {
         props: ['time'],
-        created: function() {
+        created: function () {
             this.selectedTime.hour = moment().format('h');
             this.selectedTime.minute = moment().format('m');
             console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             moment().locale(this.$props.time.local);
             this.selectedDate = moment().format('L');
             this.$props.time.modal.center.date.actual = moment().format('llll').replace(moment().format('LT'), '').replace('一', '');
-            },
-        data (){
+        },
+        data() {
             return {
                 selectedDate: '',
                 selectedTime: {
@@ -61,13 +61,13 @@
             }
         },
         methods: {
-            dateChange: function() {
+            dateChange: function () {
                 console.log('this.selectedDate', this.selectedDate);
             },
             timeChange: function () {
                 console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             },
-            setTimeToNow: function() {
+            setTimeToNow: function () {
                 console.log(moment().format('h'), moment().format('m'));
                 this.selectedTime.hour = moment().format('h');
                 this.selectedTime.minute = moment().format('m');
@@ -102,66 +102,66 @@
         color: #000;
     }
 
-    .timeSettings{
+    .timeSettings {
         flex-direction: column;
         width: 100%;
         height: 60%;
     }
 
-    .timeSettings .timeSelect{
+    .timeSettings .timeSelect {
         flex-direction: row;
         align-self: center;
         margin-bottom: -20;
         padding-top: -20;
     }
 
-    .timeSettings .timeSelect TimePicker{
+    .timeSettings .timeSelect TimePicker {
         width: 80%;
     }
 
-    .timeSettings .timeSelect .now{
+    .timeSettings .timeSelect .now {
         flex-direction: column;
         align-self: center;
         width: 20%;
     }
 
-    .timeSettings .dateTimeSelect{
+    .timeSettings .dateTimeSelect {
         flex-direction: row;
         width: 100%;
         align-items: center;
         margin-left: 10;
     }
 
-    .timeSettings .dateTimeSelect .dateTimeNav{
+    .timeSettings .dateTimeSelect .dateTimeNav {
         flex-direction: row;
         justify-content: space-between;
         width: 80%;
     }
 
-    .timeSettings .dateTimeSelect .dateTimeNav .fas{
+    .timeSettings .dateTimeSelect .dateTimeNav .fas {
         color: #1a0dab;
     }
 
-    .timeSettings .dateTimeSelect .dateTimeNav .timeStamp{
+    .timeSettings .dateTimeSelect .dateTimeNav .timeStamp {
         flex-direction: column;
         align-self: center;
     }
 
-    .timeSettings .dateTimeSelect .calenderView{
+    .timeSettings .dateTimeSelect .calenderView {
         width: 20%;
     }
 
-    .timeSettings .dateTimeSelect .calenderView .far{
+    .timeSettings .dateTimeSelect .calenderView .far {
         font-size: 20;
     }
 
-    .departureOrArrival{
+    .departureOrArrival {
         flex-direction: row;
         width: 100%;
         justify-content: center;
     }
 
-    .departureOrArrival .smaller-departureOrArrival{
+    .departureOrArrival .smaller-departureOrArrival {
         width: 80%;
         border-bottom-width: 3px;
         border-bottom-color: #D3D3D3;
@@ -169,35 +169,35 @@
         text-align: center;
     }
 
-    .departureOrArrival .smaller-departureOrArrival .topLabel{
+    .departureOrArrival .smaller-departureOrArrival .topLabel {
         width: 50%;
         font-size: 18;
         padding-top: 15;
         padding-bottom: 15;
     }
 
-    .departureOrArrival .smaller-departureOrArrival .active{
+    .departureOrArrival .smaller-departureOrArrival .active {
         border-bottom-width: 6px;
         border-bottom-color: #1a0dab;
         border-bottom-style: solid;
     }
 
-    .confirmOrDiscard{
+    .confirmOrDiscard {
         flex-direction: row;
         justify-content: flex-end;
     }
 
-    .confirmOrDiscard Label{
+    .confirmOrDiscard Label {
         font-size: 18;
         margin: 8;
         margin-bottom: 10;
     }
 
-    .confirmOrDiscard .btn{
+    .confirmOrDiscard .btn {
         padding: 6;
     }
 
-    .confirmOrDiscard .discardBtn{
+    .confirmOrDiscard .discardBtn {
         border-width: 1px;
         border-color: #1a0dab;
         border-style: solid;
@@ -205,7 +205,7 @@
         background-color: #fff;
     }
 
-    .confirmOrDiscard .confirmBtn{
+    .confirmOrDiscard .confirmBtn {
         color: #fff;
     }
 
