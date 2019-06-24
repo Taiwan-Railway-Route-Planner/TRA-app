@@ -32,7 +32,17 @@ module.exports = (function () {
                     label: 'Time',
                     hint: '',
                     date: '',
-                    time: ''
+                    time: '',
+                    local: 'en',
+                    modal: {
+                        top: {
+                            first: 'DEPARTURE',
+                            second: 'ARRIVAL',
+                        },
+                        center: {
+                            button: 'Now'
+                        }
+                    }
                 }
             }
         },
@@ -63,7 +73,17 @@ module.exports = (function () {
                     label: '時間',
                     hint: '',
                     date: '',
-                    time: ''
+                    time: '',
+                    local: 'zh-tw',
+                    modal: {
+                        top: {
+                            first: 'DEPARTURE',
+                            second: 'ARRIVAL',
+                        },
+                        center: {
+                            button: 'Now'
+                        }
+                    }
                 }
             }
         }
