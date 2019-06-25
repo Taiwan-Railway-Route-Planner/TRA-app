@@ -13,14 +13,14 @@ export default (function () {
 
     function setTime(_self) {
         _self.selectedTime.hour = moment().format('h');
-        _self.selectedTime.minute = moment().format('m');
+        _self.selectedTime.minute = moment().format('mm');
     }
 
     function setDateDetails(_self) {
         moment().locale(_self.$props.time.local);
         _self.selectedDate = moment().format('L');
         _self.$props.time.modal.center.date.today = moment().format();
-        _self.$props.time.modal.center.date.actual = moment().format('llll').replace(moment().format('LT'), '').replace('一', '');
+        _self.$props.time.modal.center.date.actual = moment().format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
     }
 
     const discard = function (_self) {
@@ -28,7 +28,7 @@ export default (function () {
     };
 
     const save = function (_self) {
-        _self.time.date = moment(_self.$props.time.modal.center.date.today).format('llll').replace(moment().format('LT'), '').replace('一', '');
+        _self.time.date = moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
         console.log(_self.selectedTime.minute);
         _self.time.time = " " + _self.selectedTime.hour + ":" + _self.selectedTime.minute;
     };
