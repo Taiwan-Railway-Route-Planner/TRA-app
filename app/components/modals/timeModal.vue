@@ -57,9 +57,6 @@
             }
         },
         methods: {
-            // dateChange: function () {
-            //     console.log('this.selectedDate', this.selectedDate);
-            // },
             timeChange: function () {
                 console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             },
