@@ -47,16 +47,22 @@ TextField{
     /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
-    height: 8%;
+    height: 6%;
     /*width: 100%;*/
 }
 
 .bottom-menu .fas{
     color: #1a0dab;
+}
+
+.bottom-menu .menu-choose{
+    flex-direction: row;
+    justify-content: center;
     border-color: #D3D3D3;
     border-right-width: 2px;
     border-right-style: solid;
     width: 33%;
+    padding-top: 4%;
 }
 
 
