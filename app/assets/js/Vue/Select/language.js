@@ -51,7 +51,8 @@ module.exports = (function () {
                             rightBtn: 'CONFIRM',
                         }
                     }
-                }
+                },
+                button: 'SEARCH'
             }
         },
         zh: {
@@ -100,7 +101,8 @@ module.exports = (function () {
                             rightBtn: 'CONFIRM',
                         }
                     }
-                }
+                },
+                button: 'SEARCH'
             }
         }
     };
