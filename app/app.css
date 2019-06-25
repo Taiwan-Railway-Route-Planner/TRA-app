@@ -40,3 +40,32 @@ TextField{
     color: #fff;
     z-index: 0;
 }
+
+/*MODAL*/
+
+.confirmOrDiscard {
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.confirmOrDiscard Label {
+    font-size: 18;
+    margin: 8;
+    margin-bottom: 10;
+}
+
+.confirmOrDiscard .btn {
+    padding: 6;
+}
+
+.confirmOrDiscard .discardBtn {
+    border-width: 1px;
+    border-color: #1a0dab;
+    border-style: solid;
+    color: #1a0dab;
+    background-color: #fff;
+}
+
+.confirmOrDiscard .confirmBtn {
+    color: #fff;
+}
