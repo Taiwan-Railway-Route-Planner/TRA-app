@@ -20,6 +20,11 @@
                     </ScrollView>
                 </FlexboxLayout>
             </DockLayout>
+            <FlexboxLayout dock="bottom" class="bottom-menu">
+                <Label class="fas" :text="'\uf3c5' | unescape" @tap=""></Label>
+                <Label class="fas" :text="'\uf005' | unescape" @tap=""></Label>
+                <Label class="fas" :text="'\uf509' | unescape" @tap=""></Label>
+            </FlexboxLayout>
             <DockLayout class="routeDetails" v-show="!search">
                 <FlexboxLayout class="mainMenu">
                     <Label class="title" text="TRA Route Planner"></Label>
