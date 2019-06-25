@@ -28,8 +28,9 @@ export default (function () {
     };
 
     const save = function (_self) {
-        _self.time.date = _self.selectedDate;
-        _self.time.time = _self.selectedTime.hour + ":" + _self.selectedTime.minute;
+        _self.time.date = moment(_self.$props.time.modal.center.date.today).format('llll').replace(moment().format('LT'), '').replace('一', '');
+        console.log(_self.selectedTime.minute);
+        _self.time.time = " " + _self.selectedTime.hour + ":" + _self.selectedTime.minute;
     };
 
     return {

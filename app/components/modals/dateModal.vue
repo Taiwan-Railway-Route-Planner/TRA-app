@@ -21,7 +21,8 @@
                 this.$modal.close();
             },
             confirm: function () {
-                this.$props.time.modal.center.date.actual = moment(this.$props.timeModal.selectedDate).format('llll').replace(moment().format('LT'), '').replace('一', '').replace('00:00', '');
+                this.$props.time.modal.center.date.today = moment(this.$props.timeModal.selectedDate).format();
+                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '').replace('一', '');
                 this.$modal.close();
             }
         }
