@@ -41,6 +41,25 @@ TextField{
     z-index: 0;
 }
 
+/*BOTTOM NAVIGATION*/
+
+.bottom-menu{
+    /*display: flex;*/
+    flex-direction: row;
+    justify-content: space-between;
+    height: 8%;
+    /*width: 100%;*/
+}
+
+.bottom-menu .fas{
+    color: #1a0dab;
+    border-color: #D3D3D3;
+    border-right-width: 2px;
+    border-right-style: solid;
+    width: 33%;
+}
+
+
 /*MODAL*/
 
 .confirmOrDiscard {
