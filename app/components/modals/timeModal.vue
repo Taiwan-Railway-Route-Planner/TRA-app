@@ -64,25 +64,28 @@
                 console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             },
             setTimeToNow: function () {
-                console.log(moment().format('h'), moment().format('m'));
+                console.log(moment().format('h'), moment().format('mm'));
                 this.selectedTime.hour = moment().format('h');
-                this.selectedTime.minute = moment().format('m');
+                this.selectedTime.minute = moment().format('mm');
                 console.log("huuuh???");
             },
             previousDay: function () {
-                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).subtract(1, 'days').format('llll').replace(moment().format('LT'), '').replace('一', '');
+                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).subtract(1, 'days').format('llll').replace(/\d\d:\d\d/i, '').replace('一', '');
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).subtract(1, 'days');
+                console.log(this.$props.time.modal.center.date.today)
             },
             nextDay: function () {
-                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).add(1, 'days').format('llll').replace(moment().format('LT'), '').replace('一', '');
+                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).add(1, 'days').format('llll').replace(/\d\d:\d\d/i, '').replace('一', '');
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
+                console.log(this.$props.time.modal.center.date.today)
             },
             modalCalender: function () {
+                this.selectedDate = moment(this.time.modal.center.date.today).format('L');
                 this.$showModal(dateModal, {
                         props: {
                             time: this.$props.time,
                             timeModal: {
-                                selectedData: this.selectedData,
+                                selectedDate: this.selectedDate,
                                 minDate: this.minDate,
                                 maxDate: this.maxDate
                             }
