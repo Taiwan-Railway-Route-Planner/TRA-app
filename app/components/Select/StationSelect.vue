@@ -21,9 +21,15 @@
                 </FlexboxLayout>
             </DockLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
-                <Label class="fas" :text="'\uf3c5' | unescape" @tap=""></Label>
-                <Label class="fas" :text="'\uf005' | unescape" @tap=""></Label>
-                <Label class="fas" :text="'\uf509' | unescape" @tap=""></Label>
+                <FlexboxLayout class="menu-choose" @tap="">
+                    <Label class="fas" :text="'\uf3c5' | unescape" ></Label>
+                </FlexboxLayout>
+                <FlexboxLayout class="menu-choose" @tap="navToStar">
+                    <Label class="fas" :text="'\uf005' | unescape"></Label>
+                </FlexboxLayout>
+                <FlexboxLayout class="menu-choose" @tap="navToSet">
+                    <Label class="fas" :text="'\uf509' | unescape"></Label>
+                </FlexboxLayout>
             </FlexboxLayout>
             <DockLayout class="routeDetails" v-show="!search">
                 <FlexboxLayout class="mainMenu">
@@ -39,6 +45,10 @@
                                     <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
                                     <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                 </FlexboxLayout>
+                            </FlexboxLayout>
+                            <FlexboxLayout class="InfoDetails timeDetails">
+                                <Label :text="data.routeDetails.time.label"></Label>
+                                <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
                             </FlexboxLayout>
                         </StackLayout>
                         <StackLayout v-else>
@@ -119,6 +129,12 @@
                         }
                     }
                 );
+            },
+            navToStar: function () {
+                
+            },
+            navToSet: function () {
+                
             }
         }
     }
