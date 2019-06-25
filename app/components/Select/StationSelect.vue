@@ -177,12 +177,6 @@
         align-self: center;
     }
 
-    /*.topRouteDetails .InfoDetails .line{*/
-    /*    border-bottom-color: #414141;*/
-    /*    border-bottom-width: 1px;*/
-    /*    border-bottom-style: solid;*/
-    /*}*/
-
     .topRouteDetails TextField {
         width: 70%;
         margin-right: 6%;
