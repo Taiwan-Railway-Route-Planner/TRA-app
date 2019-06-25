@@ -6,9 +6,7 @@
         </FlexboxLayout>
         <FlexboxLayout dock="center">
             <DatePicker v-model="$props.timeModal.selectedDate" :minDate="$props.timeModal.minDate"></DatePicker>
-
         </FlexboxLayout>
-
     </DockLayout>
 </template>
 
