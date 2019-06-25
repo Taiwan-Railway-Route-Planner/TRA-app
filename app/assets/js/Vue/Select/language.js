@@ -42,7 +42,8 @@ module.exports = (function () {
                         center: {
                             button: 'Now',
                             date: {
-                                actual: '',
+                                actual: null,
+                                today: null
                             }
                         },
                         bottom: {
@@ -90,7 +91,8 @@ module.exports = (function () {
                         center: {
                             button: 'Now',
                             date: {
-                                actual: '',
+                                actual: null,
+                                today: null
                             }
                         },
                         bottom: {
