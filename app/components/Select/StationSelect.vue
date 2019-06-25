@@ -63,6 +63,9 @@
                             <Label :text="data.routeDetails.time.label"></Label>
                             <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
                         </FlexboxLayout>
+                        <FlexboxLayout class="confirmBtn" @tap="confirmSearch">
+                            <Button class="btn btn-sq btn-wt" :text="data.routeDetails.button"></Button>
+                        </FlexboxLayout>
                     </StackLayout>
                 </FlexboxLayout>
             </DockLayout>
@@ -117,6 +120,9 @@
                 } else {
                     this.data.searchBar.hintText.now = this.data.searchBar.hintText.endStation;
                 }
+            },
+            confirmSearch: function (){
+
             },
             showTime: function () {
                 this.$showModal(timeModal, {
@@ -214,6 +220,16 @@
         margin-top: 5%;
         flex-direction: row;
         justify-content: center;
+    }
+
+    .confirmBtn{
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+        margin-top: 8%;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 2px;
     }
 
 </style>
