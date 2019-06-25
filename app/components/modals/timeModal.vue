@@ -11,7 +11,6 @@
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeSettings">
-            <!--<DatePicker v-model="selectedDate" @dateChange="dateChange" :minDate="minDate"></DatePicker>-->
             <FlexboxLayout class="timeSelect">
                 <TimePicker :hour="selectedTime.hour" :minute="selectedTime.minute" @timeChange="timeChange"></TimePicker>
                 <FlexboxLayout class="now">
@@ -36,6 +35,7 @@
 
 <script>
 
+    import dateModal from "./dateModal"
     import handle from "../../assets/js/Vue/Modal/timeModal/handle"
     import moment from "moment"
 
@@ -57,9 +57,9 @@
             }
         },
         methods: {
-            dateChange: function () {
-                console.log('this.selectedDate', this.selectedDate);
-            },
+            // dateChange: function () {
+            //     console.log('this.selectedDate', this.selectedDate);
+            // },
             timeChange: function () {
                 console.log('this.selectedTime', JSON.stringify(this.selectedTime));
             },
@@ -78,7 +78,17 @@
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
-
+                this.$showModal(dateModal, {
+                        props: {
+                            time: this.$props.time,
+                            timeModal: {
+                                selectedData: this.selectedData,
+                                minDate: this.minDate,
+                                maxDate: this.maxDate
+                            }
+                        }
+                    }
+                );
             },
             discard: function () {
                 handle.discard(this);
@@ -180,33 +190,6 @@
         border-bottom-width: 6px;
         border-bottom-color: #1a0dab;
         border-bottom-style: solid;
-    }
-
-    .confirmOrDiscard {
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-
-    .confirmOrDiscard Label {
-        font-size: 18;
-        margin: 8;
-        margin-bottom: 10;
-    }
-
-    .confirmOrDiscard .btn {
-        padding: 6;
-    }
-
-    .confirmOrDiscard .discardBtn {
-        border-width: 1px;
-        border-color: #1a0dab;
-        border-style: solid;
-        color: #1a0dab;
-        background-color: #fff;
-    }
-
-    .confirmOrDiscard .confirmBtn {
-        color: #fff;
     }
 
 </style>
