@@ -46,10 +46,6 @@
                                     <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                 </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout class="InfoDetails timeDetails">
-                                <Label :text="data.routeDetails.time.label"></Label>
-                                <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
-                            </FlexboxLayout>
                         </StackLayout>
                         <StackLayout v-else>
                             <FlexboxLayout class="InfoDetails">
@@ -62,11 +58,11 @@
                                     <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                 </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout class="InfoDetails timeDetails">
-                                <Label :text="data.routeDetails.time.label"></Label>
-                                <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
-                            </FlexboxLayout>
                         </StackLayout>
+                        <FlexboxLayout class="InfoDetails timeDetails">
+                            <Label :text="data.routeDetails.time.label"></Label>
+                            <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
+                        </FlexboxLayout>
                     </StackLayout>
                 </FlexboxLayout>
             </DockLayout>
