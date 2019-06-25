@@ -36,17 +36,13 @@
 
 <script>
 
+    import handle from "../../assets/js/Vue/Modal/timeModal/handle"
     import moment from "moment"
 
     export default {
         props: ['time'],
         created: function () {
-            this.selectedTime.hour = moment().format('h');
-            this.selectedTime.minute = moment().format('m');
-            console.log('this.selectedTime', JSON.stringify(this.selectedTime));
-            moment().locale(this.$props.time.local);
-            this.selectedDate = moment().format('L');
-            this.$props.time.modal.center.date.actual = moment().format('llll').replace(moment().format('LT'), '').replace('一', '');
+            handle.handle(this);
         },
         data() {
             return {
@@ -74,19 +70,22 @@
                 console.log("huuuh???");
             },
             previousDay: function () {
-
+                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).subtract(1, 'days').format('llll').replace(moment().format('LT'), '').replace('一', '');
+                this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).subtract(1, 'days');
             },
             nextDay: function () {
-
+                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).add(1, 'days').format('llll').replace(moment().format('LT'), '').replace('一', '');
+                this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
 
             },
             discard: function () {
 
+                this.$modal.close();
             },
             confirm: function () {
-
+                this.$modal.close();
             }
         }
     }
