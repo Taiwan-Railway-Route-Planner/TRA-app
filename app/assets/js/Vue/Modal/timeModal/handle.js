@@ -6,7 +6,6 @@ const moment = require('moment');
 
 export default (function () {
 
-
     const handle = function (_self) {
         setTime(_self);
         setDateDetails(_self);
@@ -23,8 +22,7 @@ export default (function () {
         _self.$props.time.modal.center.date.today = moment().format();
         _self.$props.time.modal.center.date.actual = moment().format('llll').replace(moment().format('LT'), '').replace('一', '');
     }
-
-
+    
     return {
         handle
     }
