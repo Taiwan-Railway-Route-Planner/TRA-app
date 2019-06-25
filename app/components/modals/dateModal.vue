@@ -5,7 +5,7 @@
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
         </FlexboxLayout>
         <FlexboxLayout dock="center">
-            <DatePicker v-model="$props.timeModal.selectedDate" @dateChange="dateChange" :minDate="$props.timeModal.minDate"></DatePicker>
+            <DatePicker v-model="$props.timeModal.selectedDate" :minDate="$props.timeModal.minDate"></DatePicker>
 
         </FlexboxLayout>
 
@@ -19,10 +19,6 @@
     export default {
         props: ['time', 'timeModal'],
         methods: {
-            dateChange: function () {
-                console.log("dkfhsdkfhsd");
-                console.log('this.selectedDate', this.$props.timeModal.selectedDate);
-            },
             discard: function () {
                 this.$modal.close();
             },
