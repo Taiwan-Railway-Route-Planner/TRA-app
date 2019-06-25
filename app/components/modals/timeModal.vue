@@ -81,10 +81,11 @@
 
             },
             discard: function () {
-
+                handle.discard(this);
                 this.$modal.close();
             },
             confirm: function () {
+                handle.save(this);
                 this.$modal.close();
             }
         }
