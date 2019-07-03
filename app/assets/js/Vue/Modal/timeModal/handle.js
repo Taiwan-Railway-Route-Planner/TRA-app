@@ -12,8 +12,7 @@ export default (function () {
     };
 
     function setTime(_self) {
-        _self.selectedTime.hour = moment().format('h');
-        _self.selectedTime.minute = moment().format('mm');
+        _self.selectedTime = moment().toDate();
     }
 
     function setDateDetails(_self) {
@@ -29,8 +28,7 @@ export default (function () {
 
     const save = function (_self) {
         _self.time.date = moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
-        console.log(_self.selectedTime.minute);
-        _self.time.time = " " + _self.selectedTime.hour + ":" + _self.selectedTime.minute;
+        _self.time.time = moment(_self.selectedTime).format('LT');
     };
 
     return {
