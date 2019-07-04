@@ -18,6 +18,7 @@ module.exports = (function () {
                 stations: []
             },
             routeDetails: {
+                language: 'EN',
                 departure: {
                     details: {},
                     hint: 'Select station',
@@ -68,6 +69,7 @@ module.exports = (function () {
                 stations: []
             },
             routeDetails: {
+                language: 'ZH',
                 departure: {
                     details: {},
                     hint: '選擇哪一站',
