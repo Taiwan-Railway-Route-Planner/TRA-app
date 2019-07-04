@@ -8,7 +8,6 @@ const moment = require('moment');
 
 export default (function () {
 
-
     const setUpSelectVue = async function (_self) {
         loadLanguage(_self);
         setHintText(_self);
