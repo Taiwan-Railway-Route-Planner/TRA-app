@@ -9,9 +9,8 @@ const errorMessages = require('../../errorMessage');
 module.exports = (function () {
 
     const getTheInformation = async function (_self) {
-        console.log( urlModule.url.date.replace("DATE", _self.longDate));
         const response = (await getRequest.fetchRequestForGettingData({
-            Url: urlModule.url.date.replace("DATE", _self.longDate),
+            Url: urlModule.url.schedules.replace("DATE", _self.longDate),
         }));
         if (response.error) {
             // if (_self.$store.state.language === "ZH"){
