@@ -7,11 +7,7 @@ const requestHandler = require("../../request/requestHandler");
 module.exports = (function () {
 
     async function getAllRoutesOfACertainDay(_self) {
-        console.log("dhfksdhkf", JSON.stringify(requestHandler));
-        const date = await requestHandler.request.date(_self);
-        console.log(date);
-        console.log(date.data);
-        return date;
+        return await requestHandler.request.date(_self);
     }
 
 
