@@ -4,12 +4,14 @@
 
 const getStations = require("./Get/GetStations/requestForTheStations");
 const getRoute = require("./Get/GetRoute/RequestForTheRoute");
+const getDate = require("./Get/GetDate/RequestForTheDate");
 
 module.exports = (function () {
 
     const request = {
         stations: getStations.getTheInformation,
-        route: getRoute.getTheInformation
+        route: getRoute.getTheInformation,
+        date: getDate.getTheInformation
     };
 
 
