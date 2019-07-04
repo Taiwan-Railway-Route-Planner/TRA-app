@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import StationSelect from "./Select/StationSelect"
+    // import StationSelect from "./Select/StationSelect"
 
     export default {
         created() {
@@ -53,7 +53,7 @@
                 // } else {
                 //     this.$navigateTo(enStationSelect);
                 // }
-                this.$navigateTo(StationSelect)
+                // this.$navigateTo(StationSelect)
             }
         }
     }
