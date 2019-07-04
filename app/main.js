@@ -1,5 +1,7 @@
 import Vue from 'nativescript-vue'
 import App from './components/App'
+import Select from './components/Select/StationSelect'
+import Route from "./components/Route/RouteSelect"
 import store from './store';
 
 import VueDevtools from 'nativescript-vue-devtools'
@@ -12,7 +14,19 @@ Vue.config.silent = (TNS_ENV === 'production');
 
 Vue.filter('unescape', v => unescape(v));
 
+const router = {
+  Settings: App,
+  Select: Select,
+  Route: Route
+};
+
+Vue.prototype.$router = router;
+
+Vue.prototype.$goto = function (to, props = null) {
+  this.$navigateTo(this.$router[to], props)
+};
+
 new Vue({
   store,
-  render: h => h('frame', [h(App)])
+  render: h => h('frame', [h(Select)])
 }).$start();
