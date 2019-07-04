@@ -63,7 +63,7 @@
                             <Label :text="data.routeDetails.time.label"></Label>
                             <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
                         </FlexboxLayout>
-                        <FlexboxLayout class="confirmBtn">
+                        <FlexboxLayout class="confirmBtn" @tap="confirmSearch">
                             <Button class="btn btn-sq btn-wt" :text="data.routeDetails.button" @tap="confirmSearch"></Button>
                         </FlexboxLayout>
                     </StackLayout>
