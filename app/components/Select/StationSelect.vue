@@ -61,7 +61,7 @@
                         </StackLayout>
                         <FlexboxLayout class="InfoDetails timeDetails">
                             <Label :text="data.routeDetails.time.label"></Label>
-                            <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date + data.routeDetails.time.time"></TextField>
+                            <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
                         </FlexboxLayout>
                         <FlexboxLayout class="confirmBtn" @tap="confirmSearch">
                             <Button class="btn btn-sq btn-wt" :text="data.routeDetails.button" @tap="confirmSearch"></Button>
@@ -74,8 +74,10 @@
 </template>
 
 <script>
+
     import handle from "../../assets/js/Vue/Select/handle"
     import timeModal from "../modals/timeModal"
+    import moment from "moment"
 
     export default {
         async created() {
@@ -122,11 +124,7 @@
                 }
             },
             confirmSearch: function (){
-                this.$goto('Route', {
-                    props: {
-                        routeDetails: this.data.routeDetails,
-                    }
-                });
+                handle.controlValuesBeforeGoingToRoute(this);
             },
             showTime: function () {
                 this.$showModal(timeModal, {
