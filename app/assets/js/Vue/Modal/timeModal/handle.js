@@ -27,7 +27,8 @@ export default (function () {
     };
 
     const save = function (_self) {
-        _self.time.date = moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
+        _self.time.date.show = moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
+        _self.time.date.real = moment().format('YYYYMMMDD');
         _self.time.time = moment(_self.selectedTime).format('LT');
     };
 
