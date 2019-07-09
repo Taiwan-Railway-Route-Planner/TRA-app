@@ -3,22 +3,50 @@
  **/
 
 const getRoutesOfADay = require("./getRoutesOfADay");
+const moment = require("moment");
 
 export default (function () {
 
-    async function handleIncomingRouteDetails(_self) {
+    const handleIncomingRouteDetails = async function(_self) {
         await getAllRoutesForThatDay(_self);
-        getPossibleRoutesForThatDay(_self);
-    }
+
+    };
 
     async function getAllRoutesForThatDay(_self) {
-        console.log("getAllRoutesForThatDay");
-        await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
-    }
-
-    function getPossibleRoutesForThatDay(_self) {
+        let routeData = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
+        getPossibleRoutesForThatDay(_self,routeData);
 
     }
+
+    function getPossibleRoutesForThatDay(_self,routeData) {
+        let filterRouteDataWithDepartureStation = filterRouteArrayOnStations(routeData.data.TrainInfos,_self.props.routeDetails.departure.details.時刻表編號);
+        let filterRouteDataWithBothStations = filterRouteArrayOnStations(filterRouteDataWithDepartureStation,_self.props.routeDetails.arrival.details.時刻表編號);
+        let departureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
+        console.log("departureTime", departureTime);
+        let firstIndex = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, departureTime);
+        console.log(JSON.stringify(firstIndex))
+    }
+
+
+    function findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations, departureStation, departureTime) {
+        return filterRouteDataWithBothStations.map(function (el) {
+            let elementTime = moment(el.TimeInfos[departureStation].DepTime, "HH:mm:ss");
+            el.timeDifference = elementTime.diff(departureTime);
+            return el;
+        }).sort(function (a, b) {
+            return parseInt(a.timeDifference) - parseInt(b.timeDifference);
+        })
+    }
+    
+    function orderArray() {
+        
+    }
+
+
+    function filterRouteArrayOnStations(routeData, filterStation) {
+        return routeData.filter((el => filterStation in el.TimeInfos));
+    }
+
 
     return {
         handleIncomingRouteDetails
