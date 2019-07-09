@@ -32,7 +32,10 @@ module.exports = (function () {
                 time: {
                     label: 'Time',
                     hint: '',
-                    date: '',
+                    date: {
+                        show: '',
+                        real: ''
+                    },
                     time: '',
                     local: 'en',
                     modal: {
@@ -83,7 +86,10 @@ module.exports = (function () {
                 time: {
                     label: '時間',
                     hint: '',
-                    date: '',
+                    date: {
+                        show: '',
+                        real: ''
+                    },
                     time: '',
                     local: 'zh-tw',
                     modal: {
