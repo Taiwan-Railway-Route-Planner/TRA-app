@@ -34,7 +34,7 @@ module.exports = (function () {
                     hint: '',
                     date: {
                         show: '',
-                        real: ''
+                        real: null
                     },
                     time: '',
                     local: 'en',
@@ -88,7 +88,7 @@ module.exports = (function () {
                     hint: '',
                     date: {
                         show: '',
-                        real: ''
+                        real: null
                     },
                     time: '',
                     local: 'zh-tw',
