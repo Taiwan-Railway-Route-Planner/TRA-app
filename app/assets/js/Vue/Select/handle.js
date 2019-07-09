@@ -35,9 +35,32 @@ export default (function () {
     async function loadStationDetails(_self) {
         await getStationDetails.getAllPossibleStations(_self);
     }
+    
+    function controlValuesBeforeGoingToRoute(_self) {
+        if (_self.data.routeDetails.time.date.real === null){
+            _self.data.routeDetails.time.date.show = moment().format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
+            _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
+            _self.data.routeDetails.time.time = _self.data.routeDetails.time.hint.replace(_self.data.routeDetails.time.date.show, '');
+        }
+        if (isEmpty(_self.data.routeDetails.departure.details) && isEmpty(_self.data.routeDetails.arrival.details)){
+            // TODO give error notification
+        } else {
+            _self.$goto('Route', {
+                props: {
+                    routeDetails: _self.data.routeDetails,
+                }
+            });
+        }
+    }
+
+    function isEmpty(obj) {
+        // TODO doesn't work
+        return Object.keys(obj).length === 0 && obj.constructor === Object
+    }
 
     return {
-        setUpSelectVue
+        setUpSelectVue,
+        controlValuesBeforeGoingToRoute
     }
 
 })();
