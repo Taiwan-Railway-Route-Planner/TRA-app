@@ -31,6 +31,7 @@ export default (function () {
         if (Intersection[0] === 1){
             mainRouteCode = calculateMainRouteCodeForRoundLine(_self);
         } else {
+            //TODO branch different lines
             console.log("Other route, search line Details");
         }
         getAllPossibleMainRoutes(_self,routeData,mainRouteCode);
