@@ -9,12 +9,21 @@ export default (function () {
 
     const handleIncomingRouteDetails = async function(_self) {
         await getAllRoutesForThatDay(_self);
-
     };
 
     async function getAllRoutesForThatDay(_self) {
         let routeData = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
-        getPossibleRoutesForThatDay(_self,routeData);
+        filterTheNotCorrectRoutesOut(_self,routeData);
+    }
+
+    function filterTheNotCorrectRoutesOut(_self,routeData) {
+        const intersection = _self.props.routeDetails.departure.details.routeCode.filter(element => _self.props.routeDetails.arrival.details.routeCode.includes(element));
+        if (intersection.length !== 0){
+
+        } else {
+            //TODO branch different lines
+            console.log("routes aren't matched");
+        }
 
     }
 
