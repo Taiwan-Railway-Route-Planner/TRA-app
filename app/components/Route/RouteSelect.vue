@@ -61,7 +61,10 @@
                         time: {
                             label: '時間',
                             hint: '',
-                            date: '',
+                            date: {
+                                show: '2019年7月11日',
+                                real: "20190704"
+                            },
                             time: '11:45',
                             local: 'zh-tw',
                             modal: {
