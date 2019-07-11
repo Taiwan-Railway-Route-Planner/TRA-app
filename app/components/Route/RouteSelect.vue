@@ -3,7 +3,7 @@
         <DockLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose" @tap="">
-                    <Label class="fas" :text="'\uf3c5' | unescape" ></Label>
+                    <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <Label class="fas" :text="'\uf005' | unescape"></Label>
@@ -22,23 +22,23 @@
 
     export default {
         props: ['routeDetails'],
-        created: async function() {
+        created: async function () {
             await handle.handleIncomingRouteDetails(this);
         },
         data() {
             return {
+                timeTable: [],
                 longDate: "20190704",
                 props: {
                     routeDetails: {
                         language: 'ZH',
                         departure: {
-                            details:  {
-                                "時刻表編號": 1025,
-                                "traWebsiteCode": "1210",
-                                "站名": "新竹",
-                                "eng站名": "Hsinchu",
+                            details: {
+                                "時刻表編號": 1008,
+                                "traWebsiteCode": "1000",
+                                "站名": "臺北",
+                                "eng站名": "Taipei",
                                 "routeCode": [
-                                    4,
                                     1
                                 ]
                             },
@@ -47,12 +47,13 @@
                         },
                         arrival: {
                             details: {
-                                "時刻表編號": 2214,
-                                "traWebsiteCode": "1194",
-                                "站名": "六家",
-                                "eng站名": "Liujia",
+                                "時刻表編號": 1025,
+                                "traWebsiteCode": "1210",
+                                "站名": "新竹",
+                                "eng站名": "Hsinchu",
                                 "routeCode": [
-                                    4
+                                    4,
+                                    1
                                 ]
                             },
                             hint: '選擇哪一站',
