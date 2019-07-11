@@ -59,7 +59,6 @@ export default (function () {
 
     function getAllPossibleMainRoutes(_self,routeData,mainRouteCode) {
         let newRouteData = filterMainRouteOut(routeData.data.TrainInfos,mainRouteCode);
-        console.log(newRouteData.length);
         getPossibleRoutesForThatDay(_self,newRouteData)
     }
 
@@ -70,20 +69,23 @@ export default (function () {
     function getPossibleRoutesForThatDay(_self,routeData) {
         let filterRouteDataWithDepartureStation = filterRouteArrayOnStations(routeData,_self.props.routeDetails.departure.details.時刻表編號);
         let filterRouteDataWithBothStations = filterRouteArrayOnStations(filterRouteDataWithDepartureStation,_self.props.routeDetails.arrival.details.時刻表編號);
-        let departureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
-        _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, departureTime);
+        let ChoosedDepartureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
+        _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, _self.props.routeDetails.arrival.details.時刻表編號,ChoosedDepartureTime);
         _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
+        console.log(JSON.stringify(_self.timeTable));
         _self.index = _self.indexWithClosestToRealTime;
     }
 
-    function findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations, departureStation, departureTime) {
+    function findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations, departureStation, arrivalStation, ChoosedDepartureTime) {
         return filterRouteDataWithBothStations.map(function (el) {
-            let elementTime = moment(el.TimeInfos[departureStation].DepTime, "HH:mm:ss");
-            if (elementTime.toISOString().startsWith("00:")){
+            let departureTime = moment(el.TimeInfos[departureStation].DepTime, "HH:mm");
+            let arrivalTime = moment(el.TimeInfos[arrivalStation].ArrTime, "HH:mm");
+            if (departureTime.toISOString().startsWith("00:")){
                 console.log("After midnight");
-                console.log(elementTime);
+                console.log(departureTime);
             }
-            el.timeDifference = elementTime.diff(departureTime);
+            el.timeDifference = departureTime.diff(ChoosedDepartureTime);
+            el.travelTime = moment.utc(arrivalTime.diff(departureTime)).format("HH:mm");
             return el;
         }).sort(function (a, b) {
             return parseInt(a.timeDifference) - parseInt(b.timeDifference);
