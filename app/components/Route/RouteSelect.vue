@@ -1,6 +1,9 @@
 <template>
     <Page actionBarHidden="true">
         <DockLayout>
+            <FlexboxLayout dock="top">
+
+            </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose" @tap="">
                     <Label class="fas" :text="'\uf3c5' | unescape"></Label>
@@ -11,6 +14,9 @@
                 <FlexboxLayout class="menu-choose" @tap="navToSet">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
                 </FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout dock="center">
+
             </FlexboxLayout>
         </DockLayout>
     </Page>
