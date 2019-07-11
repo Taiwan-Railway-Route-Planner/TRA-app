@@ -3,13 +3,23 @@
  **/
 
 const getRoutesOfADay = require("./getRoutesOfADay");
+const language = require('./language');
 const moment = require("moment");
 
 export default (function () {
 
     const handleIncomingRouteDetails = async function(_self) {
+        loadLanguage(_self);
         await getAllRoutesForThatDay(_self);
     };
+
+    function loadLanguage(_self) {
+        if (_self.$store.state.language === 'EN'){
+            _self.data = language.language.en;
+        } else {
+            _self.data = language.language.zh;
+        }
+    }
 
     async function getAllRoutesForThatDay(_self) {
         let routeData = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
@@ -62,6 +72,8 @@ export default (function () {
         let filterRouteDataWithBothStations = filterRouteArrayOnStations(filterRouteDataWithDepartureStation,_self.props.routeDetails.arrival.details.時刻表編號);
         let departureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
         _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, departureTime);
+        _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
+        _self.index = _self.indexWithClosestToRealTime;
     }
 
     function findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations, departureStation, departureTime) {
@@ -81,7 +93,10 @@ export default (function () {
     function filterRouteArrayOnStations(routeData, filterStation) {
         return routeData.filter((el => filterStation in el.TimeInfos));
     }
-
+    
+    function findClosestNumber() {
+        
+    }
 
     return {
         handleIncomingRouteDetails
