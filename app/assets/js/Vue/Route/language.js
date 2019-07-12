@@ -12,8 +12,11 @@ module.exports = (function () {
             },
             trainTypes: {
                 "Local": "Local",
+                "Other Local": "普快",
+                "Fast Local": "Fast Local",
                 "Chu-kuang": "Chu-kuang",
                 "Tze-chiang": "Tze-chiang",
+                "Fu-Hsing": "Fu-Hsing",
                 "Taroko": "Taroko",
                 "Puyuma": "Puyuma"
             }
@@ -25,8 +28,11 @@ module.exports = (function () {
             },
             trainTypes: {
                 "Local": "區間",
+                "Other Local": "普快",
+                "Fast Local": "區間快",
                 "Chu-kuang": "莒光",
                 "Tze-chiang": "自強",
+                "Fu-Hsing": "復興",
                 "Taroko": "太魯閣",
                 "Puyuma": "普悠瑪"
             }
