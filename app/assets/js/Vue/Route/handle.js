@@ -73,7 +73,6 @@ export default (function () {
         let ChoosedDepartureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
         _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, _self.props.routeDetails.arrival.details.時刻表編號,ChoosedDepartureTime);
         _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
-        console.log("_self.indexWithClosestToRealTime", _self.indexWithClosestToRealTime);
     }
 
     function findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations, departureStation, arrivalStation, ChoosedDepartureTime) {
@@ -94,10 +93,6 @@ export default (function () {
 
     function filterRouteArrayOnStations(routeData, filterStation) {
         return routeData.filter((el => filterStation in el.TimeInfos));
-    }
-    
-    function findClosestNumber() {
-        
     }
 
     return {
