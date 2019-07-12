@@ -47,8 +47,8 @@ module.exports = (function () {
         },
         zh: {
             top: {
-                first: 'Departure Station',
-                second: 'Arrival Station'
+                first: '離開站',
+                second: '抵達站'
             },
             trainTypes: {
                 "Local": {

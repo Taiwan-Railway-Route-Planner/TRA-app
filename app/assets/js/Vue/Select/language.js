@@ -94,23 +94,23 @@ module.exports = (function () {
                     local: 'zh-tw',
                     modal: {
                         top: {
-                            first: 'DEPARTURE',
-                            second: 'ARRIVAL',
+                            first: '離開',
+                            second: '抵達',
                         },
                         center: {
-                            button: 'Now',
+                            button: '現在',
                             date: {
                                 actual: null,
                                 today: null
                             }
                         },
                         bottom: {
-                            leftBtn: 'DISCARD',
-                            rightBtn: 'CONFIRM',
+                            leftBtn: '取消',
+                            rightBtn: '確認',
                         }
                     }
                 },
-                button: 'SEARCH'
+                button: '搜尋'
             }
         }
     };
