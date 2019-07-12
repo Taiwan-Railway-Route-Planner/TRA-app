@@ -15,9 +15,9 @@
                         <Label :text="props.routeDetails.arrival.details.站名"></Label>
                         <Label :text="props.routeDetails.arrival.details.站名"></Label>
                     </FlexboxLayout>
-<!--                    <FlexboxLayout class="top-time">-->
-<!--                        <Label :text="props.routeDetails.time.date.show + ' ' + props.routeDetails.time.time"></Label>-->
-<!--                    </FlexboxLayout>-->
+                    <!--                    <FlexboxLayout class="top-time">-->
+                    <!--                        <Label :text="props.routeDetails.time.date.show + ' ' + props.routeDetails.time.time"></Label>-->
+                    <!--                    </FlexboxLayout>-->
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
@@ -139,7 +139,7 @@
                 let _self = this;
                 setTimeout(function () {
                     _self.$refs.myList.nativeView.scrollToIndex(_self.indexWithClosestToRealTime);
-                },3000)
+                }, 3000)
             },
             navToStart: function () {
                 this.$goto('Select');
@@ -147,12 +147,17 @@
             navToStar: function () {
 
             },
-            navToSet: function (){
+            navToSet: function () {
 
             },
             onItemTap: function (event) {
-                console.log(event.index);
-                console.log(event.item);
+                this.$goto('RouteDetails', {
+                        props: {
+                            routeDetails: this.props.routeDetails,
+                            selectTravelDetails: event.item
+                        }
+                    }
+                );
             }
         }
     }
@@ -161,28 +166,28 @@
 
 <style scoped>
 
-    .dock-top{
+    .dock-top {
         background-color: #1a0dab;
         color: #fff;
     }
 
-    .dock-top Label{
+    .dock-top Label {
         font-size: 17;
     }
 
-    .top{
+    .top {
         flex-direction: row;
         margin-left: 6%;
         margin-top: 2%;
     }
 
-    .top .top-title{
+    .top .top-title {
         flex-direction: column;
         margin-bottom: 1%;
         margin-right: 10%;
     }
 
-    .top .top-data{
+    .top .top-data {
         flex-direction: column;
     }
 
@@ -192,53 +197,53 @@
     /*    justify-content: center;*/
     /*}*/
 
-    .center{
+    .center {
         background-color: #fff;
         color: #1a0dab;
     }
 
-    .center .travelDetails{
+    .center .travelDetails {
         padding-top: 15%;
         padding-left: 15%;
         flex-direction: column;
     }
 
-    .center .travelDetails .timeDetails{
+    .center .travelDetails .timeDetails {
         padding-bottom: 15%;
     }
 
-    .center .travelDetails .timeDetails .timeStamps{
+    .center .travelDetails .timeDetails .timeStamps {
         font-size: 20;
     }
 
-    .center .travelDetails .timeDetails .fas{
+    .center .travelDetails .timeDetails .fas {
         margin-left: 10%;
         margin-right: 10%;
     }
 
-    .center .travelDetails .travelTime{
+    .center .travelDetails .travelTime {
         padding-bottom: 15%;
     }
 
-    .center .travelDetails .travelTime .far{
+    .center .travelDetails .travelTime .far {
         margin-right: 5%;
         font-size: 24;
     }
 
-    .center .travelDetails .travelTime Label{
+    .center .travelDetails .travelTime Label {
         font-size: 18;
     }
 
-    .center .travelDetails .typeOfTrain{
+    .center .travelDetails .typeOfTrain {
         padding-bottom: 20%;
     }
 
-    .center .travelDetails .typeOfTrain .fas{
+    .center .travelDetails .typeOfTrain .fas {
         margin-right: 5%;
         font-size: 24;
     }
 
-    .center .travelDetails .typeOfTrain Label{
+    .center .travelDetails .typeOfTrain Label {
         font-size: 18;
     }
 
