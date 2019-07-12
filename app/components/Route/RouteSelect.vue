@@ -4,8 +4,8 @@
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
-                        <Label :text="data.top.first"></Label>
-                        <Label :text="data.top.second"></Label>
+                        <Label :text="data.top.first + ':'"></Label>
+                        <Label :text="data.top.second + ':'"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout v-if="$store.state.language === 'EN'" class="top-data">
                         <Label :text="props.routeDetails.arrival.details.eng站名"></Label>
@@ -15,9 +15,9 @@
                         <Label :text="props.routeDetails.arrival.details.站名"></Label>
                         <Label :text="props.routeDetails.arrival.details.站名"></Label>
                     </FlexboxLayout>
-                    <FlexboxLayout class="top-time">
-                        <Label :text="props.routeDetails.time.date.show + ' ' + props.routeDetails.time.time"></Label>
-                    </FlexboxLayout>
+<!--                    <FlexboxLayout class="top-time">-->
+<!--                        <Label :text="props.routeDetails.time.date.show + ' ' + props.routeDetails.time.time"></Label>-->
+<!--                    </FlexboxLayout>-->
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
@@ -32,7 +32,7 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="center">
-                <ListView for="(item, index) in timeTable" @itemTap="onItemTap">
+                <ListView for="item in timeTable" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
                     <v-template>
                         <FlexboxLayout class="travelDetails">
                             <FlexboxLayout class="timeDetails">
@@ -69,7 +69,7 @@
             return {
                 timeTable: [],
                 indexWithClosestToRealTime: 0,
-                index: 0,
+                // index: 0,
                 longDate: "20190704",
                 data: null,
                 props: {
@@ -135,13 +135,19 @@
             }
         },
         methods: {
+            onLoaded() {
+                let _self = this;
+                setTimeout(function () {
+                    _self.$refs.myList.nativeView.scrollToIndex(_self.indexWithClosestToRealTime);
+                },3000)
+            },
             navToStart: function () {
                 this.$goto('Select');
             },
             navToStar: function () {
 
             },
-            navToSet: function () {
+            navToSet: function (){
 
             },
             onItemTap: function (event) {
@@ -166,25 +172,25 @@
 
     .top{
         flex-direction: row;
-        margin-left: 3%;
+        margin-left: 6%;
         margin-top: 2%;
     }
 
     .top .top-title{
         flex-direction: column;
         margin-bottom: 1%;
-        margin-right: 5%;
+        margin-right: 10%;
     }
 
     .top .top-data{
         flex-direction: column;
     }
 
-    .top .top-time{
-        margin-left: 1%;
-        flex-direction: column;
-        justify-content: center;
-    }
+    /*.top .top-time{*/
+    /*    margin-left: 6%;*/
+    /*    flex-direction: column;*/
+    /*    justify-content: center;*/
+    /*}*/
 
     .center{
         background-color: #fff;
