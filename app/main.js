@@ -2,6 +2,7 @@ import Vue from 'nativescript-vue'
 import App from './components/App'
 import Select from './components/Select/StationSelect'
 import Route from "./components/Route/RouteSelect"
+import RouteDetails from "./components/Route/Details"
 import store from './store';
 
 import VueDevtools from 'nativescript-vue-devtools'
@@ -17,7 +18,8 @@ Vue.filter('unescape', v => unescape(v));
 const router = {
   Settings: App,
   Select: Select,
-  Route: Route
+  Route: Route,
+  RouteDetails: RouteDetails
 };
 
 Vue.prototype.$router = router;
