@@ -53,6 +53,7 @@ export default (function () {
         if (departureCode < arrivalCode){
             return 1;
         } else {
+            // _self.index = _self.indexWithClosestToRealTime;
             return -1;
         }
     }
@@ -72,8 +73,7 @@ export default (function () {
         let ChoosedDepartureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
         _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, _self.props.routeDetails.arrival.details.時刻表編號,ChoosedDepartureTime);
         _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
-        console.log(JSON.stringify(_self.timeTable));
-        _self.index = _self.indexWithClosestToRealTime;
+        console.log("_self.indexWithClosestToRealTime", _self.indexWithClosestToRealTime);
     }
 
     function findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations, departureStation, arrivalStation, ChoosedDepartureTime) {
