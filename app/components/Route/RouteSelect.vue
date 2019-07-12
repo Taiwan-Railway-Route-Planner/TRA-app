@@ -154,7 +154,8 @@
                 this.$goto('RouteDetails', {
                         props: {
                             routeDetails: this.props.routeDetails,
-                            selectTravelDetails: event.item
+                            selectTravelDetails: event.item,
+                            language: this.data
                         }
                     }
                 );
@@ -169,6 +170,7 @@
     .dock-top {
         background-color: #1a0dab;
         color: #fff;
+        height: 10%;
     }
 
     .dock-top Label {
@@ -178,7 +180,7 @@
     .top {
         flex-direction: row;
         margin-left: 6%;
-        margin-top: 2%;
+        align-items: center;
     }
 
     .top .top-title {
