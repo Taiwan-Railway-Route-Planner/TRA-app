@@ -77,7 +77,6 @@
 
     import handle from "../../assets/js/Vue/Select/handle"
     import timeModal from "../modals/timeModal"
-    import moment from "moment"
 
     export default {
         async created() {
