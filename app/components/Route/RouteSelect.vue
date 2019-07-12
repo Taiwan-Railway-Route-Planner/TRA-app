@@ -45,9 +45,8 @@
                                 <Label :text="item.travelTime"></Label>
                             </FlexboxLayout>
                             <FlexboxLayout class="typeOfTrain">
-                                <Label class="fas" :text="'\uf238' | unescape"></Label>
-<!--                                <Label :text="data.trainTypes[item.trainType]"></Label>-->
-                                <Label :text="item.Train"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
+                                <Label :text="data.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </v-template>
