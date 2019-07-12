@@ -16,7 +16,7 @@ module.exports = (function () {
                     color: "#333333"
                 },
                 "Other Local": {
-                    name: "普快",
+                    name: "Ordinary",
                     color: "#333333"
                 },
                 "Fast Local": {
