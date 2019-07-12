@@ -11,14 +11,38 @@ module.exports = (function () {
                 second: 'Arrival Station'
             },
             trainTypes: {
-                "Local": "Local",
-                "Other Local": "普快",
-                "Fast Local": "Fast Local",
-                "Chu-kuang": "Chu-kuang",
-                "Tze-chiang": "Tze-chiang",
-                "Fu-Hsing": "Fu-Hsing",
-                "Taroko": "Taroko",
-                "Puyuma": "Puyuma"
+                "Local": {
+                    name: "Local",
+                    color: "#333333"
+                },
+                "Other Local": {
+                    name: "普快",
+                    color: "#333333"
+                },
+                "Fast Local": {
+                    name: "Fast Local",
+                    color: "#333333"
+                },
+                "Chu-kuang": {
+                    name: "Chu-kuang",
+                    color: "#FFD200"
+                },
+                "Tze-chiang": {
+                    name: "Tze-chiang",
+                    color: "#FF8708"
+                },
+                "Fu-Hsing": {
+                    name: "Fu-Hsing",
+                    color: "#00ace8"
+                },
+                "Taroko": {
+                    name: "Taroko",
+                    color: "#FF5000"
+                },
+                "Puyuma": {
+                    name: "Puyuma",
+                    color: "#D00216"
+                }
             }
         },
         zh: {
@@ -27,14 +51,38 @@ module.exports = (function () {
                 second: 'Arrival Station'
             },
             trainTypes: {
-                "Local": "區間",
-                "Other Local": "普快",
-                "Fast Local": "區間快",
-                "Chu-kuang": "莒光",
-                "Tze-chiang": "自強",
-                "Fu-Hsing": "復興",
-                "Taroko": "太魯閣",
-                "Puyuma": "普悠瑪"
+                "Local": {
+                    name: "區間",
+                    color: "#333333"
+                },
+                "Other Local": {
+                    name: "普快",
+                    color: "#333333"
+                },
+                "Fast Local": {
+                    name: "區間快",
+                    color: "#333333"
+                },
+                "Chu-kuang": {
+                    name: "莒光",
+                    color: "#FFD200"
+                },
+                "Tze-chiang": {
+                    name: "自強",
+                    color: "#FF8708"
+                },
+                "Fu-Hsing": {
+                    name: "復興",
+                    color: "#00ace8"
+                },
+                "Taroko": {
+                    name: "太魯閣",
+                    color: "#FF5000"
+                },
+                "Puyuma": {
+                    name: "普悠瑪",
+                    color: "#D00216"
+                }
             }
         }
     };
