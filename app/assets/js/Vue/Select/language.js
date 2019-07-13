@@ -112,7 +112,61 @@ module.exports = (function () {
                 },
                 button: '搜尋'
             }
-        }
+        },
+        ko: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    startStation:  'Select departure station',
+                    endStation: 'Select arrival station'
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'KO',
+                departure: {
+                    details: {},
+                    hint: 'Select station',
+                    label: 'From'
+                },
+                arrival: {
+                    details: {},
+                    hint: 'Select station',
+                    label: 'To'
+                },
+                time: {
+                    label: 'Time',
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'en-SG',
+                    modal: {
+                        top: {
+                            first: 'DEPARTURE',
+                            second: 'ARRIVAL',
+                        },
+                        center: {
+                            button: 'Now',
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            leftBtn: 'DISCARD',
+                            rightBtn: 'CONFIRM',
+                        }
+                    }
+                },
+                button: 'SEARCH'
+            }
+        },
     };
 
 
