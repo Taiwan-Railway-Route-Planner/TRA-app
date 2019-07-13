@@ -27,7 +27,7 @@ export default (function () {
     }
 
     function filterTheNotCorrectRoutesOut(_self,routeData) {
-        const intersection = _self.props.routeDetails.departure.details.routeCode.filter(element => _self.props.routeDetails.arrival.details.routeCode.includes(element));
+        const intersection = _self.$props.routeDetails.departure.details.routeCode.filter(element => _self.$props.routeDetails.arrival.details.routeCode.includes(element));
         if (intersection.length !== 0){
             checkWhichRouteItIs(_self,routeData,intersection);
         } else {
@@ -48,8 +48,8 @@ export default (function () {
     }
 
     function calculateMainRouteCodeForRoundLine(_self) {
-        let departureCode = parseInt(_self.props.routeDetails.departure.details.traWebsiteCode);
-        let arrivalCode = parseInt(_self.props.routeDetails.arrival.details.traWebsiteCode);
+        let departureCode = parseInt(_self.$props.routeDetails.departure.details.traWebsiteCode);
+        let arrivalCode = parseInt(_self.$props.routeDetails.arrival.details.traWebsiteCode);
         if (departureCode < arrivalCode){
             return 1;
         } else {
@@ -68,10 +68,10 @@ export default (function () {
     }
 
     function getPossibleRoutesForThatDay(_self,routeData) {
-        let filterRouteDataWithDepartureStation = filterRouteArrayOnStations(routeData,_self.props.routeDetails.departure.details.時刻表編號);
-        let filterRouteDataWithBothStations = filterRouteArrayOnStations(filterRouteDataWithDepartureStation,_self.props.routeDetails.arrival.details.時刻表編號);
-        let ChoosedDepartureTime = moment(_self.props.routeDetails.time.time, "HH:mm");
-        _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.props.routeDetails.departure.details.時刻表編號, _self.props.routeDetails.arrival.details.時刻表編號,ChoosedDepartureTime);
+        let filterRouteDataWithDepartureStation = filterRouteArrayOnStations(routeData,_self.$props.routeDetails.departure.details.時刻表編號);
+        let filterRouteDataWithBothStations = filterRouteArrayOnStations(filterRouteDataWithDepartureStation,_self.$props.routeDetails.arrival.details.時刻表編號);
+        let ChoosedDepartureTime = moment(_self.$props.routeDetails.time.time, "HH:mm");
+        _self.timeTable = findTheRouteWithCloseTimeStamp(filterRouteDataWithBothStations,_self.$props.routeDetails.departure.details.時刻表編號, _self.$props.routeDetails.arrival.details.時刻表編號,ChoosedDepartureTime);
         _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
     }
 
