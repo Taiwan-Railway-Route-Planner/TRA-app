@@ -46,13 +46,18 @@
                     <FlexboxLayout class="trainDestArrDetails">
                         <Label v-if="$store.state.language === 'EN'" class="departure" :text="props.routeDetails.departure.details.eng站名"></Label>
                         <Label v-else class="departure" :text="props.routeDetails.departure.details.站名"></Label>
-                        <FlexboxLayout class="trainDetailsIcons">
-                            <Label :text="props.language.trainTypes[props.selectTravelDetails.trainType].name + ' ' + props.selectTravelDetails.Train"></Label>
-                            <FlexboxLayout class="trainIcons">
-                                <Label v-if="props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
-                                <Label v-if="props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
-                                <Label v-if="props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
-                                <Label v-if="props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                        <FlexboxLayout class="trainDetailsIcons" @tap="navigateToRouteDetails">
+                            <FlexboxLayout class="information">
+                                <Label :text="props.language.trainTypes[props.selectTravelDetails.trainType].name + ' ' + props.selectTravelDetails.Train"></Label>
+                                <FlexboxLayout class="trainIcons">
+                                    <Label v-if="props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
+                                    <Label v-if="props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
+                                    <Label v-if="props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
+                                    <Label v-if="props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                                </FlexboxLayout>
+                            </FlexboxLayout>
+                            <FlexboxLayout class="navigation">
+                                <Label class="fas" :text="'\uf054' | unescape"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <Label v-if="$store.state.language === 'EN'" class="arrival" :text="props.routeDetails.arrival.details.eng站名"></Label>
@@ -399,17 +404,32 @@
     }
 
     .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons {
-        flex-direction: column;
+        flex-direction: row;
+        width: 100%;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons {
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information{
+        flex-direction: column;
+        width: 85%;
+        /*background-color: #D3D3D3;*/
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information .trainIcons {
         padding-top: 8%;
         flex-direction: row;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons .fas {
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information .trainIcons .fas {
         font-size: 24;
         margin-right: 8%;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .navigation{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        /*background-color: #1a0dab;*/
     }
 
 </style>
