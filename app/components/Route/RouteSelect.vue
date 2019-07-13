@@ -8,16 +8,13 @@
                         <Label :text="data.top.second + ':'"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout v-if="$store.state.language === 'EN'" class="top-data">
-                        <Label :text="props.routeDetails.arrival.details.eng站名"></Label>
-                        <Label :text="props.routeDetails.arrival.details.eng站名"></Label>
+                        <Label :text="$props.routeDetails.departure.details.eng站名"></Label>
+                        <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout v-else class="top-data">
-                        <Label :text="props.routeDetails.arrival.details.站名"></Label>
-                        <Label :text="props.routeDetails.arrival.details.站名"></Label>
+                        <Label :text="$props.routeDetails.departure.details.站名"></Label>
+                        <Label :text="$props.routeDetails.arrival.details.站名"></Label>
                     </FlexboxLayout>
-                    <!--                    <FlexboxLayout class="top-time">-->
-                    <!--                        <Label :text="props.routeDetails.time.date.show + ' ' + props.routeDetails.time.time"></Label>-->
-                    <!--                    </FlexboxLayout>-->
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
@@ -36,9 +33,9 @@
                     <v-template>
                         <FlexboxLayout class="travelDetails">
                             <FlexboxLayout class="timeDetails">
-                                <Label class="timeStamps" :text="item.TimeInfos[props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
+                                <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
                                 <Label class="fas" :text="'\uf061'| unescape"></Label>
-                                <Label class="timeStamps" :text="item.TimeInfos[props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                                <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
                             </FlexboxLayout>
                             <FlexboxLayout class="travelTime">
                                 <Label class="far" :text="'\uf017' | unescape"></Label>
@@ -64,74 +61,14 @@
         props: ['routeDetails'],
         created: async function () {
             await handle.handleIncomingRouteDetails(this);
+            console.log(JSON.stringify(this.timeTable));
         },
         data() {
             return {
                 timeTable: [],
                 indexWithClosestToRealTime: 0,
-                // index: 0,
                 longDate: "20190704",
-                data: null,
-                props: {
-                    routeDetails: {
-                        language: 'ZH',
-                        departure: {
-                            details: {
-                                "時刻表編號": 1008,
-                                "traWebsiteCode": "1000",
-                                "站名": "臺北",
-                                "eng站名": "Taipei",
-                                "routeCode": [
-                                    1
-                                ]
-                            },
-                            hint: '選擇哪一站',
-                            label: '從'
-                        },
-                        arrival: {
-                            details: {
-                                "時刻表編號": 1025,
-                                "traWebsiteCode": "1210",
-                                "站名": "新竹",
-                                "eng站名": "Hsinchu",
-                                "routeCode": [
-                                    4,
-                                    1
-                                ]
-                            },
-                            hint: '選擇哪一站',
-                            label: '去'
-                        },
-                        time: {
-                            label: '時間',
-                            hint: '',
-                            date: {
-                                show: '2019年7月12日',
-                                real: "20190712"
-                            },
-                            time: '11:45',
-                            local: 'zh-tw',
-                            modal: {
-                                top: {
-                                    first: 'DEPARTURE',
-                                    second: 'ARRIVAL',
-                                },
-                                center: {
-                                    button: 'Now',
-                                    date: {
-                                        actual: null,
-                                        today: null
-                                    }
-                                },
-                                bottom: {
-                                    leftBtn: 'DISCARD',
-                                    rightBtn: 'CONFIRM',
-                                }
-                            }
-                        },
-                        button: 'SEARCH'
-                    }
-                }
+                data: null
             }
         },
         methods: {
@@ -153,7 +90,7 @@
             onItemTap: function (event) {
                 this.$goto('RouteDetails', {
                         props: {
-                            routeDetails: this.props.routeDetails,
+                            routeDetails: this.$props.routeDetails,
                             selectTravelDetails: event.item,
                             language: this.data
                         }
@@ -192,12 +129,6 @@
     .top .top-data {
         flex-direction: column;
     }
-
-    /*.top .top-time{*/
-    /*    margin-left: 6%;*/
-    /*    flex-direction: column;*/
-    /*    justify-content: center;*/
-    /*}*/
 
     .center {
         background-color: #fff;
