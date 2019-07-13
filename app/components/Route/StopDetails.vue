@@ -55,8 +55,8 @@
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="stationName">
-                                <Label v-if="$store.state.language === 'EN'" class="" :text="item.eng站名"></Label>
-                                <Label v-else class="" :text="item.站名"></Label>
+                                <Label v-if="$store.state.language === 'ZH'" class="" :text="item.站名"></Label>
+                                <Label v-else class="" :text="item.eng站名"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </v-template>

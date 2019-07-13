@@ -44,8 +44,8 @@
                         <Label class="far" :text="'\uf111' | unescape"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout class="trainDestArrDetails">
-                        <Label v-if="$store.state.language === 'EN'" class="departure" :text="$props.routeDetails.departure.details.eng站名"></Label>
-                        <Label v-else class="departure" :text="$props.routeDetails.departure.details.站名"></Label>
+                        <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"></Label>
+                        <Label v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></Label>
                         <FlexboxLayout class="trainDetailsIcons" @tap="navigateToRouteDetails">
                             <FlexboxLayout class="information">
                                 <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name + ' ' + $props.selectTravelDetails.Train"></Label>
@@ -60,8 +60,8 @@
                                 <Label class="fas" :text="'\uf054' | unescape"></Label>
                             </FlexboxLayout>
                         </FlexboxLayout>
-                        <Label v-if="$store.state.language === 'EN'" class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>
-                        <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
+                        <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
+                        <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>

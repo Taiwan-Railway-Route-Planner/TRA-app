@@ -7,13 +7,13 @@
                         <Label :text="data.top.first + ':'"></Label>
                         <Label :text="data.top.second + ':'"></Label>
                     </FlexboxLayout>
-                    <FlexboxLayout v-if="$store.state.language === 'EN'" class="top-data">
-                        <Label :text="$props.routeDetails.departure.details.eng站名"></Label>
-                        <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout v-else class="top-data">
+                    <FlexboxLayout v-if="$store.state.language === 'ZH'" class="top-data">
                         <Label :text="$props.routeDetails.departure.details.站名"></Label>
                         <Label :text="$props.routeDetails.arrival.details.站名"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout v-else class="top-data">
+                        <Label :text="$props.routeDetails.departure.details.eng站名"></Label>
+                        <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>

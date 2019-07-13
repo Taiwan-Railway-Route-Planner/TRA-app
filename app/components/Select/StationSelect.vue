@@ -7,14 +7,14 @@
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
                     <ScrollView>
-                        <ListView v-if="$store.state.language === 'EN'" class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
+                        <ListView v-if="$store.state.language === 'ZH'" class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
                             <v-template>
-                                <Label :text="item.eng站名 + ' (' + item.traWebsiteCode + ')' "></Label>
+                                <Label :text="item.站名 + ' (' + item.traWebsiteCode + ')' "></Label>
                             </v-template>
                         </ListView>
                         <ListView v-else class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
                             <v-template>
-                                <Label :text="item.站名 + ' (' + item.traWebsiteCode + ')' "></Label>
+                                <Label :text="item.eng站名 + ' (' + item.traWebsiteCode + ')' "></Label>
                             </v-template>
                         </ListView>
                     </ScrollView>
@@ -35,19 +35,7 @@
                 <FlexboxLayout class="mainMenu">
                     <Label class="title" text="TRA Route Planner"></Label>
                     <StackLayout dock="top" class="topRouteDetails">
-                        <StackLayout v-if="$store.state.language === 'EN'">
-                            <FlexboxLayout class="InfoDetails">
-                                <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                    <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
-                                    <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
-                                </FlexboxLayout>
-                                <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                    <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
-                                    <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
-                                </FlexboxLayout>
-                            </FlexboxLayout>
-                        </StackLayout>
-                        <StackLayout v-else>
+                        <StackLayout v-if="$store.state.language === 'ZH'">
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
                                     <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
@@ -56,6 +44,18 @@
                                 <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
                                     <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
                                     <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                                </FlexboxLayout>
+                            </FlexboxLayout>
+                        </StackLayout>
+                        <StackLayout v-else>
+                            <FlexboxLayout class="InfoDetails">
+                                <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
+                                    <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
+                                    <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                </FlexboxLayout>
+                                <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
+                                    <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
+                                    <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                         </StackLayout>
