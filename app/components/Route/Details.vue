@@ -221,7 +221,8 @@
                 this.$goto("RouteStopDetails", {
                     props: {
                         selectTravelDetails: this.props.selectTravelDetails,
-                        language: this.props.language
+                        language: this.props.language,
+                        startStation: this.props.departure.details['時刻表編號']
                     }
                 })
             }
