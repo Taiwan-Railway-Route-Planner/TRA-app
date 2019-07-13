@@ -220,7 +220,7 @@
             navigateToRouteDetails: function () {
                 this.$goto("RouteStopDetails", {
                     props: {
-                        travelDetails: this.props.selectTravelDetails,
+                        selectTravelDetails: this.props.selectTravelDetails,
                         language: this.props.language
                     }
                 })
