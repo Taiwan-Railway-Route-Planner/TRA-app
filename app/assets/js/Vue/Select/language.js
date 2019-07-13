@@ -37,7 +37,7 @@ module.exports = (function () {
                         real: null
                     },
                     time: '',
-                    local: 'en',
+                    local: 'en-SG',
                     modal: {
                         top: {
                             first: 'DEPARTURE',
