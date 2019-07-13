@@ -48,6 +48,11 @@ module.exports = (function () {
                 top: {
                     title: 'Travel Details'
                 }
+            },
+            stopDetails: {
+                top: {
+                    title: 'Train Details'
+                }
             }
         },
         zh: {
@@ -92,6 +97,11 @@ module.exports = (function () {
             details: {
                 top: {
                     title: 'Travel Details'
+                }
+            },
+            stopDetails: {
+                top: {
+                    title: 'Train Details'
                 }
             }
         }
