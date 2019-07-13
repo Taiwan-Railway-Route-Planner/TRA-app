@@ -13,8 +13,7 @@ module.exports = (function () {
     }
 
     function setLongDate(_self) {
-        _self.longDate = _self.props.routeDetails.time.date.real;
-        console.log(_self.longDate);
+        _self.longDate = _self.$props.routeDetails.time.date.real;
     }
 
     return {
