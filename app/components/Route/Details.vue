@@ -17,7 +17,7 @@
                         <FlexboxLayout class="timeDetails">
                             <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
                             <Label class="fas" :text="'\uf061' | unescape"></Label>
-                            <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.departure.details.時刻表編號].ArrTime"></Label>
+                            <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="dateDetails">
                             <Label :text="props.routeDetails.time.date.show"></Label>
@@ -29,8 +29,36 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
-            <FlexboxLayout dock="center" class="center">
-
+            <FlexboxLayout dock="center" class="dock-center">
+                <FlexboxLayout class="trainDetails">
+                    <FlexboxLayout class="trainTimeDetails">
+                        <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
+                        <Label class="fas" :color="props.language.trainTypes[props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
+                        <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="route">
+                        <Label class="far" :text="'\uf111' | unescape"></Label>
+                        <FlexboxLayout class="template-line">
+                            <Label class="line"></Label>
+                        </FlexboxLayout>
+                        <Label class="far" :text="'\uf111' | unescape"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="trainDestArrDetails">
+                        <Label v-if="$store.state.language === 'EN'" class="departure" :text="props.routeDetails.departure.details.eng站名"></Label>
+                        <Label v-else class="departure" :text="props.routeDetails.departure.details.站名"></Label>
+                        <FlexboxLayout class="trainDetailsIcons">
+                            <Label :text="props.language.trainTypes[props.selectTravelDetails.trainType].name + ' ' + props.selectTravelDetails.Train"></Label>
+                            <FlexboxLayout class="trainIcons">
+                                <Label v-if="props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
+                                <Label v-if="props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
+                                <Label v-if="props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
+                                <Label v-if="props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                        <Label v-if="$store.state.language === 'EN'" class="arrival" :text="props.routeDetails.arrival.details.eng站名"></Label>
+                        <Label v-else class="arrival" :text="props.routeDetails.arrival.details.站名"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
             </FlexboxLayout>
         </DockLayout>
     </Page>
@@ -102,7 +130,7 @@
                         button: 'SEARCH'
                     },
                     selectTravelDetails: {
-                        "Type": "0", "Train": "123", "BreastFeed": "N", "Route": "", "Package": "N", "OverNightStn": "0", "LineDir": "1", "Line": "1", "Dinning": "N", "Cripple": "Y", "CarClass": "1109", "Bike": "N", "Note": "æ¯æ¥è¡é§ãæ¬åæ¬¡ç¬¬12è»çºè¦ªå­è»å»ï¼ä¸ç¼å®ç¡åº§ç¥¨ï¼éæè¦ªå­è»å»è»ç¥¨æå®¢ï¼è«å¿é²å¥æ­ä¹ã", "NoteEng": "Runs Daily.Accessible Car.", "TimeInfos": {
+                        "Type": "0", "Train": "123", "BreastFeed": "Y", "Route": "", "Package": "N", "OverNightStn": "0", "LineDir": "1", "Line": "1", "Dinning": "N", "Cripple": "Y", "CarClass": "1109", "Bike": "N", "Note": "æ¯æ¥è¡é§ãæ¬åæ¬¡ç¬¬12è»çºè¦ªå­è»å»ï¼ä¸ç¼å®ç¡åº§ç¥¨ï¼éæè¦ªå­è»å»è»ç¥¨æå®¢ï¼è«å¿é²å¥æ­ä¹ã", "NoteEng": "Runs Daily.Accessible Car.", "TimeInfos": {
                             "1003": {"Station": "1003", "Order": "1", "DepTime": "11:25", "ArrTime": "11:23", "Routes": [1]},
                             "1005": {"Station": "1005", "Order": "2", "DepTime": "11:35", "ArrTime": "11:33", "Routes": [1]},
                             "1007": {"Station": "1007", "Order": "3", "DepTime": "11:46", "ArrTime": "11:45", "Routes": [1]},
@@ -178,46 +206,52 @@
                 }
             }
         },
-        methods: {
-
-        }
+        methods: {}
     }
 
 </script>
 
 <style scoped>
 
+    .dock-top {
+        height: 30%;
+    }
+
+    .dock-center {
+        height: 70%;
+    }
+
+    .dock-top .top,
+    .dock-center .trainDetails {
+        margin-left: 5%;
+    }
+
     .dock-top,
     .dock-top .top,
-    .dock-top .top .routeDetails{
+    .dock-top .top .routeDetails {
         flex-direction: column;
     }
 
     .dock-top .top .top-title .fas,
     .dock-top .top .top-title .far,
     .dock-top .top .routeDetails .fas,
-    .dock-top .top .routeDetails .far{
+    .dock-top .top .routeDetails .far {
         font-size: 24;
     }
 
     .dock-top .top .top-title .titles Label,
     .dock-top .top .routeDetails .timeDetails Label,
-    .dock-top .top .routeDetails .otherDetails Label{
+    .dock-top .top .routeDetails .otherDetails Label {
         font-size: 24;
     }
 
-    .dock-top .top .routeDetails .dateDetails Label{
+    .dock-top .top .routeDetails .dateDetails Label {
         font-size: 18;
     }
 
     .dock-top {
         background-color: #1a0dab;
         color: #fff;
-        height: 30%;
-    }
-
-    .dock-top .top {
-        margin-left: 5%;
     }
 
     .dock-top .top .top-title {
@@ -228,56 +262,154 @@
         align-items: center;
     }
 
-    .dock-top .top .top-title .titles{
+    .dock-top .top .top-title .titles {
         flex-direction: row;
         align-items: center;
     }
 
-    .dock-top .top .top-title .titles .fas{
+    .dock-top .top .top-title .titles .fas {
         margin-right: 5%;
     }
 
-    .dock-top .top .top-title .shareOptions{
+    .dock-top .top .top-title .shareOptions {
         margin-right: 3%;
     }
 
-    .dock-top .top .top-title .shareOptions .fas{
+    .dock-top .top .top-title .shareOptions .fas {
         margin-right: 4%;
     }
 
-    .dock-top .top .top-title .shareOptions .fas{
+    .dock-top .top .top-title .shareOptions .fas {
         padding-right: 10%;
     }
 
-    .dock-top .top .routeDetails{
+    .dock-top .top .routeDetails {
         height: 78%;
     }
 
-    .dock-top .top .routeDetails .timeDetails{
+    .dock-top .top .routeDetails .timeDetails {
         flex-direction: row;
         align-items: center;
         height: 35%;
     }
 
-    .dock-top .top .routeDetails .timeDetails .fas{
+    .dock-top .top .routeDetails .timeDetails .fas {
         margin-left: 10%;
         margin-right: 10%;
     }
 
-    .dock-top .top .routeDetails .dateDetails{
+    .dock-top .top .routeDetails .dateDetails {
         flex-direction: row;
         align-items: center;
         height: 30%;
     }
 
-    .dock-top .top .routeDetails .otherDetails{
+    .dock-top .top .routeDetails .otherDetails {
         flex-direction: row;
         align-items: center;
         height: 35%;
     }
 
-    .dock-top .top .routeDetails .otherDetails .far{
+    .dock-top .top .routeDetails .otherDetails .far {
         margin-right: 5%;
+    }
+
+    /*** DOCK CENTER ***/
+
+    .dock-center .trainDetails .trainDestArrDetails Label,
+    .dock-center .trainDetails .trainTimeDetails Label{
+        color: #1a0dab;
+    }
+
+    .dock-center {
+        flex-direction: column;
+    }
+
+    .dock-center .trainDetails {
+        flex-direction: row;
+        margin-top: 4%;
+        height: 30%;
+    }
+
+    .dock-center .trainDetails .trainTimeDetails {
+        width: 15%;
+    }
+
+    .dock-center .trainDetails .route {
+        width: 10%;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails {
+        width: 75%;
+    }
+
+    .dock-center .trainDetails .trainTimeDetails {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dock-center .trainDetails .route {
+        flex-direction: column;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails {
+        flex-direction: column;
+    }
+
+    .dock-center .trainDetails .route {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dock-center .trainDetails .route .far {
+        font-size: 16;
+        color: #1a0dab;
+    }
+
+    .dock-center .trainDetails .route .template-line {
+        flex-direction: row;
+        height: 77%;
+    }
+
+    .dock-center .trainDetails .route .template-line .line {
+        border-left-color: #1a0dab;
+        border-left-style: solid;
+        border-left-width: 4px;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails {
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 4%;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .departure {
+        padding-bottom: 8%;
+        border-bottom-color: #D3D3D3;
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .arrival {
+        padding-top: 8%;
+        border-top-color: #D3D3D3;
+        border-top-style: solid;
+        border-top-width: 3px;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons {
+        flex-direction: column;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons{
+        padding-top: 8%;
+        flex-direction: row;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons .fas{
+        font-size: 24;
+        margin-right: 8%;
     }
 
 </style>
