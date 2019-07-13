@@ -3,20 +3,35 @@
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
-                    <FlexboxLayout class="top-title">
-                        <FlexboxLayout class="titles" @tap="navigateBack()">
-                            <Label class="fas" :text="'\uf060' | unescape"></Label>
-                            <Label :text="props.language.stopDetails.top.title"></Label>
+                    <FlexboxLayout class="top-title" @tap="navigateBack()">
+                        <Label class="fas" :text="'\uf060' | unescape"></Label>
+                        <Label :text="props.language.stopDetails.top.title"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="trainGeneral">
+                        <FlexboxLayout class="element">
+                            <Label class="fas" :color="props.language.trainTypes[props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
                         </FlexboxLayout>
-                        <FlexboxLayout class="shareOptions">
-                            <Label class="fas" :text="'\uf1e0' | unescape"></Label>
-                            <Label class="far" :text="'\uf005' | unescape"></Label>
+                        <FlexboxLayout class="element">
+                            <Label class="title" :text="props.language.stopDetails.top.type"></Label>
+                            <Label :text="props.language.trainTypes[props.selectTravelDetails.trainType].name"></Label>
                         </FlexboxLayout>
+                        <FlexboxLayout class="element last">
+                            <Label class="title" :text="props.language.stopDetails.top.number"></Label>
+                            <Label :text="props.selectTravelDetails.Train"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="trainIcons">
+                        <Label v-if="props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
+                        <Label v-if="props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
+                        <Label v-if="props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
+                        <Label v-if="props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
+                <FlexboxLayout class="trainDetails">
 
+                </FlexboxLayout>
             </FlexboxLayout>
         </DockLayout>
     </Page>
@@ -24,12 +39,12 @@
 
 <script>
     export default {
-        props: ['travelDetails', 'language'],
+        props: ['selectTravelDetails', 'language'],
         data() {
             return {
                 props: {
                     selectTravelDetails: {
-                        "Type": "0", "Train": "123", "BreastFeed": "Y", "Route": "", "Package": "N", "OverNightStn": "0", "LineDir": "1", "Line": "1", "Dinning": "N", "Cripple": "Y", "CarClass": "1109", "Bike": "N", "Note": "æ¯æ¥è¡é§ãæ¬åæ¬¡ç¬¬12è»çºè¦ªå­è»å»ï¼ä¸ç¼å®ç¡åº§ç¥¨ï¼éæè¦ªå­è»å»è»ç¥¨æå®¢ï¼è«å¿é²å¥æ­ä¹ã", "NoteEng": "Runs Daily.Accessible Car.", "TimeInfos": {
+                        "Type": "0", "Train": "123", "BreastFeed": "Y", "Route": "", "Package": "N", "OverNightStn": "0", "LineDir": "1", "Line": "1", "Dinning": "Y", "Cripple": "Y", "CarClass": "1109", "Bike": "Y", "Note": "æ¯æ¥è¡é§ãæ¬åæ¬¡ç¬¬12è»çºè¦ªå­è»å»ï¼ä¸ç¼å®ç¡åº§ç¥¨ï¼éæè¦ªå­è»å»è»ç¥¨æå®¢ï¼è«å¿é²å¥æ­ä¹ã", "NoteEng": "Runs Daily.Accessible Car.", "TimeInfos": {
                             "1003": {"Station": "1003", "Order": "1", "DepTime": "11:25", "ArrTime": "11:23", "Routes": [1]},
                             "1005": {"Station": "1005", "Order": "2", "DepTime": "11:35", "ArrTime": "11:33", "Routes": [1]},
                             "1007": {"Station": "1007", "Order": "3", "DepTime": "11:46", "ArrTime": "11:45", "Routes": [1]},
@@ -103,7 +118,9 @@
                         },
                         stopDetails: {
                             top: {
-                                title: 'Train Details'
+                                title: 'Train Details',
+                                type: 'Type',
+                                number: 'Number'
                             }
                         }
                     }
@@ -114,5 +131,74 @@
 </script>
 
 <style scoped>
+
+    .dock-top {
+        height: 30%;
+    }
+
+    .dock-center {
+        height: 70%;
+    }
+
+    .dock-top .top,
+    .dock-center .trainDetails {
+        margin-left: 5%;
+    }
+
+    .dock-top .top .top-title Label {
+        font-size: 24;
+    }
+
+    .dock-top .top .top-title .fas {
+        margin-right: 5%;
+    }
+
+    .dock-top {
+        background-color: #1a0dab;
+        color: #fff;
+    }
+
+    .dock-top .top{
+        flex-direction: column;
+    }
+
+    .dock-top .top .top-title {
+        flex-direction: row;
+        align-items: center;
+        height: 22%;
+        width: 100%;
+    }
+
+    .dock-top .top .trainGeneral {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 40%;
+    }
+
+    .dock-top .top .trainGeneral .element {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dock-top .top .trainGeneral .last{
+        margin-right: 4%;
+    }
+
+    .dock-top .top .trainGeneral .element .title{
+        padding-bottom: 4%;
+    }
+
+    .dock-top .top .trainIcons{
+        flex-direction: row;
+        justify-content: center;
+        height: 38%;
+    }
+
+    .dock-top .top .trainIcons .fas{
+        font-size: 34;
+        margin-right: 10%;
+    }
+
 
 </style>
