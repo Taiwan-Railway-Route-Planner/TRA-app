@@ -317,7 +317,7 @@
     /*** DOCK CENTER ***/
 
     .dock-center .trainDetails .trainDestArrDetails Label,
-    .dock-center .trainDetails .trainTimeDetails Label{
+    .dock-center .trainDetails .trainTimeDetails Label {
         color: #1a0dab;
     }
 
@@ -402,12 +402,12 @@
         flex-direction: column;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons{
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons {
         padding-top: 8%;
         flex-direction: row;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons .fas{
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .trainIcons .fas {
         font-size: 24;
         margin-right: 8%;
     }
