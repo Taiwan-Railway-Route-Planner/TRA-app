@@ -43,6 +43,11 @@ module.exports = (function () {
                     name: "Puyuma",
                     color: "#D00216"
                 }
+            },
+            details: {
+                top: {
+                    title: 'Travel Details'
+                }
             }
         },
         zh: {
@@ -82,6 +87,11 @@ module.exports = (function () {
                 "Puyuma": {
                     name: "普悠瑪",
                     color: "#D00216"
+                }
+            },
+            details: {
+                top: {
+                    title: 'Travel Details'
                 }
             }
         }
