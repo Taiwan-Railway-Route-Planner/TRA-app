@@ -32,5 +32,5 @@ Vue.prototype.$goto = function (to, props = null) {
 
 new Vue({
   store,
-  render: h => h('frame', [h(RouteDetails)])
+  render: h => h('frame', [h(RouteStopDetails)])
 }).$start();
