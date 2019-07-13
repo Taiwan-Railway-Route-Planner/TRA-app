@@ -442,7 +442,6 @@
         justify-content: center;
         align-items: center;
         width: 15%;
-        /*background-color: #1a0dab;*/
     }
 
 </style>
