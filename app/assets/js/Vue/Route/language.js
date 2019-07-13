@@ -51,7 +51,9 @@ module.exports = (function () {
             },
             stopDetails: {
                 top: {
-                    title: 'Train Details'
+                    title: 'Train Details',
+                    type: 'Type',
+                    number: 'Number'
                 }
             }
         },
@@ -101,7 +103,9 @@ module.exports = (function () {
             },
             stopDetails: {
                 top: {
-                    title: 'Train Details'
+                    title: 'Train Details',
+                    type: 'Type',
+                    number: 'Number'
                 }
             }
         }
