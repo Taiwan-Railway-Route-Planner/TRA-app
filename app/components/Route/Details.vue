@@ -206,12 +206,26 @@
                             top: {
                                 title: 'Travel Details'
                             }
+                        },
+                        stopDetails: {
+                            top: {
+                                title: 'Train Details'
+                            }
                         }
                     }
                 }
             }
         },
-        methods: {}
+        methods: {
+            navigateToRouteDetails: function () {
+                this.$goto("RouteStopDetails", {
+                    props: {
+                        travelDetails: this.props.selectTravelDetails,
+                        language: this.props.language
+                    }
+                })
+            }
+        }
     }
 
 </script>
@@ -408,10 +422,9 @@
         width: 100%;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information{
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information {
         flex-direction: column;
         width: 85%;
-        /*background-color: #D3D3D3;*/
     }
 
     .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information .trainIcons {
@@ -424,7 +437,7 @@
         margin-right: 8%;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .navigation{
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .navigation {
         flex-direction: column;
         justify-content: center;
         align-items: center;
