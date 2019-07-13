@@ -4,22 +4,29 @@
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
-                        <Label class="fas" :text="'\uf104' | unescape"></Label>
-                        <Label class="" :text="props.language.details.top.title"></Label>
+                        <FlexboxLayout class="titles" @tap="navigateBack()">
+                            <Label class="fas" :text="'\uf060' | unescape"></Label>
+                            <Label :text="props.language.details.top.title"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="shareOptions">
+                            <Label class="fas" :text="'\uf1e0' | unescape"></Label>
+                            <Label class="far" :text="'\uf005' | unescape"></Label>
+                        </FlexboxLayout>
                     </FlexboxLayout>
-
-                    <!--                    <FlexboxLayout class="top-title">-->
-                    <!--                        <Label :text="$props.language.top.first + ':'"></Label>-->
-                    <!--                        <Label :text="$props.language.top.second + ':'"></Label>-->
-                    <!--                    </FlexboxLayout>-->
-                    <!--                    <FlexboxLayout v-if="$store.state.language === 'EN'" class="top-data">-->
-                    <!--                        <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>-->
-                    <!--                        <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>-->
-                    <!--                    </FlexboxLayout>-->
-                    <!--                    <FlexboxLayout v-else class="top-data">-->
-                    <!--                        <Label :text="$props.routeDetails.arrival.details.站名"></Label>-->
-                    <!--                        <Label :text="$props.routeDetails.arrival.details.站名"></Label>-->
-                    <!--                    </FlexboxLayout>-->
+                    <FlexboxLayout class="routeDetails">
+                        <FlexboxLayout class="timeDetails">
+                            <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
+                            <Label class="fas" :text="'\uf061' | unescape"></Label>
+                            <Label :text="props.selectTravelDetails.TimeInfos[props.routeDetails.departure.details.時刻表編號].ArrTime"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="dateDetails">
+                            <Label :text="props.routeDetails.time.date.show"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="otherDetails">
+                            <Label class="far" :text="'\uf017' | unescape"></Label>
+                            <Label :text="props.selectTravelDetails.travelTime"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="center">
@@ -171,12 +178,37 @@
                 }
             }
         },
-        methods: {}
+        methods: {
+
+        }
     }
 
 </script>
 
 <style scoped>
+
+    .dock-top,
+    .dock-top .top,
+    .dock-top .top .routeDetails{
+        flex-direction: column;
+    }
+
+    .dock-top .top .top-title .fas,
+    .dock-top .top .top-title .far,
+    .dock-top .top .routeDetails .fas,
+    .dock-top .top .routeDetails .far{
+        font-size: 24;
+    }
+
+    .dock-top .top .top-title .titles Label,
+    .dock-top .top .routeDetails .timeDetails Label,
+    .dock-top .top .routeDetails .otherDetails Label{
+        font-size: 24;
+    }
+
+    .dock-top .top .routeDetails .dateDetails Label{
+        font-size: 18;
+    }
 
     .dock-top {
         background-color: #1a0dab;
@@ -189,12 +221,63 @@
     }
 
     .dock-top .top .top-title {
-
+        height: 22%;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .dock-top .top .top-title .fas {
+    .dock-top .top .top-title .titles{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .dock-top .top .top-title .titles .fas{
         margin-right: 5%;
-        font-size: 24;
+    }
+
+    .dock-top .top .top-title .shareOptions{
+        margin-right: 3%;
+    }
+
+    .dock-top .top .top-title .shareOptions .fas{
+        margin-right: 4%;
+    }
+
+    .dock-top .top .top-title .shareOptions .fas{
+        padding-right: 10%;
+    }
+
+    .dock-top .top .routeDetails{
+        height: 78%;
+    }
+
+    .dock-top .top .routeDetails .timeDetails{
+        flex-direction: row;
+        align-items: center;
+        height: 35%;
+    }
+
+    .dock-top .top .routeDetails .timeDetails .fas{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .dock-top .top .routeDetails .dateDetails{
+        flex-direction: row;
+        align-items: center;
+        height: 30%;
+    }
+
+    .dock-top .top .routeDetails .otherDetails{
+        flex-direction: row;
+        align-items: center;
+        height: 35%;
+    }
+
+    .dock-top .top .routeDetails .otherDetails .far{
+        margin-right: 5%;
     }
 
 </style>
