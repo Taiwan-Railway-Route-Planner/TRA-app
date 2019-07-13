@@ -3,6 +3,7 @@ import App from './components/App'
 import Select from './components/Select/StationSelect'
 import Route from "./components/Route/RouteSelect"
 import RouteDetails from "./components/Route/Details"
+import RouteStopDetails from "./components/Route/StopDetails"
 import store from './store';
 
 import VueDevtools from 'nativescript-vue-devtools'
@@ -19,7 +20,8 @@ const router = {
   Settings: App,
   Select: Select,
   Route: Route,
-  RouteDetails: RouteDetails
+  RouteDetails: RouteDetails,
+  RouteStopDetails: RouteStopDetails
 };
 
 Vue.prototype.$router = router;
