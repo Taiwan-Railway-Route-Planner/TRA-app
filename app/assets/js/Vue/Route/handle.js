@@ -14,10 +14,16 @@ export default (function () {
     };
 
     function loadLanguage(_self) {
-        if (_self.$store.state.language === 'EN'){
-            _self.data = language.language.en;
-        } else {
-            _self.data = language.language.zh;
+        switch (_self.$store.state.language) {
+            case "EN":
+                _self.data = language.language.en;
+                break;
+            case "ZH":
+                _self.data = language.language.zh;
+                break;
+            case "KO":
+                _self.data = language.language.ko;
+                break;
         }
     }
 

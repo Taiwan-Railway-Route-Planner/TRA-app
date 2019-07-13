@@ -15,19 +15,25 @@ export default (function () {
     };
 
     function loadLanguage(_self) {
-        if (_self.$store.state.language === 'EN'){
-            _self.data = language.language.en;
-        } else {
-            _self.data = language.language.zh;
+        switch (_self.$store.state.language) {
+            case "EN":
+                _self.data = language.language.en;
+                break;
+            case "ZH":
+                _self.data = language.language.zh;
+                break;
+            case "KO":
+                _self.data = language.language.ko;
+                break;
         }
         setTime(_self);
     }
 
-    function setHintText(_self){
+    function setHintText(_self) {
         _self.data.searchBar.hintText.now = _self.data.searchBar.hintText.startStation;
     }
 
-    function setTime(_self){
+    function setTime(_self) {
         moment.locale(_self.data.routeDetails.time.local);
         _self.data.routeDetails.time.hint = moment().format('llll');
     }
@@ -35,14 +41,14 @@ export default (function () {
     async function loadStationDetails(_self) {
         await getStationDetails.getAllPossibleStations(_self);
     }
-    
+
     function controlValuesBeforeGoingToRoute(_self) {
-        if (_self.data.routeDetails.time.date.real === null){
+        if (_self.data.routeDetails.time.date.real === null) {
             _self.data.routeDetails.time.date.show = moment().format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
             _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
             _self.data.routeDetails.time.time = _self.data.routeDetails.time.hint.replace(_self.data.routeDetails.time.date.show, '');
         }
-        if (isEmpty(_self.data.routeDetails.departure.details) && isEmpty(_self.data.routeDetails.arrival.details)){
+        if (isEmpty(_self.data.routeDetails.departure.details) && isEmpty(_self.data.routeDetails.arrival.details)) {
             // TODO give error notification
         } else {
             _self.$goto('Route', {
