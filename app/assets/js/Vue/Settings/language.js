@@ -27,11 +27,11 @@ module.exports = (function () {
         },
         ko: {
             top: {
-                title: 'Settings Menu'
+                title: '설정메뉴'
             },
             center: {
                 language:{
-                    chooseTitle: 'Choose your language'
+                    chooseTitle: '당신의 언어를 선택하십시오'
                 }
             }
         }
