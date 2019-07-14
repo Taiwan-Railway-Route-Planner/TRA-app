@@ -21,7 +21,7 @@
                 </FlexboxLayout>
             </DockLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
-                <FlexboxLayout class="menu-choose" @tap="">
+                <FlexboxLayout class="menu-choose">
                     <Label class="fas" :text="'\uf3c5' | unescape" ></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">

@@ -13,7 +13,7 @@
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <Label class="fas" :text="'\uf005' | unescape"></Label>
                 </FlexboxLayout>
-                <FlexboxLayout class="menu-choose" @tap="navToSet">
+                <FlexboxLayout class="menu-choose">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
@@ -56,9 +56,6 @@
             },
             navToStar: function () {
                 
-            },
-            navToSet: function () {
-                this.$goto("Settings");
             },
             selectedIndexChanged: function () {
                 handle.saveLanguage(this)
