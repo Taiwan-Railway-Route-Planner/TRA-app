@@ -3,13 +3,15 @@
  **/
 
 const language = require('./language');
+const possibleLanguages = require('../PossibleLanguage');
 
 export default (function () {
 
     const handleSetUpOfVue = function (_self) {
-        loadLanguage(_self)
-    };
+        loadLanguage(_self);
+        loadAllPossibleLanguages(_self);
 
+    };
     function loadLanguage(_self) {
         switch (_self.$store.state.language) {
             case "EN":
@@ -24,8 +26,21 @@ export default (function () {
         }
     }
 
+    function loadAllPossibleLanguages(_self) {
+        _self.possibleLanguages = possibleLanguages.languageAvailable;
+        _self.possibleLanguagesArray = possibleLanguages.languageAvailable.map((el => el.nameNative));
+        _self.selectedItem = possibleLanguages.languageAvailable.findIndex((el => el.abbr === _self.$store.state.language));
+    }
+
+    const saveLanguage = function (_self) {
+        let abbrLanguage = _self.possibleLanguages[_self.selectedItem].abbr;
+        _self.$store.commit('updateLanguage',abbrLanguage);
+        loadLanguage(_self);
+    };
+
     return {
-        handleSetUpOfVue
+        handleSetUpOfVue,
+        saveLanguage
     }
 
 })();
