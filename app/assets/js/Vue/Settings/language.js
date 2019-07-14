@@ -5,9 +5,36 @@
 module.exports = (function () {
 
     let language = {
-        en: {},
-        zh: {},
-        ko: {}
+        en: {
+            top: {
+                title: 'Settings Menu'
+            },
+            center: {
+                language:{
+                    chooseTitle: 'Choose your language'
+                }
+            }
+        },
+        zh: {
+            top: {
+                title: 'Settings Menu'
+            },
+            center: {
+                language:{
+                    chooseTitle: 'Choose your language'
+                }
+            }
+        },
+        ko: {
+            top: {
+                title: 'Settings Menu'
+            },
+            center: {
+                language:{
+                    chooseTitle: 'Choose your language'
+                }
+            }
+        }
     };
 
     return {
