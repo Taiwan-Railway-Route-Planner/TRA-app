@@ -111,8 +111,8 @@ module.exports = (function () {
         },
         ko: {
             top: {
-                first: 'Departure Station',
-                second: 'Arrival Station'
+                first: '출발역',
+                second: '도착역'
             },
             trainTypes: {
                 "Local": {
@@ -150,14 +150,14 @@ module.exports = (function () {
             },
             details: {
                 top: {
-                    title: 'Travel Details'
+                    title: '여행내역'
                 }
             },
             stopDetails: {
                 top: {
-                    title: 'Train Details',
-                    type: 'Type',
-                    number: 'Number'
+                    title: '열차 내역',
+                    type: '유형',
+                    number: '번호'
                 }
             }
         },

@@ -117,8 +117,8 @@ module.exports = (function () {
             searchBar: {
                 hintText: {
                     now: '',
-                    startStation:  'Select departure station',
-                    endStation: 'Select arrival station'
+                    startStation:  '출발역 선택',
+                    endStation: '도착역 선택'
                 },
                 search: ''
             },
@@ -129,16 +129,16 @@ module.exports = (function () {
                 language: 'KO',
                 departure: {
                     details: {},
-                    hint: 'Select station',
-                    label: 'From'
+                    hint: '역선택',
+                    label: '출발'
                 },
                 arrival: {
                     details: {},
-                    hint: 'Select station',
-                    label: 'To'
+                    hint: '역선택',
+                    label: '도착'
                 },
                 time: {
-                    label: 'Time',
+                    label: '시간',
                     hint: '',
                     date: {
                         show: '',
@@ -148,23 +148,23 @@ module.exports = (function () {
                     local: 'en-SG',
                     modal: {
                         top: {
-                            first: 'DEPARTURE',
-                            second: 'ARRIVAL',
+                            first: '출발',
+                            second: '도착',
                         },
                         center: {
-                            button: 'Now',
+                            button: '현재',
                             date: {
                                 actual: null,
                                 today: null
                             }
                         },
                         bottom: {
-                            leftBtn: 'DISCARD',
-                            rightBtn: 'CONFIRM',
+                            leftBtn: '버리다',
+                            rightBtn: '확정하다',
                         }
                     }
                 },
-                button: 'SEARCH'
+                button: '찾다'
             }
         },
     };
