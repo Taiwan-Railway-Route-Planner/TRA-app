@@ -62,6 +62,7 @@
         created: async function () {
             await handle.handleIncomingRouteDetails(this);
             console.log(JSON.stringify(this.timeTable));
+            console.log(this.timeTable.length);
         },
         data() {
             return {
