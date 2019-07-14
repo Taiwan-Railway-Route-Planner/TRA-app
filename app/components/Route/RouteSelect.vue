@@ -86,7 +86,7 @@
 
             },
             navToSet: function () {
-
+                this.$goto("Settings");
             },
             onItemTap: function (event) {
                 this.$goto('RouteDetails', {

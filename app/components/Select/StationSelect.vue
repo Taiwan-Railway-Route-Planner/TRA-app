@@ -137,7 +137,7 @@
                 
             },
             navToSet: function () {
-                
+                this.$goto("Settings");
             }
         }
     }
