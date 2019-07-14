@@ -2,20 +2,7 @@
     <Page actionBarHidden="true">
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
-                <FlexboxLayout class="top">
-                    <FlexboxLayout class="top-title">
-                        <Label :text="data.top.first + ':'"></Label>
-                        <Label :text="data.top.second + ':'"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout v-if="$store.state.language === 'ZH'" class="top-data">
-                        <Label :text="$props.routeDetails.departure.details.站名"></Label>
-                        <Label :text="$props.routeDetails.arrival.details.站名"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout v-else class="top-data">
-                        <Label :text="$props.routeDetails.departure.details.eng站名"></Label>
-                        <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>
-                    </FlexboxLayout>
-                </FlexboxLayout>
+
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose" @tap="navToStart">
@@ -28,14 +15,37 @@
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
+            <FlexboxLayout dock="center" class="center">
+
+            </FlexboxLayout>
         </DockLayout>
     </Page>
 </template>
 
 <script>
 
-    export default {
+    import handle from "../../assets/js/Vue/Settings/handle"
 
+    export default {
+        created: function () {
+            handle.handleSetUpOfVue(this);
+        },
+        data(){
+            return {
+                data: null
+            }
+        },
+        methods: {
+            navToStart: function () {
+                
+            },
+            navToStar: function () {
+                
+            },
+            navToSet: function () {
+                
+            }
+        }
     }
 
 </script>
