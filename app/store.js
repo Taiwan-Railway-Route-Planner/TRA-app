@@ -28,6 +28,5 @@ export default new Vuex.Store({
         updateStation(state, newStations){
             state.stations = newStations;
         }
-    },
-    actions: {}
+    }
 });
