@@ -18,17 +18,25 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-               <FlexboxLayout class="settings">
-                   <FlexboxLayout class="languagesSettings">
-                       <Label class="" :text="data.center.language.chooseTitle"></Label>
-                       <FlexboxLayout class="listPicker">
-                           <ListPicker :items="possibleLanguagesArray" v-model="selectedItem" @selectedIndexChange="selectedIndexChanged"></ListPicker>
-                       </FlexboxLayout>
-                   </FlexboxLayout>
-                   <FlexboxLayout class="otherInfo">
-
-                   </FlexboxLayout>
-               </FlexboxLayout>
+                <FlexboxLayout class="settings">
+                    <FlexboxLayout class="languagesSettings">
+                        <Label class="" :text="data.center.language.chooseTitle"></Label>
+                        <FlexboxLayout>
+                            <ListPicker :items="possibleLanguagesArray" v-model="selectedItem" @selectedIndexChange="selectedIndexChanged"></ListPicker>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="otherInfo">
+                        <FlexboxLayout class="element details">
+                            <Label :text="data.center.otherInfo.rate"></Label>
+                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="element details">
+                            <Label :text="data.center.otherInfo.contactUs"></Label>
+                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                        </FlexboxLayout>
+                        <Label class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
             </FlexboxLayout>
         </DockLayout>
     </Page>
@@ -42,12 +50,13 @@
         created: function () {
             handle.handleSetUpOfVue(this);
         },
-        data(){
+        data() {
             return {
                 data: null,
                 possibleLanguages: null,
                 possibleLanguagesArray: null,
-                selectedItem: null
+                selectedItem: null,
+                currentVersion: '0.0.1'
             }
         },
         methods: {
@@ -55,7 +64,7 @@
                 this.$goto("Select");
             },
             navToStar: function () {
-                
+
             },
             selectedIndexChanged: function () {
                 handle.saveLanguage(this)
@@ -73,43 +82,68 @@
         height: 10%;
     }
 
-    .dock-center .settings{
+    .dock-center .settings {
         margin-left: 5%;
     }
 
-    .dock-top .title{
+    .dock-top .title {
         flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
     }
 
-    .dock-top .title Label{
+    .dock-top .title Label {
         font-size: 24;
     }
 
-    .dock-center{
-
+    .dock-center .settings {
+        flex-direction: column;
     }
 
-    .dock-center .settings .languagesSettings{
+    .dock-center .settings .languagesSettings {
         flex-direction: row;
         justify-content: center;
         align-items: center;
         width: 100%;
+        height: 60%;
     }
 
-    .dock-center .settings .languagesSettings Label{
+    .dock-center .settings .languagesSettings Label {
         font-size: 16;
     }
 
-    .dock-center .settings .languagesSettings listPicker{
+    .dock-center .settings .languagesSettings listPicker {
         width: 40%;
         margin-left: 2%;
     }
 
-    .dock-center .settings .otherInfo{
+    .dock-center .settings .otherInfo {
+        flex-direction: column;
+        height: 40%;
+        margin-right: 4%;
+    }
 
+    .dock-center .settings .otherInfo Label{
+        font-size: 20;
+
+    }
+
+    .dock-center .settings .otherInfo .element{
+        border-bottom-width: 2px;
+        border-bottom-color: #D3D3D3;
+        border-bottom-style: solid;
+        padding-bottom: 10%;
+        padding-top: 10%;
+    }
+
+    .dock-center .settings .otherInfo .details{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .dock-center .settings .otherInfo .details .fas{
+        font-size: 24;
     }
 
 </style>
