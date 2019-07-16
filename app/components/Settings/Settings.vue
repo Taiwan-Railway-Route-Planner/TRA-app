@@ -124,12 +124,11 @@
         margin-right: 4%;
     }
 
-    .dock-center .settings .otherInfo Label{
+    .dock-center .settings .otherInfo Label {
         font-size: 20;
-
     }
 
-    .dock-center .settings .otherInfo .element{
+    .dock-center .settings .otherInfo .element {
         border-bottom-width: 2px;
         border-bottom-color: #D3D3D3;
         border-bottom-style: solid;
@@ -137,12 +136,12 @@
         padding-top: 10%;
     }
 
-    .dock-center .settings .otherInfo .details{
+    .dock-center .settings .otherInfo .details {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .dock-center .settings .otherInfo .details .fas{
+    .dock-center .settings .otherInfo .details .fas {
         font-size: 24;
     }
 
