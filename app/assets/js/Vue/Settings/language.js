@@ -12,7 +12,13 @@ module.exports = (function () {
             center: {
                 language:{
                     chooseTitle: 'Choose your language'
+                },
+                otherInfo: {
+                    rate: 'Rate us on Google Play',
+                    contactUs: 'Email us',
+                    Version: 'Version'
                 }
+
             }
         },
         zh: {
@@ -22,6 +28,11 @@ module.exports = (function () {
             center: {
                 language:{
                     chooseTitle: 'Choose your language'
+                },
+                otherInfo: {
+                    rate: 'Rate us on Google Play',
+                    contactUs: 'Email us',
+                    Version: 'Version'
                 }
             }
         },
@@ -32,6 +43,11 @@ module.exports = (function () {
             center: {
                 language:{
                     chooseTitle: '당신의 언어를 선택하십시오'
+                },
+                otherInfo: {
+                    rate: 'Rate us on Google Play',
+                    contactUs: 'Email us',
+                    Version: 'Version'
                 }
             }
         }
