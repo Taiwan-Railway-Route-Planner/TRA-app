@@ -20,10 +20,14 @@
             <FlexboxLayout dock="center" class="dock-center">
                 <FlexboxLayout class="settings">
                     <FlexboxLayout class="languagesSettings">
-                        <Label class="" :text="data.center.language.chooseTitle"></Label>
-                        <FlexboxLayout>
-                            <ListPicker :items="possibleLanguagesArray" v-model="selectedItem" @selectedIndexChange="selectedIndexChanged"></ListPicker>
+                        <FlexboxLayout class="listPickerLanguagesSettings">
+                            <Label class="" :text="data.center.language.chooseTitle"></Label>
+                            <FlexboxLayout>
+                                <!--                            <ListPicker :items="possibleLanguagesArray" v-model="selectedItem" @selectedIndexChange="selectedIndexChanged"></ListPicker>-->
+                                <ListPicker :items="possibleLanguagesArray" v-model="selectedItem"></ListPicker>
+                            </FlexboxLayout>
                         </FlexboxLayout>
+                        <Button class="btn btn-wt" :text="data.center.language.button" @tap="saveNewLanguage"></Button>
                     </FlexboxLayout>
                     <FlexboxLayout class="otherInfo">
                         <FlexboxLayout class="element details">
@@ -32,6 +36,10 @@
                         </FlexboxLayout>
                         <FlexboxLayout class="element details">
                             <Label :text="data.center.otherInfo.contactUs"></Label>
+                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="element details">
+                            <Label :text="data.center.otherInfo.openSource"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
                         <Label class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"></Label>
@@ -66,8 +74,8 @@
             navToStar: function () {
 
             },
-            selectedIndexChanged: function () {
-                handle.saveLanguage(this)
+            saveNewLanguage: function () {
+                handle.saveLanguage(this);
             }
         }
     }
@@ -102,18 +110,22 @@
     }
 
     .dock-center .settings .languagesSettings {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         width: 100%;
         height: 60%;
     }
 
-    .dock-center .settings .languagesSettings Label {
+    .dock-center .settings .languagesSettings .listPickerLanguagesSettings {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dock-center .settings .languagesSettings .listPickerLanguagesSettings Label {
         font-size: 16;
     }
 
-    .dock-center .settings .languagesSettings listPicker {
+    .dock-center .settings .languagesSettings .listPickerLanguagesSettings listPicker {
         width: 40%;
         margin-left: 2%;
     }
