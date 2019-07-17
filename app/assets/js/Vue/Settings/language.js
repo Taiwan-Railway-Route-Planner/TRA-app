@@ -11,11 +11,13 @@ module.exports = (function () {
             },
             center: {
                 language:{
-                    chooseTitle: 'Choose your language'
+                    chooseTitle: 'Choose your language',
+                    button: 'Save'
                 },
                 otherInfo: {
                     rate: 'Rate us on Google Play',
                     contactUs: 'Email us',
+                    openSource: 'Visit the project on Github',
                     Version: 'Version'
                 }
 
@@ -27,11 +29,13 @@ module.exports = (function () {
             },
             center: {
                 language:{
-                    chooseTitle: 'Choose your language'
+                    chooseTitle: 'Choose your language',
+                    button: 'Save'
                 },
                 otherInfo: {
                     rate: 'Rate us on Google Play',
                     contactUs: 'Email us',
+                    openSource: 'Visit the project on Github',
                     Version: 'Version'
                 }
             }
@@ -42,12 +46,14 @@ module.exports = (function () {
             },
             center: {
                 language:{
-                    chooseTitle: '당신의 언어를 선택하십시오'
+                    chooseTitle: '당신의 언어를 선택하십시오',
+                    button: '저장하다'
                 },
                 otherInfo: {
-                    rate: 'Rate us on Google Play',
-                    contactUs: 'Email us',
-                    Version: 'Version'
+                    rate: 'Google Play에 대한 평가',
+                    contactUs: 'Email을 보내십시오',
+                    openSource: 'Github 프로젝트 방문',
+                    Version: '버전'
                 }
             }
         }
