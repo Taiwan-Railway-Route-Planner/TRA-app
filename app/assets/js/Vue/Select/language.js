@@ -145,7 +145,7 @@ module.exports = (function () {
                         real: null
                     },
                     time: '',
-                    local: 'en-SG',
+                    local: 'ko',
                     modal: {
                         top: {
                             first: '출발',
