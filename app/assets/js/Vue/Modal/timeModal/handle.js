@@ -27,10 +27,22 @@ export default (function () {
     };
 
     const save = function (_self) {
-        _self.time.date.show = moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
+        console.log(showDifferentTimeStampBasedOnLanguage(_self));
+        _self.time.date.show = showDifferentTimeStampBasedOnLanguage(_self);
         _self.time.date.real = moment().format('YYYYMMMDD');
         _self.time.time = moment(_self.selectedTime).format('LT');
     };
+
+    function showDifferentTimeStampBasedOnLanguage(_self) {
+        switch (_self.$store.state.language) {
+            case "EN":
+                return moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "ZH":
+                return moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
+            case "KO":
+                return moment(_self.$props.time.modal.center.date.today).format('lll').replace(/\d\d:\d\d/i, '', '');
+        }
+    }
 
     return {
         handle,
