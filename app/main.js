@@ -34,5 +34,5 @@ Vue.prototype.$goto = function (to, props = null) {
 
 new Vue({
   store,
-  render: h => h('frame', [h(Settings)])
+  render: h => h('frame', [h(Select)])
 }).$start();
