@@ -40,7 +40,7 @@
     import moment from "moment"
 
     export default {
-        props: ['time'],
+        props: ['time', 'formatTimeStampBasedOnLanguage'],
         created: function () {
             handle.handle(this);
         },
@@ -58,11 +58,11 @@
                 this.selectedTime = moment().toDate();
             },
             previousDay: function () {
-                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).subtract(1, 'days').format('llll').replace(/\d\d:\d\d/i, '').replace('一', '');
+                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).subtract(1, 'days'));
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).subtract(1, 'days');
             },
             nextDay: function () {
-                this.$props.time.modal.center.date.actual = moment(this.$props.time.modal.center.date.today).add(1, 'days').format('llll').replace(/\d\d:\d\d/i, '').replace('一', '');
+                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this,moment(this.$props.time.modal.center.date.today).add(1, 'days'));
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
@@ -74,7 +74,8 @@
                                 selectedDate: this.selectedDate,
                                 minDate: this.minDate,
                                 maxDate: this.maxDate
-                            }
+                            },
+                            formatTimeStampBasedOnLanguage: this.$props.formatTimeStampBasedOnLanguage
                         }
                     }
                 );

@@ -19,7 +19,7 @@ export default (function () {
         moment().locale(_self.$props.time.local);
         _self.selectedDate = moment().format('L');
         _self.$props.time.modal.center.date.today = moment().format();
-        _self.$props.time.modal.center.date.actual = moment().format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
+        _self.$props.time.modal.center.date.actual = _self.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(_self);
     }
 
     const discard = function (_self) {
@@ -27,22 +27,12 @@ export default (function () {
     };
 
     const save = function (_self) {
-        console.log(showDifferentTimeStampBasedOnLanguage(_self));
-        _self.time.date.show = showDifferentTimeStampBasedOnLanguage(_self);
-        _self.time.date.real = moment().format('YYYYMMMDD');
+        _self.time.date.show = _self.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self,_self.$props.time.modal.center.date.today);
+        _self.time.date.real = moment(_self.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
+        console.log(_self.time.date.real);
         _self.time.time = moment(_self.selectedTime).format('LT');
+        //TODO problem with Korean language
     };
-
-    function showDifferentTimeStampBasedOnLanguage(_self) {
-        switch (_self.$store.state.language) {
-            case "EN":
-                return moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '');
-            case "ZH":
-                return moment(_self.$props.time.modal.center.date.today).format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
-            case "KO":
-                return moment(_self.$props.time.modal.center.date.today).format('lll').replace(/\d\d:\d\d/i, '', '');
-        }
-    }
 
     return {
         handle,

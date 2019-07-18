@@ -35,18 +35,7 @@ export default (function () {
 
     function setTime(_self) {
         moment.locale(_self.data.routeDetails.time.local);
-        _self.data.routeDetails.time.hint = setHintTimeBasedOnTheLanguage(_self);
-    }
-
-    function setHintTimeBasedOnTheLanguage(_self){
-        switch (_self.$store.state.language) {
-            case "EN":
-                return moment().format('llll');
-            case "ZH":
-                return moment().format('llll');
-            case "KO":
-                return moment().format('lll');
-        }
+        _self.data.routeDetails.time.hint = _self.formatTimeStampBasedOnLanguage.setHintTimeBasedOnTheLanguage(_self);
     }
 
     async function loadStationDetails(_self) {
@@ -55,9 +44,10 @@ export default (function () {
 
     function controlValuesBeforeGoingToRoute(_self) {
         if (_self.data.routeDetails.time.date.real === null) {
-            _self.data.routeDetails.time.date.show = showDifferentTimeStampBasedOnLanguage(_self);
+            _self.data.routeDetails.time.date.show = _self.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self);
             _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
             _self.data.routeDetails.time.time = _self.data.routeDetails.time.hint.replace(_self.data.routeDetails.time.date.show, '');
+            //TODO maybe problem with Korean language
         }
         if (isEmpty(_self.data.routeDetails.departure.details) && isEmpty(_self.data.routeDetails.arrival.details)) {
             // TODO give error notification
@@ -67,17 +57,6 @@ export default (function () {
                     routeDetails: _self.data.routeDetails,
                 }
             });
-        }
-    }
-
-    function showDifferentTimeStampBasedOnLanguage(_self) {
-        switch (_self.$store.state.language) {
-            case "EN":
-                return moment().format('llll').replace(/\d\d:\d\d/i, '', '');
-            case "ZH":
-                return moment().format('llll').replace(/\d\d:\d\d/i, '', '').replace('一', '');
-            case "KO":
-                return moment().format('lll').replace(/\d\d:\d\d/i, '', '');
         }
     }
 

@@ -76,14 +76,17 @@
 <script>
 
     import handle from "../../assets/js/Vue/Select/handle"
+    import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
 
     export default {
         async created() {
+            this.formatTimeStampBasedOnLanguage = formatTimeStampBasedOnLanguage;
             await handle.setUpSelectVue(this);
         },
         data() {
             return {
+                formatTimeStampBasedOnLanguage: null,
                 data: null,
                 filteredStations: [],
                 departureOrArrival: null,
@@ -128,7 +131,8 @@
             showTime: function () {
                 this.$showModal(timeModal, {
                         props: {
-                            time: this.data.routeDetails.time
+                            time: this.data.routeDetails.time,
+                            formatTimeStampBasedOnLanguage: this.formatTimeStampBasedOnLanguage
                         }
                     }
                 );
