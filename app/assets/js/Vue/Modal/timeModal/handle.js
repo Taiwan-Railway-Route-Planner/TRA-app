@@ -29,9 +29,7 @@ export default (function () {
     const save = function (_self) {
         _self.time.date.show = _self.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self,_self.$props.time.modal.center.date.today);
         _self.time.date.real = moment(_self.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
-        console.log(_self.time.date.real);
         _self.time.time = moment(_self.selectedTime).format('LT');
-        //TODO problem with Korean language
     };
 
     return {
