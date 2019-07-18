@@ -23,7 +23,6 @@
                         <FlexboxLayout class="listPickerLanguagesSettings">
                             <Label class="" :text="data.center.language.chooseTitle"></Label>
                             <FlexboxLayout>
-                                <!--                            <ListPicker :items="possibleLanguagesArray" v-model="selectedItem" @selectedIndexChange="selectedIndexChanged"></ListPicker>-->
                                 <ListPicker :items="possibleLanguagesArray" v-model="selectedItem"></ListPicker>
                             </FlexboxLayout>
                         </FlexboxLayout>
