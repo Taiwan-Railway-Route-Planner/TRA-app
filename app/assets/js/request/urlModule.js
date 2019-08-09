@@ -8,7 +8,7 @@ module.exports = (function () {
     const BASE_URL = "https://" + HOME_IP + "/TRATimetableData/";
 
     const EXTERNALIP = "traapp.tk";
-    const BACKEND = "https://" + EXTERNALIP + "/api/";
+    const BACKEND = "https://www." + EXTERNALIP + "/api/";
 
     const url = {
         schedules: BASE_URL + "Schedules/DATE.json",
