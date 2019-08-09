@@ -5,9 +5,6 @@
 module.exports = (function () {
 
     let fetchRequestForGettingData = function (fetchData) {
-        console.log(fetchData.Url);
-        console.log((fetchData.body));
-        console.log(JSON.stringify(fetchData.body));
         return fetch(fetchData.getSpecifiedElement ? fetchData.Url + fetchData.specifiedElement : fetchData.Url, {
             method: fetchData.method,
             body: JSON.stringify(fetchData.body)
