@@ -9,7 +9,7 @@ module.exports = (function () {
 
     async function getAllRoutesOfACertainDay(_self) {
         setLongDate(_self);
-        return await requestHandler.request.date(_self);
+        return await requestHandler.request.routePost(_self);
     }
 
     function setLongDate(_self) {
