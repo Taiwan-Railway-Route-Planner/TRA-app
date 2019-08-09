@@ -28,8 +28,10 @@ export default (function () {
     }
 
     async function getAllRoutesForThatDay(_self) {
-        let routeData = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
-        filterTheNotCorrectRoutesOut(_self,routeData);
+        _self.timeTable = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
+        _self.timeTable = _self.timeTable.data.data;
+        _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
+        //filterTheNotCorrectRoutesOut(_self,routeData);
     }
 
     function filterTheNotCorrectRoutesOut(_self,routeData) {
