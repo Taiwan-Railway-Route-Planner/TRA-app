@@ -9,7 +9,7 @@ const errorMessages = require('../../errorMessage');
 module.exports =  (function () {
 
     const getTheInformation = async function (_self) {
-        const response = await postRequest.fetchRequestForGettingData({
+        let response = await postRequest.fetchRequestForGettingData({
             Url: urlModule.url.schedulesDay,
             getSpecifiedElement: false,
             method: "POST",
@@ -26,6 +26,7 @@ module.exports =  (function () {
                 }
             }
         });
+        response = response.data;
         if (response.error) {
             // if (_self.$store.state.language === "ZH"){
             //     response.msg = errorMessages.messages.zh.stations;
