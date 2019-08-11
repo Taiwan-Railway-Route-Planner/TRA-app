@@ -29,8 +29,12 @@ export default (function () {
 
     async function getAllRoutesForThatDay(_self) {
         _self.timeTable = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
-        _self.timeTable = _self.timeTable.data.data;
-        _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
+        if (_self.timeTable.error){
+
+        } else {
+            _self.timeTable = _self.timeTable.data;
+            _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
+        }
         //filterTheNotCorrectRoutesOut(_self,routeData);
     }
 
