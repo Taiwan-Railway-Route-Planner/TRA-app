@@ -25,6 +25,11 @@ export default (function () {
             case "KO":
                 _self.data = language.language.ko;
                 break;
+            default:
+                //TODO remove
+                _self.data = language.language.en;
+                _self.$store.commit('updateLanguage',"EN");
+                break;
         }
         setTime(_self);
     }
