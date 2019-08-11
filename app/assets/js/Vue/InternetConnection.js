@@ -11,26 +11,15 @@ module.exports = (function () {
         switch (myConnectionType) {
             case connectivityModule.connectionType.none:
                 // Denotes no Internet connection.
-                console.log("No connection");
-                break;
+                console.log("No internet connection");
+                return false;
             case connectivityModule.connectionType.wifi:
-                // Denotes a WiFi connection.
-                console.log("WiFi connection");
-                break;
             case connectivityModule.connectionType.mobile:
-                // Denotes a mobile connection, i.e. cellular network or WAN.
-                console.log("Mobile connection");
-                break;
             case connectivityModule.connectionType.ethernet:
-                // Denotes a ethernet connection.
-                console.log("Ethernet connection");
-                break;
             case connectivityModule.connectionType.bluetooth:
-                // Denotes a bluetooth connection.
-                console.log("Bluetooth connection");
-                break;
-            default:
-                break;
+                // Denotes a WiFi connection.
+                console.log("Has internet connection");
+                return true;
         }
     }
 
