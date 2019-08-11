@@ -77,7 +77,7 @@
                 let _self = this;
                 setTimeout(function () {
                     _self.$refs.myList.nativeView.scrollToIndex(_self.indexWithClosestToRealTime);
-                }, 1000)
+                }, 1500)
             },
             navToStart: function () {
                 this.$goto('Select');
