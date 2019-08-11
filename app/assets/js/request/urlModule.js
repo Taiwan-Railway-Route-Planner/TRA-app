@@ -5,7 +5,7 @@
 module.exports = (function () {
 
     const HOME_IP = "depickeresven.github.io";
-    const BASE_URL = "https://" + HOME_IP + "/TRATimetableData/";
+    const BASE_URL = "https://www." + HOME_IP + "/TRATimetableData/";
 
     const EXTERNALIP = "traapp.tk";
     const BACKEND = "https://www." + EXTERNALIP + "/api/";
