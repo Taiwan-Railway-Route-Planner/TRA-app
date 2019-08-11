@@ -5,6 +5,7 @@
 const getStationDetails = require("./getStationDetails");
 const language = require("./language");
 const moment = require('moment');
+const InternetConnection = require('../InternetConnection');
 
 export default (function () {
 
@@ -44,7 +45,9 @@ export default (function () {
     }
 
     async function loadStationDetails(_self) {
-        await getStationDetails.getAllPossibleStations(_self);
+        if (InternetConnection.checkInternetConnection(_self)){
+            await getStationDetails.getAllPossibleStations(_self);
+        }
     }
 
     function controlValuesBeforeGoingToRoute(_self) {
