@@ -29,7 +29,29 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="center">
-                <ListView for="item in timeTable" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
+                <ListView v-if="$props.timeTable.multi" for="item in $props.timeTable.data" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
+                    <v-template>
+                        <FlexboxLayout class="travelDetails">
+                            <FlexboxLayout class="timeDetails">
+                                <Label class="timeStamps" :text="item.startTime"></Label>
+                                <Label class="fas" :text="'\uf061'| unescape"></Label>
+                                <Label class="timeStamps" :text="item.endTime"></Label>
+                            </FlexboxLayout>
+                            <FlexboxLayout class="travelTime">
+                                <Label class="far" :text="'\uf017' | unescape"></Label>
+                                <Label :text="item.travelTime"></Label>
+                            </FlexboxLayout>
+                            <FlexboxLayout class="typeOfTrain">
+<!--                                <ListView for="el in item.trainTypes">-->
+<!--                                    <v-template>-->
+<!--                                        <Label class="fas" :color="data.trainTypes[el].color" :text="'\uf238' | unescape"></Label>-->
+<!--                                    </v-template>-->
+<!--                                </ListView>-->
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                    </v-template>
+                </ListView>
+                <ListView v-else for="item in $props.timeTable.data" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
                     <v-template>
                         <FlexboxLayout class="travelDetails">
                             <FlexboxLayout class="timeDetails">
@@ -58,17 +80,15 @@
     import handle from "../../assets/js/Vue/Route/handle"
 
     export default {
-        props: ['routeDetails'],
+        props: ['routeDetails', 'indexWithClosestToRealTime', 'timeTable'],
         created: async function () {
             await handle.handleIncomingRouteDetails(this);
-            console.log(JSON.stringify(this.timeTable));
-            console.log(this.timeTable.length);
         },
         data() {
             return {
-                timeTable: [],
-                indexWithClosestToRealTime: 0,
-                longDate: "20190704",
+                // timeTable: [],
+                // indexWithClosestToRealTime: 0,
+                // longDate: "20190704",
                 data: null
             }
         },
@@ -76,7 +96,7 @@
             onLoaded() {
                 let _self = this;
                 setTimeout(function () {
-                    _self.$refs.myList.nativeView.scrollToIndex(_self.indexWithClosestToRealTime);
+                    _self.$refs.myList.nativeView.scrollToIndex(_self.$props.indexWithClosestToRealTime);
                 }, 1500)
             },
             navToStart: function () {
