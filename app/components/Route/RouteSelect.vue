@@ -38,15 +38,37 @@
                                 <Label class="timeStamps" :text="item.endTime"></Label>
                             </FlexboxLayout>
                             <FlexboxLayout class="travelTime">
-                                <Label class="far" :text="'\uf017' | unescape"></Label>
-                                <Label :text="item.travelTime"></Label>
+                                <FlexboxLayout>
+                                    <Label class="far" :text="'\uf017' | unescape"></Label>
+                                    <Label :text="item.travelTime"></Label>
+                                </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout class="typeOfTrain">
-<!--                                <ListView for="el in item.trainTypes">-->
-<!--                                    <v-template>-->
-<!--                                        <Label class="fas" :color="data.trainTypes[el].color" :text="'\uf238' | unescape"></Label>-->
-<!--                                    </v-template>-->
-<!--                                </ListView>-->
+                            <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                <FlexboxLayout class="transfers">
+                                    <Label class="fas" :text="'\uf074' | unescape"></Label>
+                                    <Label :text="item.trainTypes.length"></Label>
+                                </FlexboxLayout>
+                            </FlexboxLayout>
+                            <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
+                                <FlexboxLayout class="transfers">
+                                    <Label class="fas" :text="'\uf074' | unescape"></Label>
+                                    <Label :text="item.trainTypes.length"></Label>
+                                </FlexboxLayout>
+                            </FlexboxLayout>
+                            <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
+                                <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"></Label>
+                                <FlexboxLayout class="transfers">
+                                    <Label class="fas" :text="'\uf074' | unescape"></Label>
+                                    <Label :text="item.trainTypes.length"></Label>
+                                </FlexboxLayout>
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </v-template>
@@ -173,13 +195,18 @@
         padding-bottom: 15%;
     }
 
-    .center .travelDetails .travelTime .far {
+    .center .travelDetails .travelTime .far,
+    .center .travelDetails .typeOfTrain .fas {
         margin-right: 5%;
         font-size: 24;
     }
 
     .center .travelDetails .travelTime Label {
         font-size: 18;
+    }
+
+    .center .travelDetails .typeOfTrain .transfers{
+        margin-left: 5%;
     }
 
     .center .travelDetails .typeOfTrain {
