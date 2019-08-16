@@ -3,6 +3,7 @@ import App from './components/App'
 import Select from './components/Select/StationSelect'
 import Route from "./components/Route/RouteSelect"
 import RouteDetails from "./components/Route/Details"
+import MultiRouteDetails from "./components/Route/Transfers/DetailsTransfers"
 import RouteStopDetails from "./components/Route/StopDetails"
 import Settings from "./components/Settings/Settings"
 import store from './store';
@@ -22,6 +23,7 @@ const router = {
   Select: Select,
   Route: Route,
   RouteDetails: RouteDetails,
+  MultiRouteDetails: MultiRouteDetails,
   RouteStopDetails: RouteStopDetails,
   Settings: Settings
 };
