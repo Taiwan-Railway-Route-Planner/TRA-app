@@ -20,11 +20,13 @@
                             <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="dateDetails">
-                            <Label :text="$props.routeDetails.time.date.show"></Label>
-                        </FlexboxLayout>
-                        <FlexboxLayout class="otherDetails">
-                            <Label class="far" :text="'\uf017' | unescape"></Label>
-                            <Label :text="$props.selectTravelDetails.travelTime"></Label>
+                            <FlexboxLayout class="dateDetails">
+                                <Label :text="$props.routeDetails.time.date.show"></Label>
+                            </FlexboxLayout>
+                            <FlexboxLayout class="otherDetails">
+                                <Label class="far" :text="'\uf017' | unescape"></Label>
+                                <Label :text="$props.selectTravelDetails.travelTime"></Label>
+                            </FlexboxLayout>
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </FlexboxLayout>
@@ -94,16 +96,20 @@
 <style scoped>
 
     .dock-top {
-        height: 30%;
+        height: 18%;
     }
 
-    .dock-center {
-        height: 70%;
-    }
+    /*.dock-center {*/
+    /*    height: 82%;*/
+    /*}*/
 
     .dock-top .top,
-    .dock-center .trainDetails {
+    .dock-center .trainDetails{
         margin-left: 5%;
+    }
+
+    .dock-top .top {
+        margin-top: 2%;
     }
 
     .dock-top,
@@ -121,12 +127,21 @@
 
     .dock-top .top .top-title .titles Label,
     .dock-top .top .routeDetails .timeDetails Label,
-    .dock-top .top .routeDetails .otherDetails Label {
+    .dock-top .top .routeDetails .dateDetails .otherDetails Label  {
         font-size: 24;
     }
 
-    .dock-top .top .routeDetails .dateDetails Label {
+    .dock-top .top .routeDetails .dateDetails .dateDetails Label {
         font-size: 18;
+    }
+
+    .dock-top .top .routeDetails .dateDetails .otherDetails {
+        padding-right: 15%;
+    }
+
+    .dock-top .top .routeDetails .dateDetails {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .dock-top {
@@ -170,7 +185,7 @@
     .dock-top .top .routeDetails .timeDetails {
         flex-direction: row;
         align-items: center;
-        height: 35%;
+        height: 50%;
     }
 
     .dock-top .top .routeDetails .timeDetails .fas {
@@ -181,16 +196,10 @@
     .dock-top .top .routeDetails .dateDetails {
         flex-direction: row;
         align-items: center;
-        height: 30%;
+        height: 50%;
     }
 
-    .dock-top .top .routeDetails .otherDetails {
-        flex-direction: row;
-        align-items: center;
-        height: 35%;
-    }
-
-    .dock-top .top .routeDetails .otherDetails .far {
+    .dock-top .top .routeDetails .dateDetails .otherDetails .far {
         margin-right: 5%;
     }
 
