@@ -18,7 +18,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         language: null,
-        stations: null
+        stations: null,
+        searchFile: null
     },
     plugins: [NSVuexPersistent],
     mutations: {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
         },
         updateStation(state, newStations){
             state.stations = newStations;
+        },
+        updateSearchFile(state, newSearchFile){
+            state.searchFile = newSearchFile;
         }
     }
 });
