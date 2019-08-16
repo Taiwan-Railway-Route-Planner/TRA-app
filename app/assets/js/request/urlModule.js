@@ -12,6 +12,7 @@ module.exports = (function () {
 
     const url = {
         station: BASE_URL + "stationInfo.json",
+        easyToSearchStationInfo: BASE_URL + "easyToSearchStationInfo.json",
         schedulesDay: BACKEND + "route"
     };
 
