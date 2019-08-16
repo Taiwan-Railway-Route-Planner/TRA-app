@@ -10,7 +10,7 @@ export default (function () {
 
     const handleIncomingRouteDetails = async function(_self) {
         loadLanguage(_self);
-        await getAllRoutesForThatDay(_self);
+        // await getAllRoutesForThatDay(_self);
     };
 
     function loadLanguage(_self) {
@@ -27,16 +27,18 @@ export default (function () {
         }
     }
 
-    async function getAllRoutesForThatDay(_self) {
-        _self.timeTable = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
-        if (_self.timeTable.error){
-
-        } else {
-            _self.timeTable = _self.timeTable.data;
-            _self.indexWithClosestToRealTime = _self.timeTable.findIndex((el => el.timeDifference > 0));
-        }
-        //filterTheNotCorrectRoutesOut(_self,routeData);
-    }
+    // async function getAllRoutesForThatDay(_self) {
+    //     _self.timeTable = await getRoutesOfADay.getAllRoutesOfACertainDay(_self);
+    //     if (_self.timeTable.error){
+    //
+    //     } else {
+    //         _self.timeTable = _self.timeTable.data;
+    //         _self.indexWithClosestToRealTime = _self.timeTable.data.findIndex((el => el.timeDifference > 0));
+    //         _self.timeTable = [{"multi": _self.timeTable.multi.toString()}, {"data": _self.timeTable.data}];
+    //         console.log(JSON.stringify(_self.timeTable))
+    //     }
+    //     //filterTheNotCorrectRoutesOut(_self,routeData);
+    // }
 
     // function filterTheNotCorrectRoutesOut(_self,routeData) {
     //     const intersection = _self.$props.routeDetails.departure.details.routeCode.filter(element => _self.$props.routeDetails.arrival.details.routeCode.includes(element));
