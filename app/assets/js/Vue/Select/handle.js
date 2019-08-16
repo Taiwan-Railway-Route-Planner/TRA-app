@@ -50,7 +50,7 @@ export default (function () {
         }
     }
 
-    function controlValuesBeforeGoingToRoute(_self) {
+    async function controlValuesBeforeGoingToRoute(_self) {
         if (_self.data.routeDetails.time.date.real === null) {
             _self.data.routeDetails.time.date.show = _self.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self);
             _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
@@ -59,11 +59,25 @@ export default (function () {
         if (isEmpty(_self.data.routeDetails.departure.details) || isEmpty(_self.data.routeDetails.arrival.details)) {
             // TODO give error notification
         } else {
+            await getAllRoutesForThatDay(_self);
             _self.$goto('Route', {
                 props: {
                     routeDetails: _self.data.routeDetails,
+                    timeTable: _self.timeTable,
+                    indexWithClosestToRealTime : _self.indexWithClosestToRealTime
                 }
             });
+        }
+    }
+
+    async function getAllRoutesForThatDay(_self) {
+        //TODO add loading screen + add error notification
+        _self.timeTable = await getStationDetails.getAllRoutesOfACertainDay(_self);
+        if (_self.timeTable.error){
+
+        } else {
+            _self.timeTable = _self.timeTable.data;
+            _self.indexWithClosestToRealTime = _self.timeTable.data.findIndex((el => el.timeDifference > 0));
         }
     }
 
