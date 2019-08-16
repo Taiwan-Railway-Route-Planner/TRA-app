@@ -17,8 +17,13 @@ module.exports = (function () {
         _self.filteredStations = _self.data.stationInfo.stations;
     }
 
+    async function getAllRoutesOfACertainDay(_self) {
+        return await requestHandler.request.routePost(_self);
+    }
+
     return {
-        getAllPossibleStations
+        getAllPossibleStations,
+        getAllRoutesOfACertainDay
     }
 
 })();
