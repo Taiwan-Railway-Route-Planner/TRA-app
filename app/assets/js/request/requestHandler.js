@@ -3,13 +3,15 @@
  **/
 
 const getStations = require("./Get/GetStations/requestForTheStations");
+const getSearchFileForStations = require("./Get/GetSearchFileWithStations/requestForSearchStationFile");
 const postRoute = require("./Post/PostRoute/requestForTheRoute");
 
 module.exports = (function () {
 
     const request = {
         stations: getStations.getTheInformation,
-        routePost: postRoute.getTheInformation
+        routePost: postRoute.getTheInformation,
+        searchFileForStations: getSearchFileForStations.getTheInformation
     };
 
 
