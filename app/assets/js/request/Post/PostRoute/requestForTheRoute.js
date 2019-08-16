@@ -15,14 +15,14 @@ module.exports =  (function () {
             method: "POST",
             body: {
                 departure: {
-                    details : _self.$props.routeDetails.departure.details
+                    details : _self.data.routeDetails.departure.details
                 },
                 arrival: {
-                    details: _self.$props.routeDetails.arrival.details
+                    details: _self.data.routeDetails.arrival.details
                 },
                 time:{
-                    date:  _self.$props.routeDetails.time.date,
-                    time:  _self.$props.routeDetails.time.time
+                    date:  _self.data.routeDetails.time.date,
+                    time:  _self.data.routeDetails.time.time
                 }
             }
         });
