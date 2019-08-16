@@ -99,10 +99,6 @@
         height: 18%;
     }
 
-    /*.dock-center {*/
-    /*    height: 82%;*/
-    /*}*/
-
     .dock-top .top,
     .dock-center .trainDetails{
         margin-left: 5%;
@@ -217,7 +213,7 @@
     .dock-center .trainDetails {
         flex-direction: row;
         margin-top: 4%;
-        height: 30%;
+        height: 160;
     }
 
     .dock-center .trainDetails .trainTimeDetails {
