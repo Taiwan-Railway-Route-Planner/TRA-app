@@ -125,14 +125,26 @@
                 this.$goto("Settings");
             },
             onItemTap: function (event) {
-                this.$goto('RouteDetails', {
-                        props: {
-                            routeDetails: this.$props.routeDetails,
-                            selectTravelDetails: event.item,
-                            language: this.data
+                if (this.$props.timeTable.multi){
+                    this.$goto('MultiRouteDetails', {
+                            props: {
+                                routeDetails: this.$props.routeDetails,
+                                selectTravelDetails: event.item,
+                                language: this.data
+                            }
                         }
-                    }
-                );
+                    );
+                } else {
+                    this.$goto('RouteDetails', {
+                            props: {
+                                routeDetails: this.$props.routeDetails,
+                                selectTravelDetails: event.item,
+                                language: this.data
+                            }
+                        }
+                    );
+                }
+
             }
         }
     }
