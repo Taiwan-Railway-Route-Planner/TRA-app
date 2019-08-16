@@ -11,8 +11,6 @@ module.exports = (function () {
     const BACKEND = "https://www." + EXTERNALIP + "/api/";
 
     const url = {
-        schedules: BASE_URL + "Schedules/DATE.json",
-        lines: BASE_URL + "Lines/LINENAME.json",
         station: BASE_URL + "stationInfo.json",
         schedulesDay: BACKEND + "route"
     };
