@@ -86,18 +86,12 @@
         },
         data() {
             return {
-                // timeTable: [],
-                // indexWithClosestToRealTime: 0,
-                // longDate: "20190704",
                 data: null
             }
         },
         methods: {
             onLoaded() {
-                let _self = this;
-                setTimeout(function () {
-                    _self.$refs.myList.nativeView.scrollToIndex(_self.$props.indexWithClosestToRealTime);
-                }, 1500)
+                this.$refs.myList.nativeView.scrollToIndex(this.$props.indexWithClosestToRealTime);
             },
             navToStart: function () {
                 this.$goto('Select');
