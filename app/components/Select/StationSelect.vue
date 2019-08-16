@@ -91,7 +91,9 @@
                 filteredStations: [],
                 departureOrArrival: null,
                 search: false,
-                someDate: ""
+                someDate: "",
+                timeTable: null,
+                indexWithClosestToRealTime: null
             }
         },
         methods: {
@@ -125,8 +127,8 @@
                     this.data.searchBar.hintText.now = this.data.searchBar.hintText.endStation;
                 }
             },
-            confirmSearch: function (){
-                handle.controlValuesBeforeGoingToRoute(this);
+            confirmSearch: async function (){
+                await handle.controlValuesBeforeGoingToRoute(this);
             },
             showTime: function () {
                 this.$showModal(timeModal, {
