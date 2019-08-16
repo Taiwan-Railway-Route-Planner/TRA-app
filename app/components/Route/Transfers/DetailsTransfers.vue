@@ -30,40 +30,44 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-                <FlexboxLayout class="trainDetails">
-                    <FlexboxLayout class="trainTimeDetails">
-                        <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
-                        <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
-                        <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout class="route">
-                        <Label class="far" :text="'\uf111' | unescape"></Label>
-                        <FlexboxLayout class="template-line">
-                            <Label class="line"></Label>
-                        </FlexboxLayout>
-                        <Label class="far" :text="'\uf111' | unescape"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout class="trainDestArrDetails">
-                        <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"></Label>
-                        <Label v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></Label>
-                        <FlexboxLayout class="trainDetailsIcons" @tap="navigateToRouteDetails">
-                            <FlexboxLayout class="information">
-                                <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name + ' ' + $props.selectTravelDetails.Train"></Label>
-                                <FlexboxLayout class="trainIcons">
-                                    <Label v-if="$props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
-                                    <Label v-if="$props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
-                                    <Label v-if="$props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
-                                    <Label v-if="$props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                <ListView for="item in $props.selectTravelDetails.Routes">
+                    <v-template>
+                        <FlexboxLayout class="trainDetails">
+                            <FlexboxLayout class="trainTimeDetails">
+                                <Label :text="item.TimeInfos[item.departureStation].DepTime"></Label>
+                                <Label class="fas" :color="$props.language.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
+                                <Label :text="item.TimeInfos[item.arrivalStation].ArrTime"></Label>
+                            </FlexboxLayout>
+                            <FlexboxLayout class="route">
+                                <Label class="far" :text="'\uf111' | unescape"></Label>
+                                <FlexboxLayout class="template-line">
+                                    <Label class="line"></Label>
                                 </FlexboxLayout>
+                                <Label class="far" :text="'\uf111' | unescape"></Label>
                             </FlexboxLayout>
-                            <FlexboxLayout class="navigation">
-                                <Label class="fas" :text="'\uf054' | unescape"></Label>
+                            <FlexboxLayout class="trainDestArrDetails">
+                                <!--                            <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"></Label>-->
+                                <!--                            <Label v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></Label>-->
+                                <FlexboxLayout class="trainDetailsIcons" @tap="navigateToRouteDetails">
+                                    <FlexboxLayout class="information">
+                                        <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
+                                        <FlexboxLayout class="trainIcons">
+                                            <Label v-if="item.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
+                                            <Label v-if="item.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
+                                            <Label v-if="item.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
+                                            <Label v-if="item.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                                        </FlexboxLayout>
+                                    </FlexboxLayout>
+                                    <FlexboxLayout class="navigation">
+                                        <Label class="fas" :text="'\uf054' | unescape"></Label>
+                                    </FlexboxLayout>
+                                </FlexboxLayout>
+                                <!--                            <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>-->
+                                <!--                            <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>-->
                             </FlexboxLayout>
                         </FlexboxLayout>
-                        <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
-                        <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>
-                    </FlexboxLayout>
-                </FlexboxLayout>
+                    </v-template>
+                </ListView>
             </FlexboxLayout>
         </DockLayout>
     </Page>
