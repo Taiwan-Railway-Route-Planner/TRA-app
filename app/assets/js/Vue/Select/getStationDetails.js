@@ -8,7 +8,7 @@ module.exports = (function () {
 
     async function getAllPossibleStations(_self) {
         // if (_self.$store.state.stations === null || _self.$store.state.stations === undefined){
-            await getSearchFileToSearchStations();
+            await getSearchFileToSearchStations(_self);
             const stations = await requestHandler.request.stations(_self);
             _self.$store.commit('updateStation', stations.data);
             _self.data.stationInfo = stations.data;
