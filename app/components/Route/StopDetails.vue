@@ -71,7 +71,7 @@
     import handle from "../../assets/js/Vue/Route/Details/StopDetails/handle"
 
     export default {
-        props: ['selectTravelDetails', 'language', 'startStation'],
+        props: ['selectTravelDetails', 'language'],
         created: function () {
             handle.handle(this);
         },
