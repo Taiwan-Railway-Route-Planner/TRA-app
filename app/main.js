@@ -8,6 +8,8 @@ import RouteStopDetails from "./components/Route/StopDetails"
 import Settings from "./components/Settings/Settings"
 import store from './store';
 
+import { Gif } from "nativescript-gif";
+
 import VueDevtools from 'nativescript-vue-devtools'
 
 if(TNS_ENV !== 'production') {
@@ -17,6 +19,8 @@ if(TNS_ENV !== 'production') {
 Vue.config.silent = (TNS_ENV === 'production');
 
 Vue.filter('unescape', v => unescape(v));
+
+Vue.registerElement("Gif", () => Gif);
 
 const router = {
   Bootup: App,
