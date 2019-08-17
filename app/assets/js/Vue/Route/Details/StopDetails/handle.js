@@ -14,7 +14,7 @@ export default (function () {
             _self.orderedTimeInfo.push(_self.$props.selectTravelDetails.TimeInfos[key]);
         });
         _self.orderedTimeInfo.sort((a, b) => parseFloat(a.Order) - parseFloat(b.Order));
-        _self.startIndex = _self.orderedTimeInfo.findIndex((el => parseInt(el.Station) === parseInt(_self.$props.startStation)));
+        _self.startIndex = _self.orderedTimeInfo.findIndex((el => parseInt(el.Station) === parseInt(_self.$props.selectTravelDetails.departureStation)));
     };
 
     function getCurrentTime() {
@@ -28,7 +28,7 @@ export default (function () {
     }
 
     function addMoreStationDetails(_self, key) {
-        let stationDetails = _self.$store.state.stations.stations.find((el => parseInt(el.時刻表編號) === parseInt(key)));
+        let stationDetails = _self.$store.state.searchFile[key];
         _self.$props.selectTravelDetails.TimeInfos[key].站名 = stationDetails.站名;
         _self.$props.selectTravelDetails.TimeInfos[key].eng站名 = stationDetails.eng站名;
     }
