@@ -32,7 +32,7 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-                <FlexboxLayout class="trainDetails">
+                <FlexboxLayout class="trainDetails" @tap="navigateToRouteDetails">
                     <FlexboxLayout class="trainTimeDetails">
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
                         <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
@@ -48,7 +48,7 @@
                     <FlexboxLayout class="trainDestArrDetails">
                         <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"></Label>
                         <Label v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></Label>
-                        <FlexboxLayout class="trainDetailsIcons" @tap="navigateToRouteDetails">
+                        <FlexboxLayout class="trainDetailsIcons">
                             <FlexboxLayout class="information">
                                 <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name + ' ' + $props.selectTravelDetails.Train"></Label>
                                 <FlexboxLayout class="trainIcons">
