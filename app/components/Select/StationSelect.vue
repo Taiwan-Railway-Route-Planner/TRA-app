@@ -78,6 +78,7 @@
     import handle from "../../assets/js/Vue/Select/handle"
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
+    import loadingModal from "../modals/loadingModal"
 
     export default {
         async created() {
@@ -128,7 +129,7 @@
                 }
             },
             confirmSearch: async function (){
-                await handle.controlValuesBeforeGoingToRoute(this);
+                await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
                 this.$showModal(timeModal, {
