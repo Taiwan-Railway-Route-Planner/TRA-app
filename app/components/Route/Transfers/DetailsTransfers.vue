@@ -32,7 +32,7 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-                <ListView for="item in $props.selectTravelDetails.Routes" marginLeft="5%">
+                <ListView for="item in $props.selectTravelDetails.Routes" marginLeft="5%" @itemTap="navigateToRouteDetails">
                     <v-template>
                         <FlexboxLayout height="180" flexDirection="column">
                             <FlexboxLayout height="10">
@@ -53,7 +53,7 @@
                                 <FlexboxLayout class="trainDestArrDetails">
                                     <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$store.state.searchFile[item.departureStation].站名"></Label>
                                     <Label v-else class="departure" :text="$store.state.searchFile[item.departureStation].eng站名"></Label>
-                                    <FlexboxLayout class="trainDetailsIcons" @tap="navigateToRouteDetails">
+                                    <FlexboxLayout class="trainDetailsIcons">
                                         <FlexboxLayout class="information">
                                             <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
                                             <FlexboxLayout class="trainIcons">
@@ -89,12 +89,11 @@
             return {}
         },
         methods: {
-            navigateToRouteDetails: function () {
+            navigateToRouteDetails: function (event) {
                 this.$goto("RouteStopDetails", {
                     props: {
-                        selectTravelDetails: this.$props.selectTravelDetails,
-                        language: this.$props.language,
-                        startStation: this.$props.routeDetails.departure.details['時刻表編號']
+                        selectTravelDetails: event.item,
+                        language: this.$props.language
                     }
                 })
             }
