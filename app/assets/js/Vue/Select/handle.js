@@ -6,6 +6,7 @@ const getStationDetails = require("./getStationDetails");
 const language = require("./language");
 const moment = require('moment');
 const InternetConnection = require('../InternetConnection');
+import { topmost } from "ui/frame"
 
 export default (function () {
 
@@ -50,7 +51,8 @@ export default (function () {
         }
     }
 
-    async function controlValuesBeforeGoingToRoute(_self) {
+    async function controlValuesBeforeGoingToRoute(_self, loadingModal) {
+        startLoadingModal(_self,loadingModal);
         if (_self.data.routeDetails.time.date.real === null) {
             _self.data.routeDetails.time.date.show = _self.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self);
             _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
@@ -59,11 +61,13 @@ export default (function () {
         console.log(_self.data.routeDetails.departure.details);
         if (isEmpty(_self.data.routeDetails.departure.details) || isEmpty(_self.data.routeDetails.arrival.details)) {
             // TODO give error notification
-            console.log("fails")
+            console.log("fails");
+            stopLoadingModal(_self,loadingModal);
         } else {
             let isError = await getAllRoutesForThatDay(_self);
             if (isError){
                 // TODO show notification
+                stopLoadingModal(_self,loadingModal);
             } else {
                 _self.$goto('Route', {
                     props: {
@@ -72,8 +76,10 @@ export default (function () {
                         indexWithClosestToRealTime : _self.indexWithClosestToRealTime
                     }
                 });
+                stopLoadingModal(_self,loadingModal);
             }
         }
+
     }
 
     async function getAllRoutesForThatDay(_self) {
@@ -90,6 +96,17 @@ export default (function () {
 
     function isEmpty(obj) {
         return !obj.hasOwnProperty('routeCode')
+    }
+
+    function startLoadingModal(_self, loadingModal) {
+        _self.$showModal(loadingModal);
+    }
+
+    function stopLoadingModal(_self,loadingModal) {
+        const page = topmost().currentPage;
+        if (page && page.modal) {
+            page.modal.closeModal()
+        }
     }
 
     return {
