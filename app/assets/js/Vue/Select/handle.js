@@ -58,7 +58,6 @@ export default (function () {
             _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
             _self.data.routeDetails.time.time = _self.data.routeDetails.time.hint.replace(_self.data.routeDetails.time.date.show, '');
         }
-        console.log(_self.data.routeDetails.departure.details);
         if (isEmpty(_self.data.routeDetails.departure.details) || isEmpty(_self.data.routeDetails.arrival.details)) {
             // TODO give error notification
             console.log("fails");
@@ -79,7 +78,6 @@ export default (function () {
                 stopLoadingModal(_self,loadingModal);
             }
         }
-
     }
 
     async function getAllRoutesForThatDay(_self) {
