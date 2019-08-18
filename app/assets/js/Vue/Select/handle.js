@@ -61,12 +61,12 @@ export default (function () {
         if (isEmpty(_self.data.routeDetails.departure.details) || isEmpty(_self.data.routeDetails.arrival.details)) {
             // TODO give error notification
             console.log("fails");
-            stopLoadingModal(_self,loadingModal);
+            stopLoadingModal();
         } else {
             let isError = await getAllRoutesForThatDay(_self);
             if (isError){
                 // TODO show notification
-                stopLoadingModal(_self,loadingModal);
+                stopLoadingModal();
             } else {
                 _self.$goto('Route', {
                     props: {
@@ -75,7 +75,7 @@ export default (function () {
                         indexWithClosestToRealTime : _self.indexWithClosestToRealTime
                     }
                 });
-                stopLoadingModal(_self,loadingModal);
+                stopLoadingModal();
             }
         }
     }
@@ -100,7 +100,7 @@ export default (function () {
         _self.$showModal(loadingModal);
     }
 
-    function stopLoadingModal(_self,loadingModal) {
+    function stopLoadingModal() {
         const page = topmost().currentPage;
         if (page && page.modal) {
             page.modal.closeModal()
