@@ -32,10 +32,10 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-                <ListView for="item in $props.selectTravelDetails.Routes" marginLeft="5%" @itemTap="navigateToRouteDetails">
+                <ListView for="item in $props.selectTravelDetails.Routes" class="listTrain" @itemTap="navigateToRouteDetails">
                     <v-template>
-                        <FlexboxLayout height="180" flexDirection="column">
-                            <FlexboxLayout height="10">
+                        <FlexboxLayout class="oneTrainElement" flexDirection="column">
+                            <FlexboxLayout class="whiteSpace">
                             </FlexboxLayout>
                             <FlexboxLayout class="trainDetails">
                                 <FlexboxLayout class="trainTimeDetails">
@@ -71,7 +71,7 @@
                                     <Label v-else class="arrival" :text="$store.state.searchFile[item.arrivalStation].eng站名"></Label>
                                 </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout height="10">
+                            <FlexboxLayout class="whiteSpace">
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </v-template>
@@ -215,9 +215,17 @@
         color: #1a0dab;
     }
 
-    /*.dock-center {*/
-    /*    flex-direction: column;*/
-    /*}*/
+    .dock-center .listTrain{
+        margin-left: 5%;
+    }
+
+    .dock-center .listTrain .oneTrainElement{
+        height: 180;
+    }
+
+    .dock-center .listTrain .whiteSpace{
+        height: 10;
+    }
 
     .dock-center .trainDetails {
         flex-direction: row;
