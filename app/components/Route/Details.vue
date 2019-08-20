@@ -1,39 +1,8 @@
 <template>
     <Page actionBarHidden="true">
         <DockLayout>
-
             <FlexboxLayout dock="top" class="dock-top">
-
-                <FlexboxLayout class="top" v-if="$props.multi">
-                    <FlexboxLayout class="top-title">
-                        <FlexboxLayout class="titles" @tap="navigateBack()">
-                            <Label class="fas" :text="'\uf060' | unescape"></Label>
-                            <Label :text="$props.language.details.top.title"></Label>
-                        </FlexboxLayout>
-                        <FlexboxLayout class="shareOptions">
-                            <Label class="fas" :text="'\uf1e0' | unescape"></Label>
-                            <Label class="far" :text="'\uf005' | unescape"></Label>
-                        </FlexboxLayout>
-                    </FlexboxLayout>
-                    <FlexboxLayout class="routeDetails">
-                        <FlexboxLayout class="timeDetails">
-                            <Label :text="$props.selectTravelDetails.startTime"></Label>
-                            <Label class="fas" :text="'\uf061' | unescape"></Label>
-                            <Label :text="$props.selectTravelDetails.endTime"></Label>
-                        </FlexboxLayout>
-                        <FlexboxLayout class="dateDetails">
-                            <FlexboxLayout class="dateDetails">
-                                <Label :text="$props.routeDetails.time.date.show"></Label>
-                            </FlexboxLayout>
-                            <FlexboxLayout class="otherDetails">
-                                <Label class="far" :text="'\uf017' | unescape"></Label>
-                                <Label :text="$props.selectTravelDetails.travelTime"></Label>
-                            </FlexboxLayout>
-                        </FlexboxLayout>
-                    </FlexboxLayout>
-                </FlexboxLayout>
-
-                <FlexboxLayout class="top" v-else>
+                <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
                         <FlexboxLayout class="titles" @tap="navigateBack()">
                             <Label class="fas" :text="'\uf060' | unescape"></Label>
@@ -62,56 +31,7 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
-
-
-            <FlexboxLayout dock="center" class="dock-center" v-if="$props.multi">
-                <ListView for="item in $props.selectTravelDetails.Routes" marginLeft="5%" @itemTap="navigateToRouteDetailsEvent">
-                    <v-template>
-                        <FlexboxLayout height="180" flexDirection="column">
-                            <FlexboxLayout height="10">
-                            </FlexboxLayout>
-                            <FlexboxLayout class="trainDetails">
-                                <FlexboxLayout class="trainTimeDetails">
-                                    <Label :text="item.TimeInfos[item.departureStation].DepTime"></Label>
-                                    <Label class="fas" :color="$props.language.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
-                                    <Label :text="item.TimeInfos[item.arrivalStation].ArrTime"></Label>
-                                </FlexboxLayout>
-                                <FlexboxLayout class="route">
-                                    <Label class="far" :text="'\uf111' | unescape"></Label>
-                                    <FlexboxLayout class="template-line">
-                                        <Label class="line"></Label>
-                                    </FlexboxLayout>
-                                    <Label class="far" :text="'\uf111' | unescape"></Label>
-                                </FlexboxLayout>
-                                <FlexboxLayout class="trainDestArrDetails">
-                                    <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$store.state.searchFile[item.departureStation].站名"></Label>
-                                    <Label v-else class="departure" :text="$store.state.searchFile[item.departureStation].eng站名"></Label>
-                                    <FlexboxLayout class="trainDetailsIcons">
-                                        <FlexboxLayout class="information">
-                                            <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
-                                            <FlexboxLayout class="trainIcons">
-                                                <Label v-if="item.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
-                                                <Label v-if="item.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
-                                                <Label v-if="item.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
-                                                <Label v-if="item.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
-                                            </FlexboxLayout>
-                                        </FlexboxLayout>
-                                        <FlexboxLayout class="navigation">
-                                            <Label class="fas" :text="'\uf054' | unescape"></Label>
-                                        </FlexboxLayout>
-                                    </FlexboxLayout>
-                                    <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$store.state.searchFile[item.arrivalStation].站名"></Label>
-                                    <Label v-else class="arrival" :text="$store.state.searchFile[item.arrivalStation].eng站名"></Label>
-                                </FlexboxLayout>
-                            </FlexboxLayout>
-                            <FlexboxLayout height="10">
-                            </FlexboxLayout>
-                        </FlexboxLayout>
-                    </v-template>
-                </ListView>
-            </FlexboxLayout>
-
-            <FlexboxLayout dock="center" class="dock-center" v-else>
+            <FlexboxLayout dock="center" class="dock-center">
                 <FlexboxLayout class="trainDetails" @tap="navigateToRouteDetails">
                     <FlexboxLayout class="trainTimeDetails">
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
@@ -147,7 +67,6 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
-
         </DockLayout>
     </Page>
 </template>
@@ -155,7 +74,7 @@
 <script>
 
     export default {
-        props: ['routeDetails', 'selectTravelDetails', 'language', 'multi'],
+        props: ['routeDetails', 'selectTravelDetails', 'language'],
         data() {
             return {}
         },
@@ -164,14 +83,6 @@
                 this.$goto("RouteStopDetails", {
                     props: {
                         selectTravelDetails: this.$props.selectTravelDetails,
-                        language: this.$props.language
-                    }
-                })
-            },
-            navigateToRouteDetailsEvent: function (event) {
-                this.$goto("RouteStopDetails", {
-                    props: {
-                        selectTravelDetails: event.item,
                         language: this.$props.language
                     }
                 })
