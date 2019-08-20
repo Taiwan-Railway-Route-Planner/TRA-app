@@ -108,10 +108,6 @@
         height: 18%;
     }
 
-    /*.dock-center {*/
-    /*    height: 82%;*/
-    /*}*/
-
     .dock-top .top,
     .dock-center .trainDetails {
         margin-left: 5%;
