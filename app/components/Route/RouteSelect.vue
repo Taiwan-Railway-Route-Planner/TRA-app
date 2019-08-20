@@ -125,26 +125,17 @@
                 this.$goto("Settings");
             },
             onItemTap: function (event) {
-                if (this.$props.timeTable.multi){
-                    this.$goto('MultiRouteDetails', {
-                            props: {
-                                routeDetails: this.$props.routeDetails,
-                                selectTravelDetails: event.item,
-                                language: this.data
-                            }
+                console.log(this.$props.timeTable);
+                console.log(this.$props.timeTable.multi);
+                this.$goto('RouteDetails', {
+                        props: {
+                            routeDetails: this.$props.routeDetails,
+                            selectTravelDetails: event.item,
+                            language: this.data,
+                            multi: this.$props.timeTable.multi
                         }
-                    );
-                } else {
-                    this.$goto('RouteDetails', {
-                            props: {
-                                routeDetails: this.$props.routeDetails,
-                                selectTravelDetails: event.item,
-                                language: this.data
-                            }
-                        }
-                    );
-                }
-
+                    }
+                );
             }
         }
     }
@@ -217,7 +208,7 @@
         font-size: 18;
     }
 
-    .center .travelDetails .typeOfTrain .transfers{
+    .center .travelDetails .typeOfTrain .transfers {
         margin-left: 5%;
     }
 
