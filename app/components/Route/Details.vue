@@ -99,7 +99,7 @@
     }
 
     .dock-top .top,
-    .dock-center .trainDetails{
+    .dock-center .trainDetails {
         margin-left: 5%;
     }
 
@@ -122,7 +122,7 @@
 
     .dock-top .top .top-title .titles Label,
     .dock-top .top .routeDetails .timeDetails Label,
-    .dock-top .top .routeDetails .dateDetails .otherDetails Label  {
+    .dock-top .top .routeDetails .dateDetails .otherDetails Label {
         font-size: 24;
     }
 

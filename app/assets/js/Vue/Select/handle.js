@@ -65,6 +65,7 @@ export default (function () {
         } else {
             let isError = await getAllRoutesForThatDay(_self);
             if (isError){
+                console.log("Oke ready to go");
                 // TODO show notification
                 stopLoadingModal();
             } else {

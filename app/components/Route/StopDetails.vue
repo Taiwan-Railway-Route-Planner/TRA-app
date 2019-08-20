@@ -83,10 +83,10 @@
         },
         methods: {
             onLoaded() {
-                let _self = this;
-                setTimeout(function () {
-                    _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
-                }, 3000)
+                // let _self = this;
+                // setTimeout(function () {
+                //     _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
+                // }, 3000)
             },
         }
     }
