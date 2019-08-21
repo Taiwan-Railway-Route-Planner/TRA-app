@@ -24,19 +24,19 @@ module.exports = (function () {
             }
         },
         zh: {
-            top: {
-                title: 'Settings Menu'
+            "top": {
+                "title": "Settings Menu"
             },
-            center: {
-                language:{
-                    chooseTitle: 'Choose your language',
-                    button: 'Save'
+            "center": {
+                "language":{
+                    "chooseTitle": "Choose your language",
+                    "button": "Save"
                 },
-                otherInfo: {
-                    rate: 'Rate us on Google Play',
-                    contactUs: 'Email us',
-                    openSource: 'Visit the project on Github',
-                    Version: 'Version'
+                "otherInfo": {
+                    "rate": "Rate us on Google Play",
+                    "contactUs": "Email us",
+                    "openSource": "Visit the project on Github",
+                    "Version": "Version"
                 }
             }
         },
