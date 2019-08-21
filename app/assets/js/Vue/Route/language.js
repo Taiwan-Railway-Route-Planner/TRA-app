@@ -6,54 +6,54 @@ module.exports = (function () {
 
     let language = {
         en: {
-            top: {
-                first: 'Departure Station',
-                second: 'Arrival Station'
+            "top": {
+                "first": "Departure Station",
+                "second": "Arrival Station"
             },
-            trainTypes: {
+            "trainTypes": {
                 "Local": {
-                    name: "Local",
-                    color: "#333333"
+                    "name": "Local",
+                    "color": "#333333"
                 },
                 "Other Local": {
-                    name: "Ordinary",
-                    color: "#333333"
+                    "name": "Ordinary",
+                    "color": "#333333"
                 },
                 "Fast Local": {
-                    name: "Fast Local",
-                    color: "#333333"
+                    "name": "Fast Local",
+                    "color": "#333333"
                 },
                 "Chu-kuang": {
-                    name: "Chu-kuang",
-                    color: "#FFD200"
+                    "name": "Chu-kuang",
+                    "color": "#FFD200"
                 },
                 "Tze-chiang": {
-                    name: "Tze-chiang",
-                    color: "#FF8708"
+                    "name": "Tze-chiang",
+                    "color": "#FF8708"
                 },
                 "Fu-Hsing": {
-                    name: "Fu-Hsing",
-                    color: "#00ace8"
+                    "name": "Fu-Hsing",
+                    "color": "#00ace8"
                 },
                 "Taroko": {
-                    name: "Taroko",
-                    color: "#FF5000"
+                    "name": "Taroko",
+                    "color": "#FF5000"
                 },
                 "Puyuma": {
-                    name: "Puyuma",
-                    color: "#D00216"
+                    "name": "Puyuma",
+                    "color": "#D00216"
                 }
             },
-            details: {
-                top: {
-                    title: 'Travel Details'
+            "details": {
+                "top": {
+                    "title": "Travel Details"
                 }
             },
-            stopDetails: {
-                top: {
-                    title: 'Train Details',
-                    type: 'Type',
-                    number: 'Number'
+            "stopDetails": {
+                "top": {
+                    "title": "Train Details",
+                    "type": "Type",
+                    "number": "Number"
                 }
             }
         },
