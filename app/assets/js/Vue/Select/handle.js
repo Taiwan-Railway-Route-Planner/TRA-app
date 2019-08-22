@@ -65,13 +65,14 @@ export default (function () {
             // TODO give error notification
             console.log("fails");
             stopLoadingModal();
-            showError(_self);
+            showError(_self.data.error);
         } else {
             let isError = await getAllRoutesForThatDay(_self);
             if (isError){
                 console.log("Oke ready to go");
                 // TODO show notification
                 stopLoadingModal();
+                showError(_self.timeTable.msg);
             } else {
                 _self.$goto('Route', {
                     props: {
@@ -112,10 +113,11 @@ export default (function () {
         }
     }
 
-    function showError(_self) {
+    function showError(errorMessage) {
         feedback.error({
             title: "Error",
-            message: _self.data.error
+            message: errorMessage,
+            duration: 6000
         })
     }
 
