@@ -57,7 +57,8 @@ module.exports = (function () {
                     }
                 },
                 "button": "SEARCH"
-            }
+            },
+            "error": "You didn't fill in a destination or departure!"
         },
         zh: {
             searchBar: {
