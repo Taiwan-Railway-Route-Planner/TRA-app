@@ -8,6 +8,9 @@ const moment = require('moment');
 const InternetConnection = require('../InternetConnection');
 import { topmost } from "ui/frame"
 
+var FeedbackPlugin = require("nativescript-feedback");
+var feedback = new FeedbackPlugin.Feedback();
+
 export default (function () {
 
     const setUpSelectVue = async function (_self) {
@@ -62,6 +65,7 @@ export default (function () {
             // TODO give error notification
             console.log("fails");
             stopLoadingModal();
+            showError(_self);
         } else {
             let isError = await getAllRoutesForThatDay(_self);
             if (isError){
@@ -106,6 +110,13 @@ export default (function () {
         if (page && page.modal) {
             page.modal.closeModal()
         }
+    }
+
+    function showError(_self) {
+        feedback.error({
+            title: "Error",
+            message: _self.data.error
+        })
     }
 
     return {
