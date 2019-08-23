@@ -5,7 +5,6 @@
 const getStationDetails = require("./getStationDetails");
 const language = require("./language");
 const moment = require('moment');
-const InternetConnection = require('../InternetConnection');
 import { topmost } from "ui/frame"
 
 const FeedbackPlugin = require("nativescript-feedback");
@@ -49,9 +48,7 @@ export default (function () {
     }
 
     async function loadStationDetails(_self) {
-        if (InternetConnection.checkInternetConnection()){
-            await getStationDetails.getAllPossibleStations(_self);
-        }
+        await getStationDetails.getAllPossibleStations(_self);
     }
 
     async function controlValuesBeforeGoingToRoute(_self, loadingModal) {
@@ -62,19 +59,15 @@ export default (function () {
             _self.data.routeDetails.time.time = _self.data.routeDetails.time.hint.replace(_self.data.routeDetails.time.date.show, '');
         }
         if (isEmpty(_self.data.routeDetails.departure.details) || isEmpty(_self.data.routeDetails.arrival.details)) {
-            // TODO give error notification
-            console.log("fails");
             stopLoadingModal();
             showError(_self.data.error);
         } else {
             let isError = await getAllRoutesForThatDay(_self);
             if (isError){
-                console.log("Oke ready to go");
-                // TODO show notification
                 stopLoadingModal();
                 showError(_self.timeTable.msg);
             } else {
-                _self.$goto('Route', {
+                await _self.$goto('Route', {
                     props: {
                         routeDetails: _self.data.routeDetails,
                         timeTable: _self.timeTable,
@@ -87,7 +80,6 @@ export default (function () {
     }
 
     async function getAllRoutesForThatDay(_self) {
-        //TODO add loading screen + add error notification
         _self.timeTable = await getStationDetails.getAllRoutesOfACertainDay(_self);
         if (_self.timeTable.error){
             return true;
