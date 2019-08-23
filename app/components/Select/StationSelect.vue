@@ -122,12 +122,15 @@
                 this.search = false;
             },
             showSearch: function (departureOrArrival) {
-                this.search = true;
-                this.departureOrArrival = departureOrArrival;
-                if (departureOrArrival) {
-                    this.data.searchBar.hintText.now = this.data.searchBar.hintText.startStation;
-                } else {
-                    this.data.searchBar.hintText.now = this.data.searchBar.hintText.endStation;
+                const isntEmpty = handle.checkFirstIfTheElementsArentEmpty(this);
+                if (isntEmpty){
+                    this.search = true;
+                    this.departureOrArrival = departureOrArrival;
+                    if (departureOrArrival) {
+                        this.data.searchBar.hintText.now = this.data.searchBar.hintText.startStation;
+                    } else {
+                        this.data.searchBar.hintText.now = this.data.searchBar.hintText.endStation;
+                    }
                 }
             },
             confirmSearch: async function (){
