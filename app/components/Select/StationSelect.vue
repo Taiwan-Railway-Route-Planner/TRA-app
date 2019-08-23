@@ -94,7 +94,9 @@
                 search: false,
                 someDate: "",
                 timeTable: null,
-                indexWithClosestToRealTime: null
+                indexWithClosestToRealTime: null,
+                feedback: null,
+                topmost: null
             }
         },
         methods: {
