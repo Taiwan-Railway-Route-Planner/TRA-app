@@ -7,7 +7,7 @@ const moment = require('moment');
 module.exports = (function () {
 
     const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, loadingModal, requestBuilderForSelect) {
-        startLoadingModal(_self,loadingModal);
+        startLoadingModal(_self, loadingModal);
         if (_self.data.routeDetails.time.date.real === null) {
             assignTimeToRouteDetailsWhenEmpty(_self);
         }
@@ -18,22 +18,22 @@ module.exports = (function () {
         }
     };
 
-    function assignTimeToRouteDetailsWhenEmpty (_self){
+    function assignTimeToRouteDetailsWhenEmpty(_self) {
         _self.data.routeDetails.time.date.show = _self.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self);
         _self.data.routeDetails.time.date.real = moment().locale('en').format('YYYYMMDD');
         _self.data.routeDetails.time.time = _self.data.routeDetails.time.hint.replace(_self.data.routeDetails.time.date.show, '');
     }
 
-    async function getPossibleRoutes (_self, requestBuilderForSelect){
+    async function getPossibleRoutes(_self, requestBuilderForSelect) {
         let isError = await requestBuilderForSelect.checkIfThereIsAPossibleRoute(_self);
-        if (isError){
+        if (isError) {
             showErrorMessageWhyRouteCantBeFound(_self);
         } else {
             await _self.$goto('Route', {
                 props: {
                     routeDetails: _self.data.routeDetails,
                     timeTable: _self.timeTable,
-                    indexWithClosestToRealTime : _self.indexWithClosestToRealTime
+                    indexWithClosestToRealTime: _self.indexWithClosestToRealTime
                 }
             });
             stopLoadingModal(_self);
@@ -42,7 +42,7 @@ module.exports = (function () {
 
     /***************** ERROR - MESSAGES *****************/
 
-    function startOrAndEndpositionIsntFilledIn (_self){
+    function startOrAndEndpositionIsntFilledIn(_self) {
         stopLoadingModal(_self);
         showError(_self, _self.data.error);
     }
@@ -69,7 +69,7 @@ module.exports = (function () {
         }
     }
 
-    function showError(_self,errorMessage) {
+    function showError(_self, errorMessage) {
         _self.feedback.error({
             title: "Error",
             message: errorMessage,
