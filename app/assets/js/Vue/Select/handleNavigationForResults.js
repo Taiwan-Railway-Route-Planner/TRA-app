@@ -25,19 +25,35 @@ module.exports = (function () {
     }
 
     async function getPossibleRoutes(_self, requestBuilderForSelect) {
+        await checkIfRouteCanBeFound(_self, requestBuilderForSelect);
+    }
+
+    /***************** HANDLE - ROUTES - ERROR *****************/
+
+    async function checkIfRouteCanBeFound(_self, requestBuilderForSelect) {
         let isError = await requestBuilderForSelect.checkIfThereIsAPossibleRoute(_self);
-        if (isError) {
-            showErrorMessageWhyRouteCantBeFound(_self);
-        } else {
-            await _self.$goto('Route', {
-                props: {
-                    routeDetails: _self.data.routeDetails,
-                    timeTable: _self.timeTable,
-                    indexWithClosestToRealTime: _self.indexWithClosestToRealTime
-                }
-            });
-            stopLoadingModal(_self);
+        switch (isError) {
+            case null:
+                showNoInternetConnection(_self);
+                break;
+            case true:
+                showErrorMessageWhyRouteCantBeFound(_self);
+                break;
+            case false:
+                await goToTheResultPage(_self);
+                break;
         }
+    }
+
+    async function goToTheResultPage(_self) {
+        await _self.$goto('Route', {
+            props: {
+                routeDetails: _self.data.routeDetails,
+                timeTable: _self.timeTable,
+                indexWithClosestToRealTime: _self.indexWithClosestToRealTime
+            }
+        });
+        stopLoadingModal(_self);
     }
 
     /***************** ERROR - MESSAGES *****************/
@@ -50,6 +66,11 @@ module.exports = (function () {
     function showErrorMessageWhyRouteCantBeFound(_self) {
         stopLoadingModal(_self);
         showError(_self, _self.timeTable.msg);
+    }
+
+    function showNoInternetConnection(_self) {
+        stopLoadingModal(_self);
+        internetError(_self);
     }
 
     /***************** HELP - FUNCTIONS *****************/
@@ -73,6 +94,14 @@ module.exports = (function () {
         _self.feedback.error({
             title: "Error",
             message: errorMessage,
+            duration: 6000
+        })
+    }
+
+    function internetError(_self) {
+        _self.feedback.warning({
+            title: "No Internet Connection",
+            message: "Can't find route without internet connection!",
             duration: 6000
         })
     }
