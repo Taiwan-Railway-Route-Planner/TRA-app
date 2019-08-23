@@ -8,8 +8,8 @@ const moment = require('moment');
 const InternetConnection = require('../InternetConnection');
 import { topmost } from "ui/frame"
 
-var FeedbackPlugin = require("nativescript-feedback");
-var feedback = new FeedbackPlugin.Feedback();
+const FeedbackPlugin = require("nativescript-feedback");
+const feedback = new FeedbackPlugin.Feedback();
 
 export default (function () {
 
@@ -49,7 +49,7 @@ export default (function () {
     }
 
     async function loadStationDetails(_self) {
-        if (InternetConnection.checkInternetConnection(_self)){
+        if (InternetConnection.checkInternetConnection()){
             await getStationDetails.getAllPossibleStations(_self);
         }
     }
