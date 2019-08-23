@@ -107,7 +107,8 @@ module.exports = (function () {
     }
 
     return {
-        checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute
+        checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute,
+        internetError
     }
 
 })();
