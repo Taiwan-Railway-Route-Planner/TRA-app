@@ -2,8 +2,8 @@
  Created by svend on 14/06/2019.
  **/
 
-const getStationDetails = require("./getStationDetails");
-const language = require("./language");
+const requestBuilderForSelect = require("./requestBuilderForSelect");
+const initScreen = require('./initScreen');
 const moment = require('moment');
 import { topmost } from "ui/frame"
 
@@ -13,43 +13,9 @@ const feedback = new FeedbackPlugin.Feedback();
 export default (function () {
 
     const setUpSelectVue = async function (_self) {
-        loadLanguage(_self);
-        setHintText(_self);
-        await loadStationDetails(_self);
+        await initScreen.initScreen(_self, requestBuilderForSelect)
     };
 
-    function loadLanguage(_self) {
-        switch (_self.$store.state.language) {
-            case "EN":
-                _self.data = language.language.en;
-                break;
-            case "ZH":
-                _self.data = language.language.zh;
-                break;
-            case "KO":
-                _self.data = language.language.ko;
-                break;
-            default:
-                //TODO remove
-                _self.data = language.language.en;
-                _self.$store.commit('updateLanguage',"EN");
-                break;
-        }
-        setTime(_self);
-    }
-
-    function setHintText(_self) {
-        _self.data.searchBar.hintText.now = _self.data.searchBar.hintText.startStation;
-    }
-
-    function setTime(_self) {
-        moment.locale(_self.data.routeDetails.time.local);
-        _self.data.routeDetails.time.hint = _self.formatTimeStampBasedOnLanguage.setHintTimeBasedOnTheLanguage(_self);
-    }
-
-    async function loadStationDetails(_self) {
-        await getStationDetails.getAllPossibleStations(_self);
-    }
 
     async function controlValuesBeforeGoingToRoute(_self, loadingModal) {
         startLoadingModal(_self,loadingModal);
@@ -80,7 +46,7 @@ export default (function () {
     }
 
     async function getAllRoutesForThatDay(_self) {
-        _self.timeTable = await getStationDetails.getAllRoutesOfACertainDay(_self);
+        _self.timeTable = await requestBuilderForSelect.getAllRoutesOfACertainDay(_self);
         if (_self.timeTable.error){
             return true;
         } else {
