@@ -27,9 +27,28 @@ export default (function () {
         _self.topmost = topmost;
     }
 
+    const checkFirstIfTheElementsArentEmpty = function (_self) {
+        if (typeof _self.filteredStations !== 'undefined'){
+            internetError(_self);
+            return false;
+        } else {
+            return true;
+        }
+    };
+
+    /***************** HELP - FUNCTIONS *****************/
+
+    function internetError(_self) {
+        _self.feedback.warning({
+            title: "No Internet Connection",
+            duration: 6000
+        })
+    }
+
     return {
         setUpSelectVue,
-        controlValuesBeforeGoingToRoute
+        controlValuesBeforeGoingToRoute,
+        checkFirstIfTheElementsArentEmpty
     }
 
 })();
