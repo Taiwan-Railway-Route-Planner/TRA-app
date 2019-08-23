@@ -27,14 +27,19 @@ module.exports = (function () {
     }
 
     async function checkIfThereIsAPossibleRoute(_self) {
-        _self.timeTable = await requestHandler.request.routePost(_self);
-        if (_self.timeTable.error){
-            return true;
+        if (!InternetConnection.checkInternetConnection()){
+            return null;
         } else {
-            _self.timeTable = _self.timeTable.data;
-            _self.indexWithClosestToRealTime = _self.timeTable.data.findIndex((el => el.timeDifference > 0));
-            return false;
+            _self.timeTable = await requestHandler.request.routePost(_self);
+            if (_self.timeTable.error){
+                return true;
+            } else {
+                _self.timeTable = _self.timeTable.data;
+                _self.indexWithClosestToRealTime = _self.timeTable.data.findIndex((el => el.timeDifference > 0));
+                return false;
+            }
         }
+
     }
 
     return {
