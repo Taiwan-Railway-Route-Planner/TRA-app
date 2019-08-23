@@ -17,7 +17,7 @@ export default (function () {
         assignVariables(_self);
         await initScreen.initScreen(_self, requestBuilderForSelect);
     };
-    
+
     async function controlValuesBeforeGoingToRoute(_self, loadingModal) {
         await handleNavigationForResults.checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute(_self, loadingModal, requestBuilderForSelect)
     }
