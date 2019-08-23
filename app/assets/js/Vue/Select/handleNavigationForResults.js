@@ -108,7 +108,6 @@ module.exports = (function () {
 
     return {
         checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute,
-        internetError
     }
 
 })();
