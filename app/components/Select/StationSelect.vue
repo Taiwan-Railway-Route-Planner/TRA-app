@@ -124,6 +124,7 @@
             showSearch: function (departureOrArrival) {
                 const isntEmpty = handle.checkFirstIfTheElementsArentEmpty(this);
                 if (isntEmpty){
+                    this.data.searchBar.search = "";
                     this.search = true;
                     this.departureOrArrival = departureOrArrival;
                     if (departureOrArrival) {
