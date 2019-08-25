@@ -2,7 +2,7 @@
  Created by svend on 23/08/2019.
  **/
 
-const language = require("./language");
+const language = require("../language");
 const moment = require('moment');
 
 module.exports = (function () {

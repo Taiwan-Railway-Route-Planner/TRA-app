@@ -2,9 +2,9 @@
  Created by svend on 14/06/2019.
  **/
 
-const requestBuilderForSelect = require("./requestBuilderForSelect");
-const initScreen = require("./initScreen");
-const handleNavigationForResults = require("./handleNavigationForResults");
+const requestBuilderForSelect = require("./SetUp/requestBuilderForSelect");
+const initScreen = require("./SetUp/initScreen");
+const handleNavigationForResults = require("./SetUp/handleNavigationForResults");
 
 const FeedbackPlugin = require("nativescript-feedback");
 const feedback = new FeedbackPlugin.Feedback();

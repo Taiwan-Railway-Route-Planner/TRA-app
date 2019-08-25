@@ -2,8 +2,8 @@
  Created by svend on 20/06/2019.
  **/
 
-const requestHandler = require("../../request/requestHandler");
-const InternetConnection = require('../InternetConnection');
+const requestHandler = require("../../../request/requestHandler");
+const InternetConnection = require('../../InternetConnection');
 
 module.exports = (function () {
 
