@@ -47,7 +47,8 @@ module.exports = (function () {
     }
 
     return {
-        initScreen
+        initScreen,
+        loadStationDetails
     }
 
 })();
