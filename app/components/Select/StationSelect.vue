@@ -89,7 +89,7 @@
             return {
                 formatTimeStampBasedOnLanguage: null,
                 data: null,
-                filteredStations: [],
+                filteredStations: null,
                 departureOrArrival: null,
                 search: false,
                 someDate: "",
@@ -121,8 +121,8 @@
                 }
                 this.search = false;
             },
-            showSearch: function (departureOrArrival) {
-                const isntEmpty = handle.checkFirstIfTheElementsArentEmpty(this);
+            showSearch: async function (departureOrArrival) {
+                const isntEmpty = await handle.checkFirstIfTheElementsArentEmpty(this);
                 if (isntEmpty){
                     this.data.searchBar.search = "";
                     this.search = true;
