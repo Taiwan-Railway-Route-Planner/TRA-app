@@ -27,10 +27,15 @@ export default (function () {
         _self.topmost = topmost;
     }
 
-    const checkFirstIfTheElementsArentEmpty = function (_self) {
-        if (typeof _self.filteredStations !== 'undefined'){
-            internetError(_self);
-            return false;
+    const checkFirstIfTheElementsArentEmpty = async function (_self) {
+        if (_self.filteredStations === null){
+            await initScreen.loadStationDetails(_self, requestBuilderForSelect);
+            if (_self.filteredStations === null){
+                internetError(_self);
+                return false;
+            } else {
+                return true;
+            }
         } else {
             return true;
         }
