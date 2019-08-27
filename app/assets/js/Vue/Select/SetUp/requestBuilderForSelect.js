@@ -18,7 +18,9 @@ module.exports = (function () {
         } else {
             _self.data.stationInfo = _self.$store.state.stations;
         }
-        _self.filteredStations = _self.data.stationInfo.stations;
+        if (_self.data.stationInfo !== undefined){
+            _self.filteredStations = _self.data.stationInfo.stations;
+        }
     }
 
     async function getSearchFileToSearchStations(_self){
