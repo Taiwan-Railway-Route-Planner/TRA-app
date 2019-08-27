@@ -23,7 +23,12 @@ export default (function () {
 
     function calculateIfTimeAlreadyPassed(_self,key,currentTime) {
         let departureTime = moment(_self.$props.selectTravelDetails.TimeInfos[key].DepTime, "HH:mm");
-        let timeDifference = currentTime.diff(departureTime);
+        if (departureTime.toObject().hours < 4 && currentTime.toObject().hours > 4){
+            // TODO test at midnight
+            departureTime = departureTime.add('1', 'd');
+        }
+        let formatTimeStamp = (moment(departureTime));
+        let timeDifference = currentTime.diff(formatTimeStamp);
         _self.$props.selectTravelDetails.TimeInfos[key].alreadyPassed = !(timeDifference > 0);
     }
 
