@@ -95,11 +95,11 @@
 <style scoped>
 
     .dock-top {
-        height: 30%;
+        height: 26%;
     }
 
     .dock-center {
-        height: 70%;
+        height: 78%;
     }
 
     .dock-top .top,
@@ -127,7 +127,7 @@
     .dock-top .top .top-title {
         flex-direction: row;
         align-items: center;
-        height: 22%;
+        height: 32%;
         width: 100%;
     }
 
@@ -135,6 +135,15 @@
         flex-direction: row;
         justify-content: space-between;
         height: 40%;
+        color: #1a0dab;
+        background-color: #ffffff;
+        border-radius: 20;
+        border-style: solid;
+        border-width: 1;
+        border-color: #1a0dab;
+        padding-right: 12;
+        padding-left: 12;
+        margin-bottom: 4%;
     }
 
     .dock-top .top .trainGeneral .element {
@@ -154,7 +163,7 @@
     .dock-top .top .trainIcons {
         flex-direction: row;
         justify-content: center;
-        height: 38%;
+        height: 20%;
     }
 
     .dock-top .top .trainIcons .fas {
