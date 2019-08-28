@@ -24,6 +24,9 @@ module.exports = (function () {
             case "KO":
                 _self.data = language.language.ko;
                 break;
+            case "NL":
+                _self.data = language.language.nl;
+                break;
             default:
                 //TODO remove
                 _self.data = language.language.en;
