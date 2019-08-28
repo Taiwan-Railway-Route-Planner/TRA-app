@@ -99,7 +99,7 @@
 
 <script>
 
-    import handle from "../../../assets/js/Vue/Route/handle"
+    import handle from "../../assets/js/Vue/Route/handle"
 
     export default {
         props: ['routeDetails', 'indexWithClosestToRealTime', 'timeTable'],
