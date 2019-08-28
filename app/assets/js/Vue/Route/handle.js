@@ -22,6 +22,9 @@ export default (function () {
             case "KO":
                 _self.data = language.language.ko;
                 break;
+            case "NL":
+                _self.data = language.language.nl;
+                break;
         }
     }
 

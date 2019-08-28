@@ -10,8 +10,8 @@ export default (function () {
     const handleSetUpOfVue = function (_self) {
         loadLanguage(_self);
         loadAllPossibleLanguages(_self);
-
     };
+
     function loadLanguage(_self) {
         switch (_self.$store.state.language) {
             case "EN":
@@ -22,6 +22,9 @@ export default (function () {
                 break;
             case "KO":
                 _self.data = language.language.ko;
+                break;
+            case "NL":
+                _self.data = language.language.nl;
                 break;
         }
     }
@@ -34,7 +37,7 @@ export default (function () {
 
     const saveLanguage = function (_self) {
         let abbrLanguage = _self.possibleLanguages[_self.selectedItem].abbr;
-        _self.$store.commit('updateLanguage',abbrLanguage);
+        _self.$store.commit('updateLanguage', abbrLanguage);
         loadLanguage(_self);
     };
 
