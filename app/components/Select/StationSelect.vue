@@ -22,7 +22,7 @@
             </DockLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose">
-                    <Label class="fas" :text="'\uf3c5' | unescape" ></Label>
+                    <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <Label class="fas" :text="'\uf005' | unescape"></Label>
@@ -47,18 +47,26 @@
                                 </FlexboxLayout>
                             </FlexboxLayout>
                         </StackLayout>
-                        <StackLayout v-else>
+                        <StackLayout v-else class="routeDetailsChoice">
+
                             <FlexboxLayout class="InfoDetails">
-                                <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                    <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
-                                    <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                <FlexboxLayout class="text">
+                                    <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
+                                        <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
+                                        <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                    </FlexboxLayout>
+                                    <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
+                                        <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
+                                        <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                                    </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                    <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
-                                    <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
-                                </FlexboxLayout>
+<!--                                <FlexboxLayout class="bubbleTea">-->
+                                    <Label class="fas bubble" :text="'\uf362' | unescape"></Label>
+<!--                                </FlexboxLayout>-->
                             </FlexboxLayout>
                         </StackLayout>
+
+
                         <FlexboxLayout class="InfoDetails timeDetails">
                             <Label :text="data.routeDetails.time.label"></Label>
                             <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
@@ -123,7 +131,7 @@
             },
             showSearch: async function (departureOrArrival) {
                 const isntEmpty = await handle.checkFirstIfTheElementsArentEmpty(this);
-                if (isntEmpty){
+                if (isntEmpty) {
                     this.data.searchBar.search = "";
                     this.search = true;
                     this.departureOrArrival = departureOrArrival;
@@ -134,7 +142,7 @@
                     }
                 }
             },
-            confirmSearch: async function (){
+            confirmSearch: async function () {
                 await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
@@ -147,7 +155,7 @@
                 );
             },
             navToStar: function () {
-                
+
             },
             navToSet: function () {
                 this.$goto("Settings");
@@ -158,7 +166,7 @@
 
 <style scoped>
 
-    .mainMenu{
+    .mainMenu {
         flex-direction: column;
     }
 
@@ -230,13 +238,35 @@
         padding: 12 4;
     }
 
+    .topRouteDetails .routeDetailsChoice .InfoDetails {
+        flex-direction: row;
+    }
+
+    .topRouteDetails .InfoDetails .text {
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .topRouteDetails .InfoDetails .bubbleTea{
+        width: 15%;
+        /*flex-direction: column;*/
+        background-color: #1a0dab;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+    }
+
+    .topRouteDetails .InfoDetails .bubble{
+        color: #ffffff;
+        width: 15%;
+    }
+
     .topRouteDetails .timeDetails {
         margin-top: 5%;
         flex-direction: row;
         justify-content: center;
     }
 
-    .confirmBtn{
+    .confirmBtn {
         flex-direction: row;
         justify-content: center;
         width: 80%;
