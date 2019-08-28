@@ -155,7 +155,7 @@
     }
 
     .dock-top .top .top-title {
-        height: 22%;
+        height: 26%;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
