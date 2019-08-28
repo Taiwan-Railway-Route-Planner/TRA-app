@@ -25,18 +25,18 @@ module.exports = (function () {
         },
         zh: {
             "top": {
-                "title": "Settings Menu"
+                "title": "設定功能表"
             },
             "center": {
                 "language":{
-                    "chooseTitle": "Choose your language",
-                    "button": "Save"
+                    "chooseTitle": "選擇你的語言",
+                    "button": "保存"
                 },
                 "otherInfo": {
-                    "rate": "Rate us on Google Play",
-                    "contactUs": "Email us",
-                    "openSource": "Visit the project on Github",
-                    "Version": "Version"
+                    "rate": "在Google Play上為我們評分",
+                    "contactUs": "電郵我們",
+                    "openSource": "訪問Github上的項目",
+                    "Version": "版"
                 }
             }
         },
@@ -54,6 +54,23 @@ module.exports = (function () {
                     contactUs: 'Email을 보내십시오',
                     openSource: 'Github 프로젝트 방문',
                     Version: '버전'
+                }
+            }
+        },
+        nl: {
+            "top": {
+                "title": "Instellingen"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Kies uw taal",
+                    "button": "Opslaan"
+                },
+                "otherInfo": {
+                    "rate": "Beoordeel ons op Google Play",
+                    "contactUs": "Mail ons",
+                    "openSource": "Bezoek het project op Github",
+                    "Version": "Versie"
                 }
             }
         }

@@ -168,6 +168,60 @@ module.exports = (function () {
                 button: '찾다'
             }
         },
+        nl: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation": "Van",
+                    "endStation": "Naar"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'NL',
+                departure: {
+                    details: {},
+                    "hint": "Kies een station",
+                    "label": "Van"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Kies een station",
+                    "label": "Naar"
+                },
+                time: {
+                    "label": "Tijd",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'nl',
+                    modal: {
+                        top: {
+                            "first": "VERTREK",
+                            "second": "AANKOMST"
+                        },
+                        center: {
+                            "button": "Nu",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "ANNULEREN",
+                            "rightBtn": "BEVESTIGEN"
+                        }
+                    }
+                },
+                "button": "ZOEKEN"
+            }
+        }
     };
 
 
