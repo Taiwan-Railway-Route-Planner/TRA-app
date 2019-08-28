@@ -19,6 +19,11 @@ module.exports = (function () {
             nameNative: '한국어',
             name: 'Korean',
             abbr: 'KO'
+        },
+        {
+            nameNative: 'Nederlands',
+            name: 'Dutch',
+            abbr: 'NL'
         }
     ];
 
