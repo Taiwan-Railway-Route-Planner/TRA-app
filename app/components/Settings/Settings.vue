@@ -33,7 +33,7 @@
                             <Label :text="data.center.otherInfo.rate"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
-                        <FlexboxLayout class="element details">
+                        <FlexboxLayout class="element details" @tap="openMail">
                             <Label :text="data.center.otherInfo.contactUs"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
@@ -52,6 +52,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/Settings/handle"
+    var utils = require('utils/utils');
 
     export default {
         created: function () {
@@ -75,6 +76,10 @@
             },
             saveNewLanguage: function () {
                 handle.saveLanguage(this);
+            },
+            openMail: function () {
+                //TODO add email
+                utils.openUrl("mailto:");
             }
         }
     }
