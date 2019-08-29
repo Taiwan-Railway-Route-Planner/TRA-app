@@ -4,7 +4,7 @@
 
 module.exports = (function () {
 
-    const HOME_IP = "depickeresven.github.io";
+    const HOME_IP = "taiwan-railway-route-planner.github.io";
     const BASE_URL = "https://" + HOME_IP + "/TRATimetableData/";
 
     const EXTERNALIP = "traapp.tk";
