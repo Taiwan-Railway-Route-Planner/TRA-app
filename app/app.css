@@ -18,13 +18,13 @@ Label, TextField, SearchBar, Button {
     font-size: 25;
 }
 
-TextField{
+TextField {
     background-color: transparent;
 }
 
 /*Button-Styling*/
 
-.btn{
+.btn {
     margin-bottom: 0;
     line-height: 1.42857143;
     text-align: center;
@@ -34,18 +34,18 @@ TextField{
     background-color: #1a0dab;
 }
 
-.btn-sq{
+.btn-sq {
     padding: 6;
 }
 
-.btn-wt{
+.btn-wt {
     color: #fff;
     z-index: 0;
 }
 
 /*BOTTOM NAVIGATION*/
 
-.bottom-menu{
+.bottom-menu {
     /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
@@ -53,11 +53,11 @@ TextField{
     /*width: 100%;*/
 }
 
-.bottom-menu .fas{
+.bottom-menu .fas {
     color: #1a0dab;
 }
 
-.bottom-menu .menu-choose{
+.bottom-menu .menu-choose {
     flex-direction: row;
     justify-content: center;
     border-color: #D3D3D3;
