@@ -29,7 +29,7 @@
                         <Button class="btn btn-wt" :text="data.center.language.button" @tap="saveNewLanguage"></Button>
                     </FlexboxLayout>
                     <FlexboxLayout class="otherInfo">
-                        <FlexboxLayout class="element details">
+                        <FlexboxLayout class="element details" @tap="openGooglePlay">
                             <Label :text="data.center.otherInfo.rate"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
@@ -37,7 +37,7 @@
                             <Label :text="data.center.otherInfo.contactUs"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
-                        <FlexboxLayout class="element details">
+                        <FlexboxLayout class="element details" @tap="openGithub">
                             <Label :text="data.center.otherInfo.openSource"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
@@ -80,6 +80,14 @@
             openMail: function () {
                 //TODO add email
                 utils.openUrl("mailto:");
+            },
+            openGooglePlay: function () {
+              //TODO add correct playstore
+              utils.openUrl("market://details?id= appPackageName");
+            },
+            openGithub: function () {
+                //TODO add correct webpage
+                utils.openUrl("github")
             }
         }
     }
