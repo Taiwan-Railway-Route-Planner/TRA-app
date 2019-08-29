@@ -9,7 +9,7 @@
                             <Label :text="$props.language.details.top.title"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
-                            <Label class="fas" :text="'\uf1e0' | unescape"></Label>
+                            <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"></Label>
                             <Label class="far" :text="'\uf005' | unescape"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
@@ -73,6 +73,8 @@
 
 <script>
 
+    import handle from "../../../assets/js/Vue/Route/TransfersOrNot/handle"
+
     export default {
         props: ['routeDetails', 'selectTravelDetails', 'language'],
         data() {
@@ -86,6 +88,9 @@
                         language: this.$props.language
                     }
                 })
+            },
+            shareToTheWorld: function () {
+                handle.share(this, false);
             }
         }
     }
