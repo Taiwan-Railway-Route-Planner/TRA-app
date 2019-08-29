@@ -25,7 +25,7 @@
                     <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
-                    <Label class="fas" :text="'\uf005' | unescape"></Label>
+<!--                    <Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToSet">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
