@@ -9,7 +9,7 @@ const handleNavigationForResults = require("./SetUp/handleNavigationForResults")
 const FeedbackPlugin = require("nativescript-feedback");
 const feedback = new FeedbackPlugin.Feedback();
 
-import { topmost } from "ui/frame"
+import {topmost} from "ui/frame"
 
 export default (function () {
 
@@ -28,9 +28,9 @@ export default (function () {
     }
 
     const checkFirstIfTheElementsArentEmpty = async function (_self) {
-        if (_self.filteredStations === null){
+        if (_self.filteredStations === null) {
             await initScreen.loadStationDetails(_self, requestBuilderForSelect);
-            if (_self.filteredStations === null){
+            if (_self.filteredStations === null) {
                 internetError(_self);
                 return false;
             } else {

@@ -31,7 +31,7 @@ module.exports = (function () {
             default:
                 //TODO remove
                 _self.data = language.language.en;
-                _self.$store.commit('updateLanguage',"EN");
+                _self.$store.commit('updateLanguage', "EN");
                 break;
         }
         setTime(_self);

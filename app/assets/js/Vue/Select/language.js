@@ -9,7 +9,7 @@ module.exports = (function () {
             "searchBar": {
                 "hintText": {
                     "now": "",
-                    "startStation":  "Select departure station",
+                    "startStation": "Select departure station",
                     "endStation": "Select arrival station"
                 },
                 "search": ""
@@ -64,7 +64,7 @@ module.exports = (function () {
             searchBar: {
                 hintText: {
                     now: '',
-                    startStation:  '選擇離開的車站',
+                    startStation: '選擇離開的車站',
                     endStation: '選擇抵達的車站'
                 },
                 search: ''
@@ -118,7 +118,7 @@ module.exports = (function () {
             searchBar: {
                 hintText: {
                     now: '',
-                    startStation:  '출발역 선택',
+                    startStation: '출발역 선택',
                     endStation: '도착역 선택'
                 },
                 search: ''

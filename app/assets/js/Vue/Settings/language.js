@@ -10,7 +10,7 @@ module.exports = (function () {
                 title: 'Settings Menu'
             },
             center: {
-                language:{
+                language: {
                     chooseTitle: 'Choose your language',
                     button: 'Save'
                 },
@@ -28,7 +28,7 @@ module.exports = (function () {
                 "title": "設定功能表"
             },
             "center": {
-                "language":{
+                "language": {
                     "chooseTitle": "選擇你的語言",
                     "button": "保存"
                 },
@@ -45,7 +45,7 @@ module.exports = (function () {
                 title: '설정메뉴'
             },
             center: {
-                language:{
+                language: {
                     chooseTitle: '당신의 언어를 선택하십시오',
                     button: '저장하다'
                 },

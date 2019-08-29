@@ -32,7 +32,7 @@ export default (function () {
         }
     }
 
-    function setHintTimeBasedOnTheLanguage(_self){
+    function setHintTimeBasedOnTheLanguage(_self) {
         switch (_self.$store.state.language) {
             case "EN":
                 return moment().format('llll');

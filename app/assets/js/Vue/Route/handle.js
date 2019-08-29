@@ -7,7 +7,7 @@ const moment = require("moment");
 
 export default (function () {
 
-    const handleIncomingRouteDetails = async function(_self) {
+    const handleIncomingRouteDetails = async function (_self) {
         loadLanguage(_self);
     };
 

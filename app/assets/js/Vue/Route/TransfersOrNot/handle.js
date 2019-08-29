@@ -16,7 +16,7 @@ export default (function () {
         // TODO if add new language
         switch (_self.$store.state.language) {
             case "EN":
-                return transferOrNot ? buildTransferSentence(_self,language.language.en.sentence) : buildSentence(_self,language.language.en.sentence);
+                return transferOrNot ? buildTransferSentence(_self, language.language.en.sentence) : buildSentence(_self, language.language.en.sentence);
             case "ZH":
                 return transferOrNot ? buildZHTransferSentence(_self, language.language.zh.sentence) : buildZHSentence(_self, language.language.zh.sentence);
             case "KO":
