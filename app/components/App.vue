@@ -47,7 +47,7 @@
         },
         methods: {
             navigateTo: function (language) {
-                this.$store.commit('updateLanguage',language);
+                this.$store.commit('updateLanguage', language);
                 // if (language === 'ZH'){
                 //     this.$navigateTo(zhStationSelect);
                 // } else {
@@ -61,7 +61,7 @@
 
 <style scoped>
 
-    .menu-top-title{
+    .menu-top-title {
         height: 20%;
         display: flex;
         justify-content: center;
@@ -70,13 +70,13 @@
         font-size: 30;
     }
 
-    .menu-center{
+    .menu-center {
         display: flex;
         flex-direction: column;
         height: 80%;
     }
 
-    .menu-center-title{
+    .menu-center-title {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -84,11 +84,11 @@
         font-size: 20;
     }
 
-    .menu-center-title Label{
+    .menu-center-title Label {
         padding-top: 5%;
     }
 
-    .menu-center-image{
+    .menu-center-image {
         display: flex;
         flex-direction: row;
         justify-content: center;

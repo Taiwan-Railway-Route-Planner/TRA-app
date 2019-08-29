@@ -13,7 +13,7 @@
 <style scoped>
 
     .modal {
-        backgroud-color: transparent;
+        background-color: transparent;
         height: 190;
         width: 250;
     }

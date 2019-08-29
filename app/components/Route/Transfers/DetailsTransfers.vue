@@ -137,7 +137,7 @@
 
     .dock-top .top .top-title .titles Label,
     .dock-top .top .routeDetails .timeDetails Label,
-    .dock-top .top .routeDetails .dateDetails .otherDetails Label  {
+    .dock-top .top .routeDetails .dateDetails .otherDetails Label {
         font-size: 24;
     }
 
@@ -220,15 +220,15 @@
         color: #1a0dab;
     }
 
-    .dock-center .listTrain{
+    .dock-center .listTrain {
         margin-left: 5%;
     }
 
-    .dock-center .listTrain .oneTrainElement{
+    .dock-center .listTrain .oneTrainElement {
         height: 180;
     }
 
-    .dock-center .listTrain .whiteSpace{
+    .dock-center .listTrain .whiteSpace {
         height: 10;
     }
 

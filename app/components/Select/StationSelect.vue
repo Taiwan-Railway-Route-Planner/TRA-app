@@ -22,7 +22,7 @@
             </DockLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose">
-                    <Label class="fas" :text="'\uf3c5' | unescape" ></Label>
+                    <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <Label class="fas" :text="'\uf005' | unescape"></Label>
@@ -123,7 +123,7 @@
             },
             showSearch: async function (departureOrArrival) {
                 const isntEmpty = await handle.checkFirstIfTheElementsArentEmpty(this);
-                if (isntEmpty){
+                if (isntEmpty) {
                     this.data.searchBar.search = "";
                     this.search = true;
                     this.departureOrArrival = departureOrArrival;
@@ -134,7 +134,7 @@
                     }
                 }
             },
-            confirmSearch: async function (){
+            confirmSearch: async function () {
                 await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
@@ -147,7 +147,7 @@
                 );
             },
             navToStar: function () {
-                
+
             },
             navToSet: function () {
                 this.$goto("Settings");
@@ -158,7 +158,7 @@
 
 <style scoped>
 
-    .mainMenu{
+    .mainMenu {
         flex-direction: column;
     }
 
@@ -236,7 +236,7 @@
         justify-content: center;
     }
 
-    .confirmBtn{
+    .confirmBtn {
         flex-direction: row;
         justify-content: center;
         width: 80%;

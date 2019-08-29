@@ -86,7 +86,7 @@
                 // TODO test out if it will always work
                 let _self = this;
                 // setTimeout(function () {
-                    _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
+                _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
                 // }, 500)
             },
         }

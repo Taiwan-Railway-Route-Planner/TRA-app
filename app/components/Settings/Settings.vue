@@ -52,6 +52,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/Settings/handle"
+
     var utils = require('utils/utils');
 
     export default {
@@ -82,8 +83,8 @@
                 utils.openUrl("mailto:");
             },
             openGooglePlay: function () {
-              //TODO add correct playstore
-              utils.openUrl("market://details?id= appPackageName");
+                //TODO add correct playstore
+                utils.openUrl("market://details?id= appPackageName");
             },
             openGithub: function () {
                 //TODO add correct webpage
