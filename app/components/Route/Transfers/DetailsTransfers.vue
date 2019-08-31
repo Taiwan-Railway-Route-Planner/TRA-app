@@ -32,16 +32,16 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-                <ListView for="item in $props.selectTravelDetails.Routes" class="listTrain" @itemTap="navigateToRouteDetails">
+                <ListView for="(item, index) in $props.selectTravelDetails.Routes" class="listTrain" @itemTap="navigateToRouteDetails">
                     <v-template>
                         <FlexboxLayout class="oneTrainElement" flexDirection="column">
                             <FlexboxLayout class="whiteSpace">
                             </FlexboxLayout>
                             <FlexboxLayout class="trainDetails">
                                 <FlexboxLayout class="trainTimeDetails">
-                                    <Label :text="item.TimeInfos[item.departureStation].DepTime"></Label>
+                                    <Label :text="$props.selectTravelDetails.details[index].start.time"></Label>
                                     <Label class="fas" :color="$props.language.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
-                                    <Label :text="item.TimeInfos[item.arrivalStation].ArrTime"></Label>
+                                    <Label :text="$props.selectTravelDetails.details[index].end.time"></Label>
                                 </FlexboxLayout>
                                 <FlexboxLayout class="route">
                                     <Label class="far" :text="'\uf111' | unescape"></Label>
@@ -51,8 +51,8 @@
                                     <Label class="far" :text="'\uf111' | unescape"></Label>
                                 </FlexboxLayout>
                                 <FlexboxLayout class="trainDestArrDetails">
-                                    <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$store.state.searchFile[item.departureStation].站名"></Label>
-                                    <Label v-else class="departure" :text="$store.state.searchFile[item.departureStation].eng站名"></Label>
+                                    <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$store.state.searchFile[$props.selectTravelDetails.details[index].start.code].站名"></Label>
+                                    <Label v-else class="departure" :text="$store.state.searchFile[$props.selectTravelDetails.details[index].start.code].eng站名"></Label>
                                     <FlexboxLayout class="trainDetailsIcons">
                                         <FlexboxLayout class="information">
                                             <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
@@ -67,8 +67,8 @@
                                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                                         </FlexboxLayout>
                                     </FlexboxLayout>
-                                    <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$store.state.searchFile[item.arrivalStation].站名"></Label>
-                                    <Label v-else class="arrival" :text="$store.state.searchFile[item.arrivalStation].eng站名"></Label>
+                                    <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$store.state.searchFile[$props.selectTravelDetails.details[index].end.code].站名"></Label>
+                                    <Label v-else class="arrival" :text="$store.state.searchFile[$props.selectTravelDetails.details[index].end.code].eng站名"></Label>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="whiteSpace">
