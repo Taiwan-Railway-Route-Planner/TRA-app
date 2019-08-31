@@ -45,7 +45,7 @@ export default (function () {
 
     function internetError(_self) {
         _self.feedback.warning({
-            title: "No Internet Connection",
+            title: _self.data.internetError,
             duration: 6000
         })
     }
