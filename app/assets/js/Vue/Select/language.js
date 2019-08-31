@@ -58,7 +58,8 @@ module.exports = (function () {
                 },
                 "button": "SEARCH"
             },
-            "error": "You didn't fill in a destination or departure!"
+            "error": "You didn't fill in a destination or departure!",
+            "internetError": "No internet connection!"
         },
         zh: {
             searchBar: {
@@ -112,7 +113,9 @@ module.exports = (function () {
                     }
                 },
                 button: '搜尋'
-            }
+            },
+            "error": "You didn't fill in a destination or departure!",
+            "internetError": "No internet connection!"
         },
         ko: {
             searchBar: {
@@ -166,7 +169,9 @@ module.exports = (function () {
                     }
                 },
                 button: '찾다'
-            }
+            },
+            "error": "You didn't fill in a destination or departure!",
+            "internetError": "No internet connection!"
         },
         nl: {
             searchBar: {
@@ -220,7 +225,9 @@ module.exports = (function () {
                     }
                 },
                 "button": "ZOEKEN"
-            }
+            },
+            "error": "You didn't fill in a destination or departure!",
+            "internetError": "No internet connection!"
         }
     };
 
