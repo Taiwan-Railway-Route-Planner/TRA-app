@@ -226,8 +226,8 @@ module.exports = (function () {
                 },
                 "button": "ZOEKEN"
             },
-            "error": "You didn't fill in a destination or departure!",
-            "internetError": "No internet connection!"
+            "error": "Je moet je VAN en NAAR invullen!",
+            "internetError": "Geen internet verbinding!"
         }
     };
 
