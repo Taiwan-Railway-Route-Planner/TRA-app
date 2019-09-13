@@ -3,7 +3,7 @@
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
                 <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""></Label>
-                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>
+<!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
