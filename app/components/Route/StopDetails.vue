@@ -89,6 +89,9 @@
                 _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
                 // }, 500)
             },
+            navigateBack : function () {
+
+            }
         }
     }
 </script>

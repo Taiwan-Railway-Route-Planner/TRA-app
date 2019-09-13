@@ -91,6 +91,9 @@
             },
             shareToTheWorld: function () {
                 handle.share(this, false);
+            },
+            navigateBack : function () {
+
             }
         }
     }
