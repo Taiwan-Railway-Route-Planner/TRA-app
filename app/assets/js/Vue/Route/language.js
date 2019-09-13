@@ -96,16 +96,16 @@ module.exports = (function () {
                     color: "#D00216"
                 }
             },
-            details: {
-                top: {
-                    title: 'Travel Details'
+            "details": {
+                "top": {
+                    "title": "旅行細節"
                 }
             },
-            stopDetails: {
-                top: {
-                    title: 'Train Details',
-                    type: 'Type',
-                    number: 'Number'
+            "stopDetails": {
+                "top": {
+                    "title": "火車詳情",
+                    "type": "類型",
+                    "number": "數"
                 }
             }
         },
