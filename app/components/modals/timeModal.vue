@@ -48,7 +48,7 @@
             return {
                 selectedDate: '',
                 selectedTime: '',
-                minDate: '01-01-2019',
+                minDate: '06-13-2019',
                 maxDate: '01-01-2020',
                 departureTimeOrArrivalTime: true
             }
