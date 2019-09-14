@@ -114,8 +114,8 @@ module.exports = (function () {
                 },
                 button: '搜尋'
             },
-            error: "",
-            internetError: ""
+            error: "離開的站!",
+            internetError: "沒有網絡連接"
         },
         ko: {
             searchBar: {
@@ -170,8 +170,8 @@ module.exports = (function () {
                 },
                 button: '찾다'
             },
-            error: "",
-            internetError: ""
+            error: "목적지나 출발을 입력하지 않았습니다!",
+            internetError: "인터넷에 연결되지 않음!"
         },
         nl: {
             searchBar: {
