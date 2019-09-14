@@ -15,6 +15,7 @@ module.exports = (function () {
 
     function loadLanguage(_self) {
         // TODO if add new language
+        console.log(_self.$store.state.language);
         switch (_self.$store.state.language) {
             case "EN":
                 _self.data = language.language.en;
@@ -27,11 +28,6 @@ module.exports = (function () {
                 break;
             case "NL":
                 _self.data = language.language.nl;
-                break;
-            default:
-                //TODO remove
-                _self.data = language.language.en;
-                _self.$store.commit('updateLanguage', "EN");
                 break;
         }
         setTime(_self);
