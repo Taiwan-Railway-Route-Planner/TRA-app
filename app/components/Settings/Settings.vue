@@ -88,7 +88,7 @@
             },
             openGithub: function () {
                 //TODO add correct webpage
-                utils.openUrl("github")
+                utils.openUrl("https://github.com/Taiwan-Railway-Route-Planner/TRA-app")
             }
         }
     }
