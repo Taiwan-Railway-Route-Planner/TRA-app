@@ -4,7 +4,7 @@
             <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
         </FlexboxLayout>
-        <FlexboxLayout dock="center">
+        <FlexboxLayout dock="center" class="center">
             <DatePicker v-model="$props.timeModal.selectedDate" :minDate="$props.timeModal.minDate"></DatePicker>
         </FlexboxLayout>
     </DockLayout>
@@ -22,7 +22,7 @@
             },
             confirm: function () {
                 this.$props.time.modal.center.date.today = moment(this.$props.timeModal.selectedDate).format();
-                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today)
+                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
                 this.$modal.close();
             }
         }
@@ -32,11 +32,15 @@
 <style scoped>
 
     .modal {
-        backgroud-color: white;
+        background-color: white;
         height: 350;
-        width: 250;
+        width: 280;
         text-align: left;
         color: #000;
+    }
+
+    .center{
+        justify-content: center;
     }
 
 </style>
