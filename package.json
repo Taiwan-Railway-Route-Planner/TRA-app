@@ -2,7 +2,7 @@
   "name": "tra-app",
   "version": "0.0.1",
   "description": "A native application built with NativeScript-Vue",
-  "author": "svend <sven.depickere@student.howest.be>",
+  "author": "wingcrowny@gmail.com",
   "license": "AGPL-3.0",
   "nativescript": {
     "id": "com.wingcrony.tra.app",
