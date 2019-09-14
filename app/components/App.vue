@@ -1,22 +1,20 @@
 <template>
     <Page actionBarHidden="true">
-        <DockLayout>
-            <FlexboxLayout dock="top" class="menu-top-title">
-                <Label text="Taiwan rail"></Label>
+        <DockLayout class="page">
+            <FlexboxLayout dock="top" class="mainMenu">
+                <Label class="title" text="TRA Route Planner"></Label>
             </FlexboxLayout>
-            <FlexboxLayout dock="center" class="menu-center">
-                <FlexboxLayout class="menu-center-title">
-                    <Label text="Choose your language"></Label>
-                    <Label text="選擇"></Label>
-                </FlexboxLayout>
-                <FlexboxLayout class="menu-center-image">
-                    <FlexboxLayout @tap="navigateTo('ZH')">
-                        <Image src="~/assets/images/taiwan.png" stretch="none"></Image>
-                    </FlexboxLayout>
-                    <FlexboxLayout @tap="navigateTo('EN')">
-                        <Image src="~/assets/images/english.png" stretch="none"></Image>
-                    </FlexboxLayout>
-                </FlexboxLayout>
+            <FlexboxLayout dock="bottom" class="menu-bottom">
+                <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"></Button>
+            </FlexboxLayout>
+            <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
+                <ListView for="(item, index) in languages" @itemTap="onItemTap">
+                    <v-template>
+                        <FlexboxLayout class="element">
+                            <Label class="top-text" :text="item.nameNative"></Label>
+                        </FlexboxLayout>
+                    </v-template>
+                </ListView>
             </FlexboxLayout>
         </DockLayout>
     </Page>
@@ -24,16 +22,29 @@
 
 <script>
 
+    import handle from "../assets/js/Vue/BootUp/handle"
+
     export default {
         created() {
-
+            handle.handle(this);
         },
         data() {
-            return {}
+            return {
+                languages: null,
+                data: {
+                    confirm: ""
+                },
+                selected: false,
+                saveAbbr: null
+            }
         },
         methods: {
-            navigateTo: function (language) {
-                this.$store.commit('updateLanguage', language);
+            onItemTap: function (event) {
+                handle.loadSelectedLanguage(this, event.item.abbr);
+            },
+            confirm: function () {
+                this.$store.commit('updateLanguage', this.saveAbbr);
+                this.$goto("Select");
             }
         }
     }
@@ -41,39 +52,48 @@
 
 <style scoped>
 
-    .menu-top-title {
-        height: 20%;
-        display: flex;
-        justify-content: center;
-        padding-top: 30%;
+    .page{
+        background-color: #1a0dab;
+        color: #ffffff;
+    }
+
+    .mainMenu {
         flex-direction: row;
-        font-size: 30;
-    }
-
-    .menu-center {
-        display: flex;
-        flex-direction: column;
-        height: 80%;
-    }
-
-    .menu-center-title {
-        display: flex;
         justify-content: center;
-        align-items: center;
+        margin-bottom: 10%;
+    }
+
+    .title {
+        font-size: 25;
+        color: #ffffff;
+        margin-top: 5%;
+    }
+
+    .menu-center{
         flex-direction: column;
+    }
+
+    .menu-center .element{
+        padding-top: 20%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-center .element .top-text{
         font-size: 20;
     }
 
-    .menu-center-title Label {
-        padding-top: 5%;
+    .menu-bottom{
+        justify-content: center;
     }
 
-    .menu-center-image {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        height: 70%;
+    .menu-bottom .btn{
+        height: 10%;
+        width: 80%;
+        background-color: #ffffff;
+        color: #1a0dab;
+        margin-bottom: 3%;
     }
+
 
 </style>
