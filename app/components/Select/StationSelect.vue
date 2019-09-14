@@ -1,5 +1,5 @@
 <template>
-    <Page actionBarHidden="true">
+    <Page actionBarHidden="true" @loaded="pageLoaded" @unloaded="pageUnloaded">
         <DockLayout>
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
@@ -89,6 +89,8 @@
     import timeModal from "../modals/timeModal"
     import loadingModal from "../modals/loadingModal"
 
+    let application = require('application');
+
     export default {
         async created() {
             this.formatTimeStampBasedOnLanguage = formatTimeStampBasedOnLanguage;
@@ -165,6 +167,26 @@
                 let switchDetails = this.data.routeDetails.departure.details;
                 this.data.routeDetails.departure.details = this.data.routeDetails.arrival.details;
                 this.data.routeDetails.arrival.details = switchDetails;
+            },
+            pageLoaded: function () {
+                // We only want to register the event in Android
+                if (application.android) {
+                    application.android.on(application.AndroidApplication.activityBackPressedEvent, this.backEvent);
+                }
+            },
+            pageUnloaded: function () {
+                // We only want to un-register the event on Android
+                if (application.android) {
+                    application.android.off(application.AndroidApplication.activityBackPressedEvent, this.backEvent);
+                }
+            },
+            backEvent: function (args) {
+                if (this.search) {
+                    args.cancel = true;
+                    this.search = false;
+                } else {
+                    args.cancel = false;
+                }
             }
         }
     }
