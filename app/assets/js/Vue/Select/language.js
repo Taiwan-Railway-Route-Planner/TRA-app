@@ -114,8 +114,8 @@ module.exports = (function () {
                 },
                 button: '搜尋'
             },
-            "error": "You didn't fill in a destination or departure!",
-            "internetError": "No internet connection!"
+            error: "",
+            internetError: ""
         },
         ko: {
             searchBar: {
@@ -170,8 +170,8 @@ module.exports = (function () {
                 },
                 button: '찾다'
             },
-            "error": "You didn't fill in a destination or departure!",
-            "internetError": "No internet connection!"
+            error: "",
+            internetError: ""
         },
         nl: {
             searchBar: {
@@ -226,8 +226,8 @@ module.exports = (function () {
                 },
                 "button": "ZOEKEN"
             },
-            "error": "Je moet je VAN en NAAR invullen!",
-            "internetError": "Geen internet verbinding!"
+            error: "Je moet je VAN en NAAR invullen!",
+            internetError: "Geen internet verbinding!"
         }
     };
 
