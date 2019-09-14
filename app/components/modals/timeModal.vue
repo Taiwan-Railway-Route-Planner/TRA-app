@@ -66,7 +66,7 @@
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
-                this.selectedDate = moment(this.time.modal.center.date.today).format('L');
+                this.selectedDate = moment(this.time.modal.center.date.today).toDate();
                 this.$showModal(dateModal, {
                         props: {
                             time: this.$props.time,
@@ -95,7 +95,7 @@
 <style scoped>
 
     .modal {
-        backgroud-color: white;
+        background-color: white;
         height: 400;
         width: 300;
         text-align: left;
