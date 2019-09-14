@@ -93,7 +93,7 @@
                 handle.share(this, false);
             },
             navigateBack : function () {
-
+                this.$back();
             }
         }
     }

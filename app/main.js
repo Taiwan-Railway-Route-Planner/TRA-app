@@ -38,6 +38,10 @@ Vue.prototype.$goto = function (to, props = null) {
   this.$navigateTo(this.$router[to], props)
 };
 
+Vue.prototype.$back = function () {
+  this.navigateBack();
+};
+
 new Vue({
   store,
   render: h => h('frame', [h(Select)])

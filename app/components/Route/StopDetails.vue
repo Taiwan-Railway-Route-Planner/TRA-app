@@ -90,7 +90,7 @@
                 // }, 500)
             },
             navigateBack : function () {
-
+                this.$back();
             }
         }
     }

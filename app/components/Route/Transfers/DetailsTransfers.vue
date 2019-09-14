@@ -103,7 +103,7 @@
                 handle.share(this, true);
             },
             navigateBack : function () {
-                
+                this.$back();
             }
         }
     }
