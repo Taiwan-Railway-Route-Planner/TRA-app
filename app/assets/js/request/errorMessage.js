@@ -5,7 +5,7 @@
 module.exports = (function () {
 
     const messages = {
-        eng: {
+        en: {
             stations: "Please, Try again later!",
             route: "We can't find any route for that day!"
         },
@@ -13,11 +13,11 @@ module.exports = (function () {
             stations: "",
             route: ""
         },
-        nl: {
+        ko: {
             stations: "",
             route: ""
         },
-        ko: {
+        nl: {
             stations: "",
             route: ""
         }
