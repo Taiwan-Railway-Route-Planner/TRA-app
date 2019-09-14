@@ -3,7 +3,7 @@
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
                 <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""></Label>
-                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>
+<!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
@@ -48,7 +48,7 @@
             return {
                 selectedDate: '',
                 selectedTime: '',
-                minDate: '01-01-2019',
+                minDate: '06-13-2019',
                 maxDate: '01-01-2020',
                 departureTimeOrArrivalTime: true
             }
@@ -66,7 +66,7 @@
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
-                this.selectedDate = moment(this.time.modal.center.date.today).format('L');
+                this.selectedDate = moment(this.time.modal.center.date.today).toDate();
                 this.$showModal(dateModal, {
                         props: {
                             time: this.$props.time,
@@ -95,7 +95,7 @@
 <style scoped>
 
     .modal {
-        backgroud-color: white;
+        background-color: white;
         height: 400;
         width: 300;
         text-align: left;

@@ -13,11 +13,20 @@ module.exports = (function () {
             Url: urlModule.url.easyToSearchStationInfo,
         }));
         if (response.error) {
-            // if (_self.$store.state.language === "ZH"){
-            //     response.msg = errorMessages.messages.zh.stations;
-            // } else {
-                response.msg = errorMessages.messages.eng.stations;
-            // }
+            switch (_self.$store.state.language) {
+                case "EN":
+                    response.msg = errorMessages.messages.en.stations;
+                    break;
+                case "ZH":
+                    response.msg = errorMessages.messages.zh.stations;
+                    break;
+                case "KO":
+                    response.msg = errorMessages.messages.ko.stations;
+                    break;
+                case "NL":
+                    response.msg = errorMessages.messages.nl.stations;
+                    break;
+            }
         }
         return response;
     };

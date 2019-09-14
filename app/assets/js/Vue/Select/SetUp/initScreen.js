@@ -28,11 +28,6 @@ module.exports = (function () {
             case "NL":
                 _self.data = language.language.nl;
                 break;
-            default:
-                //TODO remove
-                _self.data = language.language.en;
-                _self.$store.commit('updateLanguage', "EN");
-                break;
         }
         setTime(_self);
     }

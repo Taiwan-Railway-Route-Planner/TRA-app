@@ -3,8 +3,8 @@
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
-                    <FlexboxLayout class="top-title" @tap="navigateBack()">
-                        <Label class="fas" :text="'\uf060' | unescape"></Label>
+                    <FlexboxLayout class="top-title" @tap="navigateBackVue">
+<!--                        <Label class="fas" :text="'\uf060' | unescape"></Label>-->
                         <Label :text="$props.language.stopDetails.top.title"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout class="trainGeneral">
@@ -89,6 +89,9 @@
                 _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
                 // }, 500)
             },
+            navigateBackVue : function () {
+                // this.$back();
+            }
         }
     }
 </script>
@@ -130,6 +133,7 @@
         align-items: center;
         height: 32%;
         width: 100%;
+        text-align: center;
     }
 
     .dock-top .top .trainGeneral {

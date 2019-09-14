@@ -1,5 +1,5 @@
 import Vue from 'nativescript-vue'
-import App from './components/App'
+import Bootup from './components/App'
 import Select from './components/Select/StationSelect'
 import Route from "./components/Route/RouteSelect"
 import RouteDetails from "./components/Route/SingleTrain/Details"
@@ -23,7 +23,7 @@ Vue.filter('unescape', v => unescape(v));
 Vue.registerElement("Gif", () => Gif);
 
 const router = {
-  Bootup: App,
+  Bootup: Bootup,
   Select: Select,
   Route: Route,
   RouteDetails: RouteDetails,
@@ -37,8 +37,12 @@ Vue.prototype.$router = router;
 Vue.prototype.$goto = function (to, props = null) {
   this.$navigateTo(this.$router[to], props)
 };
+//
+// Vue.prototype.$back = function () {
+//   this.$navigateBack();
+// };
 
 new Vue({
   store,
-  render: h => h('frame', [h(Select)])
+  render: h => h('frame', [h(store.state.language !== null ? Select : Bootup)])
 }).$start();

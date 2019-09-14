@@ -101,7 +101,7 @@ module.exports = (function () {
     function internetError(_self) {
         _self.feedback.warning({
             title: "No Internet Connection",
-            message: "Can't find route without internet connection!",
+            message: _self._self.data.internetError,
             duration: 6000
         })
     }

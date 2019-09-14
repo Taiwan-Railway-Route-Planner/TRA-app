@@ -1,5 +1,5 @@
 <template>
-    <Page actionBarHidden="true">
+    <Page actionBarHidden="true" @loaded="pageLoaded" @unloaded="pageUnloaded">
         <DockLayout>
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
@@ -25,7 +25,7 @@
                     <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
-<!--                    <Label class="fas" :text="'\uf005' | unescape"></Label>-->
+                    <!--<Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToSet">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
@@ -35,7 +35,8 @@
                 <FlexboxLayout class="mainMenu">
                     <Label class="title" text="TRA Route Planner"></Label>
                     <StackLayout dock="top" class="topRouteDetails">
-                        <StackLayout v-if="$store.state.language === 'ZH'">
+
+                        <StackLayout v-if="$store.state.language === 'ZH'" class="routeDetailsChoice">
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="text">
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
@@ -46,10 +47,11 @@
                                         <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
                                         <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                     </FlexboxLayout>
-                                    <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"></Label>
                                 </FlexboxLayout>
+                                <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"></Label>
                             </FlexboxLayout>
                         </StackLayout>
+
                         <StackLayout v-else class="routeDetailsChoice">
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="text">
@@ -65,6 +67,7 @@
                                 <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"></Label>
                             </FlexboxLayout>
                         </StackLayout>
+
                         <FlexboxLayout class="InfoDetails timeDetails">
                             <Label :text="data.routeDetails.time.label"></Label>
                             <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
@@ -85,6 +88,8 @@
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
     import loadingModal from "../modals/loadingModal"
+
+    let application = require('application');
 
     export default {
         async created() {
@@ -162,6 +167,26 @@
                 let switchDetails = this.data.routeDetails.departure.details;
                 this.data.routeDetails.departure.details = this.data.routeDetails.arrival.details;
                 this.data.routeDetails.arrival.details = switchDetails;
+            },
+            pageLoaded: function () {
+                // We only want to register the event in Android
+                if (application.android) {
+                    application.android.on(application.AndroidApplication.activityBackPressedEvent, this.backEvent);
+                }
+            },
+            pageUnloaded: function () {
+                // We only want to un-register the event on Android
+                if (application.android) {
+                    application.android.off(application.AndroidApplication.activityBackPressedEvent, this.backEvent);
+                }
+            },
+            backEvent: function (args) {
+                if (this.search) {
+                    args.cancel = true;
+                    this.search = false;
+                } else {
+                    args.cancel = false;
+                }
             }
         }
     }
@@ -250,7 +275,7 @@
         width: 85%;
     }
 
-    .topRouteDetails .InfoDetails .fas{
+    .topRouteDetails .InfoDetails .fas {
         color: #1a0dab;
     }
 
