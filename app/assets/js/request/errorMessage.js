@@ -10,16 +10,16 @@ module.exports = (function () {
             route: "We can't find any route for that day!"
         },
         zh: {
-            stations: "",
-            route: ""
+            stations: "沒有網絡連接",
+            route: "那天我們找不到任何路線"
         },
         ko: {
-            stations: "",
-            route: ""
+            stations: "나중에 다시 시도하세요!",
+            route: "우리는 그 날에 대한 경로를 찾을 수 없습니다!"
         },
         nl: {
-            stations: "",
-            route: ""
+            stations: "Gelieve later nog eens te proberen!",
+            route: "Geen route mogelijk voor die dag!"
         }
     };
 
