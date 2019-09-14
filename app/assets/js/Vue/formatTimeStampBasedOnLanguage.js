@@ -6,6 +6,7 @@ const moment = require('moment');
 
 export default (function () {
 
+    // TODO refactor
     function formatTimeStampForModel(_self, timeMoment = moment()) {
         switch (_self.$store.state.language) {
             case "EN":
