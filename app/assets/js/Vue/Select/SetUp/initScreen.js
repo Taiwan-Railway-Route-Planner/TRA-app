@@ -15,7 +15,6 @@ module.exports = (function () {
 
     function loadLanguage(_self) {
         // TODO if add new language
-        console.log(_self.$store.state.language);
         switch (_self.$store.state.language) {
             case "EN":
                 _self.data = language.language.en;

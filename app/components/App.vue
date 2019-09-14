@@ -23,24 +23,10 @@
 </template>
 
 <script>
-    // import StationSelect from "./Select/StationSelect"
 
     export default {
         created() {
-            // switch (this.$store.state.language) {
-            //     case null:
-            //         console.log("Navigate to nowhere");
-            //         break;
-            //     case "ZH":
-            //         console.log("Navigate to station zh");
-            //         this.$navigateTo(zhStationSelect);
-            //         break;
-            //     case "EN":
-            //         console.log("Navigate to station eng");
-            //         this.$navigateTo(enStationSelect);
-            //         console.log("I can't be logged");
-            //         break;
-            // }
+
         },
         data() {
             return {}
@@ -48,12 +34,6 @@
         methods: {
             navigateTo: function (language) {
                 this.$store.commit('updateLanguage', language);
-                // if (language === 'ZH'){
-                //     this.$navigateTo(zhStationSelect);
-                // } else {
-                //     this.$navigateTo(enStationSelect);
-                // }
-                // this.$navigateTo(StationSelect)
             }
         }
     }
