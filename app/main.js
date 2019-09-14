@@ -37,10 +37,10 @@ Vue.prototype.$router = router;
 Vue.prototype.$goto = function (to, props = null) {
   this.$navigateTo(this.$router[to], props)
 };
-
-Vue.prototype.$back = function () {
-  this.navigateBack();
-};
+//
+// Vue.prototype.$back = function () {
+//   this.$navigateBack();
+// };
 
 new Vue({
   store,

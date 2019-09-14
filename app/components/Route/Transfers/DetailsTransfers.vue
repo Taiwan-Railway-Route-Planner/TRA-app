@@ -4,8 +4,8 @@
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
-                        <FlexboxLayout class="titles" @tap="navigateBack()">
-                            <Label class="fas" :text="'\uf060' | unescape"></Label>
+                        <FlexboxLayout class="titles" @tap="navigateBackVue">
+<!--                            <Label class="fas" :text="'\uf060' | unescape"></Label>-->
                             <Label :text="$props.language.details.top.title"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
@@ -102,8 +102,8 @@
             shareToTheWorld: function () {
                 handle.share(this, true);
             },
-            navigateBack : function () {
-                this.$back();
+            navigateBackVue : function () {
+                // this.$back();
             }
         }
     }
@@ -173,6 +173,7 @@
     .dock-top .top .top-title .titles {
         flex-direction: row;
         align-items: center;
+        text-align: center;
     }
 
     .dock-top .top .top-title .titles .fas {
