@@ -28,11 +28,20 @@ module.exports =  (function () {
         });
         response = response.data;
         if (response.error) {
-            // if (_self.$store.state.language === "ZH"){
-            //     response.msg = errorMessages.messages.zh.stations;
-            // } else {
-            response.msg = errorMessages.messages.eng.route;
-            // }
+            switch (_self.$store.state.language) {
+                case "EN":
+                    response.msg = errorMessages.messages.en.route;
+                    break;
+                case "ZH":
+                    response.msg = errorMessages.messages.zh.route;
+                    break;
+                case "KO":
+                    response.msg = errorMessages.messages.ko.route;
+                    break;
+                case "NL":
+                    response.msg = errorMessages.messages.nl.route;
+                    break;
+            }
         }
         return response;
     };
