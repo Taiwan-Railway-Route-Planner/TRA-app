@@ -10,8 +10,8 @@ module.exports = (function () {
             route: "We can't find any route for that day!"
         },
         zh: {
-            stations: "沒有網絡連接",
-            route: "那天我們找不到任何路線"
+            stations: "沒有網絡連接!",
+            route: "那天我們找不到任何路線!"
         },
         ko: {
             stations: "나중에 다시 시도하세요!",
