@@ -58,6 +58,11 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 應用程序中的加載GIF來自Dribbble上的 [Fayeliew](https://dribbble.com/fayeliew)
 
 
+## Download
+
+<a href="https://play.google.com/store/apps/details?id=com.wingcrony.tra.app" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
+
+
 ## Privacy notice
 
 I don't collect any data of where you go or when. I don't keep any records.
