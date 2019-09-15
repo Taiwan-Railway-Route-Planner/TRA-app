@@ -79,15 +79,12 @@
                 handle.saveLanguage(this);
             },
             openMail: function () {
-                //TODO add email
-                utils.openUrl("mailto:");
+                utils.openUrl("mailto:support@traapp.tk");
             },
             openGooglePlay: function () {
-                //TODO add correct playstore
-                utils.openUrl("market://details?id= appPackageName");
+                utils.openUrl("market://details?id=com.wingcrony.tra.app");
             },
             openGithub: function () {
-                //TODO add correct webpage
                 utils.openUrl("https://github.com/Taiwan-Railway-Route-Planner/TRA-app")
             }
         }
