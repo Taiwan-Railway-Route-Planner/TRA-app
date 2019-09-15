@@ -118,3 +118,29 @@ The unmodified data can be found here [TRAOriginalTimeTable](https://github.com/
 ## Questions / Problems
 
 If you have any question / problems just open an issue [this repo Github](https://github.com/Taiwan-Railway-Route-Planner/TRA-app/issues) or email me [support@traapp.tk](mailto:support@traapp.tk).
+
+
+## Languages 
+
+Currently we support the following languages:
+
+| Native name   | English Name  |
+| ------------- | ------------- |
+| 中文  | Traditional Chinese  |
+| 한국어  | Korean  |
+| English  | English  |
+| Nederlands  | Dutch  |
+
+If you want to help to make more translations available you can do that follow [this link](https://poeditor.com/join/project/9Aukv8rxJ5). \
+If you would rather use Github instead that's also possible All the translations are stored in [this repo](https://github.com/Taiwan-Railway-Route-Planner/TRA_Translations) just open an issue.
+
+Wanted languages are:
+
+| Native name   | English Name  |
+| ------------- | ------------- |
+| Deutsche  | German  |
+| Française  | French |
+| Pilipino  | Filipino  |
+| 日本語  | Japanese  |
+| ไทย  | Thai  |
+| Tiếng việt  | Vietnamese  |
