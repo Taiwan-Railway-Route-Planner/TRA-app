@@ -115,7 +115,7 @@ module.exports = (function () {
                 button: '搜尋'
             },
             error: "離開的站!",
-            internetError: "沒有網絡連接"
+            internetError: "沒有網絡連接!"
         },
         ko: {
             searchBar: {
@@ -227,7 +227,7 @@ module.exports = (function () {
                 "button": "ZOEKEN"
             },
             error: "Je moet je VAN en NAAR invullen!",
-            internetError: "Geen internet verbinding!"
+            internetError: "Geen internetverbinding!"
         }
     };
 
