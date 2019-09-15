@@ -81,14 +81,15 @@ Gives on the TRA website 3 possible route.
 On the Taiwan Railway Route Planner you will find 6 routes.
 
 
-<img src="https://user-images.githubusercontent.com/26543813/64919540-865b7c00-d7ac-11e9-806b-d9b573350d46.png" width="40%"><img src="https://user-images.githubusercontent.com/26543813/64919645-8a3bce00-d7ad-11e9-840f-f5b5d5a6ddda.png" height="50%"><img src="https://user-images.githubusercontent.com/26543813/64919753-e2270480-d7ae-11e9-9e21-068c91d2a4b7.png" height="50%">
+<img src="https://user-images.githubusercontent.com/26543813/64919540-865b7c00-d7ac-11e9-806b-d9b573350d46.png" width="60%"><img src="https://user-images.githubusercontent.com/26543813/64919645-8a3bce00-d7ad-11e9-840f-f5b5d5a6ddda.png" width="20%"><img src="https://user-images.githubusercontent.com/26543813/64919753-e2270480-d7ae-11e9-9e21-068c91d2a4b7.png" width="20%">
 
 
 `Chang Jung Christian University (長榮大學) -> Zhuifen (追分)`
 
 Gives no result on the TRA website
 On the Taiwan Railway Route Planner you will find many different routes to your destination.
-<img src="https://user-images.githubusercontent.com/26543813/64919735-b441c000-d7ae-11e9-9943-be9bc6716a84.png" width="40%"><img src="https://user-images.githubusercontent.com/26543813/64919760-f834c500-d7ae-11e9-9a16-d038d2bdbf4b.png" height=50%>
+
+<img src="https://user-images.githubusercontent.com/26543813/64919735-b441c000-d7ae-11e9-9943-be9bc6716a84.png" width="60%"><img src="https://user-images.githubusercontent.com/26543813/64919760-f834c500-d7ae-11e9-9a16-d038d2bdbf4b.png" width=20%>
 
 
 ## Architecture of the system
