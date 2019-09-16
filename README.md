@@ -65,7 +65,7 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 
 ## Privacy notice
 
-I don't collect any data of where you go or when. I don't keep any records.
+See this link: []()
 
 ## Difference between the app and then TRA-Website
 
