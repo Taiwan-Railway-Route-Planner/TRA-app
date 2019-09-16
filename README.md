@@ -28,7 +28,7 @@ The app is open-source check the Github link in the app.
 The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) on Dribbble
 
 
-# Taiwan Railway Route Planner 
+# 台灣鐵路路線圖規劃表
 
 計劃您在台灣鐵路的火車之旅
 
