@@ -65,7 +65,7 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 
 ## Privacy notice
 
-See this link: []()
+See this link [https://traapp.tk/privacy](https://traapp.tk/privacy)
 
 ## Difference between the app and then TRA-Website
 
