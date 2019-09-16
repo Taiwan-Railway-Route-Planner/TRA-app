@@ -25,6 +25,8 @@ Data provide by [DATA.GOV.TW](https://data.gov.tw/dataset/6138#r1)
 
 The app is open-source check the Github link in the app.
 
+I want also to thank my friends to help translate!
+
 The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) on Dribbble
 
 
@@ -54,6 +56,8 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 數據由 [DATA.GOV.TW](https://data.gov.tw/dataset/6138#r1)提供
 
 該應用程序是開源檢查應用程序中的Github鏈接。
+
+我還要感謝我的朋友們幫忙翻譯。
 
 應用程序中的加載GIF來自Dribbble上的 [Fayeliew](https://dribbble.com/fayeliew)
 
