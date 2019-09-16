@@ -38,7 +38,7 @@ export default (function () {
             case "EN":
                 return moment().format('llll');
             case "ZH":
-                return moment().format('llll');
+                return moment().format('llll').replace('一', '');
             case "KO":
                 return moment().format('ll') + " " + moment().locale('en-SG').format('LT');
             case "NL":
