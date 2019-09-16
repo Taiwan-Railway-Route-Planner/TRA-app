@@ -4,6 +4,9 @@ android {
   defaultConfig {  
     generatedDensities = []
     applicationId = "com.wingcrony.tra.app"
+    ndk {
+          abiFilters.clear()
+        }
   }
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
