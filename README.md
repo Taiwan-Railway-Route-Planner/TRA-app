@@ -12,6 +12,7 @@ Supports the following languages:
 - English
 - Korean
 - Dutch
+- Spanish
 
 More languages coming soon!
 
@@ -44,6 +45,7 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 - 英語
 - 韓國語
 - 荷蘭語
+- 西班牙語
 
 即將推出更多語言！
 
@@ -117,7 +119,7 @@ By example from [20190915](https://taiwan-railway-route-planner.github.io/TRATim
 The data comes from [DATA.GOV.TW](https://data.gov.tw/dataset/6138#r1). \
 I modify the data a little bit so I can search easier with it. \
 The modified data can be found here [TRATimetableData](https://github.com/Taiwan-Railway-Route-Planner/TRATimetableData). \
-The unmodified data can be found here [TRAOriginalTimeTable](https://github.com/Taiwan-Railway-Route-Planner/TRAOriginalTimeTable). \
+The unmodified data can be found here [TRAOriginalTimeTable](https://github.com/Taiwan-Railway-Route-Planner/TRAOriginalTimeTable). 
 
 
 ## Questions / Problems
@@ -135,6 +137,7 @@ Currently we support the following languages:
 | 한국어  | Korean  |
 | English  | English  |
 | Nederlands  | Dutch  |
+| Español | Spanish
 
 If you want to help to make more translations available you can do that follow [this link](https://poeditor.com/join/project/9Aukv8rxJ5). \
 If you would rather use Github instead that's also possible All the translations are stored in [this repo](https://github.com/Taiwan-Railway-Route-Planner/TRA_Translations) just open an issue.
@@ -149,3 +152,10 @@ Wanted languages are:
 | 日本語  | Japanese  |
 | ไทย  | Thai  |
 | Tiếng việt  | Vietnamese  |
+
+
+## Thank you very much
+
+I couldn't created this project without the support and help of the following persons:
+* 吳宛玲 Lilly Wu for translating to  中文  (Traditional Chinese)
+* Javier Pérez Gómez for translating to Español (Spanish)
