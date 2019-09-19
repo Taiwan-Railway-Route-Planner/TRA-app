@@ -73,6 +73,23 @@ module.exports = (function () {
                     "Version": "Versie"
                 }
             }
+        },
+        es: {
+            "top": {
+                "title": "Opciones"
+            },
+            "center": {
+                "language":{
+                    "chooseTitle": "Selecciona un idioma",
+                    "button": "Guardar"
+                },
+                "otherInfo": {
+                    "rate": "Calificamos en Google Play",
+                    "contactUs": "Contacta con nosotros mediante email",
+                    "openSource": "Visita la página del proyecto en Github",
+                    "Version": "Versión"
+                }
+            }
         }
     };
 
