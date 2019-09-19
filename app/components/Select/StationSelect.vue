@@ -69,8 +69,8 @@
                         </StackLayout>
 
                         <FlexboxLayout class="InfoDetails timeDetails">
-                            <Label :class="layoutStateLabel" :text="data.routeDetails.time.label"></Label>
-                            <TextField :class="layoutStateTextField" @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
+                            <Label :class="layoutStateLabelForTimeStamp" :text="data.routeDetails.time.label"></Label>
+                            <TextField :class="layoutStateTextFieldForTimeStamp" @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
                         </FlexboxLayout>
                         <FlexboxLayout class="confirmBtn" @tap="confirmSearch">
                             <Button class="btn btn-sq btn-wt" :text="data.routeDetails.button" @tap="confirmSearch"></Button>
@@ -117,6 +117,20 @@
                     active = true;
                 }
                 return active ? 'textFieldForSpanish' : 'textFieldForStandard';
+            },
+            layoutStateLabelForTimeStamp(){
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'timeStampLabelForSpanish' : 'labelForStandard';
+            },
+            layoutStateTextFieldForTimeStamp(){
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'timeStampTextFieldForSpanish' : 'textFieldForStandard';
             }
         },
         data() {
@@ -269,7 +283,7 @@
 
     .labelForStandard {
         width: 15%;
-        /*margin-left: 2%;*/
+        /*margin-left: 4%;*/
         align-self: center;
     }
 
@@ -289,6 +303,18 @@
         margin-right: 6%;
     }
 
+    .timeStampLabelForSpanish{
+        width: 35%;
+        /*margin-left: 2%;*/
+        align-self: center;
+    }
+
+
+    .timeStampTextFieldForSpanish{
+        width: 65%;
+        margin-right: 6%;
+    }
+
     .topRouteDetails .InfoDetails {
         border-color: #1a0dab;
         border-radius: 20;
@@ -302,7 +328,7 @@
 
     .topRouteDetails .routeDetailsChoice .InfoDetails {
         flex-direction: row;
-        /*align-items: center;*/
+        align-items: center;
     }
 
     .topRouteDetails .InfoDetails .text {
@@ -318,6 +344,7 @@
     .topRouteDetails .timeDetails {
         margin-top: 5%;
         flex-direction: row;
+        justify-content: center;
     }
 
     .confirmBtn {
