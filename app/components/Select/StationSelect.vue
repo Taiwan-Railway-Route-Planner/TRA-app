@@ -40,12 +40,12 @@
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="text">
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                        <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
-                                        <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                        <Label class="labelForStandard" @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
+                                        <TextField class="textFieldForStandard" @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.站名" :hint="data.routeDetails.departure.hint"></TextField>
                                     </FlexboxLayout>
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                        <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
-                                        <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                                        <Label class="labelForStandard" @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
+                                        <TextField class="textFieldForStandard" @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"></Label>
@@ -56,12 +56,12 @@
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="text">
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                        <Label @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
-                                        <TextField @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
+                                        <Label :class="layoutStateLabel" @tap="showSearch(true)" :text="data.routeDetails.departure.label"></Label>
+                                        <TextField :class="layoutStateTextField" @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"></TextField>
                                     </FlexboxLayout>
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                        <Label @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
-                                        <TextField @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
+                                        <Label :class="layoutStateLabel" @tap="showSearch(false)" :text="data.routeDetails.arrival.label"></Label>
+                                        <TextField :class="layoutStateTextField" @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"></TextField>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"></Label>
@@ -69,8 +69,8 @@
                         </StackLayout>
 
                         <FlexboxLayout class="InfoDetails timeDetails">
-                            <Label :text="data.routeDetails.time.label"></Label>
-                            <TextField @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
+                            <Label :class="layoutStateLabelForTimeStamp" :text="data.routeDetails.time.label"></Label>
+                            <TextField :class="layoutStateTextFieldForTimeStamp" @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"></TextField>
                         </FlexboxLayout>
                         <FlexboxLayout class="confirmBtn" @tap="confirmSearch">
                             <Button class="btn btn-sq btn-wt" :text="data.routeDetails.button" @tap="confirmSearch"></Button>
@@ -95,6 +95,43 @@
         async created() {
             this.formatTimeStampBasedOnLanguage = formatTimeStampBasedOnLanguage;
             await handle.setUpSelectVue(this);
+        },
+        computed: {
+            layoutStateLabel() {
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'labelForSpanish' : 'labelForStandard';
+            },
+            layoutStateTextField() {
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'textFieldForSpanish' : 'textFieldForStandard';
+            },
+            layoutStateButton(){
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'textFieldForSpanish' : 'textFieldForStandard';
+            },
+            layoutStateLabelForTimeStamp(){
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'timeStampLabelForSpanish' : 'labelForStandard';
+            },
+            layoutStateTextFieldForTimeStamp(){
+                let active = false;
+                if (this.$store.state.language === "ES"){
+                    active = true;
+                }
+                return active ? 'timeStampTextFieldForSpanish' : 'textFieldForStandard';
+            }
         },
         data() {
             return {
@@ -244,14 +281,37 @@
         justify-content: center;
     }
 
-    .topRouteDetails Label {
+    .labelForStandard {
         width: 15%;
-        margin-left: 2%;
+        /*margin-left: 4%;*/
         align-self: center;
     }
 
-    .topRouteDetails TextField {
+    .textFieldForStandard {
         width: 70%;
+        margin-right: 6%;
+    }
+
+    .labelForSpanish {
+        width: 25%;
+        /*margin-left: 2%;*/
+        align-self: center;
+    }
+
+    .textFieldForSpanish {
+        width: 65%;
+        margin-right: 6%;
+    }
+
+    .timeStampLabelForSpanish{
+        width: 35%;
+        /*margin-left: 2%;*/
+        align-self: center;
+    }
+
+
+    .timeStampTextFieldForSpanish{
+        width: 65%;
         margin-right: 6%;
     }
 
@@ -268,6 +328,7 @@
 
     .topRouteDetails .routeDetailsChoice .InfoDetails {
         flex-direction: row;
+        align-items: center;
     }
 
     .topRouteDetails .InfoDetails .text {
@@ -277,6 +338,7 @@
 
     .topRouteDetails .InfoDetails .fas {
         color: #1a0dab;
+        align-self: center;
     }
 
     .topRouteDetails .timeDetails {

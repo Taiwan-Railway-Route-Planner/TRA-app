@@ -228,6 +228,62 @@ module.exports = (function () {
             },
             error: "Je moet je VAN en NAAR invullen!",
             internetError: "Geen internetverbinding!"
+        },
+        es: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation":  "Selecciona la estación de origen",
+                    "endStation": "Selecciona la estación de destino"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'ES',
+                departure: {
+                    details: {},
+                    "hint": "Escoge una estación",
+                    "label": "Origen"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Escoge una estación",
+                    "label": "Destino"
+                },
+                time: {
+                    "label": "Fecha y hora",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'nl',
+                    modal: {
+                        top: {
+                            "first": "Salida",
+                            "second": "Llegada"
+                        },
+                        center: {
+                            "button": "Ahora",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "Descartar",
+                            "rightBtn": "Confirmar"
+                        }
+                    }
+                },
+                "button": "Buscar"
+            },
+            "error": "¡No has seleccionado estación de origen o destino!",
+            "internetError": "¡No hay conexión a internet!"
         }
     };
 

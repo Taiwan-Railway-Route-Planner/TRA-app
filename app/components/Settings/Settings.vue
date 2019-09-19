@@ -11,7 +11,7 @@
                     <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
-<!--                    <Label class="fas" :text="'\uf005' | unescape"></Label>-->
+                    <!--                    <Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
@@ -30,15 +30,15 @@
                     </FlexboxLayout>
                     <FlexboxLayout class="otherInfo">
                         <FlexboxLayout class="element details" @tap="openGooglePlay">
-                            <Label :text="data.center.otherInfo.rate"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.rate"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="element details" @tap="openMail">
-                            <Label :text="data.center.otherInfo.contactUs"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.contactUs"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="element details" @tap="openGithub">
-                            <Label :text="data.center.otherInfo.openSource"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.openSource"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
                         <Label class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"></Label>
@@ -58,6 +58,15 @@
     export default {
         created: function () {
             handle.handleSetUpOfVue(this);
+        },
+        computed: {
+            layoutStateLabel() {
+                let active = false;
+                if (this.$store.state.language === "ES") {
+                    active = true;
+                }
+                return active ? 'labelForSpanish' : 'labelForStandard';
+            }
         },
         data() {
             return {
@@ -146,8 +155,12 @@
         margin-right: 4%;
     }
 
-    .dock-center .settings .otherInfo Label {
+    .labelStandard {
         font-size: 20;
+    }
+
+    .labelForSpanish {
+        font-size: 16;
     }
 
     .dock-center .settings .otherInfo .element {

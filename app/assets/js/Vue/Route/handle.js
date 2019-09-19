@@ -26,6 +26,9 @@ export default (function () {
             case "NL":
                 _self.data = language.language.nl;
                 break;
+            case "ES":
+                _self.data = language.language.es;
+                break;
         }
     }
 

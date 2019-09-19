@@ -20,6 +20,10 @@ module.exports = (function () {
         nl: {
             stations: "Gelieve later nog eens te proberen!",
             route: "Geen route mogelijk voor die dag!"
+        },
+        es: {
+            "stations": "¡Por favor, inténtelo de nuevo más tarde!",
+            "route": "¡No hemos podido encontrar ningún itinerario para ese día!"
         }
     };
 
