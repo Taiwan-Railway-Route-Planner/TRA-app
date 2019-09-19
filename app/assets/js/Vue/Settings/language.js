@@ -84,7 +84,7 @@ module.exports = (function () {
                     "button": "Guardar"
                 },
                 "otherInfo": {
-                    "rate": "Calificamos en Google Play",
+                    "rate": "Valoranos en Google Play",
                     "contactUs": "Contacta con nosotros mediante email",
                     "openSource": "Visita la página del proyecto en Github",
                     "Version": "Versión"

@@ -245,16 +245,16 @@ module.exports = (function () {
                 language: 'ES',
                 departure: {
                     details: {},
-                    "hint": "Selecciona una estación",
+                    "hint": "Escoge una estación",
                     "label": "Origen"
                 },
                 arrival: {
                     details: {},
-                    "hint": "Selecciona una estación",
+                    "hint": "Escoge una estación",
                     "label": "Destino"
                 },
                 time: {
-                    "label": "Hora",
+                    "label": "Fecha y hora",
                     hint: '',
                     date: {
                         show: '',

@@ -215,7 +215,7 @@ module.exports = (function () {
         },
         es: {
             top: {
-                "first": "Estación origen",
+                "first": "Estación de origen",
                 "second": "Estación de destino"
             },
             trainTypes: {
