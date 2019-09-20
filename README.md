@@ -156,6 +156,6 @@ Wanted languages are:
 
 ## Thank you very much
 
-I couldn't created this project without the support and help of the following persons:
+I couldn't have created this project without the support and help of the following persons:
 * 吳宛玲 Lilly Wu for translating to  中文  (Traditional Chinese)
 * Javier Pérez Gómez for translating to Español (Spanish)
