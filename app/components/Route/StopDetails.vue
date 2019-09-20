@@ -4,7 +4,7 @@
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title" @tap="navigateBackVue">
-<!--                        <Label class="fas" :text="'\uf060' | unescape"></Label>-->
+                        <Label class="fas" :text="'\uf060' | unescape"></Label>
                         <Label :text="$props.language.stopDetails.top.title"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout class="trainGeneral">
@@ -83,14 +83,10 @@
         },
         methods: {
             onLoaded() {
-                // TODO test out if it will always work
-                let _self = this;
-                // setTimeout(function () {
-                _self.$refs.myList.nativeView.scrollToIndex(_self.startIndex);
-                // }, 500)
+                this.$refs.myList.nativeView.scrollToIndex(this.startIndex);
             },
             navigateBackVue : function () {
-                // this.$back();
+                this.$navigateBack();
             }
         }
     }
