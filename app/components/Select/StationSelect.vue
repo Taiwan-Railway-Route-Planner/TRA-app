@@ -3,7 +3,7 @@
         <DockLayout>
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
-                    <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged"></SearchBar>
+                    <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged" @clear="goBackToNormalScreen"></SearchBar>
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
                     <ScrollView>
@@ -167,6 +167,9 @@
                 } else {
                     this.data.routeDetails.arrival.details = event.item;
                 }
+                this.goBackToNormalScreen();
+            },
+            goBackToNormalScreen: function (){
                 this.search = false;
             },
             showSearch: async function (departureOrArrival) {
