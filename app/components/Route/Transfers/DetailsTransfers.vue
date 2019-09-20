@@ -5,7 +5,7 @@
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
                         <FlexboxLayout class="titles" @tap="navigateBackVue">
-<!--                            <Label class="fas" :text="'\uf060' | unescape"></Label>-->
+                            <Label class="fas" :text="'\uf060' | unescape"></Label>
                             <Label :text="$props.language.details.top.title"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
@@ -103,7 +103,7 @@
                 handle.share(this, true);
             },
             navigateBackVue : function () {
-                // this.$back();
+                this.$navigateBack();
             }
         }
     }
