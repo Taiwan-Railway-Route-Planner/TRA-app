@@ -32,45 +32,57 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="center">
-                <ListView v-if="$props.timeTable.multi" for="item in $props.timeTable.data" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
+                <ListView v-if="$props.timeTable.multi" for="(item, index) in $props.timeTable.data" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
                     <v-template>
                         <FlexboxLayout class="travelDetails">
-                            <FlexboxLayout class="timeDetails">
-                                <Label class="timeStamps" :text="item.startTime"></Label>
-                                <Label class="fas" :text="'\uf061'| unescape"></Label>
-                                <Label class="timeStamps" :text="item.endTime"></Label>
-                            </FlexboxLayout>
-                            <FlexboxLayout class="travelTime">
-                                <FlexboxLayout>
-                                    <Label class="far" :text="'\uf017' | unescape"></Label>
-                                    <Label :text="item.travelTime"></Label>
+                            <FlexboxLayout class="travelDetailsNoFare">
+                                <FlexboxLayout class="timeDetails">
+                                    <Label class="timeStamps" :text="item.startTime"></Label>
+                                    <Label class="fas" :text="'\uf061'| unescape"></Label>
+                                    <Label class="timeStamps" :text="item.endTime"></Label>
+                                </FlexboxLayout>
+                                <FlexboxLayout class="travelTime">
+                                    <FlexboxLayout>
+                                        <Label class="far" :text="'\uf017' | unescape"></Label>
+                                        <Label :text="item.travelTime"></Label>
+                                    </FlexboxLayout>
+                                </FlexboxLayout>
+                                <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                    <FlexboxLayout class="transfers">
+                                        <Label class="fas" :text="'\uf074' | unescape"></Label>
+                                        <Label :text="item.trainTypes.length"></Label>
+                                    </FlexboxLayout>
+                                </FlexboxLayout>
+                                <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
+                                    <FlexboxLayout class="transfers">
+                                        <Label class="fas" :text="'\uf074' | unescape"></Label>
+                                        <Label :text="item.trainTypes.length"></Label>
+                                    </FlexboxLayout>
+                                </FlexboxLayout>
+                                <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"></Label>
+                                    <FlexboxLayout class="transfers">
+                                        <Label class="fas" :text="'\uf074' | unescape"></Label>
+                                        <Label :text="item.trainTypes.length"></Label>
+                                    </FlexboxLayout>
                                 </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                <FlexboxLayout class="transfers">
-                                    <Label class="fas" :text="'\uf074' | unescape"></Label>
-                                    <Label :text="item.trainTypes.length"></Label>
+                            <FlexboxLayout class="fareDetails">
+                                <FlexboxLayout class="prices">
+                                    <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                                    <Label class="text" :text="item.prices.singlePrice"></Label>
                                 </FlexboxLayout>
-                            </FlexboxLayout>
-                            <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
-                                <FlexboxLayout class="transfers">
-                                    <Label class="fas" :text="'\uf074' | unescape"></Label>
-                                    <Label :text="item.trainTypes.length"></Label>
-                                </FlexboxLayout>
-                            </FlexboxLayout>
-                            <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
-                                <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"></Label>
-                                <FlexboxLayout class="transfers">
-                                    <Label class="fas" :text="'\uf074' | unescape"></Label>
-                                    <Label :text="item.trainTypes.length"></Label>
+                                <FlexboxLayout v-if="item.prices.ePrice !== null" class="prices">
+                                    <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                                    <Label class="text" :text="item.prices.ePrice"></Label>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                         </FlexboxLayout>
