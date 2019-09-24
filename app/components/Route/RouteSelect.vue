@@ -226,7 +226,6 @@
     .center .travelDetails {
         padding-top: 15%;
         padding-left: 15%;
-        /*flex-direction: column;*/
     }
 
     .center .travelDetails .travelDetailsNoFare {
