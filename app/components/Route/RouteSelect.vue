@@ -25,7 +25,7 @@
                     <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
-                    <!--                    <Label class="fas" :text="'\uf005' | unescape"></Label>-->
+                    <!--<Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToSet">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
@@ -79,18 +79,30 @@
                 <ListView v-else for="item in $props.timeTable.data" @itemTap="onItemTap" ref="myList" @loaded="onLoaded">
                     <v-template>
                         <FlexboxLayout class="travelDetails">
-                            <FlexboxLayout class="timeDetails">
-                                <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
-                                <Label class="fas" :text="'\uf061'| unescape"></Label>
-                                <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                            <FlexboxLayout class="travelDetailsNoFare">
+                                <FlexboxLayout class="timeDetails">
+                                    <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
+                                    <Label class="fas" :text="'\uf061'| unescape"></Label>
+                                    <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                                </FlexboxLayout>
+                                <FlexboxLayout class="travelTime">
+                                    <Label class="far" :text="'\uf017' | unescape"></Label>
+                                    <Label :text="item.travelTime"></Label>
+                                </FlexboxLayout>
+                                <FlexboxLayout class="typeOfTrain">
+                                    <Label class="fas" :color="data.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
+                                    <Label :text="data.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
+                                </FlexboxLayout>
                             </FlexboxLayout>
-                            <FlexboxLayout class="travelTime">
-                                <Label class="far" :text="'\uf017' | unescape"></Label>
-                                <Label :text="item.travelTime"></Label>
-                            </FlexboxLayout>
-                            <FlexboxLayout class="typeOfTrain">
-                                <Label class="fas" :color="data.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
-                                <Label :text="data.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
+                            <FlexboxLayout class="fareDetails">
+                                <FlexboxLayout class="prices">
+                                    <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                                    <Label class="text" :text="item.singlePrice"></Label>
+                                </FlexboxLayout>
+                                <FlexboxLayout v-if="item.ePrice !== null" class="prices">
+                                    <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                                    <Label class="text" :text="item.ePrice"></Label>
+                                </FlexboxLayout>
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </v-template>
@@ -185,7 +197,7 @@
         align-items: center;
     }
 
-    .top .fas{
+    .top .fas {
         font-size: 30;
         margin-right: 6%;
     }
@@ -202,8 +214,34 @@
     .center .travelDetails {
         padding-top: 15%;
         padding-left: 15%;
-        flex-direction: column;
+        /*flex-direction: column;*/
     }
+
+    .center .travelDetails .travelDetailsNoFare {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .center .travelDetails .fareDetails {
+        width: 20%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .center .travelDetails .fareDetails .prices {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .center .travelDetails .fareDetails .prices .fas {
+        font-size: 20;
+    }
+
+    .center .travelDetails .fareDetails .prices .text {
+        padding-left: 4%;
+    }
+
 
     .center .travelDetails .timeDetails {
         padding-bottom: 15%;
