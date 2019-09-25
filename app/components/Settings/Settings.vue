@@ -29,6 +29,10 @@
                         <Button class="btn btn-wt" :text="data.center.language.button" @tap="saveNewLanguage"></Button>
                     </FlexboxLayout>
                     <FlexboxLayout class="otherInfo">
+                        <FlexboxLayout class="element details" @tap="openMoreInfo">
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.support"></Label>
+                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                        </FlexboxLayout>
                         <FlexboxLayout class="element details" @tap="openGooglePlay">
                             <Label :class="layoutStateLabel" :text="data.center.otherInfo.rate"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
@@ -95,6 +99,9 @@
             },
             openGithub: function () {
                 utils.openUrl("https://github.com/Taiwan-Railway-Route-Planner/TRA-app")
+            },
+            openMoreInfo: function () {
+
             }
         }
     }
@@ -131,7 +138,7 @@
     .dock-center .settings .languagesSettings {
         flex-direction: column;
         width: 100%;
-        height: 60%;
+        height: 55%;
     }
 
     .dock-center .settings .languagesSettings .listPickerLanguagesSettings {
@@ -151,7 +158,7 @@
 
     .dock-center .settings .otherInfo {
         flex-direction: column;
-        height: 40%;
+        height: 45%;
         margin-right: 4%;
     }
 
