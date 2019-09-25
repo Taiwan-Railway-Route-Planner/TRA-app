@@ -29,6 +29,11 @@ module.exports = (function () {
             nameNative: 'Español',
             name: 'Spanish',
             abbr: 'ES'
+        },
+        {
+            nameNative: 'Deutsche',
+            name: 'German',
+            abbr: 'DE'
         }
     ];
 
