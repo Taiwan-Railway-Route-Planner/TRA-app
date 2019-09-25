@@ -67,22 +67,20 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
                 <FlexboxLayout class="extraDetails">
-<!--                    <FlexboxLayout class="">-->
-                        <FlexboxLayout class="prices">
-                            <Label class="fas" :text="'\uf3ff' | unescape"></Label>
-                            <Label class="text" :text="$props.selectTravelDetails.singlePrice + ' NT$'"></Label>
-                            <Label class="text" :text="$props.language.details.price.single"></Label>
-                        </FlexboxLayout>
-                        <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
-                            <Image src="~/assets/images/easycard.png" stretch="none"></Image>
-                            <Label class="text" :text="$props.selectTravelDetails.ePrice + ' NT$'"></Label>
-                            <Label class="text" :text="$props.language.details.price.ePrice"></Label>
-                        </FlexboxLayout>
+                    <FlexboxLayout class="prices">
+                        <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                        <Label class="text" :text="$props.selectTravelDetails.singlePrice + ' NT$'"></Label>
+                        <Label class="text" :text="$props.language.details.price.single"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
+                        <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                        <Label class="text" :text="$props.selectTravelDetails.ePrice + ' NT$'"></Label>
+                        <Label class="text" :text="$props.language.details.price.ePrice"></Label>
+                    </FlexboxLayout>
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf4d7' | unescape"></Label>
                         <Label class="text" :text="$props.selectTravelDetails.distance + ' km'"></Label>
                     </FlexboxLayout>
-<!--                    </FlexboxLayout>-->
                 </FlexboxLayout>
             </FlexboxLayout>
         </DockLayout>
@@ -110,7 +108,7 @@
             shareToTheWorld: function () {
                 handle.share(this, false);
             },
-            navigateBackVue : function () {
+            navigateBackVue: function () {
                 this.$navigateBack();
             }
         }
@@ -336,9 +334,10 @@
         width: 15%;
     }
 
-    .dock-center .extraDetails{
+    .dock-center .extraDetails {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         margin-top: 10%;
         color: #1a0dab;
         margin-left: 2%;
@@ -358,7 +357,7 @@
         /*padding-left: 4%;*/
     }
 
-    .dock-center .extraDetails .prices Label{
+    .dock-center .extraDetails .prices Label {
         margin-top: 4%;
     }
 
