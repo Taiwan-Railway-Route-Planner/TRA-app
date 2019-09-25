@@ -7,7 +7,13 @@ module.exports = (function () {
     let language = {
         en: {
             top: {
-                title: ""
+                title: "Information"
+            },
+            information: {
+                intro: "If you want to help with translating to other languages.",
+            },
+            thanks:{
+                intro: "I would like to thank the following persons for helping translating:"
             }
         },
         zh: {
