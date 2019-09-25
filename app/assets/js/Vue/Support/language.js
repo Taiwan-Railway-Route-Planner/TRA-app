@@ -10,7 +10,8 @@ module.exports = (function () {
                 title: "Information"
             },
             information: {
-                intro: "If you want to help with translating to other languages.",
+                intro: "If you want to help, you can help translating the following languages:",
+                btn: "Help us."
             },
             thanks:{
                 intro: "I would like to thank the following persons for helping translating:"
