@@ -18,7 +18,20 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-
+                <FlexboxLayout class="information">
+                    <Label class="" textWrap="true" @tap="goToTranslatingPage" :text="data.information.intro"></Label>
+                </FlexboxLayout>
+                <FlexboxLayout class="thankyou">
+                    <Label class="message" textWrap="true" :text="data.thanks.intro"></Label>
+                    <ListView class="listGroup" for="item in persons" separatorColor="transparent">
+                        <v-template>
+                            <FlexboxLayout class="detailsPerson">
+                                <Label class="" :text="item.name"></Label>
+                                <Label class="spaceAround" :text="item.language"></Label>
+                            </FlexboxLayout>
+                        </v-template>
+                    </ListView>
+                </FlexboxLayout>
             </FlexboxLayout>
         </DockLayout>
     </Page>
@@ -27,6 +40,8 @@
 <script>
     
     import handle from "../../assets/js/Vue/Support/handle"
+
+    var utils = require('utils/utils');
     
     export default {
         created: function () {
@@ -34,7 +49,17 @@
         },
         data () {
             return {
-                data: null
+                data: null,
+                persons: [
+                    {
+                        name: "吳宛玲 Lilly Wu",
+                        language: "中文 (Traditional Chinese)"
+                    },
+                    {
+                        name: "Javier Pérez Gómez",
+                        language: "Español (Spanish)"
+                    }
+                ]
             }
         },
         methods: {
@@ -43,6 +68,9 @@
             },
             navToStar: function () {
 
+            },
+            goToTranslatingPage: function () {
+                utils.openUrl("https://poeditor.com/join/project/9Aukv8rxJ5")
             }
         }
     }
@@ -67,6 +95,40 @@
         font-size: 24;
     }
 
+    .dock-center{
+        flex-direction: column;
+        width: 100%;
+    }
 
+    .dock-center .information,
+    .dock-center .thankyou{
+        margin-top: 6%;
+        text-align: center;
+    }
+
+    .dock-center .thankyou{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dock-center .thankyou .message{
+        margin-top: 4%;
+    }
+
+    .dock-center .thankyou .listGroup {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dock-center .thankyou .listGroup .detailsPerson{
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 8%;
+        font-size: 14;
+    }
+
+    .dock-center .thankyou .listGroup .detailsPerson .spaceAround{
+        padding-left: 4%;
+    }
 
 </style>
