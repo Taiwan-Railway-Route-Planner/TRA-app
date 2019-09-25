@@ -11,7 +11,7 @@
                     <Label class="fas" :text="'\uf3c5' | unescape"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
-                    <!--                    <Label class="fas" :text="'\uf005' | unescape"></Label>-->
+                    <!--<Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose">
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
@@ -101,7 +101,7 @@
                 utils.openUrl("https://github.com/Taiwan-Railway-Route-Planner/TRA-app")
             },
             openMoreInfo: function () {
-
+                this.$goto("Support");
             }
         }
     }
