@@ -11,7 +11,7 @@ module.exports = (function () {
             },
             information: {
                 intro: "If you want to help, you can help translating the following languages:",
-                btn: "Help us."
+                btn: "Help translating"
             },
             thanks:{
                 intro: "I would like to thank the following persons for helping translating:"
