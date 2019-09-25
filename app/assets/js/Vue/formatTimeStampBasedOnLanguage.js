@@ -19,6 +19,8 @@ export default (function () {
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
             case "ES":
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "DE":
+                return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
         }
     }
 
@@ -34,6 +36,8 @@ export default (function () {
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
             case "ES":
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "DE":
+                return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
         }
     }
 
@@ -48,6 +52,8 @@ export default (function () {
             case "NL":
                 return moment().format('llll');
             case "ES":
+                return moment().format('llll');
+            case "DE":
                 return moment().format('llll');
         }
     }

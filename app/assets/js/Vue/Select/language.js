@@ -233,7 +233,7 @@ module.exports = (function () {
             searchBar: {
                 hintText: {
                     now: '',
-                    "startStation":  "Selecciona la estación de origen",
+                    "startStation": "Selecciona la estación de origen",
                     "endStation": "Selecciona la estación de destino"
                 },
                 search: ''
@@ -284,6 +284,62 @@ module.exports = (function () {
             },
             "error": "¡No has seleccionado estación de origen o destino!",
             "internetError": "¡No hay conexión a internet!"
+        },
+        de: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation": "Wähle eine Abfahrtshaltestelle",
+                    "endStation": "Wähle eine Ankunftshaltestelle"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'ES',
+                departure: {
+                    details: {},
+                    "hint": "Wähle eine Haltestelle",
+                    "label": "Von"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Wähle eine Haltestelle",
+                    "label": "Zu"
+                },
+                time: {
+                    "label": "Abfahrtszeitpunkt",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'nl',
+                    modal: {
+                        top: {
+                            "first": "ABFAHRT",
+                            "second": "ANKUNFT"
+                        },
+                        center: {
+                            "button": "Jetzt",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "VERWERFEN",
+                            "rightBtn": "BESTÄTIGEN"
+                        }
+                    }
+                },
+                "button": "SUCHE"
+            },
+            "error": "Du hast kein Ziel oder einen Startpunkt angegeben!",
+            "internetError": "Keine Internetverbindung !"
         }
     };
 

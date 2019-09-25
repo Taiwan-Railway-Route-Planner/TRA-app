@@ -29,6 +29,9 @@ module.exports = (function () {
                 case "ES":
                     response.msg = errorMessages.messages.es.stations;
                     break;
+                case "DE":
+                    response.msg = errorMessages.messages.de.stations;
+                    break;
             }
         }
         return response;

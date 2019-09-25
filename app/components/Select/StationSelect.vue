@@ -119,18 +119,24 @@
                 return active ? 'textFieldForSpanish' : 'textFieldForStandard';
             },
             layoutStateLabelForTimeStamp(){
-                let active = false;
-                if (this.$store.state.language === "ES"){
-                    active = true;
+                switch (this.$store.state.language) {
+                    case "ES":
+                        return "timeStampLabelForSpanish";
+                    case "DE":
+                        return "timeStampLabelForGerman";
+                    default:
+                        return "labelForStandard";
                 }
-                return active ? 'timeStampLabelForSpanish' : 'labelForStandard';
             },
             layoutStateTextFieldForTimeStamp(){
-                let active = false;
-                if (this.$store.state.language === "ES"){
-                    active = true;
+                switch (this.$store.state.language) {
+                    case "ES":
+                        return "timeStampTextFieldForSpanish";
+                    case "DE":
+                        return "timeStampTextFieldForGerman";
+                    default:
+                        return "textFieldForStandard";
                 }
-                return active ? 'timeStampTextFieldForSpanish' : 'textFieldForStandard';
             }
         },
         data() {
@@ -309,6 +315,18 @@
     .timeStampLabelForSpanish{
         width: 35%;
         /*margin-left: 2%;*/
+        align-self: center;
+    }
+
+    .textFieldForGerman {
+        width: 62%;
+        margin-right: 6%;
+    }
+
+    .timeStampLabelForGerman{
+        width: 38%;
+        /*margin-left: 2%;*/
+        font-size: 14;
         align-self: center;
     }
 

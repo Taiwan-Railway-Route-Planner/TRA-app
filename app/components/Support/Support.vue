@@ -68,12 +68,13 @@
                     {
                         name: "Javier Pérez Gómez",
                         language: "Español (Spanish)"
+                    },
+                    {
+                        name: "Marvin Plum",
+                        language: "Deutsche (German)"
                     }
                 ],
                 languages: [
-                    {
-                        name: "Deutsche"
-                    },
                     {
                         name: "Française"
                     },

@@ -13,6 +13,7 @@ Supports the following languages:
 - Korean
 - Dutch
 - Spanish
+- German
 
 More languages coming soon!
 
@@ -46,6 +47,7 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 - 韓國語
 - 荷蘭語
 - 西班牙語
+- 德語
 
 即將推出更多語言！
 
@@ -137,7 +139,8 @@ Currently we support the following languages:
 | 한국어  | Korean  |
 | English  | English  |
 | Nederlands  | Dutch  |
-| Español | Spanish
+| Español | Spanish |
+| Deutsche  | German  |
 
 If you want to help to make more translations available you can do that follow [this link](https://poeditor.com/join/project/9Aukv8rxJ5). \
 If you would rather use Github instead that's also possible All the translations are stored in [this repo](https://github.com/Taiwan-Railway-Route-Planner/TRA_Translations) just open an issue.
@@ -146,7 +149,6 @@ Wanted languages are:
 
 | Native name   | English Name  |
 | ------------- | ------------- |
-| Deutsche  | German  |
 | Française  | French |
 | Pilipino  | Filipino  |
 | 日本語  | Japanese  |
@@ -159,3 +161,4 @@ Wanted languages are:
 I couldn't have created this project without the support and help of the following persons:
 * 吳宛玲 Lilly Wu for translating to  中文  (Traditional Chinese)
 * Javier Pérez Gómez for translating to Español (Spanish)
+* Marvin Plum for translating to Deutsche (German) 

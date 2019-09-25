@@ -16,6 +16,12 @@ module.exports = (function () {
         },
         nl: {
             sentence: "Ik neem de trein van POINTA om TIMEA en kom aan in POINTB om TIMEB. \nDownload de app https://www.traapp.tk "
+        },
+        es: {
+            sentence: "Ik neem de trein van POINTA om TIMEA en kom aan in POINTB om TIMEB. \nDownload de app https://www.traapp.tk "
+        },
+        de: {
+            sentence: "Ik neem de trein van POINTA om TIMEA en kom aan in POINTB om TIMEB. \nDownload de app https://www.traapp.tk "
         }
     };
 

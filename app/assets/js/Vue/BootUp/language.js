@@ -19,6 +19,9 @@ module.exports = (function () {
         },
         es: {
             confirm: "Confirmar"
+        },
+        de: {
+            confirm: "BESTÄTIGEN"
         }
     };
 
