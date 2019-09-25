@@ -31,14 +31,14 @@ module.exports = (function () {
         },
         ko: {
             top: {
-                title: ""
+                title: "정보"
             },
             information: {
-                intro: "",
-                btn: ""
+                intro: "도움이 필요하면 다음 언어를 번역하는 데 도움이 될 수 있습니다.",
+                btn: "번역 도움말"
             },
             thanks:{
-                intro: ""
+                intro: "번역에 도움을 주신 다음 분들께 감사드립니다."
             }
         },
         nl: {
