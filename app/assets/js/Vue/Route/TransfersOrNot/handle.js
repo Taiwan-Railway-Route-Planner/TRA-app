@@ -23,6 +23,10 @@ export default (function () {
                 return transferOrNot ? buildTransferSentence(_self, language.language.ko.sentence) : buildSentence(_self, language.language.ko.sentence);
             case "NL":
                 return transferOrNot ? buildTransferSentence(_self, language.language.nl.sentence) : buildSentence(_self, language.language.nl.sentence);
+            case "ES":
+                return transferOrNot ? buildTransferSentence(_self, language.language.es.sentence) : buildSentence(_self, language.language.es.sentence);
+            case "DE":
+                return transferOrNot ? buildTransferSentence(_self, language.language.de.sentence) : buildSentence(_self, language.language.de.sentence);
         }
     }
 
