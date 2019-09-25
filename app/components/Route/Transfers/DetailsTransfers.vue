@@ -10,7 +10,7 @@
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
                             <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"></Label>
-<!--                            <Label class="far" :text="'\uf005' | unescape"></Label>-->
+                            <!--<Label class="far" :text="'\uf005' | unescape"></Label>-->
                         </FlexboxLayout>
                     </FlexboxLayout>
                     <FlexboxLayout class="routeDetails">
