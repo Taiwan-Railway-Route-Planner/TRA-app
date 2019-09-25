@@ -15,6 +15,7 @@ module.exports = (function () {
                     button: 'Save'
                 },
                 otherInfo: {
+                    support: "More information",
                     rate: 'Rate us on Google Play',
                     contactUs: 'Email us',
                     openSource: 'Visit the project on Github',
@@ -33,6 +34,7 @@ module.exports = (function () {
                     "button": "保存"
                 },
                 "otherInfo": {
+                    "support": "更多信息",
                     "rate": "在Google Play上為我們評分",
                     "contactUs": "電郵我們",
                     "openSource": "訪問Github上的項目",
@@ -50,6 +52,7 @@ module.exports = (function () {
                     button: '저장하다'
                 },
                 otherInfo: {
+                    support: "추가 정보",
                     rate: 'Google Play에 대한 평가',
                     contactUs: 'Email을 보내십시오',
                     openSource: 'Github 프로젝트 방문',
@@ -67,6 +70,7 @@ module.exports = (function () {
                     "button": "Opslaan"
                 },
                 "otherInfo": {
+                    "support": "Meer informatie",
                     "rate": "Beoordeel ons op Google Play",
                     "contactUs": "Mail ons",
                     "openSource": "Bezoek het project op Github",
@@ -84,6 +88,7 @@ module.exports = (function () {
                     "button": "Guardar"
                 },
                 "otherInfo": {
+                    "support": "",
                     "rate": "Valoranos en Google Play",
                     "contactUs": "Contacta con nosotros mediante email",
                     "openSource": "Visita la página del proyecto en Github",

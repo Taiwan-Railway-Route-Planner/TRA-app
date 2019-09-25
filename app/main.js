@@ -6,6 +6,7 @@ import RouteDetails from "./components/Route/SingleTrain/Details"
 import MultiRouteDetails from "./components/Route/Transfers/DetailsTransfers"
 import RouteStopDetails from "./components/Route/StopDetails"
 import Settings from "./components/Settings/Settings"
+import Support from "./components/Support/Support"
 import store from './store';
 
 import { Gif } from "nativescript-gif";
@@ -29,7 +30,8 @@ const router = {
   RouteDetails: RouteDetails,
   MultiRouteDetails: MultiRouteDetails,
   RouteStopDetails: RouteStopDetails,
-  Settings: Settings
+  Settings: Settings,
+  Support: Support
 };
 
 Vue.prototype.$router = router;
