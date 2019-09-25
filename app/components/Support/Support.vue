@@ -147,7 +147,7 @@
     }
 
     .dock-center .information .button .btn{
-        width: 35%;
+        width: 60%;
     }
 
     .dock-center .thankyou .message,
