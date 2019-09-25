@@ -20,21 +20,49 @@ module.exports = (function () {
         zh: {
             top: {
                 title: ""
+            },
+            information: {
+                intro: "",
+                btn: ""
+            },
+            thanks:{
+                intro: ""
             }
         },
         ko: {
             top: {
                 title: ""
+            },
+            information: {
+                intro: "",
+                btn: ""
+            },
+            thanks:{
+                intro: ""
             }
         },
         nl: {
             top: {
-                title: ""
+                title: "Informatie"
+            },
+            information: {
+                intro: "Als je wilt helpen, kan je helpen met het vertalen naar een van de volgende talen:",
+                btn: "Help met vertalen"
+            },
+            thanks:{
+                intro: "Ik wil graag de volgende personen bedanken voor te helpen met vertalen:"
             }
         },
         es: {
             top: {
                 title: ""
+            },
+            information: {
+                intro: "",
+                btn: ""
+            },
+            thanks:{
+                intro: ""
             }
         }
     };
