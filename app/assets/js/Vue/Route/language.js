@@ -104,9 +104,9 @@ module.exports = (function () {
                 "top": {
                     "title": "旅行細節"
                 },
-                price: {
-                    single: "單程票",
-                    ePrice: "電子票證",
+                "price": {
+                    "single": "單程票",
+                    "ePrice": "電子票證",
                 }
             },
             "stopDetails": {
@@ -271,6 +271,10 @@ module.exports = (function () {
             details: {
                 top: {
                     "title": "Detalles del recorrido"
+                },
+                price: {
+                    single: "",
+                    ePrice: ""
                 }
             },
             stopDetails: {
