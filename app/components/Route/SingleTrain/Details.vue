@@ -10,7 +10,7 @@
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
                             <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"></Label>
-<!--                            <Label class="far" :text="'\uf005' | unescape"></Label>-->
+                            <!--<Label class="far" :text="'\uf005' | unescape"></Label>-->
                         </FlexboxLayout>
                     </FlexboxLayout>
                     <FlexboxLayout class="routeDetails">
@@ -65,6 +65,24 @@
                         <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
                         <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>
                     </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout class="extraDetails">
+<!--                    <FlexboxLayout class="">-->
+                        <FlexboxLayout class="prices">
+                            <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                            <Label class="text" :text="$props.selectTravelDetails.singlePrice + ' NT$'"></Label>
+                            <Label class="text" :text="$props.language.details.price.single"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
+                            <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                            <Label class="text" :text="$props.selectTravelDetails.ePrice + ' NT$'"></Label>
+                            <Label class="text" :text="$props.language.details.price.ePrice"></Label>
+                        </FlexboxLayout>
+                    <FlexboxLayout class="prices">
+                        <Label class="fas" :text="'\uf4d7' | unescape"></Label>
+                        <Label class="text" :text="$props.selectTravelDetails.distance + ' km'"></Label>
+                    </FlexboxLayout>
+<!--                    </FlexboxLayout>-->
                 </FlexboxLayout>
             </FlexboxLayout>
         </DockLayout>
@@ -316,6 +334,32 @@
         justify-content: center;
         align-items: center;
         width: 15%;
+    }
+
+    .dock-center .extraDetails{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10%;
+        color: #1a0dab;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .dock-center .extraDetails .prices {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dock-center .extraDetails .prices .fas {
+        font-size: 20;
+    }
+
+    .dock-center .extraDetails .prices .text {
+        /*padding-left: 4%;*/
+    }
+
+    .dock-center .extraDetails .prices Label{
+        margin-top: 4%;
     }
 
 </style>
