@@ -47,6 +47,10 @@ module.exports = (function () {
             "details": {
                 "top": {
                     "title": "Travel Details"
+                },
+                "price": {
+                    "single": "Single Ticket",
+                    "ePrice": "E-ticket",
                 }
             },
             "stopDetails": {
@@ -99,6 +103,10 @@ module.exports = (function () {
             "details": {
                 "top": {
                     "title": "旅行細節"
+                },
+                "price": {
+                    "single": "單程票",
+                    "ePrice": "電子票證",
                 }
             },
             "stopDetails": {
@@ -151,6 +159,10 @@ module.exports = (function () {
             details: {
                 top: {
                     title: '여행내역'
+                },
+                price: {
+                    single: "승차권 편도",
+                    ePrice: "전자 티켓",
                 }
             },
             stopDetails: {
@@ -203,6 +215,10 @@ module.exports = (function () {
             details: {
                 top: {
                     "title": "Reisgegevens"
+                },
+                price: {
+                    single: "Enkel Ticket",
+                    ePrice: "E-ticket",
                 }
             },
             stopDetails: {
@@ -255,6 +271,10 @@ module.exports = (function () {
             details: {
                 top: {
                     "title": "Detalles del recorrido"
+                },
+                price: {
+                    single: "",
+                    ePrice: ""
                 }
             },
             stopDetails: {
