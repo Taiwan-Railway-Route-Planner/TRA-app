@@ -17,6 +17,9 @@
                     <Label class="fas" :text="'\uf509' | unescape"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
+            <FlexboxLayout dock="center" class="dock-center">
+
+            </FlexboxLayout>
         </DockLayout>
     </Page>
 </template>
@@ -35,11 +38,35 @@
             }
         },
         methods: {
-            
+            navToStart: function () {
+                this.$goto("Select");
+            },
+            navToStar: function () {
+
+            }
         }
     }
 </script>
 
 <style scoped>
+
+    .dock-top {
+        background-color: #1a0dab;
+        color: #fff;
+        height: 10%;
+    }
+
+    .dock-top .title {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .dock-top .title Label {
+        font-size: 24;
+    }
+
+
 
 </style>
