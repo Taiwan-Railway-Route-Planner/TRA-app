@@ -24,6 +24,10 @@ module.exports = (function () {
         es: {
             "stations": "¡Por favor, inténtelo de nuevo más tarde!",
             "route": "¡No hemos podido encontrar ningún itinerario para ese día!"
+        },
+        de: {
+            "stations": "Bitte versuche es später noch einmal!",
+            "route": "Wir können keine Route für diesen Tag finden!"
         }
     };
 

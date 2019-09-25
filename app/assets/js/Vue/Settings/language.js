@@ -83,7 +83,7 @@ module.exports = (function () {
                 "title": "Opciones"
             },
             "center": {
-                "language":{
+                "language": {
                     "chooseTitle": "Selecciona un idioma",
                     "button": "Guardar"
                 },
@@ -93,6 +93,24 @@ module.exports = (function () {
                     "contactUs": "Contacta con nosotros mediante email",
                     "openSource": "Visita la página del proyecto en Github",
                     "Version": "Versión"
+                }
+            }
+        },
+        de: {
+            "top": {
+                "title": "Einstellungen"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Wähle deine Sprache aus",
+                    "button": "Speichern"
+                },
+                "otherInfo": {
+                    "support": "Mehr Informationen",
+                    "rate": "Bewerte uns auf Google Play",
+                    "contactUs": "Schreibe uns eine Email",
+                    "openSource": "Sieh dir das Projekt auf Github an",
+                    "Version": "Version"
                 }
             }
         }
