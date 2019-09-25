@@ -19,7 +19,17 @@
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
                 <FlexboxLayout class="information">
-                    <Label class="" textWrap="true" @tap="goToTranslatingPage" :text="data.information.intro"></Label>
+                    <Label class="message" textWrap="true" :text="data.information.intro"></Label>
+                    <ListView class="listGroup" for="item in languages" separatorColor="transparent">
+                        <v-template>
+                            <FlexboxLayout class="languageDetails">
+                                <Label :text="item.name"></Label>
+                            </FlexboxLayout>
+                        </v-template>
+                    </ListView>
+                    <FlexboxLayout class="button">
+                        <Button class="btn btn-wt" :text="data.information.btn" @tap="goToTranslatingPage"></Button>
+                    </FlexboxLayout>
                 </FlexboxLayout>
                 <FlexboxLayout class="thankyou">
                     <Label class="message" textWrap="true" :text="data.thanks.intro"></Label>
@@ -58,6 +68,26 @@
                     {
                         name: "Javier Pérez Gómez",
                         language: "Español (Spanish)"
+                    }
+                ],
+                languages: [
+                    {
+                        name: "Deutsche"
+                    },
+                    {
+                        name: "Française"
+                    },
+                    {
+                        name: "Pilipino"
+                    },
+                    {
+                        name: "日本語"
+                    },
+                    {
+                        name: "ไทย"
+                    },
+                    {
+                        name: "Tiếng việt"
                     }
                 ]
             }
@@ -104,26 +134,40 @@
     .dock-center .thankyou{
         margin-top: 6%;
         text-align: center;
-    }
-
-    .dock-center .thankyou{
         display: flex;
         flex-direction: column;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
-    .dock-center .thankyou .message{
+    .dock-center .information .button{
         margin-top: 4%;
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .dock-center .thankyou .listGroup {
+    .dock-center .information .button .btn{
+        width: 35%;
+    }
+
+    .dock-center .thankyou .message,
+    .dock-center .information .message{
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+
+
+    .dock-center .thankyou .listGroup,
+    .dock-center .information .listGroup {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .dock-center .thankyou .listGroup .detailsPerson{
+    .dock-center .thankyou .listGroup .detailsPerson,
+    .dock-center .information .listGroup .languageDetails{
         flex-direction: row;
         justify-content: center;
-        padding-top: 8%;
+        padding-top: 10%;
         font-size: 14;
     }
 
