@@ -19,14 +19,14 @@ module.exports = (function () {
         },
         zh: {
             top: {
-                title: ""
+                title: "資訊"
             },
             information: {
-                intro: "",
-                btn: ""
+                intro: "如果您需要幫助，可以幫助翻譯以下語言：",
+                btn: "幫助翻譯"
             },
-            thanks:{
-                intro: ""
+            thanks: {
+                intro: "我感謝以下人員的翻譯幫助："
             }
         },
         ko: {
