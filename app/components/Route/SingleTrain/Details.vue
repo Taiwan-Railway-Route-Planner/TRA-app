@@ -32,6 +32,22 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
+                <FlexboxLayout class="extraDetails">
+                    <FlexboxLayout class="prices">
+                        <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                        <Label class="text" :text="$props.selectTravelDetails.singlePrice + ' NT$'"></Label>
+                        <Label class="text" :text="$props.language.details.price.single"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
+                        <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                        <Label class="text" :text="$props.selectTravelDetails.ePrice + ' NT$'"></Label>
+                        <Label class="text" :text="$props.language.details.price.ePrice"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="prices">
+                        <Label class="fas" :text="'\uf4d7' | unescape"></Label>
+                        <Label class="text" :text="$props.selectTravelDetails.distance + ' km'"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
                 <FlexboxLayout class="trainDetails" @tap="navigateToRouteDetails">
                     <FlexboxLayout class="trainTimeDetails">
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
@@ -64,22 +80,6 @@
                         </FlexboxLayout>
                         <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
                         <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>
-                    </FlexboxLayout>
-                </FlexboxLayout>
-                <FlexboxLayout class="extraDetails">
-                    <FlexboxLayout class="prices">
-                        <Label class="fas" :text="'\uf3ff' | unescape"></Label>
-                        <Label class="text" :text="$props.selectTravelDetails.singlePrice + ' NT$'"></Label>
-                        <Label class="text" :text="$props.language.details.price.single"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
-                        <Image src="~/assets/images/easycard.png" stretch="none"></Image>
-                        <Label class="text" :text="$props.selectTravelDetails.ePrice + ' NT$'"></Label>
-                        <Label class="text" :text="$props.language.details.price.ePrice"></Label>
-                    </FlexboxLayout>
-                    <FlexboxLayout class="prices">
-                        <Label class="fas" :text="'\uf4d7' | unescape"></Label>
-                        <Label class="text" :text="$props.selectTravelDetails.distance + ' km'"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
@@ -338,7 +338,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: 10%;
         color: #1a0dab;
         margin-left: 2%;
         margin-right: 2%;

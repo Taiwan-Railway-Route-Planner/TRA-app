@@ -32,6 +32,22 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
+                <FlexboxLayout class="totalFareDetails">
+                    <FlexboxLayout class="prices">
+                        <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                        <Label class="text" :text="$props.selectTravelDetails.prices.singlePrice + ' NT$'"></Label>
+                        <Label class="text" :text="$props.language.details.price.single"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout v-if="$props.selectTravelDetails.prices.ePrice !== null" class="prices">
+                        <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                        <Label class="text" :text="$props.selectTravelDetails.prices.ePrice + ' NT$'"></Label>
+                        <Label class="text" :text="$props.language.details.price.ePrice"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="prices">
+                        <Label class="fas" :text="'\uf4d7' | unescape"></Label>
+                        <Label class="text" :text="$props.selectTravelDetails.prices.distance + ' km'"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
                 <ListView for="(item, index) in $props.selectTravelDetails.Routes" class="listTrain" @itemTap="navigateToRouteDetails">
                     <v-template>
                         <FlexboxLayout class="oneTrainElement" flexDirection="column">
@@ -55,12 +71,26 @@
                                     <Label v-else class="departure" :text="$store.state.searchFile[$props.selectTravelDetails.details[index].start.code].eng站名"></Label>
                                     <FlexboxLayout class="trainDetailsIcons">
                                         <FlexboxLayout class="information">
-                                            <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
-                                            <FlexboxLayout class="trainIcons">
-                                                <Label v-if="item.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
-                                                <Label v-if="item.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
-                                                <Label v-if="item.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
-                                                <Label v-if="item.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                                                <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
+                                                <FlexboxLayout class="trainIcons">
+                                                    <Label v-if="item.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
+                                                    <Label v-if="item.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
+                                                    <Label v-if="item.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
+                                                    <Label v-if="item.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                                                </FlexboxLayout>
+                                        </FlexboxLayout>
+                                        <FlexboxLayout class="fareDetails">
+                                            <FlexboxLayout class="prices">
+                                                <Label class="fas" :text="'\uf3ff' | unescape"></Label>
+                                                <Label class="text" :text="$props.selectTravelDetails.details[index].fare.singlePrice"></Label>
+                                            </FlexboxLayout>
+                                            <FlexboxLayout v-if="$props.selectTravelDetails.details[index].fare.ePrice !== null" class="prices">
+                                                <Image src="~/assets/images/easycard.png" stretch="none"></Image>
+                                                <Label class="text" :text="$props.selectTravelDetails.details[index].fare.ePrice"></Label>
+                                            </FlexboxLayout>
+                                            <FlexboxLayout class="prices">
+                                                <Label class="fas" :text="'\uf4d7' | unescape"></Label>
+                                                <Label class="text" :text="Math.round($props.selectTravelDetails.details[index].fare.distance)"></Label>
                                             </FlexboxLayout>
                                         </FlexboxLayout>
                                         <FlexboxLayout class="navigation">
@@ -102,7 +132,7 @@
             shareToTheWorld: function () {
                 handle.share(this, true);
             },
-            navigateBackVue : function () {
+            navigateBackVue: function () {
                 this.$navigateBack();
             }
         }
@@ -219,6 +249,10 @@
 
     /*** DOCK CENTER ***/
 
+    .dock-center {
+        flex-direction: column;
+    }
+
     .dock-center .trainDetails .trainDestArrDetails Label,
     .dock-center .trainDetails .trainTimeDetails Label {
         color: #1a0dab;
@@ -316,7 +350,7 @@
 
     .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information {
         flex-direction: column;
-        width: 85%;
+        width: 63%;
     }
 
     .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .information .trainIcons {
@@ -334,6 +368,54 @@
         justify-content: center;
         align-items: center;
         width: 15%;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .fareDetails {
+        flex-direction: column;
+        width: 22%;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .fareDetails .prices {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .fareDetails .prices .fas,
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .fareDetails .prices Label {
+        font-size: 14;
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .fareDetails .prices Image{
+
+    }
+
+    .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons .fareDetails .prices .text {
+        padding-left: 2%;
+        font-size: 14;
+    }
+
+    .dock-center .totalFareDetails{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: #1a0dab;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-top: 2%;
+        height: 180;
+    }
+
+    .dock-center .totalFareDetails .prices{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dock-center .totalFareDetails .prices .fas{
+        font-size: 20;
+    }
+
+    .dock-center .totalFareDetails .prices Label{
+        margin-top: 4%;
     }
 
 </style>
