@@ -54,15 +54,15 @@ module.exports = (function () {
             }
         },
         es: {
-            top: {
-                title: ""
+            "top": {
+                "title": "Información"
             },
-            information: {
-                intro: "",
-                btn: ""
+            "information": {
+                "intro": "Si deseas contribuir, puedes ayudarnos a traducir los siguientes idiomas:",
+                "btn": "Ayudar en la traducción"
             },
-            thanks:{
-                intro: ""
+            "thanks": {
+                "intro": "Me gustaría agradecer a las siguientes personas por su ayuda con las traducciones:"
             }
         },
         de: {
