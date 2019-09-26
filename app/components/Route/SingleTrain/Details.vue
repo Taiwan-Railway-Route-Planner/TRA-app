@@ -35,12 +35,12 @@
                 <FlexboxLayout class="extraDetails">
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf3ff' | unescape"></Label>
-                        <Label class="text" :text="$props.selectTravelDetails.singlePrice + ' NT$'"></Label>
+                        <Label class="text" :text="'NT$ ' + $props.selectTravelDetails.singlePrice"></Label>
                         <Label class="text" :text="$props.language.details.price.single"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
                         <Image src="~/assets/images/easycard.png" stretch="none"></Image>
-                        <Label class="text" :text="$props.selectTravelDetails.ePrice + ' NT$'"></Label>
+                        <Label class="text" :text="'NT$ ' +$props.selectTravelDetails.ePrice"></Label>
                         <Label class="text" :text="$props.language.details.price.ePrice"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout class="prices">
