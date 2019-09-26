@@ -2,7 +2,7 @@
     <Page actionBarHidden="true">
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
-                <FlexboxLayout class="top">
+                <FlexboxLayout :class="resizeLabels">
                     <FlexboxLayout class="navDetails" @tap="navigateBackVue">
                         <Label class="fas" :text="'\uf060' | unescape"></Label>
                         <FlexboxLayout class="top-title">
@@ -133,6 +133,18 @@
         created: async function () {
             await handle.handleIncomingRouteDetails(this);
         },
+        computed: {
+            resizeLabels(){
+                switch (this.$store.state.language) {
+                    case 'ES':
+                    case 'DE':
+                    case 'EN':
+                        return 'smallerLabels';
+                    default:
+                         return 'standardLabels';
+                }
+            }
+        },
         data() {
             return {
                 data: null
@@ -192,29 +204,30 @@
         font-size: 17;
     }
 
-    .top {
+    /*.top {*/
+    /*    flex-direction: row;*/
+    /*    margin-left: 6%;*/
+    /*    align-items: center;*/
+    /*}*/
+
+    .dock-top .navDetails {
         flex-direction: row;
         margin-left: 6%;
         align-items: center;
     }
 
-    .top .top-title {
+    .dock-top .navDetails .top-title {
         flex-direction: column;
         margin-bottom: 1%;
         margin-right: 10%;
     }
 
-    .top .navDetails {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .top .fas {
+    .dock-top .navDetails .fas {
         font-size: 30;
         margin-right: 6%;
     }
 
-    .top .top-data {
+    .dock-top .navDetails .top-data {
         flex-direction: column;
     }
 
@@ -296,6 +309,14 @@
 
     .center .travelDetails .typeOfTrain Label {
         font-size: 18;
+    }
+
+    .smallerLabels  Label{
+        font-size: 14;
+    }
+
+    .standardLabels Label{
+        font-size: 16;
     }
 
 </style>
