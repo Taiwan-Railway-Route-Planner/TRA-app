@@ -78,7 +78,7 @@
                 possibleLanguages: null,
                 possibleLanguagesArray: null,
                 selectedItem: null,
-                currentVersion: '0.0.2'
+                currentVersion: '0.0.3'
             }
         },
         methods: {
