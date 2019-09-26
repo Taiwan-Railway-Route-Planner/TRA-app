@@ -32,7 +32,7 @@
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
-                <FlexboxLayout class="totalFareDetails">
+                <FlexboxLayout :class="[doWeNeedSmaller, 'totalFareDetails']">
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf3ff' | unescape"></Label>
                         <Label class="text" :text="$props.selectTravelDetails.prices.singlePrice + ' NT$'"></Label>
@@ -117,6 +117,15 @@
 
     export default {
         props: ['routeDetails', 'selectTravelDetails', 'language'],
+        computed: {
+          doWeNeedSmaller(){
+              if (this.$props.selectTravelDetails.Routes.length === 2){
+                  return 'fareHight'
+              } else {
+                  return '';
+              }
+          }
+        },
         data() {
             return {}
         },
@@ -403,6 +412,10 @@
         margin-right: 2%;
         margin-top: 2%;
         height: 180;
+    }
+
+    .dock-center .totalFareDetails.fareHight{
+        height: 20%;
     }
 
     .dock-center .totalFareDetails .prices{
