@@ -273,8 +273,8 @@ module.exports = (function () {
                     "title": "Detalles del recorrido"
                 },
                 price: {
-                    single: "",
-                    ePrice: ""
+                    single: "Billete físico",
+                    ePrice: "Billete electrónico"
                 }
             },
             stopDetails: {
