@@ -293,10 +293,6 @@
         width: 10%;
     }
 
-    .dock-center .trainDetails .trainDestArrDetails {
-        width: 75%;
-    }
-
     .dock-center .trainDetails .trainTimeDetails {
         flex-direction: column;
         justify-content: space-between;
@@ -304,10 +300,6 @@
     }
 
     .dock-center .trainDetails .route {
-        flex-direction: column;
-    }
-
-    .dock-center .trainDetails .trainDestArrDetails {
         flex-direction: column;
     }
 
@@ -336,6 +328,7 @@
         flex-direction: column;
         justify-content: space-between;
         margin-right: 4%;
+        width: 75%;
     }
 
     .dock-center .trainDetails .trainDestArrDetails .departure {
@@ -354,6 +347,7 @@
 
     .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons {
         flex-direction: row;
+        align-items: center;
         width: 100%;
     }
 
