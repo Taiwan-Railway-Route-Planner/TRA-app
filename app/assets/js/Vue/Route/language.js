@@ -113,7 +113,7 @@ module.exports = (function () {
                 "top": {
                     "title": "火車詳情",
                     "type": "類型",
-                    "number": "數"
+                    "number": "班次號碼"
                 }
             }
         },
