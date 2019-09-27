@@ -45,7 +45,8 @@
                             <Label :class="layoutStateLabel" :text="data.center.otherInfo.openSource"></Label>
                             <Label class="fas" :text="'\uf054' | unescape"></Label>
                         </FlexboxLayout>
-                        <Label class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"></Label>
+                        <Label v-if="$store.state.language === 'ZH'" class="element" :text="currentVersion + ' ' + data.center.otherInfo.Version"></Label>
+                        <Label v-else class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
