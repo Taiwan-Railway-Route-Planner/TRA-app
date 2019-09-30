@@ -140,7 +140,7 @@ Currently we support the following languages:
 | English  | English  |
 | Nederlands  | Dutch  |
 | Español | Spanish |
-| Deutsche  | German  |
+| Deutsch  | German  |
 
 If you want to help to make more translations available you can do that follow [this link](https://poeditor.com/join/project/9Aukv8rxJ5). \
 If you would rather use Github instead that's also possible All the translations are stored in [this repo](https://github.com/Taiwan-Railway-Route-Planner/TRA_Translations) just open an issue.

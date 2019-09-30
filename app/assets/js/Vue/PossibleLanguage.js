@@ -31,7 +31,7 @@ module.exports = (function () {
             abbr: 'ES'
         },
         {
-            nameNative: 'Deutsche',
+            nameNative: 'Deutsch',
             name: 'German',
             abbr: 'DE'
         }

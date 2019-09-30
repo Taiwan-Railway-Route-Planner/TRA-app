@@ -71,7 +71,7 @@
                     },
                     {
                         name: "Marvin Plum",
-                        language: "Deutsche (German)"
+                        language: "Deutsch (German)"
                     }
                 ],
                 languages: [
