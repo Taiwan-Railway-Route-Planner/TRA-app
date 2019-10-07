@@ -14,7 +14,7 @@
                         </ListView>
                         <ListView v-else class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
                             <v-template>
-                                <Label :text="item.eng站名 + ' (' + item.traWebsiteCode + ')' "></Label>
+                                <Label :text="item.eng站名 + ' (' + item.站名 + ')' +  ' - ' + item.traWebsiteCode"></Label>
                             </v-template>
                         </ListView>
                     </ScrollView>
