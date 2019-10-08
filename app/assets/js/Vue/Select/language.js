@@ -358,12 +358,12 @@ module.exports = (function () {
                 departure: {
                     details: {},
                     "hint": "Choisissez votre station",
-                    "label": "À partir de"
+                    "label": "Départ"
                 },
                 arrival: {
                     details: {},
                     "hint": "Choisissez votre station",
-                    "label": "À partir de"
+                    "label": "Arrivée"
                 },
                 time: {
                     "label": "L'heure",
