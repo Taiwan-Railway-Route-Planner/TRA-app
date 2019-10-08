@@ -76,6 +76,18 @@ module.exports = (function () {
             "thanks": {
                 "intro": "Ich möchte folgenden Personen für ihre Hilfe beim Übersetzen danken:"
             }
+        },
+        fr: {
+            "top": {
+                "title": "Information"
+            },
+            "information": {
+                "intro": "Si vous voulez aider, vous pouvez aider à traduire les langues suivantes:",
+                "btn": "Aidez à traduire"
+            },
+            "thanks": {
+                "intro": "Je voudrais remercier les personnes suivantes pour leur aide à la traduction:"
+            }
         }
     };
 

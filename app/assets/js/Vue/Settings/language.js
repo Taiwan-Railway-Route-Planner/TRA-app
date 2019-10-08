@@ -113,6 +113,24 @@ module.exports = (function () {
                     "Version": "Version"
                 }
             }
+        },
+        fr: {
+            "top": {
+                "title": "Paramètres"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Choisissez votre langue",
+                    "button": "Enregistrer"
+                },
+                "otherInfo": {
+                    "support": "Plus d'information",
+                    "rate": "Évaluez-nous sur Google Play",
+                    "contactUs": "Contactez-nous",
+                    "openSource": "Visitez le projet sur Github",
+                    "Version": "Version"
+                }
+            }
         }
     };
 

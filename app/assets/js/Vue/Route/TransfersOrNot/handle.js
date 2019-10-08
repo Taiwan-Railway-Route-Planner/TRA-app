@@ -27,6 +27,8 @@ export default (function () {
                 return transferOrNot ? buildTransferSentence(_self, language.language.es.sentence) : buildSentence(_self, language.language.es.sentence);
             case "DE":
                 return transferOrNot ? buildTransferSentence(_self, language.language.de.sentence) : buildSentence(_self, language.language.de.sentence);
+            case "FR":
+                return transferOrNot ? buildTransferSentence(_self, language.language.fr.sentence) : buildSentence(_self, language.language.fr.sentence);
         }
     }
 

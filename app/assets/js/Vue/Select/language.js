@@ -261,7 +261,7 @@ module.exports = (function () {
                         real: null
                     },
                     time: '',
-                    local: 'nl',
+                    local: 'es',
                     modal: {
                         top: {
                             "first": "Salida",
@@ -298,7 +298,7 @@ module.exports = (function () {
                 stations: []
             },
             routeDetails: {
-                language: 'ES',
+                language: 'DE',
                 departure: {
                     details: {},
                     "hint": "Wähle eine Haltestelle",
@@ -317,7 +317,7 @@ module.exports = (function () {
                         real: null
                     },
                     time: '',
-                    local: 'nl',
+                    local: 'de',
                     modal: {
                         top: {
                             "first": "ABFAHRT",
@@ -340,6 +340,62 @@ module.exports = (function () {
             },
             "error": "Du hast kein Ziel oder einen Startpunkt angegeben!",
             "internetError": "Keine Internetverbindung !"
+        },
+        fr: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation": "Sélectionnez la gare de départ",
+                    "endStation": "Sélectionnez la gare d'arrivée"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'FR',
+                departure: {
+                    details: {},
+                    "hint": "Choisissez votre station",
+                    "label": "Départ"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Choisissez votre station",
+                    "label": "Arrivée"
+                },
+                time: {
+                    "label": "L'heure",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'fr',
+                    modal: {
+                        top: {
+                            "first": "DÉPART",
+                            "second": "ARRIVÉE"
+                        },
+                        center: {
+                            "button": "Maintenant",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "ANNULER",
+                            "rightBtn": "ACCEPTER"
+                        }
+                    }
+                },
+                "button": "RECHERCHER"
+            },
+            "error": "Vous n'avez pas renseigné de destination ou de départ!",
+            "internetError": "Pas de connexion Internet!"
         }
     };
 

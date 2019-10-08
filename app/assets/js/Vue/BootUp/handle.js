@@ -33,6 +33,9 @@ export default (function () {
             case "DE":
                 _self.data = language.language.de;
                 break;
+            case "FR":
+                _self.data = language.language.fr;
+                break;
         }
         _self.saveAbbr = abbr;
         _self.selected = true;
