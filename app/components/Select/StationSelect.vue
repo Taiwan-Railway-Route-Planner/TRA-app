@@ -4,6 +4,8 @@
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
                     <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged" @clear="goBackToNormalScreen"></SearchBar>
+                    <Counties :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"></Counties>
+                    <Label class="fas" :text="'\uf0d7' | undefined"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
                     <ScrollView>
@@ -89,6 +91,7 @@
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
     import loadingModal from "../modals/loadingModal"
+    import Counties from "./component/counties"
 
     let application = require('application');
 
@@ -96,6 +99,9 @@
         async created() {
             this.formatTimeStampBasedOnLanguage = formatTimeStampBasedOnLanguage;
             await handle.setUpSelectVue(this);
+        },
+        components: {
+            Counties
         },
         computed: {
             layoutStateLabel() {
@@ -151,10 +157,17 @@
                 timeTable: null,
                 indexWithClosestToRealTime: null,
                 feedback: null,
-                topmost: null
+                topmost: null,
+                selectedCounty: {
+                    name: null
+                },
+                hideThis: false
             }
         },
         methods: {
+            changeTheSelectedOne: function (prop, ref){
+                handle.changeTheDefaultCounty(this, prop, ref);
+            },
             onTextChanged: function () {
                 this.filteredStations = this.data.stationInfo.stations
                     .filter(el => {
@@ -257,6 +270,7 @@
         margin-top: 1%;
         display: flex;
         flex-flow: column;
+        text-align: center;
     }
 
     .searchBar SearchBar {
