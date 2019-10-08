@@ -159,7 +159,11 @@
                 feedback: null,
                 topmost: null,
                 selectedCounty: {
-                    name: null
+                    name: {
+                        縣市: null,
+                        eng縣市: null
+                    },
+                    prop: null
                 },
                 hideThis: false,
                 countyFilterStations: null
@@ -168,7 +172,7 @@
         methods: {
             changeTheSelectedOne: function (prop, ref){
                 handle.changeTheDefaultCounty(this, prop, ref);
-                handle.filterCountiesOutOfTheList(this);
+                handle.filterCountiesOutOfTheListOfStations(this);
             },
             onTextChanged: function () {
                 this.filteredStations = this.countyFilterStations
