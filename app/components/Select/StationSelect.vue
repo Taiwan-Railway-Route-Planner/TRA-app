@@ -4,7 +4,7 @@
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
                     <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged" @clear="goBackToNormalScreen"></SearchBar>
-                    <Counties :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"></Counties>
+                    <Counties ref="counties" :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"></Counties>
                     <Label class="fas" :text="'\uf0d7' | undefined"></Label>
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
@@ -170,8 +170,8 @@
             }
         },
         methods: {
-            changeTheSelectedOne: function (prop, ref){
-                handle.changeTheDefaultCounty(this, prop, ref);
+            changeTheSelectedOne: function (prop){
+                handle.changeTheDefaultCounty(this, prop, this.$refs.counties.$refs);
                 handle.filterCountiesOutOfTheListOfStations(this);
             },
             onTextChanged: function () {

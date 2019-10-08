@@ -55,7 +55,7 @@
         props: ["data", "selectedCounty", "hideThis"],
         methods: {
             setNewFilter: function (args) {
-                this.$emit('changeTheSelectedOne', args.object.link, this.$refs);
+                this.$emit('changeTheSelectedOne', args.object.link);
             }
         }
     }
