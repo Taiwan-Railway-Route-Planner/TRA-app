@@ -98,29 +98,27 @@
         },
         computed: {
             layoutStateLabel() {
-                let active = false;
-                if (this.$store.state.language === "ES"){
-                    active = true;
+                switch (this.$store.state.language) {
+                    case 'ES':
+                    case 'FR':
+                        return 'labelForSpanish';
+                    default:
+                        return 'labelForStandard'
                 }
-                return active ? 'labelForSpanish' : 'labelForStandard';
             },
             layoutStateTextField() {
-                let active = false;
-                if (this.$store.state.language === "ES"){
-                    active = true;
+                switch (this.$store.state.language) {
+                    case 'ES':
+                    case 'FR':
+                        return 'textFieldForSpanish';
+                    default:
+                        return 'textFieldForStandard'
                 }
-                return active ? 'textFieldForSpanish' : 'textFieldForStandard';
-            },
-            layoutStateButton(){
-                let active = false;
-                if (this.$store.state.language === "ES"){
-                    active = true;
-                }
-                return active ? 'textFieldForSpanish' : 'textFieldForStandard';
             },
             layoutStateLabelForTimeStamp(){
                 switch (this.$store.state.language) {
                     case "ES":
+                    case 'FR':
                         return "timeStampLabelForSpanish";
                     case "DE":
                         return "timeStampLabelForGerman";
@@ -131,6 +129,7 @@
             layoutStateTextFieldForTimeStamp(){
                 switch (this.$store.state.language) {
                     case "ES":
+                    case 'FR':
                         return "timeStampTextFieldForSpanish";
                     case "DE":
                         return "timeStampTextFieldForGerman";
@@ -290,15 +289,12 @@
         justify-content: center;
     }
 
+    /****** label ******/
+
     .labelForStandard {
         width: 15%;
         /*margin-left: 4%;*/
         align-self: center;
-    }
-
-    .textFieldForStandard {
-        width: 70%;
-        margin-right: 6%;
     }
 
     .labelForSpanish {
@@ -307,20 +303,28 @@
         align-self: center;
     }
 
+    /****** textField ******/
+
+    .textFieldForStandard {
+        width: 70%;
+        margin-right: 6%;
+    }
     .textFieldForSpanish {
         width: 65%;
         margin-right: 6%;
     }
 
+    .textFieldForGerman {
+         width: 62%;
+         margin-right: 6%;
+     }
+
+    /****** timeStamp -- Label ******/
+
     .timeStampLabelForSpanish{
         width: 35%;
         /*margin-left: 2%;*/
         align-self: center;
-    }
-
-    .textFieldForGerman {
-        width: 62%;
-        margin-right: 6%;
     }
 
     .timeStampLabelForGerman{
@@ -330,11 +334,15 @@
         align-self: center;
     }
 
+    /****** timeStamp -- TextField ******/
 
     .timeStampTextFieldForSpanish{
         width: 65%;
         margin-right: 6%;
     }
+
+
+
 
     .topRouteDetails .InfoDetails {
         border-color: #1a0dab;
