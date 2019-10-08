@@ -54,7 +54,7 @@ export default (function () {
     /***************** FUNCTIONS -- Counties *****************/
 
     const changeTheDefaultCounty = function (_self, prop, ref) {
-            if (_self.selectedCounty.name === null){
+            if (_self.selectedCounty.name.eng縣市 === null){
                 _self.hideThis = true;
                 setNotFilledOrFilled(true, ref);
                 hideElementShowSelected(prop, ref);
@@ -64,7 +64,7 @@ export default (function () {
                     _self.hideThis = false;
                     showElementBack(_self.selectedCounty.prop, ref);
                     setNotFilledOrFilled(false, ref);
-                    _self.selectedCounty.name = null;
+                    _self.selectedCounty.name.eng縣市 = null;
                 } else {
                     _self.hideThis = true;
                     hideElementShowSelected(prop, ref);
@@ -78,10 +78,9 @@ export default (function () {
     /***************** HELP - FUNCTIONS - COUNTIES *****************/
 
     function setTheNewSelectedCounty(_self, prop) {
-        _self.selectedCounty = {};
         _self.selectedCounty.prop = prop;
-        _self.selectedCounty.name = _self.$store.state.language === 'ZH' ?
-            _self.data.stationInfo.counties[prop].縣市 : _self.data.stationInfo.counties[prop].eng縣市;
+        _self.selectedCounty.name.縣市 = _self.data.stationInfo.counties[prop].縣市;
+        _self.selectedCounty.name.eng縣市 = _self.data.stationInfo.counties[prop].eng縣市;
     }
 
     function setNotFilledOrFilled(status, ref) {
@@ -99,7 +98,14 @@ export default (function () {
     /***************** FILTER - FUNCTIONS - COUNTIES *****************/
 
     const filterCountiesOutOfTheListOfStations = function (_self) {
-
+        if (_self.selectedCounty.name.eng縣市 === null){
+            _self.countyFilterStations = _self.data.stationInfo.stations;
+        } else {
+            _self.countyFilterStations = _self.data.stationInfo.stations.filter(function (el) {
+                return el.eng縣市 === _self.selectedCounty.name.eng縣市;
+            })
+        }
+        _self.filteredStations = _self.countyFilterStations;
     };
 
     return {
