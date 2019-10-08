@@ -91,7 +91,7 @@
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
     import loadingModal from "../modals/loadingModal"
-    import countiesModal from "../modals/countiesModal"
+    // import countiesModal from "../modals/countiesModal"
     import Counties from "./component/counties"
 
     let application = require('application');
