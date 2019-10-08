@@ -5,7 +5,7 @@
                 <FlexboxLayout dock="top" class="searchBar">
                     <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged" @clear="goBackToNormalScreen"></SearchBar>
                     <Counties ref="counties" :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"></Counties>
-                    <Label class="fas" :text="'\uf0d7' | undefined"></Label>
+<!--                    <Label class="fas" @tap="openMoreCounties" :text="'\uf0d7' | undefined"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
                     <ScrollView>
@@ -91,6 +91,7 @@
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
     import loadingModal from "../modals/loadingModal"
+    import countiesModal from "../modals/countiesModal"
     import Counties from "./component/counties"
 
     let application = require('application');
@@ -170,8 +171,18 @@
             }
         },
         methods: {
-            changeTheSelectedOne: function (prop){
-                handle.changeTheDefaultCounty(this, prop, this.$refs.counties.$refs);
+            // openMoreCounties: function (){
+            //     this.$showModal(countiesModal, {
+            //             props: {
+            //                 data: this.data,
+            //                 selectedCounty: this.selectedCounty,
+            //                 hideThis: this.hideThis
+            //             }
+            //         }
+            //     );
+            // },
+            changeTheSelectedOne: function (prop, ref=this.$refs.counties.$refs){
+                handle.changeTheDefaultCounty(this, prop, ref);
                 handle.filterCountiesOutOfTheListOfStations(this);
             },
             onTextChanged: function () {
