@@ -41,29 +41,8 @@ export default (function () {
         }
     };
 
-    const changeTheDefaultCounty = function (_self, prop, ref) {
-        if (_self.selectedCounty.name === null){
-            _self.hideThis = true;
-            setNotFilledOrFilled(true, ref);
-            hideElementShowSelected(prop, ref);
-            setTheNewSelectedCounty(_self, prop);
-        } else {
-            if (prop === "all"){
-                _self.hideThis = false;
-                showElementBack(_self.selectedCounty.prop, ref);
-                setNotFilledOrFilled(false, ref);
-                _self.selectedCounty.name = null;
-            } else {
-                _self.hideThis = true;
-                hideElementShowSelected(prop, ref);
-                showElementBack(_self.selectedCounty.prop, ref);
-                setTheNewSelectedCounty(_self, prop);
-            }
-        }
-        ref["countiesList"].nativeView.scrollToHorizontalOffset(0, true);
-    };
-
     /***************** HELP - FUNCTIONS *****************/
+
 
     function internetError(_self) {
         _self.feedback.warning({
@@ -71,6 +50,32 @@ export default (function () {
             duration: 6000
         })
     }
+
+    /***************** FUNCTIONS -- Counties *****************/
+
+    const changeTheDefaultCounty = function (_self, prop, ref) {
+            if (_self.selectedCounty.name === null){
+                _self.hideThis = true;
+                setNotFilledOrFilled(true, ref);
+                hideElementShowSelected(prop, ref);
+                setTheNewSelectedCounty(_self, prop);
+            } else {
+                if (prop === "all"){
+                    _self.hideThis = false;
+                    showElementBack(_self.selectedCounty.prop, ref);
+                    setNotFilledOrFilled(false, ref);
+                    _self.selectedCounty.name = null;
+                } else {
+                    _self.hideThis = true;
+                    hideElementShowSelected(prop, ref);
+                    showElementBack(_self.selectedCounty.prop, ref);
+                    setTheNewSelectedCounty(_self, prop);
+                }
+            }
+            ref["countiesList"].nativeView.scrollToHorizontalOffset(0, true);
+        };
+
+    /***************** HELP - FUNCTIONS - COUNTIES *****************/
 
     function setTheNewSelectedCounty(_self, prop) {
         _self.selectedCounty = {};
