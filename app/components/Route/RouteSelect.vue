@@ -139,6 +139,7 @@
                     case 'ES':
                     case 'DE':
                     case 'EN':
+                    case 'FR':
                         return 'smallerLabels';
                     default:
                          return 'standardLabels';
