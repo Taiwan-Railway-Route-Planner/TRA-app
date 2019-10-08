@@ -1,7 +1,8 @@
 <template>
     <ScrollView class="county" orientation="horizontal" scrollBarIndicatorVisible="false" ref="countiesList">
         <StackLayout orientation="horizontal">
-            <Label class="filled" v-show="hideThis" :text="selectedCounty.name"></Label>
+            <Label class="filled" v-if="$store.state.language === 'ZH'" v-show="hideThis" :text="selectedCounty.name.縣市"></Label>
+            <Label class="filled" v-else v-show="hideThis" :text="selectedCounty.name.eng縣市"></Label>
             <Label ref="all" @tap="setNewFilter" link="all" class="fas filled" :text="'\uf57e' | undefined"></Label>
             <StackLayout v-if="$store.state.language === 'ZH'" orientation="horizontal">
                 <Label ref="0" @tap="setNewFilter" link="0" :text="data.stationInfo.counties[0].縣市"></Label>
