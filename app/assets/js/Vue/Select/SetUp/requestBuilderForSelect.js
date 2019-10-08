@@ -23,6 +23,7 @@ module.exports = (function () {
         }
         if (_self.data.stationInfo !== undefined) {
             _self.filteredStations = _self.data.stationInfo.stations;
+            _self.countyFilterStations = _self.data.stationInfo.stations;
         }
     }
 

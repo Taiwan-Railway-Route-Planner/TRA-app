@@ -161,15 +161,17 @@
                 selectedCounty: {
                     name: null
                 },
-                hideThis: false
+                hideThis: false,
+                countyFilterStations: null
             }
         },
         methods: {
             changeTheSelectedOne: function (prop, ref){
                 handle.changeTheDefaultCounty(this, prop, ref);
+                handle.filterCountiesOutOfTheList(this);
             },
             onTextChanged: function () {
-                this.filteredStations = this.data.stationInfo.stations
+                this.filteredStations = this.countyFilterStations
                     .filter(el => {
                         return el.eng站名.toLowerCase().startsWith(this.data.searchBar.search.toLowerCase())
                             ||
