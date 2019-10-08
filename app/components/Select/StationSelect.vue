@@ -307,10 +307,6 @@
         flex: 1 1 auto;
     }
 
-    /*.listGroup Label{*/
-    /*    textWrap: true;*/
-    /*}*/
-
     .routeDetails {
         background-color: #1a0dab;
     }
