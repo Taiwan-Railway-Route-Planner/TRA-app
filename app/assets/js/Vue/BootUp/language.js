@@ -22,6 +22,9 @@ module.exports = (function () {
         },
         de: {
             confirm: "BESTÄTIGEN"
+        },
+        fr: {
+            confirm: "ACCEPTER"
         }
     };
 

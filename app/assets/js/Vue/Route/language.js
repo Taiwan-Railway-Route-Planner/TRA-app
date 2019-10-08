@@ -341,6 +341,63 @@ module.exports = (function () {
                     "number": "Nummer"
                 }
 
+            },
+        },
+        fr: {
+            top: {
+                "first": "Gare de départ",
+                "second": "Gare d'arrivée"
+            },
+            trainTypes: {
+                "Local": {
+                    name: "Local",
+                    color: "#333333"
+                },
+                "Other Local": {
+                    name: "Ordinary",
+                    color: "#333333"
+                },
+                "Fast Local": {
+                    name: "Fast Local",
+                    color: "#333333"
+                },
+                "Chu-kuang": {
+                    name: "Chu-kuang",
+                    color: "#FFD200"
+                },
+                "Tze-chiang": {
+                    name: "Tze-chiang",
+                    color: "#FF8708"
+                },
+                "Fu-Hsing": {
+                    name: "Fu-Hsing",
+                    color: "#00ace8"
+                },
+                "Taroko": {
+                    name: "Taroko",
+                    color: "#FF5000"
+                },
+                "Puyuma": {
+                    name: "Puyuma",
+                    color: "#D00216"
+                }
+            },
+            details: {
+                top: {
+                    "title": "Détails du voyage"
+                },
+                price: {
+                    "single": "Billet papier",
+                    "ePrice": "E-ticket"
+                }
+            },
+            stopDetails: {
+                top: {
+                    "title": "Détails du train",
+                    "type": "Type",
+                    "number": "Nombre"
+                }
+
             }
         }
     };
