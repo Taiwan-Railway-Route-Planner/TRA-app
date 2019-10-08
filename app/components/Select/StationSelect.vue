@@ -4,6 +4,8 @@
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
                     <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged" @clear="goBackToNormalScreen"></SearchBar>
+                    <Counties ref="counties" :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"></Counties>
+<!--                    <Label class="fas" @tap="openMoreCounties" :text="'\uf0d7' | undefined"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
                     <ScrollView>
@@ -14,7 +16,8 @@
                         </ListView>
                         <ListView v-else class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
                             <v-template>
-                                <Label :text="item.eng站名 + ' (' + item.traWebsiteCode + ')' "></Label>
+<!--                                <Label :text="item.eng站名 + ' (' + item.traWebsiteCode + ')' "></Label>-->
+                                <Label textWrap="true" :text="item.eng站名 + ' (' + item.站名 + ')' +  ' - ' + item.traWebsiteCode"></Label>
                             </v-template>
                         </ListView>
                     </ScrollView>
@@ -88,6 +91,8 @@
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import timeModal from "../modals/timeModal"
     import loadingModal from "../modals/loadingModal"
+    // import countiesModal from "../modals/countiesModal"
+    import Counties from "./component/counties"
 
     let application = require('application');
 
@@ -95,6 +100,9 @@
         async created() {
             this.formatTimeStampBasedOnLanguage = formatTimeStampBasedOnLanguage;
             await handle.setUpSelectVue(this);
+        },
+        components: {
+            Counties
         },
         computed: {
             layoutStateLabel() {
@@ -149,12 +157,35 @@
                 timeTable: null,
                 indexWithClosestToRealTime: null,
                 feedback: null,
-                topmost: null
+                topmost: null,
+                selectedCounty: {
+                    name: {
+                        縣市: null,
+                        eng縣市: null
+                    },
+                    prop: null
+                },
+                hideThis: false,
+                countyFilterStations: null
             }
         },
         methods: {
+            // openMoreCounties: function (){
+            //     this.$showModal(countiesModal, {
+            //             props: {
+            //                 data: this.data,
+            //                 selectedCounty: this.selectedCounty,
+            //                 hideThis: this.hideThis
+            //             }
+            //         }
+            //     );
+            // },
+            changeTheSelectedOne: function (prop, ref=this.$refs.counties.$refs){
+                handle.changeTheDefaultCounty(this, prop, ref);
+                handle.filterCountiesOutOfTheListOfStations(this);
+            },
             onTextChanged: function () {
-                this.filteredStations = this.data.stationInfo.stations
+                this.filteredStations = this.countyFilterStations
                     .filter(el => {
                         return el.eng站名.toLowerCase().startsWith(this.data.searchBar.search.toLowerCase())
                             ||
@@ -255,6 +286,7 @@
         margin-top: 1%;
         display: flex;
         flex-flow: column;
+        text-align: center;
     }
 
     .searchBar SearchBar {
@@ -274,6 +306,10 @@
     .listGroup {
         flex: 1 1 auto;
     }
+
+    /*.listGroup Label{*/
+    /*    textWrap: true;*/
+    /*}*/
 
     .routeDetails {
         background-color: #1a0dab;

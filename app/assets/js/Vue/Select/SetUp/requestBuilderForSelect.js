@@ -8,11 +8,14 @@ const InternetConnection = require('../../InternetConnection');
 module.exports = (function () {
 
     async function getAllPossibleStations(_self) {
-        if (_self.$store.state.stations === null || _self.$store.state.stations === undefined) {
+        if (_self.$store.state.stations === null
+            || _self.$store.state.stations === undefined
+            || _self.$store.state.forceUpdate === false) {
             if (InternetConnection.checkInternetConnection()) {
                 await getSearchFileToSearchStations(_self);
                 const stations = await requestHandler.request.stations(_self);
                 _self.$store.commit('updateStation', stations.data);
+                _self.$store.commit('forceUpdateStationInfo', true);
                 _self.data.stationInfo = stations.data;
             }
         } else {
@@ -20,6 +23,7 @@ module.exports = (function () {
         }
         if (_self.data.stationInfo !== undefined) {
             _self.filteredStations = _self.data.stationInfo.stations;
+            _self.countyFilterStations = _self.data.stationInfo.stations;
         }
     }
 
