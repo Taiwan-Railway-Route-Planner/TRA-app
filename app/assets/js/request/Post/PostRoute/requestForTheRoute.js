@@ -47,6 +47,9 @@ module.exports =  (function () {
                 case "DE":
                     response.msg = errorMessages.messages.de.route;
                     break;
+                case "FR":
+                    response.msg = errorMessages.messages.fr.route;
+                    break;
             }
         }
         return response;

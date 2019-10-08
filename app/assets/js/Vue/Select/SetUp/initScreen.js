@@ -34,6 +34,9 @@ module.exports = (function () {
             case "DE":
                 _self.data = language.language.de;
                 break;
+            case "FR":
+                _self.data = language.language.fr;
+                break;
         }
         setTime(_self);
     }
