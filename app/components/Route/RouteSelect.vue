@@ -134,7 +134,7 @@
             await handle.handleIncomingRouteDetails(this);
         },
         computed: {
-            resizeLabels(){
+            resizeLabels() {
                 switch (this.$store.state.language) {
                     case 'ES':
                     case 'DE':
@@ -142,7 +142,7 @@
                     case 'FR':
                         return 'smallerLabels';
                     default:
-                         return 'standardLabels';
+                        return 'standardLabels';
                 }
             }
         },
@@ -312,11 +312,11 @@
         font-size: 18;
     }
 
-    .smallerLabels  Label{
+    .smallerLabels Label {
         font-size: 14;
     }
 
-    .standardLabels Label{
+    .standardLabels Label {
         font-size: 16;
     }
 
