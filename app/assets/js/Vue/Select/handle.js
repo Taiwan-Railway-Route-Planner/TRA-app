@@ -96,11 +96,18 @@ export default (function () {
         ref[prevProp].nativeView.visibility = 'visible';
     }
 
+    /***************** FILTER - FUNCTIONS - COUNTIES *****************/
+
+    const filterCountiesOutOfTheListOfStations = function (_self) {
+
+    };
+
     return {
         setUpSelectVue,
         controlValuesBeforeGoingToRoute,
         checkFirstIfTheElementsArentEmpty,
-        changeTheDefaultCounty
+        changeTheDefaultCounty,
+        filterCountiesOutOfTheListOfStations
     }
 
 })();
