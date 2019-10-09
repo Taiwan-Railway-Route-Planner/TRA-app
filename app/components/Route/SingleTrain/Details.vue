@@ -63,7 +63,7 @@
                     </FlexboxLayout>
                     <FlexboxLayout class="trainDestArrDetails">
                         <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"></Label>
-                        <Label v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></Label>
+                        <ScalingLabel v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></ScalingLabel>
                         <FlexboxLayout class="trainDetailsIcons">
                             <FlexboxLayout class="information">
                                 <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name + ' ' + $props.selectTravelDetails.Train"></Label>
@@ -79,7 +79,7 @@
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
-                        <Label v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></Label>
+                        <ScalingLabel v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></ScalingLabel>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
