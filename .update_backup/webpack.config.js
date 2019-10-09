@@ -34,7 +34,8 @@ module.exports = env => {
 
     const {
         // The 'appPath' and 'appResourcesPath' values are fetched from
-        // the nsconfig.json configuration file.
+        // the nsconfig.json configuration file
+        // when bundling with `tns run android|ios --bundle`.
         appPath = "app",
         appResourcesPath = "app/App_Resources",
 
@@ -169,7 +170,7 @@ module.exports = env => {
         },
         module: {
             rules: [{
-                include: [join(appFullPath, entryPath + ".js"), join(appFullPath, entryPath + ".ts")],
+                test: nsWebpack.getEntryPathRegExp(appFullPath, entryPath + ".(js|ts)"),
                 use: [
                     // Require all Android app components
                     platform === "android" && {
