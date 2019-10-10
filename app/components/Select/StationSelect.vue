@@ -16,7 +16,6 @@
                         </ListView>
                         <ListView v-else class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
                             <v-template>
-<!--                                <Label :text="item.eng站名 + ' (' + item.traWebsiteCode + ')' "></Label>-->
                                 <ScalingLabel :text="item.eng站名 + ' (' + item.站名 + ')' +  ' - ' + item.traWebsiteCode"></ScalingLabel>
                             </v-template>
                         </ListView>
@@ -321,6 +320,7 @@
         justify-content: center;
     }
 
+    /****** GENERATE FROM COMPUTED layoutStateLabel() ******/
     /****** label ******/
 
     .labelForStandard {
@@ -338,6 +338,7 @@
         align-self: center;
     }
 
+    /****** GENERATE FROM COMPUTED layoutStateTextField() ******/
     /****** textField ******/
 
     .textFieldForStandard {
@@ -355,6 +356,7 @@
         margin-right: 6%;
     }
 
+    /****** GENERATE FROM COMPUTED layoutStateLabelForTimeStamp() ******/
     /****** timeStamp -- Label ******/
 
     .timeStampLabelForSpanish {
@@ -373,10 +375,18 @@
         align-self: center;
     }
 
+    /****** GENERATE FROM COMPUTED layoutStateTextField() ******/
     /****** timeStamp -- TextField ******/
 
     .timeStampTextFieldForSpanish {
         width: 65%;
+        font-size: 14;
+        margin-right: 6%;
+    }
+
+    .timeStampTextFieldForGerman {
+        width: 52%;
+        font-size: 14;
         margin-right: 6%;
     }
 
