@@ -260,24 +260,6 @@
         width: 50%;
     }
 
-    /****** GENERATE FROM COMPUTED smallerTitleRoom() and biggerDestinationDetails() ******/
-
-    .dock-top .navDetails .top-data.biggerTopDataForKorean{
-        width: 66%;
-    }
-
-    .dock-top .navDetails .top-title.smallerTopTitleForKorean{
-        width: 14%;
-    }
-
-    .dock-top .navDetails .top-data.biggerTopDataForDutch{
-        width: 69%;
-    }
-
-    .dock-top .navDetails .top-title.smallerTopTitleForDutch{
-        width: 11%;
-    }
-
     .center {
         background-color: #fff;
         color: #1a0dab;
@@ -358,12 +340,32 @@
         font-size: 18;
     }
 
+    /****** GENERATE FROM COMPUTED resizeLabels() ******/
+
     .smallerLabels .navDetails Label {
         font-size: 16;
     }
 
     .standardLabels .navDetails Label{
         font-size: 16;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerTitleRoom() and biggerDestinationDetails() ******/
+
+    .dock-top .navDetails .top-data.biggerTopDataForKorean{
+        width: 66%;
+    }
+
+    .dock-top .navDetails .top-title.smallerTopTitleForKorean{
+        width: 14%;
+    }
+
+    .dock-top .navDetails .top-data.biggerTopDataForDutch{
+        width: 69%;
+    }
+
+    .dock-top .navDetails .top-title.smallerTopTitleForDutch{
+        width: 11%;
     }
 
 </style>
