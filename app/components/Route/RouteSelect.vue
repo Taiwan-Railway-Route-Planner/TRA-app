@@ -137,10 +137,11 @@
             resizeLabels() {
                 switch (this.$store.state.language) {
                     case 'ES':
-                        return 'smallerLabelsForSpain';
                     case 'DE':
-                    case 'EN':
                     case 'FR':
+                        return 'smallerLabelsForSpain';
+                    case 'EN':
+
                         return 'smallerLabels';
                     default:
                         return 'standardLabels';
@@ -161,7 +162,10 @@
                     case 'NL':
                         return 'smallerTopTitleForDutch';
                     case 'ES':
-                        return 'biggerTopTitleForSpanish';
+                    case 'DE':
+                        return 'biggerTopDataForSpanish';
+                    case 'FR':
+                        return 'biggerTopTitleForFrench';
                     default:
                         return '';
                 }
@@ -173,7 +177,10 @@
                     case 'NL':
                         return 'biggerTopDataForDutch';
                     case 'ES':
+                    case 'DE':
                         return 'biggerTopDataForSpanish';
+                    case 'FR':
+                        return 'biggerTopDataForFrench';
                     default:
                         return '';
                 }
@@ -246,7 +253,7 @@
 
     .dock-top .navDetails {
         flex-direction: row;
-        margin-left: 6%;
+        margin-left: 4%;
         align-items: center;
     }
 
@@ -359,7 +366,7 @@
     }
 
     .smallerLabelsForSpain .navDetails .fas{
-        margin-right: 1%;
+        margin-right: 2%;
     }
 
     .standardLabels .navDetails Label{
@@ -389,6 +396,10 @@
         width: 40%;
     }
 
+    .dock-top .navDetails .top-data.biggerTopDataForFrench{
+        width: 50%;
+    }
+
     /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
 
     .dock-top .navDetails .top-title.smallerTopTitleForKorean{
@@ -401,6 +412,10 @@
 
     .dock-top .navDetails .top-title.biggerTopTitleForSpanish{
         width: 42%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForFrench{
+        width: 32%;
     }
 
 </style>
