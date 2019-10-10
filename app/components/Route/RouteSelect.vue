@@ -9,7 +9,7 @@
                             <Label  :text="data.top.first + ':'"></Label>
                             <Label  :text="data.top.second + ':'"></Label>
                         </FlexboxLayout>
-                        <FlexboxLayout v-if="$store.state.language === 'ZH'" class="top-data">
+                        <FlexboxLayout v-if="$store.state.language === 'ZH'" class="biggerTopDataForZH top-data">
                             <Label :text="$props.routeDetails.departure.details.站名"></Label>
                             <Label :text="$props.routeDetails.arrival.details.站名"></Label>
                         </FlexboxLayout>
@@ -139,10 +139,10 @@
                     case 'ES':
                     case 'DE':
                     case 'FR':
-                        return 'smallerLabelsForSpain';
                     case 'EN':
-
-                        return 'smallerLabels';
+                        return 'smallerLabelsForSpain';
+                    // case 'EN':
+                    //     return 'smallerLabels';
                     default:
                         return 'standardLabels';
                 }
@@ -159,13 +159,17 @@
                 switch (this.$store.state.language) {
                     case 'KO':
                         return 'smallerTopTitleForKorean';
+                    case 'ZH':
+                        return 'smallerTopTitleForZH';
                     case 'NL':
                         return 'smallerTopTitleForDutch';
                     case 'ES':
                     case 'DE':
-                        return 'biggerTopDataForSpanish';
+                        return 'biggerTopTitleForSpanish';
                     case 'FR':
                         return 'biggerTopTitleForFrench';
+                    case 'EN':
+                        return 'biggerTopTitleForEnglish';
                     default:
                         return '';
                 }
@@ -174,6 +178,8 @@
                 switch (this.$store.state.language) {
                     case 'KO':
                         return 'biggerTopDataForKorean';
+                    case 'ZH':
+                        return 'biggerTopDataForZH';
                     case 'NL':
                         return 'biggerTopDataForDutch';
                     case 'ES':
@@ -181,6 +187,8 @@
                         return 'biggerTopDataForSpanish';
                     case 'FR':
                         return 'biggerTopDataForFrench';
+                    case 'EN':
+                        return 'biggerTopTitleForEnglish';
                     default:
                         return '';
                 }
@@ -362,7 +370,7 @@
     }
 
     .smallerLabelsForSpain .navDetails .top-data Label{
-        font-size: 13;
+        font-size: 14;
     }
 
     .smallerLabelsForSpain .navDetails .fas{
@@ -385,11 +393,15 @@
     /****** GENERATE FROM COMPUTED biggerDestinationDetails() ******/
 
     .dock-top .navDetails .top-data.biggerTopDataForKorean{
-        width: 66%;
+        width: 64%;
+    }
+
+    .dock-top .navDetails .top-data.biggerTopDataForZH{
+        width: 62%;
     }
 
     .dock-top .navDetails .top-data.biggerTopDataForDutch{
-        width: 69%;
+        width: 67%;
     }
 
     .dock-top .navDetails .top-data.biggerTopDataForSpanish{
@@ -400,14 +412,22 @@
         width: 50%;
     }
 
+    .dock-top .navDetails .top-data.biggerTopTitleForEnglish{
+        width: 45%;
+    }
+
     /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
 
     .dock-top .navDetails .top-title.smallerTopTitleForKorean{
-        width: 14%;
+        width: 16%;
+    }
+
+    .dock-top .navDetails .top-title.smallerTopTitleForZH{
+        width: 18%;
     }
 
     .dock-top .navDetails .top-title.smallerTopTitleForDutch{
-        width: 11%;
+        width: 13%;
     }
 
     .dock-top .navDetails .top-title.biggerTopTitleForSpanish{
@@ -416,6 +436,10 @@
 
     .dock-top .navDetails .top-title.biggerTopTitleForFrench{
         width: 32%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForEnglish{
+        width: 37%;
     }
 
 </style>
