@@ -5,17 +5,17 @@
                 <FlexboxLayout :class="resizeLabels">
                     <FlexboxLayout class="navDetails" @tap="navigateBackVue">
                         <Label class="fas" :text="'\uf060' | unescape"></Label>
-                        <FlexboxLayout class="top-title">
-                            <Label :text="data.top.first + ':'"></Label>
-                            <Label :text="data.top.second + ':'"></Label>
+                        <FlexboxLayout :class="[smallerTitleRoom, 'top-title']">
+                            <ScalingLabel  :text="data.top.first + ':'"></ScalingLabel>
+                            <ScalingLabel  :text="data.top.second + ':'"></ScalingLabel>
                         </FlexboxLayout>
                         <FlexboxLayout v-if="$store.state.language === 'ZH'" class="top-data">
                             <Label :text="$props.routeDetails.departure.details.站名"></Label>
                             <Label :text="$props.routeDetails.arrival.details.站名"></Label>
                         </FlexboxLayout>
-                        <FlexboxLayout v-else class="top-data">
-                            <Label :text="$props.routeDetails.departure.details.eng站名"></Label>
-                            <Label :text="$props.routeDetails.arrival.details.eng站名"></Label>
+                        <FlexboxLayout v-else :class="[biggerDestinationDetails, 'top-data']">
+                            <ScalingLabel :class="makeDestinationSmaller" :text="$props.routeDetails.departure.details.eng站名"></ScalingLabel>
+                            <ScalingLabel :class="makeDestinationSmaller" :text="$props.routeDetails.arrival.details.eng站名"></ScalingLabel>
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </FlexboxLayout>
@@ -144,6 +144,31 @@
                     default:
                         return 'standardLabels';
                 }
+            },
+            makeDestinationSmaller(){
+                console.log(this.$props.routeDetails.departure.details.eng站名.length);
+                console.log(this.$props.routeDetails.arrival.details.eng站名.length);
+                console.log(this.data.top.second.length);
+            },
+            smallerTitleRoom(){
+                switch (this.$store.state.language) {
+                    case 'KO':
+                        return 'smallerTopTitleForKorean';
+                    case 'NL':
+                        return 'smallerTopTitleForDutch';
+                    default:
+                        return '';
+                }
+            },
+            biggerDestinationDetails(){
+                switch (this.$store.state.language) {
+                    case 'KO':
+                        return 'biggerTopDataForKorean';
+                    case 'NL':
+                        return 'biggerTopDataForDutch';
+                    default:
+                        return '';
+                }
             }
         },
         data() {
@@ -201,9 +226,9 @@
         height: 10%;
     }
 
-    .dock-top Label {
-        font-size: 17;
-    }
+    /*.dock-top Label {*/
+    /*    font-size: 17;*/
+    /*}*/
 
     /*.top {*/
     /*    flex-direction: row;*/
@@ -220,16 +245,37 @@
     .dock-top .navDetails .top-title {
         flex-direction: column;
         margin-bottom: 1%;
-        margin-right: 10%;
+        margin-right: 3%;
+        width: 30%;
     }
 
     .dock-top .navDetails .fas {
         font-size: 30;
-        margin-right: 6%;
+        margin-right: 4%;
+        width: 10%;
     }
 
     .dock-top .navDetails .top-data {
         flex-direction: column;
+        width: 50%;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerTitleRoom() and biggerDestinationDetails() ******/
+
+    .dock-top .navDetails .top-data.biggerTopDataForKorean{
+        width: 66%;
+    }
+
+    .dock-top .navDetails .top-title.smallerTopTitleForKorean{
+        width: 14%;
+    }
+
+    .dock-top .navDetails .top-data.biggerTopDataForDutch{
+        width: 69%;
+    }
+
+    .dock-top .navDetails .top-title.smallerTopTitleForDutch{
+        width: 11%;
     }
 
     .center {
@@ -312,11 +358,11 @@
         font-size: 18;
     }
 
-    .smallerLabels Label {
-        font-size: 14;
+    .smallerLabels .navDetails Label {
+        font-size: 16;
     }
 
-    .standardLabels Label {
+    .standardLabels .navDetails Label{
         font-size: 16;
     }
 
