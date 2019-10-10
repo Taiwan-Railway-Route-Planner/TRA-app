@@ -6,16 +6,16 @@
                     <FlexboxLayout class="navDetails" @tap="navigateBackVue">
                         <Label class="fas" :text="'\uf060' | unescape"></Label>
                         <FlexboxLayout :class="[smallerTitleRoom, 'top-title']">
-                            <ScalingLabel  :text="data.top.first + ':'"></ScalingLabel>
-                            <ScalingLabel  :text="data.top.second + ':'"></ScalingLabel>
+                            <Label  :text="data.top.first + ':'"></Label>
+                            <Label  :text="data.top.second + ':'"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout v-if="$store.state.language === 'ZH'" class="top-data">
                             <Label :text="$props.routeDetails.departure.details.站名"></Label>
                             <Label :text="$props.routeDetails.arrival.details.站名"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout v-else :class="[biggerDestinationDetails, 'top-data']">
-                            <ScalingLabel :class="makeDestinationSmaller" :text="$props.routeDetails.departure.details.eng站名"></ScalingLabel>
-                            <ScalingLabel :class="makeDestinationSmaller" :text="$props.routeDetails.arrival.details.eng站名"></ScalingLabel>
+                            <Label :class="makeDestinationSmaller" :text="$props.routeDetails.departure.details.eng站名"></Label>
+                            <Label :class="makeDestinationSmaller" :text="$props.routeDetails.arrival.details.eng站名"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </FlexboxLayout>
@@ -137,6 +137,7 @@
             resizeLabels() {
                 switch (this.$store.state.language) {
                     case 'ES':
+                        return 'smallerLabelsForSpain';
                     case 'DE':
                     case 'EN':
                     case 'FR':
@@ -146,9 +147,12 @@
                 }
             },
             makeDestinationSmaller(){
-                console.log(this.$props.routeDetails.departure.details.eng站名.length);
-                console.log(this.$props.routeDetails.arrival.details.eng站名.length);
-                console.log(this.data.top.second.length);
+                if (this.$props.routeDetails.departure.details.eng站名.length > 19
+                    || this.$props.routeDetails.arrival.details.eng站名.length > 19){
+                    return 'extraSmall';
+                } else {
+                    return ''
+                }
             },
             smallerTitleRoom(){
                 switch (this.$store.state.language) {
@@ -156,6 +160,8 @@
                         return 'smallerTopTitleForKorean';
                     case 'NL':
                         return 'smallerTopTitleForDutch';
+                    case 'ES':
+                        return 'biggerTopTitleForSpanish';
                     default:
                         return '';
                 }
@@ -166,6 +172,8 @@
                         return 'biggerTopDataForKorean';
                     case 'NL':
                         return 'biggerTopDataForDutch';
+                    case 'ES':
+                        return 'biggerTopDataForSpanish';
                     default:
                         return '';
                 }
@@ -342,30 +350,57 @@
 
     /****** GENERATE FROM COMPUTED resizeLabels() ******/
 
-    .smallerLabels .navDetails Label {
-        font-size: 16;
+    .smallerLabelsForSpain .navDetails .top-title Label {
+        font-size: 14;
+    }
+
+    .smallerLabelsForSpain .navDetails .top-data Label{
+        font-size: 13;
+    }
+
+    .smallerLabelsForSpain .navDetails .fas{
+        margin-right: 1%;
     }
 
     .standardLabels .navDetails Label{
         font-size: 16;
     }
 
-    /****** GENERATE FROM COMPUTED smallerTitleRoom() and biggerDestinationDetails() ******/
+    /****** GENERATE FROM COMPUTED makeDestinationSmaller() ******/
+
+    .dock-top .navDetails .top-data .extraSmall{
+        font-size: 10;
+        padding-bottom: 3%;
+        padding-top: 3%;
+    }
+
+
+    /****** GENERATE FROM COMPUTED biggerDestinationDetails() ******/
 
     .dock-top .navDetails .top-data.biggerTopDataForKorean{
         width: 66%;
-    }
-
-    .dock-top .navDetails .top-title.smallerTopTitleForKorean{
-        width: 14%;
     }
 
     .dock-top .navDetails .top-data.biggerTopDataForDutch{
         width: 69%;
     }
 
+    .dock-top .navDetails .top-data.biggerTopDataForSpanish{
+        width: 40%;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
+
+    .dock-top .navDetails .top-title.smallerTopTitleForKorean{
+        width: 14%;
+    }
+
     .dock-top .navDetails .top-title.smallerTopTitleForDutch{
         width: 11%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForSpanish{
+        width: 42%;
     }
 
 </style>
