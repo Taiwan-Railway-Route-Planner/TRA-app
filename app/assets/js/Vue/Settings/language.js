@@ -150,7 +150,7 @@ module.exports = (function () {
                 }
             }
         },
-        RU: {
+        ru: {
             "top": {
                 "title": "Настройки"
             },
