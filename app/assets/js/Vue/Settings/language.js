@@ -144,9 +144,9 @@ module.exports = (function () {
                 "otherInfo": {
                     "rate": "Գնահատեք մեզ Google Play հարթակում",
                     "contactUs": "Ուղարկել էլեկտրոնային նամակ",
-                    "openSource": "Դիտել մեր նախագիծը GitHub կայքում",
+                    "openSource": "Դիտել մեր նախագիծը Github կայքում",
                     "Version": "Տարբերակ",
-                    "support": "Լրացուցիչ տեղեկատվություն"
+                    "support": "Լրացուցիչ տեղեկություն"
                 }
             }
         }
