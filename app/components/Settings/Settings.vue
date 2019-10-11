@@ -66,11 +66,15 @@
         },
         computed: {
             layoutStateLabel() {
-                let active = false;
-                if (this.$store.state.language === "ES") {
-                    active = true;
+                switch (this.$store.state.language) {
+                    case 'ES':
+                    // case 'AR':
+                        return 'labelForSpanish';
+                    case 'AR':
+                        return 'labelForArmenian';
+                    default:
+                        return 'labelForStandard';
                 }
-                return active ? 'labelForSpanish' : 'labelForStandard';
             }
         },
         data() {
@@ -169,6 +173,10 @@
 
     .labelForSpanish {
         font-size: 16;
+    }
+
+    .labelForArmenian{
+        font-size: 14;
     }
 
     .dock-center .settings .otherInfo .element {
