@@ -408,6 +408,8 @@
         height: 180;
     }
 
+    /****** GENERATE FROM COMPUTED doWeNeedSmaller() ******/
+
     .dock-center .totalFareDetails.fareHight{
         height: 20%;
     }
