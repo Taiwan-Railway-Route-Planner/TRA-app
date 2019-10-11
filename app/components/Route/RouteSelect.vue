@@ -140,7 +140,8 @@
                     case 'DE':
                     case 'FR':
                     case 'EN':
-                        return 'smallerLabelsForSpain';
+                    case 'RU':
+                        return 'smallerLabels';
                     default:
                         return 'standardLabels';
                 }
@@ -163,6 +164,7 @@
                         return 'smallerTopTitleForDutch';
                     case 'ES':
                     case 'DE':
+                    case 'RU':
                         return 'biggerTopTitleForSpanish';
                     case 'FR':
                         return 'biggerTopTitleForFrench';
@@ -182,6 +184,7 @@
                         return 'biggerTopDataForDutch';
                     case 'ES':
                     case 'DE':
+                    case 'RU':
                         return 'biggerTopDataForSpanish';
                     case 'FR':
                         return 'biggerTopDataForFrench';
@@ -363,15 +366,15 @@
 
     /****** GENERATE FROM COMPUTED resizeLabels() ******/
 
-    .smallerLabelsForSpain .navDetails .top-title Label {
+    .smallerLabels .navDetails .top-title Label {
         font-size: 14;
     }
 
-    .smallerLabelsForSpain .navDetails .top-data Label{
+    .smallerLabels .navDetails .top-data Label{
         font-size: 14;
     }
 
-    .smallerLabelsForSpain .navDetails .fas{
+    .smallerLabels .navDetails .fas{
         margin-right: 2%;
     }
 
