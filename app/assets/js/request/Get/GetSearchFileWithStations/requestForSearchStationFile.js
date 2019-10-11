@@ -38,6 +38,9 @@ module.exports = (function () {
                 case "AR":
                     response.msg = errorMessages.messages.ar.stations;
                     break;
+                case "RU":
+                    response.msg = errorMessages.messages.ru.stations;
+                    break;
             }
         }
         return response;
