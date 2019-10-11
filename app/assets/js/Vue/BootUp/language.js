@@ -30,7 +30,7 @@ module.exports = (function () {
             confirm: "ՀԱՍՏԱՏԵԼ"
         },
         ru: {
-            confirm: "ОТКАЗЫВАТЬСЯ"
+            confirm: "ПОДТВЕРДИТЬ"
         }
     };
 

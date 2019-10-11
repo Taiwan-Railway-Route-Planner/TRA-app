@@ -499,12 +499,12 @@ module.exports = (function () {
                             }
                         },
                         bottom: {
-                            "leftBtn": "ПОДТВЕРДИТЬ",
-                            "rightBtn": "ОТКАЗЫВАТЬСЯ"
+                            "leftBtn": "ОТМЕНИТЬ",
+                            "rightBtn": "ПОДТВЕРДИТЬ"
                         }
                     }
                 },
-                "button": "ПОИСК"
+                "button": "НАЙТИ"
             },
             "error": "Станция отправления или прибытия не заполнены!",
             "internetError": "Нет интернет связи!"
