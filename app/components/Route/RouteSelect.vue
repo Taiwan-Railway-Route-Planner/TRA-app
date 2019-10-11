@@ -164,12 +164,13 @@
                         return 'smallerTopTitleForDutch';
                     case 'ES':
                     case 'DE':
-                    case 'RU':
                         return 'biggerTopTitleForSpanish';
                     case 'FR':
                         return 'biggerTopTitleForFrench';
                     case 'EN':
                         return 'biggerTopTitleForEnglish';
+                    case 'RU':
+                        return 'biggerTopTitleForRussian';
                     default:
                         return '';
                 }
@@ -184,12 +185,13 @@
                         return 'biggerTopDataForDutch';
                     case 'ES':
                     case 'DE':
-                    case 'RU':
                         return 'biggerTopDataForSpanish';
                     case 'FR':
                         return 'biggerTopDataForFrench';
                     case 'EN':
-                        return 'biggerTopTitleForEnglish';
+                        return 'biggerTopDataForEnglish';
+                    case 'RU':
+                        return 'biggerTopDataForRussian';
                     default:
                         return '';
                 }
@@ -413,8 +415,12 @@
         width: 50%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopTitleForEnglish{
+    .dock-top .navDetails .top-data.biggerTopDataForEnglish{
         width: 45%;
+    }
+
+    .dock-top .navDetails .top-data.biggerTopDataForRussian{
+        width: 38%;
     }
 
     /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
@@ -441,6 +447,10 @@
 
     .dock-top .navDetails .top-title.biggerTopTitleForEnglish{
         width: 37%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForRussian{
+        width: 45%;
     }
 
 </style>
