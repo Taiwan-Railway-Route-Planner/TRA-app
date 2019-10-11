@@ -1,9 +1,9 @@
 <template>
-    <DockLayout class="modal">
+    <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
                 <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""></Label>
-<!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
+                <!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
@@ -43,6 +43,16 @@
         props: ['time', 'formatTimeStampBasedOnLanguage'],
         created: function () {
             handle.handle(this);
+        },
+        computed: {
+            smallerLabels() {
+                switch (this.$store.state.language) {
+                    case 'RU':
+                        return 'smallerLabels';
+                    default:
+                        return '';
+                }
+            }
         },
         data() {
             return {
@@ -100,6 +110,17 @@
         width: 300;
         text-align: left;
         color: #000;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerLabels() ******/
+
+    .smallerLabels.modal Label,
+    .smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel{
+        font-size: 14;
+    }
+
+    .smallerLabels.modal .timeSettings .timeSelect .now Button{
+        font-size: 12;
     }
 
     .timeSettings {
