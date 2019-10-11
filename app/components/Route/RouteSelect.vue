@@ -141,8 +141,6 @@
                     case 'FR':
                     case 'EN':
                         return 'smallerLabelsForSpain';
-                    // case 'EN':
-                    //     return 'smallerLabels';
                     default:
                         return 'standardLabels';
                 }
