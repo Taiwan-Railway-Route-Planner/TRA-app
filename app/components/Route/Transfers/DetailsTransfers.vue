@@ -6,7 +6,7 @@
                     <FlexboxLayout class="top-title">
                         <FlexboxLayout class="titles" @tap="navigateBackVue">
                             <Label class="fas" :text="'\uf060' | unescape"></Label>
-                            <Label :text="$props.language.details.top.title"></Label>
+                            <Label :class="smallerTopTitle" :text="$props.language.details.top.title"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
                             <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"></Label>
@@ -128,10 +128,19 @@
             smallerTextPrices(){
               switch (this.$store.state.language) {
                   case 'RU':
+                  case 'AR':
                       return 'smallerTextPrices';
                   default:
                       return '';
               }
+            },
+            smallerTopTitle(){
+                switch (this.$store.state.language) {
+                    case 'AR':
+                        return 'smallerTopTitle';
+                    default:
+                        return '';
+                }
             }
         },
         data() {
@@ -416,12 +425,6 @@
         height: 180;
     }
 
-    /****** GENERATE FROM COMPUTED doWeNeedSmaller() ******/
-
-    .dock-center .totalFareDetails.fareHight{
-        height: 20%;
-    }
-
     .dock-center .totalFareDetails .prices{
         flex-direction: column;
         align-items: center;
@@ -435,11 +438,22 @@
         margin-top: 4%;
     }
 
+    /****** GENERATE FROM COMPUTED doWeNeedSmaller() ******/
+
+    .dock-center .totalFareDetails.fareHight{
+        height: 20%;
+    }
+
     /****** GENERATE FROM COMPUTED smallerTextPrices() ******/
 
     .dock-center .totalFareDetails .prices .smallerTextPrices.text{
         font-size: 12;
     }
 
+    /****** GENERATE FROM COMPUTED smallerTextPrices() ******/
+
+    .dock-top .top .top-title .titles .smallerTopTitle{
+        font: 20;
+    }
 
 </style>

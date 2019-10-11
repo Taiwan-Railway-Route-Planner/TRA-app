@@ -6,7 +6,7 @@
                     <FlexboxLayout class="top-title">
                         <FlexboxLayout class="titles" @tap="navigateBackVue">
                             <Label class="fas" :text="'\uf060' | unescape"></Label>
-                            <Label :text="$props.language.details.top.title"></Label>
+                            <Label :class="smallerTopTitle" :text="$props.language.details.top.title"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
                             <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"></Label>
@@ -36,12 +36,12 @@
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf3ff' | unescape"></Label>
                         <Label class="text" :text="'NT$ ' + $props.selectTravelDetails.singlePrice"></Label>
-                        <Label class="text" :text="$props.language.details.price.single"></Label>
+                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.single"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
                         <Image src="~/assets/images/easycard.png" stretch="none"></Image>
                         <Label class="text" :text="'NT$ ' +$props.selectTravelDetails.ePrice"></Label>
-                        <Label class="text" :text="$props.language.details.price.ePrice"></Label>
+                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.ePrice"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf4d7' | unescape"></Label>
@@ -97,7 +97,16 @@
             smallerTextPrices(){
                 switch (this.$store.state.language) {
                     case 'RU':
+                    case 'AR':
                         return 'smallerTextPrices';
+                    default:
+                        return '';
+                }
+            },
+            smallerTopTitle(){
+                switch (this.$store.state.language) {
+                    case 'AR':
+                        return 'smallerTopTitle';
                     default:
                         return '';
                 }
@@ -372,8 +381,14 @@
 
     /****** GENERATE FROM COMPUTED smallerTextPrices() ******/
 
-    .dock-center .totalFareDetails .prices .smallerTextPrices.text{
+    .dock-center .extraDetails .prices .smallerTextPrices.text{
         font-size: 12;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerTextPrices() ******/
+
+    .dock-top .top .top-title .titles .smallerTopTitle{
+        font: 20;
     }
 
 </style>
