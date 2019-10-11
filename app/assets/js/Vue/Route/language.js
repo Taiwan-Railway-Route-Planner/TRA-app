@@ -399,6 +399,120 @@ module.exports = (function () {
                 }
 
             }
+        },
+        ar: {
+            top: {
+                "first": "Մեկնման կայարան",
+                "second": "Ժամանման կայարան"
+            },
+            trainTypes: {
+                "Local": {
+                    name: "Local",
+                    color: "#333333"
+                },
+                "Other Local": {
+                    name: "Ordinary",
+                    color: "#333333"
+                },
+                "Fast Local": {
+                    name: "Fast Local",
+                    color: "#333333"
+                },
+                "Chu-kuang": {
+                    name: "Chu-kuang",
+                    color: "#FFD200"
+                },
+                "Tze-chiang": {
+                    name: "Tze-chiang",
+                    color: "#FF8708"
+                },
+                "Fu-Hsing": {
+                    name: "Fu-Hsing",
+                    color: "#00ace8"
+                },
+                "Taroko": {
+                    name: "Taroko",
+                    color: "#FF5000"
+                },
+                "Puyuma": {
+                    name: "Puyuma",
+                    color: "#D00216"
+                }
+            },
+            details: {
+                top: {
+                    "title": "Ուղևորության տվյալներ"
+                },
+                price: {
+                    "single": "Միակողմանի տոմս",
+                    "ePrice": "Էլեկտրոնային տոմս"
+                }
+            },
+            stopDetails: {
+                top: {
+                    "title": "Գնացքի տվյալներ",
+                    "type": "Տեսակ",
+                    "number": "Համար"
+                }
+
+            }
+        },
+        ru: {
+            top: {
+                "first": "Станция отправления",
+                "second": "Станция прибытия"
+            },
+            trainTypes: {
+                "Local": {
+                    name: "Local",
+                    color: "#333333"
+                },
+                "Other Local": {
+                    name: "Ordinary",
+                    color: "#333333"
+                },
+                "Fast Local": {
+                    name: "Fast Local",
+                    color: "#333333"
+                },
+                "Chu-kuang": {
+                    name: "Chu-kuang",
+                    color: "#FFD200"
+                },
+                "Tze-chiang": {
+                    name: "Tze-chiang",
+                    color: "#FF8708"
+                },
+                "Fu-Hsing": {
+                    name: "Fu-Hsing",
+                    color: "#00ace8"
+                },
+                "Taroko": {
+                    name: "Taroko",
+                    color: "#FF5000"
+                },
+                "Puyuma": {
+                    name: "Puyuma",
+                    color: "#D00216"
+                }
+            },
+            details: {
+                top: {
+                    "title": "Данные путешествия"
+                },
+                price: {
+                    "single": "Билет в одну сторону",
+                    "ePrice": "Электронный билет"
+                }
+            },
+            stopDetails: {
+                top: {
+                    "title": "Данные поезда",
+                    "type": "Тип",
+                    "number": "Номер"
+                }
+
+            }
         }
     };
 

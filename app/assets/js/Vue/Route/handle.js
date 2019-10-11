@@ -35,6 +35,12 @@ export default (function () {
             case "FR":
                 _self.data = language.language.fr;
                 break;
+            case "AR":
+                _self.data = language.language.ar;
+                break;
+            case "RU":
+                _self.data = language.language.ru;
+                break;
         }
     }
 

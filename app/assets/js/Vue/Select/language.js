@@ -396,6 +396,118 @@ module.exports = (function () {
             },
             "error": "Vous n'avez pas renseigné de destination ou de départ!",
             "internetError": "Pas de connexion Internet!"
+        },
+        ar: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation": "Ընտրել մեկնման կայարանը",
+                    "endStation": "Ընտրել ժամանման կայարանը"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'AR',
+                departure: {
+                    details: {},
+                    "hint": "Ընտրել կայարանը",
+                    "label": "Որտեղից"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Ընտրել կայարանը",
+                    "label": "Ուր"
+                },
+                time: {
+                    "label": "Օրը և ժամը",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'hy-am',
+                    modal: {
+                        top: {
+                            "first": "ՄԵԿՆՈՒՄ",
+                            "second": "ԺԱՄԱՆՈՒՄ"
+                        },
+                        center: {
+                            "button": "Հիմա",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "ՀԵՐՔԵԼ",
+                            "rightBtn": "ՀԱՍՏԱՏԵԼ"
+                        }
+                    }
+                },
+                "button": "ՓՆՏՐԵԼ"
+            },
+            "error": "Մեկնման կամ ժամանման վայրը լրացված չէ:",
+            "internetError": "Ինտերնետ կապ չկա:"
+        },
+        ru: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation": "Выбрать станцию отправления",
+                    "endStation": "Выбрать станцию прибытия"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'RU',
+                departure: {
+                    details: {},
+                    "hint": "Выбрать станцию",
+                    "label": "Откуда"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Выбрать станцию",
+                    "label": "Куда"
+                },
+                time: {
+                    "label": "Время",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'ru',
+                    modal: {
+                        top: {
+                            "first": "ОТПРАВЛЕНИЕ",
+                            "second": "ПРИБЫТИЕ"
+                        },
+                        center: {
+                            "button": "СЕЙЧАС",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "ОТМЕНИТЬ",
+                            "rightBtn": "ПОДТВЕРДИТЬ"
+                        }
+                    }
+                },
+                "button": "НАЙТИ"
+            },
+            "error": "Станция отправления или прибытия не заполнены!",
+            "internetError": "Нет интернет связи!"
         }
     };
 

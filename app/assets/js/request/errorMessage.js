@@ -32,6 +32,14 @@ module.exports = (function () {
         fr: {
             "stations": "Veuillez réessayer plus tard!",
             "route": "Nous ne pouvons trouver aucun itinéraire pour ce jour!"
+        },
+        ar: {
+            "stations": "Խնդրում ենք փորձել ավելի ուշ:",
+            "route": "Նշված օրվա համար երթուղի չի գտնվել:"
+        },
+        ru: {
+            "stations": "Пожалуйста, повторите попытку позже!",
+            "route": "На указанный день не найдено ни одного маршрута!"
         }
     };
 

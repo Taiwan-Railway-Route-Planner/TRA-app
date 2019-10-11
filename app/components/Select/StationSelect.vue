@@ -108,7 +108,10 @@
                 switch (this.$store.state.language) {
                     case 'ES':
                         return 'labelForSpanish';
+                    case 'AR':
+                        return 'labelForArmenian';
                     case 'FR':
+                    case 'RU':
                         return 'labelForFrench';
                     default:
                         return 'labelForStandard'
@@ -118,6 +121,8 @@
                 switch (this.$store.state.language) {
                     case 'ES':
                         return 'textFieldForSpanish';
+                    case 'AR':
+                        return 'textFieldForArmenian';
                     default:
                         return 'textFieldForStandard'
                 }
@@ -125,10 +130,12 @@
             layoutStateLabelForTimeStamp() {
                 switch (this.$store.state.language) {
                     case "ES":
+                    case 'AR':
                         return "timeStampLabelForSpanish";
                     case "DE":
                         return "timeStampLabelForGerman";
                     case 'FR':
+                    case 'RU':
                         return 'timeStampLabelForFrench';
                     default:
                         return "labelForStandard";
@@ -137,6 +144,7 @@
             layoutStateTextFieldForTimeStamp() {
                 switch (this.$store.state.language) {
                     case "ES":
+                    case 'AR':
                         return "timeStampTextFieldForSpanish";
                     case "DE":
                         return "timeStampTextFieldForGerman";
@@ -343,6 +351,11 @@
         align-self: center;
     }
 
+    .labelForArmenian{
+        width: 28%;
+        align-self: center;
+    }
+
     /****** GENERATE FROM COMPUTED layoutStateTextField() ******/
     /****** textField ******/
 
@@ -357,6 +370,11 @@
     }
 
     .textFieldForGerman {
+        width: 62%;
+        margin-right: 6%;
+    }
+
+    .textFieldForArmenian{
         width: 62%;
         margin-right: 6%;
     }

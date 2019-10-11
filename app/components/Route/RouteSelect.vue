@@ -140,9 +140,9 @@
                     case 'DE':
                     case 'FR':
                     case 'EN':
-                        return 'smallerLabelsForSpain';
-                    // case 'EN':
-                    //     return 'smallerLabels';
+                    case 'RU':
+                    case 'AR':
+                        return 'smallerLabels';
                     default:
                         return 'standardLabels';
                 }
@@ -170,6 +170,10 @@
                         return 'biggerTopTitleForFrench';
                     case 'EN':
                         return 'biggerTopTitleForEnglish';
+                    case 'RU':
+                        return 'biggerTopTitleForRussian';
+                    case 'AR':
+                        return 'biggerTopTitleForArmenian';
                     default:
                         return '';
                 }
@@ -188,7 +192,11 @@
                     case 'FR':
                         return 'biggerTopDataForFrench';
                     case 'EN':
-                        return 'biggerTopTitleForEnglish';
+                        return 'biggerTopDataForEnglish';
+                    case 'RU':
+                        return 'biggerTopDataForRussian';
+                    case 'AR':
+                        return 'biggerTopDataForArmenian';
                     default:
                         return '';
                 }
@@ -365,15 +373,15 @@
 
     /****** GENERATE FROM COMPUTED resizeLabels() ******/
 
-    .smallerLabelsForSpain .navDetails .top-title Label {
+    .smallerLabels .navDetails .top-title Label {
         font-size: 14;
     }
 
-    .smallerLabelsForSpain .navDetails .top-data Label{
+    .smallerLabels .navDetails .top-data Label{
         font-size: 14;
     }
 
-    .smallerLabelsForSpain .navDetails .fas{
+    .smallerLabels .navDetails .fas{
         margin-right: 2%;
     }
 
@@ -412,8 +420,16 @@
         width: 50%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopTitleForEnglish{
+    .dock-top .navDetails .top-data.biggerTopDataForEnglish{
         width: 45%;
+    }
+
+    .dock-top .navDetails .top-data.biggerTopDataForRussian{
+        width: 38%;
+    }
+
+    .dock-top .navDetails .top-data.biggerTopDataForArmenian{
+        width: 37%;
     }
 
     /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
@@ -440,6 +456,18 @@
 
     .dock-top .navDetails .top-title.biggerTopTitleForEnglish{
         width: 37%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForRussian{
+        width: 45%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForArmenian{
+        width: 46%;
+    }
+
+    .dock-top .smallerLabels .navDetails .top-title.biggerTopTitleForArmenian Label{
+        font-size: 13;
     }
 
 </style>

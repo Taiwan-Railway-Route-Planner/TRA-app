@@ -35,6 +35,12 @@ module.exports = (function () {
                 case "FR":
                     response.msg = errorMessages.messages.fr.stations;
                     break;
+                case "AR":
+                    response.msg = errorMessages.messages.ar.stations;
+                    break;
+                case "RU":
+                    response.msg = errorMessages.messages.ru.stations;
+                    break;
             }
         }
         return response;

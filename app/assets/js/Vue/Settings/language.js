@@ -131,6 +131,42 @@ module.exports = (function () {
                     "Version": "Version"
                 }
             }
+        },
+        ar: {
+            "top": {
+                "title": "Կարգավորումներ"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Ընտրել լեզուն",
+                    "button": "Պահպանել փոփոխությունները"
+                },
+                "otherInfo": {
+                    "rate": "Գնահատեք մեզ Google Play հարթակում",
+                    "contactUs": "Ուղարկել էլեկտրոնային նամակ",
+                    "openSource": "Դիտել մեր նախագիծը Github կայքում",
+                    "Version": "Տարբերակ",
+                    "support": "Լրացուցիչ տեղեկություն"
+                }
+            }
+        },
+        ru: {
+            "top": {
+                "title": "Настройки"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Выберите Ваш язык",
+                    "button": "Сохранить"
+                },
+                "otherInfo": {
+                    "rate": "Оценивайте нас в Google Play",
+                    "contactUs": "Отправить эл. сообщение",
+                    "openSource": "Посетить проект на Github",
+                    "Version": "Версия",
+                    "support": "Дополнительная информация"
+                }
+            }
         }
     };
 

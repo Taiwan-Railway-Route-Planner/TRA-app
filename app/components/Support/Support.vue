@@ -72,12 +72,17 @@
                     {
                         name: "Marvin Plum",
                         language: "Deutsch (German)"
+                    },
+                    {
+                        name: 'Hayk Avetisyan',
+                        langauge: 'Հայերեն (Armenian)'
+                    },
+                    {
+                        name: 'Hayk Avetisyan',
+                        langauge: 'Русский (Russian)'
                     }
                 ],
                 languages: [
-                    {
-                        name: "Française"
-                    },
                     {
                         name: "Pilipino"
                     },

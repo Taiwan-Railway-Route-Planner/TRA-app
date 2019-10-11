@@ -66,11 +66,14 @@
         },
         computed: {
             layoutStateLabel() {
-                let active = false;
-                if (this.$store.state.language === "ES") {
-                    active = true;
+                switch (this.$store.state.language) {
+                    case 'ES':
+                        return 'labelForSpanish';
+                    case 'AR':
+                        return 'labelForArmenian';
+                    default:
+                        return 'labelForStandard';
                 }
-                return active ? 'labelForSpanish' : 'labelForStandard';
             }
         },
         data() {
@@ -163,14 +166,6 @@
         margin-right: 4%;
     }
 
-    .labelStandard {
-        font-size: 20;
-    }
-
-    .labelForSpanish {
-        font-size: 16;
-    }
-
     .dock-center .settings .otherInfo .element {
         border-bottom-width: 2px;
         border-bottom-color: #D3D3D3;
@@ -186,6 +181,20 @@
 
     .dock-center .settings .otherInfo .details .fas {
         font-size: 24;
+    }
+
+    /****** GENERATE FROM COMPUTED layoutStateLabel() ******/
+
+    .labelStandard {
+        font-size: 20;
+    }
+
+    .labelForSpanish {
+        font-size: 16;
+    }
+
+    .labelForArmenian{
+        font-size: 14;
     }
 
 </style>

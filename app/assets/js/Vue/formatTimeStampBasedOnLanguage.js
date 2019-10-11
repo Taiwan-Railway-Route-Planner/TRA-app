@@ -23,6 +23,10 @@ export default (function () {
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
             case "FR":
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "AR":
+                return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "RU":
+                return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
         }
     }
 
@@ -42,6 +46,10 @@ export default (function () {
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
             case "FR":
                 return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "AR":
+                return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
+            case "RU":
+                return moment(timeMoment).format('llll').replace(/\d\d:\d\d/i, '', '');
         }
     }
 
@@ -60,6 +68,10 @@ export default (function () {
             case "DE":
                 return moment().format('llll');
             case "FR":
+                return moment().format('llll');
+            case "AR":
+                return moment().format('llll');
+            case "RU":
                 return moment().format('llll');
         }
     }

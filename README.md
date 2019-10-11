@@ -15,6 +15,8 @@ Supports the following languages:
 - Spanish
 - German
 - French
+- Armenian
+- Russian
 
 More languages coming soon!
 
@@ -50,6 +52,8 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 - 西班牙語
 - 德語
 - 法國人
+- 亞美尼亞人
+- 俄語
 
 即將推出更多語言！
 
@@ -144,6 +148,8 @@ Currently we support the following languages:
 | Español | Spanish |
 | Deutsch  | German  |
 | Française  | French |
+| Հայերեն | Armenian  |
+| Русский | Russian  |
 
 If you want to help to make more translations available you can do that follow [this link](https://poeditor.com/join/project/9Aukv8rxJ5). \
 If you would rather use Github instead that's also possible All the translations are stored in [this repo](https://github.com/Taiwan-Railway-Route-Planner/TRA_Translations) just open an issue.
@@ -164,3 +170,5 @@ I couldn't have created this project without the support and help of the followi
 * 吳宛玲 Lilly Wu for translating to  中文  (Traditional Chinese)
 * Javier Pérez Gómez for translating to Español (Spanish)
 * Marvin Plum for translating to Deutsche (German) 
+* Hayk Avetisyan for translating to Հայերեն (Armenian)
+* Hayk Avetisyan for translating to Русский (Russian)

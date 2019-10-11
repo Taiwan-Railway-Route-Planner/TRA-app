@@ -39,6 +39,16 @@ module.exports = (function () {
             nameNative: 'Française',
             name: 'French',
             abbr: 'FR'
+        },
+        {
+            nameNative: 'Հայերեն',
+            name: 'Armenian',
+            abbr: 'AR',
+        },
+        {
+            nameNative: 'Русский',
+            name: 'Russian',
+            abbr: 'RU'
         }
     ];
 

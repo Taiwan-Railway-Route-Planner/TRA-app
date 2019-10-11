@@ -50,6 +50,12 @@ module.exports =  (function () {
                 case "FR":
                     response.msg = errorMessages.messages.fr.route;
                     break;
+                case "AR":
+                    response.msg = errorMessages.messages.ar.route;
+                    break;
+                case "RU":
+                    response.msg = errorMessages.messages.ru.route;
+                    break;
             }
         }
         return response;

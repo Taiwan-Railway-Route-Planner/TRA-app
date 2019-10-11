@@ -1,5 +1,5 @@
 <template>
-    <DockLayout class="modal">
+    <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
             <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
@@ -16,6 +16,16 @@
 
     export default {
         props: ['time', 'timeModal', 'formatTimeStampBasedOnLanguage'],
+        computed: {
+            smallerLabels() {
+                switch (this.$store.state.language) {
+                    case 'RU':
+                        return 'smallerLabels';
+                    default:
+                        return '';
+                }
+            }
+        },
         methods: {
             discard: function () {
                 this.$modal.close();
@@ -41,6 +51,12 @@
 
     .center{
         justify-content: center;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerLabels() ******/
+
+    .smallerLabels.modal Label{
+        font-size: 14;
     }
 
 </style>
