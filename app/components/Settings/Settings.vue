@@ -68,7 +68,6 @@
             layoutStateLabel() {
                 switch (this.$store.state.language) {
                     case 'ES':
-                    // case 'AR':
                         return 'labelForSpanish';
                     case 'AR':
                         return 'labelForArmenian';
