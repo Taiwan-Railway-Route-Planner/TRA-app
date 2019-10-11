@@ -88,6 +88,18 @@ module.exports = (function () {
             "thanks": {
                 "intro": "Je voudrais remercier les personnes suivantes pour leur aide à la traduction:"
             }
+        },
+        ar: {
+            "top": {
+                "title": "Տեղեկատվություն"
+            },
+            "information": {
+                "intro": "Եթե ցանկանում եք օգնել մեզ, ապա կարող եք թարգմանել մեր հավելվածը հետևյալ լեզուներով.",
+                "btn": "Օգնեք մեզ թարգմանել"
+            },
+            "thanks": {
+                "intro": "Թարգմանության համար շնորհակալություն ենք հայտնում հետևյալ անձանց."
+            }
         }
     };
 

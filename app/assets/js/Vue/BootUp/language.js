@@ -25,6 +25,9 @@ module.exports = (function () {
         },
         fr: {
             confirm: "ACCEPTER"
+        },
+        ar: {
+            confirm: "ՀԱՍՏԱՏԵԼ"
         }
     };
 

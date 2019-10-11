@@ -131,6 +131,24 @@ module.exports = (function () {
                     "Version": "Version"
                 }
             }
+        },
+        ar: {
+            "top": {
+                "title": "Կարգավորումներ"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Ընտրել լեզուն",
+                    "button": "Պահպանել փոփոխությունները"
+                },
+                "otherInfo": {
+                    "rate": "Գնահատեք մեզ Google Play հարթակում",
+                    "contactUs": "Ուղարկել էլեկտրոնային նամակ",
+                    "openSource": "Դիտել մեր նախագիծը GitHub կայքում",
+                    "Version": "Տարբերակ",
+                    "support": "Լրացուցիչ տեղեկատվություն"
+                }
+            }
         }
     };
 
