@@ -141,6 +141,7 @@
                     case 'FR':
                     case 'EN':
                     case 'RU':
+                    case 'AR':
                         return 'smallerLabels';
                     default:
                         return 'standardLabels';
@@ -171,6 +172,8 @@
                         return 'biggerTopTitleForEnglish';
                     case 'RU':
                         return 'biggerTopTitleForRussian';
+                    case 'AR':
+                        return 'biggerTopTitleForArmenian';
                     default:
                         return '';
                 }
@@ -192,6 +195,8 @@
                         return 'biggerTopDataForEnglish';
                     case 'RU':
                         return 'biggerTopDataForRussian';
+                    case 'AR':
+                        return 'biggerTopDataForArmenian';
                     default:
                         return '';
                 }
@@ -423,6 +428,10 @@
         width: 38%;
     }
 
+    .dock-top .navDetails .top-data.biggerTopDataForArmenian{
+        width: 37%;
+    }
+
     /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
 
     .dock-top .navDetails .top-title.smallerTopTitleForKorean{
@@ -451,6 +460,14 @@
 
     .dock-top .navDetails .top-title.biggerTopTitleForRussian{
         width: 45%;
+    }
+
+    .dock-top .navDetails .top-title.biggerTopTitleForArmenian{
+        width: 46%;
+    }
+
+    .dock-top .smallerLabels .navDetails .top-title.biggerTopTitleForArmenian Label{
+        font-size: 13;
     }
 
 </style>
