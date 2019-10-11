@@ -28,6 +28,9 @@ module.exports = (function () {
         },
         ar: {
             confirm: "ՀԱՍՏԱՏԵԼ"
+        },
+        ru: {
+            confirm: "ОТКАЗЫВАТЬСЯ"
         }
     };
 

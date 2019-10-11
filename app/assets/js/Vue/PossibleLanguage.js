@@ -44,6 +44,11 @@ module.exports = (function () {
             nameNative: 'Հայերեն',
             name: 'Armenian',
             abbr: 'AR',
+        },
+        {
+            nameNative: 'Русский',
+            name: 'Russian',
+            abbr: 'RU'
         }
     ];
 

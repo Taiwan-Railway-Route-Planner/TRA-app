@@ -149,6 +149,24 @@ module.exports = (function () {
                     "support": "Լրացուցիչ տեղեկություն"
                 }
             }
+        },
+        RU: {
+            "top": {
+                "title": "Настройки"
+            },
+            "center": {
+                "language": {
+                    "chooseTitle": "Выберите Ваш язык",
+                    "button": "Сохранить"
+                },
+                "otherInfo": {
+                    "rate": "Оценивайте нас в Google Play",
+                    "contactUs": "Отправить эл. сообщение",
+                    "openSource": "Посетить проект на Github",
+                    "Version": "Версия",
+                    "support": "Дополнительная информация"
+                }
+            }
         }
     };
 
