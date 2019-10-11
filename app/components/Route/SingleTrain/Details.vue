@@ -93,6 +93,16 @@
 
     export default {
         props: ['routeDetails', 'selectTravelDetails', 'language'],
+        computed: {
+            smallerTextPrices(){
+                switch (this.$store.state.language) {
+                    case 'RU':
+                        return 'smallerTextPrices';
+                    default:
+                        return '';
+                }
+            }
+        },
         data() {
             return {}
         },
@@ -358,6 +368,12 @@
 
     .dock-center .extraDetails .prices Label {
         margin-top: 4%;
+    }
+
+    /****** GENERATE FROM COMPUTED smallerTextPrices() ******/
+
+    .dock-center .totalFareDetails .prices .smallerTextPrices.text{
+        font-size: 12;
     }
 
 </style>
