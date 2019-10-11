@@ -429,7 +429,7 @@ module.exports = (function () {
                         real: null
                     },
                     time: '',
-                    local: 'fr',
+                    local: 'hy-am',
                     modal: {
                         top: {
                             "first": "ՄԵԿՆՈՒՄ",
