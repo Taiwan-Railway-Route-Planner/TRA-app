@@ -485,7 +485,7 @@ module.exports = (function () {
                         real: null
                     },
                     time: '',
-                    local: 'hy-am',
+                    local: 'ru',
                     modal: {
                         top: {
                             "first": "ОТПРАВЛЕНИЕ",
