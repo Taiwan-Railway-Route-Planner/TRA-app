@@ -422,7 +422,7 @@ module.exports = (function () {
                     "label": "Ուր"
                 },
                 time: {
-                    "label": "Ժամ",
+                    "label": "Օրը և ժամը",
                     hint: '',
                     date: {
                         show: '',
