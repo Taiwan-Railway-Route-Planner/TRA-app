@@ -75,11 +75,11 @@
                     },
                     {
                         name: 'Hayk Avetisyan',
-                        langauge: 'Հայերեն (Armenian)'
+                        language: 'Հայերեն (Armenian)'
                     },
                     {
                         name: 'Hayk Avetisyan',
-                        langauge: 'Русский (Russian)'
+                        language: 'Русский (Russian)'
                     }
                 ],
                 languages: [
