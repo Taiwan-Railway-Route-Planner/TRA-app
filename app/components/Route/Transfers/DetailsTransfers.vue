@@ -36,12 +36,12 @@
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf3ff' | unescape"></Label>
                         <Label class="text" :text="'NT$ ' + $props.selectTravelDetails.prices.singlePrice"></Label>
-                        <Label class="text" :text="$props.language.details.price.single"></Label>
+                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.single"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout v-if="$props.selectTravelDetails.prices.ePrice !== null" class="prices">
                         <Image src="~/assets/images/easycard.png" stretch="none"></Image>
                         <Label class="text" :text="'NT$ ' + $props.selectTravelDetails.prices.ePrice"></Label>
-                        <Label class="text" :text="$props.language.details.price.ePrice"></Label>
+                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.ePrice"></Label>
                     </FlexboxLayout>
                     <FlexboxLayout class="prices">
                         <Label class="fas" :text="'\uf4d7' | unescape"></Label>
@@ -118,13 +118,21 @@
     export default {
         props: ['routeDetails', 'selectTravelDetails', 'language'],
         computed: {
-          doWeNeedSmaller(){
-              if (this.$props.selectTravelDetails.Routes.length === 2){
-                  return 'fareHight'
-              } else {
-                  return '';
+            doWeNeedSmaller() {
+                if (this.$props.selectTravelDetails.Routes.length === 2) {
+                    return 'fareHight'
+                } else {
+                    return '';
+                }
+            },
+            smallerTextPrices(){
+              switch (this.$store.state.language) {
+                  case 'RU':
+                      return 'smallerTextPrices';
+                  default:
+                      return '';
               }
-          }
+            }
         },
         data() {
             return {}
@@ -408,6 +416,8 @@
         height: 180;
     }
 
+    /****** GENERATE FROM COMPUTED doWeNeedSmaller() ******/
+
     .dock-center .totalFareDetails.fareHight{
         height: 20%;
     }
@@ -424,5 +434,12 @@
     .dock-center .totalFareDetails .prices Label{
         margin-top: 4%;
     }
+
+    /****** GENERATE FROM COMPUTED smallerTextPrices() ******/
+
+    .dock-center .totalFareDetails .prices .smallerTextPrices.text{
+        font-size: 12;
+    }
+
 
 </style>

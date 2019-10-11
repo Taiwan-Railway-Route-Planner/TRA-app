@@ -37,6 +37,9 @@ export default (function () {
             case "AR":
                 _self.data = language.language.ar;
                 break;
+            case "RU":
+                _self.data = language.language.ru;
+                break;
         }
     }
 

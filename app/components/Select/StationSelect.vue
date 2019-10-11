@@ -111,6 +111,7 @@
                     case 'AR':
                         return 'labelForArmenian';
                     case 'FR':
+                    case 'RU':
                         return 'labelForFrench';
                     default:
                         return 'labelForStandard'
@@ -134,6 +135,7 @@
                     case "DE":
                         return "timeStampLabelForGerman";
                     case 'FR':
+                    case 'RU':
                         return 'timeStampLabelForFrench';
                     default:
                         return "labelForStandard";

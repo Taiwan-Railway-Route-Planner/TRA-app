@@ -452,6 +452,62 @@ module.exports = (function () {
             },
             "error": "Մեկնման կամ ժամանման վայրը լրացված չէ:",
             "internetError": "Ինտերնետ կապ չկա:"
+        },
+        ru: {
+            searchBar: {
+                hintText: {
+                    now: '',
+                    "startStation": "Выбрать станцию отправления",
+                    "endStation": "Выбрать станцию прибытия"
+                },
+                search: ''
+            },
+            resultDetails: {
+                stations: []
+            },
+            routeDetails: {
+                language: 'RU',
+                departure: {
+                    details: {},
+                    "hint": "Выбрать станцию",
+                    "label": "Откуда"
+                },
+                arrival: {
+                    details: {},
+                    "hint": "Выбрать станцию",
+                    "label": "Куда"
+                },
+                time: {
+                    "label": "Время",
+                    hint: '',
+                    date: {
+                        show: '',
+                        real: null
+                    },
+                    time: '',
+                    local: 'ru',
+                    modal: {
+                        top: {
+                            "first": "ОТПРАВЛЕНИЕ",
+                            "second": "ПРИБЫТИЕ"
+                        },
+                        center: {
+                            "button": "СЕЙЧАС",
+                            date: {
+                                actual: null,
+                                today: null
+                            }
+                        },
+                        bottom: {
+                            "leftBtn": "ОТМЕНИТЬ",
+                            "rightBtn": "ПОДТВЕРДИТЬ"
+                        }
+                    }
+                },
+                "button": "НАЙТИ"
+            },
+            "error": "Станция отправления или прибытия не заполнены!",
+            "internetError": "Нет интернет связи!"
         }
     };
 
