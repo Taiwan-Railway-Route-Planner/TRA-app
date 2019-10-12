@@ -17,9 +17,11 @@ module.exports = (function () {
                 _self.$store.commit('updateStation', stations.data);
                 _self.$store.commit('forceUpdateStationInfo', true);
                 _self.data.stationInfo = stations.data;
+                _self.isFetching = false;
             }
         } else {
             _self.data.stationInfo = _self.$store.state.stations;
+            _self.isFetching = false;
         }
         if (_self.data.stationInfo !== undefined) {
             _self.filteredStations = _self.data.stationInfo.stations;
