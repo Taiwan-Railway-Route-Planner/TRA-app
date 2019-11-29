@@ -8,7 +8,7 @@
                 <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"></Button>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
-                <ListView for="(item, index) in languages" @itemTap="onItemTap">
+                <ListView for="(item, index) in languages" ref="listview" @itemTap="onItemTap" @itemLoading="onItemLoading">
                     <v-template>
                         <FlexboxLayout class="element">
                             <Label class="top-text" :text="item.nameNative"></Label>
@@ -45,6 +45,12 @@
             confirm: function () {
                 this.$store.commit('updateLanguage', this.saveAbbr);
                 this.$goto("Select");
+            },
+            onItemLoading: function(args) {
+                const cell = args.ios;
+                if (cell) {
+                    cell.selectionStyle = UITableViewCellSelectionStyle.UITableViewCellSelectionStyleNone;
+                }
             }
         }
     }
@@ -77,6 +83,7 @@
         padding-top: 20%;
         flex-direction: column;
         align-items: center;
+        background-color: #1a0dab;
     }
 
     .menu-center .element .top-text{
@@ -94,6 +101,5 @@
         color: #1a0dab;
         margin-bottom: 3%;
     }
-
 
 </style>
