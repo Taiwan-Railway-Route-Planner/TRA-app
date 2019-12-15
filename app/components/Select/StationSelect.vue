@@ -304,8 +304,12 @@
     }
 
     .listGroup Label{
+        /*Android*/
         padding-bottom: 4;
         padding-top: 4;
+        /*Ios*/
+        /*padding-bottom: 8;*/
+        /*padding-top: 8;*/
     }
 
     .routeDetails {
@@ -316,10 +320,49 @@
         margin-top: 5%;
     }
 
-    .topRouteDetails .NavigateIn {
+    .topRouteDetails .InfoDetails {
+        border-color: #1a0dab;
+        border-radius: 20;
+        border-style: solid;
+        border-width: 1;
+        flex-direction: column;
+        background-color: white;
+        width: 90%;
+        /*Android*/
+        padding: 12 4;
+        /*Ios*/
+        padding: 24 8;
+    }
+
+    .topRouteDetails .routeDetailsChoice .InfoDetails {
         flex-direction: row;
-        width: 100%;
+        align-items: center;
+    }
+
+    .topRouteDetails .InfoDetails .text {
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .topRouteDetails .InfoDetails .fas {
+        color: #1a0dab;
+        align-self: center;
+    }
+
+    .topRouteDetails .timeDetails {
+        margin-top: 5%;
+        flex-direction: row;
         justify-content: center;
+    }
+
+    .confirmBtn {
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+        margin-top: 8%;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 2px;
     }
 
     /****** GENERATE FROM COMPUTED layoutStateLabel() ******/
@@ -400,49 +443,6 @@
         width: 52%;
         font-size: 14;
         margin-right: 6%;
-    }
-
-
-    .topRouteDetails .InfoDetails {
-        border-color: #1a0dab;
-        border-radius: 20;
-        border-style: solid;
-        border-width: 1;
-        flex-direction: column;
-        background-color: white;
-        width: 90%;
-        padding: 12 4;
-    }
-
-    .topRouteDetails .routeDetailsChoice .InfoDetails {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .topRouteDetails .InfoDetails .text {
-        flex-direction: column;
-        width: 85%;
-    }
-
-    .topRouteDetails .InfoDetails .fas {
-        color: #1a0dab;
-        align-self: center;
-    }
-
-    .topRouteDetails .timeDetails {
-        margin-top: 5%;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .confirmBtn {
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-        margin-top: 8%;
-        border-color: #fff;
-        border-style: solid;
-        border-width: 2px;
     }
 
 </style>

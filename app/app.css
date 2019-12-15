@@ -38,7 +38,10 @@ TextField {
 }
 
 .btn-sq {
+    /*Android*/
     padding: 6;
+    /*Ios*/
+    padding: 12;
 }
 
 .btn-wt {
@@ -82,8 +85,12 @@ TextField {
 
 .confirmOrDiscard Label {
     font-size: 18;
+    /*Android*/
     margin: 8;
     margin-bottom: 10;
+    /*Ios*/
+    margin: 16;
+    margin-bottom: 20;
 }
 
 .confirmOrDiscard .btn {
