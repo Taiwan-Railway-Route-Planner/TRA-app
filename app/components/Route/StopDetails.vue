@@ -186,20 +186,37 @@
     .dock-center .oneRouteDetail {
         flex-direction: row;
         width: 100%;
+        /*Ios*/
+        height: 60;
+        align-items: center;
     }
 
     .dock-center .oneRouteDetail .time {
+        /*Android*/
         width: 15%;
+        /*Ios*/
+        /*width: 15%;*/
         /*background-color: #4fab26;*/
     }
 
+    .dock-center .oneRouteDetail .time Label{
+        /*Ios*/
+        width: 100%;
+    }
+
     .dock-center .oneRouteDetail .route {
+        /*Android*/
         width: 10%;
+        /*Ios*/
+        /*width: 10%;*/
         /*background-color: #ab312a;*/
     }
 
     .dock-center .oneRouteDetail .stationName {
+        /*Android*/
         width: 75%;
+        /*Ios*/
+        /*width: 75%;*/
         /*background-color: #ddaaee;*/
     }
 
@@ -231,6 +248,8 @@
         border-left-color: #1a0dab;
         border-left-style: solid;
         border-left-width: 4px;
+        width: 4px;
+        height: 50px
     }
 
     .dock-center .oneRouteDetail .route .template-line .line.passed {
