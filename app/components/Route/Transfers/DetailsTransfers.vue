@@ -339,6 +339,8 @@
         border-left-color: #1a0dab;
         border-left-style: solid;
         border-left-width: 4px;
+        /*Ios*/
+        width: 4px;
     }
 
     .dock-center .trainDetails .trainDestArrDetails {
