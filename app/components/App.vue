@@ -8,7 +8,7 @@
                 <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"></Button>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
-                <ListView for="(item, index) in languages" ref="listview" @itemTap="onItemTap" @itemLoading="onItemLoading">
+                <ListView for="(item, index) in languages" ref="listview" class="listView" @itemTap="onItemTap" @itemLoading="onItemLoading">
                     <v-template>
                         <FlexboxLayout class="element">
                             <Label class="top-text" :text="item.nameNative"></Label>
@@ -77,6 +77,10 @@
 
     .menu-center{
         flex-direction: column;
+    }
+
+    .menu-center .listView{
+        background-color: #1a0dab;
     }
 
     .menu-center .element{
