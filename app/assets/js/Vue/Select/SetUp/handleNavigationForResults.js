@@ -80,14 +80,14 @@ module.exports = (function () {
     }
 
     function startLoadingModal(_self, loadingModal) {
-        _self.$showModal(loadingModal);
+        // _self.$showModal(loadingModal);
     }
 
     function stopLoadingModal(_self) {
-        const page = _self.topmost().currentPage;
-        if (page && page.modal) {
-            page.modal.closeModal()
-        }
+        // const page = _self.topmost().currentPage;
+        // if (page && page.modal) {
+        //     page.modal.closeModal()
+        // }
     }
 
     function showError(_self, errorMessage) {
