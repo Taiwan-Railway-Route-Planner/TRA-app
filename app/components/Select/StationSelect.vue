@@ -342,6 +342,9 @@
     .topRouteDetails .InfoDetails .text {
         flex-direction: column;
         width: 85%;
+        /*iOS*/
+        justify-content: space-between;
+        height: 150px;
     }
 
     .topRouteDetails .InfoDetails .fas {
