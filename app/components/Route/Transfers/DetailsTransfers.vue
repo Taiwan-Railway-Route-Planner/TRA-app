@@ -285,7 +285,10 @@
     }
 
     .dock-center .listTrain {
+        /*Android*/
         margin-left: 5%;
+        /*iOS*/
+        height: 90%;
     }
 
     .dock-center .listTrain .oneTrainElement {
