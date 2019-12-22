@@ -126,6 +126,7 @@
 
     .dock-top .title {
         flex-direction: row;
+        align-items: center;
     }
 
     .dock-top .title .fas{
