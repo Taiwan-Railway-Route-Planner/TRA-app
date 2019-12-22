@@ -56,7 +56,8 @@
 
 <script>
 
-    import handle from "../../assets/js/Vue/Settings/handle"
+    import handle from "../../assets/js/Vue/Settings/handle";
+    import { isIOS } from "tns-core-modules/platform";
 
     var utils = require('utils/utils');
 
@@ -99,7 +100,11 @@
                 utils.openUrl("mailto:support@traapp.tk");
             },
             openGooglePlay: function () {
-                utils.openUrl("market://details?id=com.wingcrony.tra.app");
+                if (isIOS){
+                    // TODO
+                } else {
+                    utils.openUrl("market://details?id=com.wingcrony.tra.app");
+                }
             },
             openGithub: function () {
                 utils.openUrl("https://github.com/Taiwan-Railway-Route-Planner/TRA-app")
