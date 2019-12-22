@@ -91,7 +91,9 @@
     import loadingModal from "../modals/loadingModal"
     import Counties from "./component/counties"
 
+    import { isIOS } from "tns-core-modules/platform";
     let application = require('application');
+    const utils = require('utils/utils');
 
     export default {
         async created() {
@@ -203,6 +205,12 @@
             },
             goBackToNormalScreen: function () {
                 this.search = false;
+                if (isIOS) {
+                    utils.ios
+                        .getter(UIApplication, UIApplication.sharedApplication)
+                        .keyWindow
+                        .endEditing(true);
+                }
             },
             showSearch: async function (departureOrArrival) {
                 const isntEmpty = await handle.checkFirstIfTheElementsArentEmpty(this);
