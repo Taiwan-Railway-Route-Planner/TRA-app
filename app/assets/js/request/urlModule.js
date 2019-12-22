@@ -7,7 +7,7 @@ module.exports = (function () {
     const HOME_IP = "taiwan-railway-route-planner.github.io";
     const BASE_URL = "https://" + HOME_IP + "/TRATimetableData/";
 
-    const EXTERNALIP = "traapp.tk";
+    const EXTERNALIP = "taiwanrailwayapp.com";
     const BACKEND = "https://www." + EXTERNALIP + "/api/";
 
     const url = {

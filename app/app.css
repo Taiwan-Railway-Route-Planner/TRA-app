@@ -5,16 +5,19 @@ Label, TextField, SearchBar, Button {
 
 .far {
     font-family: 'Font Awesome 5 Free', fa-regular-400;
+    font-weight: 400;
     font-size: 40em;
 }
 
 .fab {
     font-family: 'Font Awesome 5 Brands', fa-brands-400;
+    font-weight: 400;
     font-size: 40em;
 }
 
 .fas {
     font-family: 'Font Awesome 5 Free', fa-solid-900;
+    font-weight: 900;
     font-size: 25;
 }
 
@@ -35,7 +38,10 @@ TextField {
 }
 
 .btn-sq {
+    /*Android*/
     padding: 6;
+    /*Ios*/
+    padding: 12;
 }
 
 .btn-wt {
@@ -79,8 +85,12 @@ TextField {
 
 .confirmOrDiscard Label {
     font-size: 18;
+    /*Android*/
     margin: 8;
     margin-bottom: 10;
+    /*Ios*/
+    margin: 16;
+    margin-bottom: 20;
 }
 
 .confirmOrDiscard .btn {

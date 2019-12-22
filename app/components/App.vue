@@ -8,7 +8,7 @@
                 <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"></Button>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
-                <ListView for="(item, index) in languages" @itemTap="onItemTap">
+                <ListView for="(item, index) in languages" ref="listview" class="listView" @itemTap="onItemTap" @itemLoading="onItemLoading">
                     <v-template>
                         <FlexboxLayout class="element">
                             <Label class="top-text" :text="item.nameNative"></Label>
@@ -22,7 +22,8 @@
 
 <script>
 
-    import handle from "../assets/js/Vue/BootUp/handle"
+    import handle from "../assets/js/Vue/BootUp/handle";
+    import { isIOS } from "tns-core-modules/platform";
 
     export default {
         created() {
@@ -45,6 +46,14 @@
             confirm: function () {
                 this.$store.commit('updateLanguage', this.saveAbbr);
                 this.$goto("Select");
+            },
+            onItemLoading: function(args) {
+                if (isIOS){
+                    const cell = args.ios;
+                    if (cell) {
+                        cell.selectionStyle = UITableViewCellSelectionStyle.UITableViewCellSelectionStyleNone;
+                    }
+                }
             }
         }
     }
@@ -73,10 +82,15 @@
         flex-direction: column;
     }
 
+    .menu-center .listView{
+        background-color: #1a0dab;
+    }
+
     .menu-center .element{
         padding-top: 20%;
         flex-direction: column;
         align-items: center;
+        background-color: #1a0dab;
     }
 
     .menu-center .element .top-text{
@@ -94,6 +108,5 @@
         color: #1a0dab;
         margin-bottom: 3%;
     }
-
 
 </style>
