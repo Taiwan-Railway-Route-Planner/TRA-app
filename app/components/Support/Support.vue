@@ -52,7 +52,7 @@
     
     import handle from "../../assets/js/Vue/Support/handle"
 
-    var utils = require('utils/utils');
+    const utils = require('utils/utils');
     
     export default {
         created: function () {
