@@ -59,7 +59,7 @@
     import handle from "../../assets/js/Vue/Settings/handle";
     import { isIOS } from "tns-core-modules/platform";
 
-    var utils = require('utils/utils');
+    const utils = require('utils/utils');
 
     export default {
         created: function () {
