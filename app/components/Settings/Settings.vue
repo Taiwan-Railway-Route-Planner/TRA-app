@@ -64,6 +64,7 @@
     export default {
         created: function () {
             handle.handleSetUpOfVue(this);
+            this.updateProp();
         },
         computed: {
             layoutStateLabel() {
@@ -95,6 +96,7 @@
             },
             saveNewLanguage: function () {
                 handle.saveLanguage(this);
+                this.updateProp();
             },
             openMail: function () {
                 utils.openUrl("mailto:support@traapp.tk");
@@ -111,6 +113,11 @@
             },
             openMoreInfo: function () {
                 this.$goto("Support");
+            },
+            updateProp: function () {
+                if (isIOS){
+                    this.data.center.otherInfo.rate = this.data.center.otherInfo.rate.replace('Google Play', 'App Store');
+                }
             }
         }
     }
