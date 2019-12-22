@@ -148,9 +148,9 @@
 
     .timeSettings .timeSelect .now Button{
         /*iOS*/
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        /*width: 80%;*/
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
     }
 
     .timeSettings .dateTimeSelect {
@@ -179,8 +179,8 @@
         /*Android*/
         width: 20%;
         /*iOS*/
-        width: 30%;
-        height: 100px;
+        /*width: 30%;*/
+        /*height: 100px;*/
     }
 
     .timeSettings .dateTimeSelect .calenderView .far {

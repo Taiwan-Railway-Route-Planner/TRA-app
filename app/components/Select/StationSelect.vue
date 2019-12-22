@@ -339,7 +339,7 @@
         /*Android*/
         padding: 12 4;
         /*Ios*/
-        padding: 24 8;
+        /*padding: 24 8;*/
     }
 
     .topRouteDetails .routeDetailsChoice .InfoDetails {
@@ -351,8 +351,8 @@
         flex-direction: column;
         width: 85%;
         /*iOS*/
-        justify-content: space-between;
-        height: 150px;
+        /*justify-content: space-between;*/
+        /*height: 150px;*/
     }
 
     .topRouteDetails .InfoDetails .fas {

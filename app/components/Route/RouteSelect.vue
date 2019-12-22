@@ -315,7 +315,7 @@
         align-items: center;
         justify-content: center;
         /*iOS*/
-        width: 15%;
+        /*width: 15%;*/
     }
 
     .center .travelDetails .fareDetails .prices {

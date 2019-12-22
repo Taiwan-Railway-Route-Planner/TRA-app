@@ -47,7 +47,7 @@
         /*Android*/
         width: 280;
         /*iOS*/
-        width: 300;
+        /*width: 300;*/
         text-align: left;
         color: #000;
     }
