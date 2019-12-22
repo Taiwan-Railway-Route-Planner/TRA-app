@@ -192,31 +192,21 @@
     }
 
     .dock-center .oneRouteDetail .time {
-        /*Android*/
         width: 15%;
-        /*Ios*/
-        /*width: 15%;*/
         /*background-color: #4fab26;*/
     }
 
     .dock-center .oneRouteDetail .time Label{
-        /*Ios*/
         width: 100%;
     }
 
     .dock-center .oneRouteDetail .route {
-        /*Android*/
         width: 10%;
-        /*Ios*/
-        /*width: 10%;*/
         /*background-color: #ab312a;*/
     }
 
     .dock-center .oneRouteDetail .stationName {
-        /*Android*/
         width: 75%;
-        /*Ios*/
-        /*width: 75%;*/
         /*background-color: #ddaaee;*/
     }
 
@@ -249,7 +239,7 @@
         border-left-style: solid;
         border-left-width: 4px;
         width: 4px;
-        height: 50px
+        height: 68px
     }
 
     .dock-center .oneRouteDetail .route .template-line .line.passed {
