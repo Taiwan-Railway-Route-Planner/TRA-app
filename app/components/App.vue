@@ -22,7 +22,8 @@
 
 <script>
 
-    import handle from "../assets/js/Vue/BootUp/handle"
+    import handle from "../assets/js/Vue/BootUp/handle";
+    import { isIOS } from "tns-core-modules/platform";
 
     export default {
         created() {
@@ -47,9 +48,11 @@
                 this.$goto("Select");
             },
             onItemLoading: function(args) {
-                const cell = args.ios;
-                if (cell) {
-                    cell.selectionStyle = UITableViewCellSelectionStyle.UITableViewCellSelectionStyleNone;
+                if (isIOS){
+                    const cell = args.ios;
+                    if (cell) {
+                        cell.selectionStyle = UITableViewCellSelectionStyle.UITableViewCellSelectionStyleNone;
+                    }
                 }
             }
         }
