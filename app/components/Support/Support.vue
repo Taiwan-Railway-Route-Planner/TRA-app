@@ -2,7 +2,8 @@
     <Page actionBarHidden="true">
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
-                <FlexboxLayout class="title">
+                <FlexboxLayout class="title" @tap="navigateBackVue">
+                    <Label class="fas" :text="'\uf060' | unescape"></Label>
                     <Label class="" :text="data.top.title"></Label>
                 </FlexboxLayout>
             </FlexboxLayout>
@@ -51,7 +52,7 @@
     
     import handle from "../../assets/js/Vue/Support/handle"
 
-    var utils = require('utils/utils');
+    const utils = require('utils/utils');
     
     export default {
         created: function () {
@@ -107,6 +108,9 @@
             },
             goToTranslatingPage: function () {
                 utils.openUrl("https://poeditor.com/join/project/9Aukv8rxJ5")
+            },
+            navigateBackVue: function () {
+                this.$navigateBack();
             }
         }
     }
@@ -123,8 +127,11 @@
     .dock-top .title {
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        width: 100%;
+    }
+
+    .dock-top .title .fas{
+        margin-left: 6%;
+        margin-right: 5%;
     }
 
     .dock-top .title Label {

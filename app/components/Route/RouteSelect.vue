@@ -297,8 +297,11 @@
     }
 
     .center .travelDetails {
+        /*Android*/
         padding-top: 15%;
         padding-left: 15%;
+        /*iOS*/
+        /*padding-right: 10%;*/
     }
 
     .center .travelDetails .travelDetailsNoFare {
@@ -311,6 +314,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        /*iOS*/
+        width: 15%;
     }
 
     .center .travelDetails .fareDetails .prices {

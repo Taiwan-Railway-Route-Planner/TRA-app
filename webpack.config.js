@@ -1,7 +1,7 @@
 const { join, relative, resolve, sep } = require("path");
 
 const webpack = require("webpack");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -270,7 +270,7 @@ module.exports = env => {
                 "process": "global.process"
             }),
             // Remove all files from the out dir.
-            new CleanWebpackPlugin(itemsToClean, { verbose: !!verbose }),
+            new CleanWebpackPlugin({itemsToClean,  verbose: !!verbose }),
             // Copy assets to out dir. Add your own globs as needed.
             new CopyWebpackPlugin([
                 { from: { glob: "fonts/**" } },

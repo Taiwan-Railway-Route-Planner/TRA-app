@@ -44,7 +44,10 @@
     .modal {
         background-color: white;
         height: 350;
+        /*Android*/
         width: 280;
+        /*iOS*/
+        width: 300;
         text-align: left;
         color: #000;
     }

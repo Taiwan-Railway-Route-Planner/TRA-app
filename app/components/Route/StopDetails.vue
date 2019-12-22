@@ -186,11 +186,18 @@
     .dock-center .oneRouteDetail {
         flex-direction: row;
         width: 100%;
+        /*Ios*/
+        height: 60;
+        align-items: center;
     }
 
     .dock-center .oneRouteDetail .time {
         width: 15%;
         /*background-color: #4fab26;*/
+    }
+
+    .dock-center .oneRouteDetail .time Label{
+        width: 100%;
     }
 
     .dock-center .oneRouteDetail .route {
@@ -231,6 +238,8 @@
         border-left-color: #1a0dab;
         border-left-style: solid;
         border-left-width: 4px;
+        width: 4px;
+        height: 68px
     }
 
     .dock-center .oneRouteDetail .route .template-line .line.passed {
