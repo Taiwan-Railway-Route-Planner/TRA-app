@@ -3,11 +3,17 @@
  **/
 
 const moment = require('moment');
+import {
+    LoadingIndicator,
+    Mode
+} from '@nstudio/nativescript-loading-indicator';
 
-module.exports = (function () {
+export default (function () {
 
-    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, loadingModal, requestBuilderForSelect) {
-        startLoadingModal(_self, loadingModal);
+    const indicator = new LoadingIndicator();
+
+    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect) {
+        startLoadingModal(_self);
         if (_self.data.routeDetails.time.date.real === null) {
             assignTimeToRouteDetailsWhenEmpty(_self);
         }
@@ -79,15 +85,17 @@ module.exports = (function () {
         return !obj.hasOwnProperty('routeCode')
     }
 
-    function startLoadingModal(_self, loadingModal) {
-        // _self.$showModal(loadingModal);
+    function startLoadingModal(_self) {
+        indicator.show({
+            dimBackground: true,
+            hideBezel: true,
+            userInteractionEnabled: false,
+            mode: Mode.Indeterminate
+        });
     }
 
     function stopLoadingModal(_self) {
-        // const page = _self.topmost().currentPage;
-        // if (page && page.modal) {
-        //     page.modal.closeModal()
-        // }
+        indicator.hide();
     }
 
     function showError(_self, errorMessage) {
