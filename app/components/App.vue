@@ -64,7 +64,6 @@
     $primary: #1a0dab;
     $white: #ffffff;
 
-
     .page {
         background-color: $primary;
         color: $white;
