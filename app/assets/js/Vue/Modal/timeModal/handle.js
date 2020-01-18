@@ -12,7 +12,7 @@ export default (function () {
     };
 
     function setTime(_self) {
-        _self.selectedTime = moment().toDate();
+        _self.timeModal.selectedTime = moment().toDate();
     }
 
     function setDateDetails(_self) {
@@ -30,9 +30,9 @@ export default (function () {
         _self.time.date.show = _self.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(_self, _self.$props.time.modal.center.date.today);
         _self.time.date.real = moment(_self.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
         if (_self.$store.state.language === "KO"){
-            _self.time.time = moment(_self.selectedTime).locale('en-SG').format('LT');
+            _self.time.time = moment(_self.timeModal.selectedTime).locale('en-SG').format('LT');
         } else {
-            _self.time.time = moment(_self.selectedTime).format('LT');
+            _self.time.time = moment(_self.timeModal.selectedTime).format('LT');
         }
     };
 

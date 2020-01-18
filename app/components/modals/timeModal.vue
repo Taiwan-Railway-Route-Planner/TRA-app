@@ -57,15 +57,17 @@
         data() {
             return {
                 selectedDate: '',
-                selectedTime: '',
-                minDate: '06-13-2019',
-                maxDate: '01-01-2020',
+                timeModal: {
+                    selectedTime: '',
+                    minDate: '06-13-2019',
+                    maxDate: '01-01-2020',
+                },
                 departureTimeOrArrivalTime: true
             }
         },
         methods: {
             setTimeToNow: function () {
-                this.selectedTime = moment().toDate();
+                this.timeModal.selectedTime = moment().toDate();
             },
             previousDay: function () {
                 this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).subtract(1, 'days'));
@@ -80,11 +82,7 @@
                 this.$showModal(dateModal, {
                         props: {
                             time: this.$props.time,
-                            timeModal: {
-                                selectedDate: this.selectedDate,
-                                minDate: this.minDate,
-                                maxDate: this.maxDate
-                            },
+                            timeModal: this.timeModal,
                             formatTimeStampBasedOnLanguage: this.$props.formatTimeStampBasedOnLanguage
                         }
                     }
@@ -115,11 +113,11 @@
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
 
     .smallerLabels.modal Label,
-    .smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel{
+    .smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel {
         font-size: 14;
     }
 
-    .smallerLabels.modal .timeSettings .timeSelect .now Button{
+    .smallerLabels.modal .timeSettings .timeSelect .now Button {
         font-size: 12;
     }
 
@@ -146,7 +144,7 @@
         width: 20%;
     }
 
-    .timeSettings .timeSelect .now Button{
+    .timeSettings .timeSelect .now Button {
         /*iOS*/
         /*width: 80%;*/
         /*margin-left: auto;*/
