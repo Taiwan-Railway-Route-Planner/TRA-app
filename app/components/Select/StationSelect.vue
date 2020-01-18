@@ -87,7 +87,7 @@
 
     import handle from "../../assets/js/Vue/Select/handle"
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
-    import timeModal from "../modals/timeModal"
+    import modal from "../modals/modal"
     import loadingModal from "../modals/loadingModal"
     import Counties from "./component/counties"
 
@@ -229,7 +229,7 @@
                 await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
-                this.$showModal(timeModal, {
+                this.$showModal(modal, {
                         props: {
                             time: this.data.routeDetails.time,
                             formatTimeStampBasedOnLanguage: this.formatTimeStampBasedOnLanguage
