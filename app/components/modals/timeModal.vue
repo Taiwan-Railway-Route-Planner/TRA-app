@@ -3,7 +3,7 @@
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
                 <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""/>
-                <!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
+<!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""/>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
@@ -12,7 +12,7 @@
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeSettings">
             <FlexboxLayout class="timeSelect">
-                <TimePicker v-model="selectedTime"/>
+                <TimePicker v-model="timeWeSelected"/>
                 <FlexboxLayout class="now">
                     <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
                 </FlexboxLayout>
@@ -35,15 +35,11 @@
 
 <script>
 
-    import dateModal from "./dateModal"
     import handle from "../../assets/js/Vue/Modal/timeModal/handle"
     import moment from "moment"
 
     export default {
-        props: ['time', 'formatTimeStampBasedOnLanguage'],
-        created: function () {
-            handle.handle(this);
-        },
+        props: ['time', 'formatTimeStampBasedOnLanguage', 'selectedTime'],
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -56,18 +52,12 @@
         },
         data() {
             return {
-                selectedDate: '',
-                timeModal: {
-                    selectedTime: '',
-                    minDate: '06-13-2019',
-                    maxDate: '01-01-2020',
-                },
-                departureTimeOrArrivalTime: true
+                timeWeSelected: this.$props.selectedTime
             }
         },
         methods: {
             setTimeToNow: function () {
-                this.timeModal.selectedTime = moment().toDate();
+                this.timeWeSelected = moment().toDate();
             },
             previousDay: function () {
                 this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).subtract(1, 'days'));
@@ -78,23 +68,15 @@
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
-                this.selectedDate = moment(this.time.modal.center.date.today).toDate();
-                this.$showModal(dateModal, {
-                        props: {
-                            time: this.$props.time,
-                            timeModal: this.timeModal,
-                            formatTimeStampBasedOnLanguage: this.$props.formatTimeStampBasedOnLanguage
-                        }
-                    }
-                );
+                this.$emit('changeModalReturnTime', this.timeWeSelected);
             },
             discard: function () {
                 handle.discard(this);
-                this.$modal.close();
+                this.$emit('close');
             },
             confirm: function () {
                 handle.save(this);
-                this.$modal.close();
+                this.$emit('close');
             }
         }
     }
