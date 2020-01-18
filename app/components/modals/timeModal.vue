@@ -2,31 +2,31 @@
     <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
-                <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""></Label>
+                <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""/>
                 <!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
-            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
-            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
+            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"/>
+            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeSettings">
             <FlexboxLayout class="timeSelect">
-                <TimePicker v-model="selectedTime"></TimePicker>
+                <TimePicker v-model="selectedTime"/>
                 <FlexboxLayout class="now">
-                    <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"></Button>
+                    <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout class="dateTimeSelect">
                 <FlexboxLayout class="dateTimeNav">
-                    <Label class="fas" @tap="previousDay" :text="'\uf053' | unescape"></Label>
+                    <Label class="fas" @tap="previousDay" :text="'\uf053' | unescape"/>
                     <FlexboxLayout class="timeStamp">
-                        <Label class="" @tap="modalCalender" :text="$props.time.modal.center.date.actual"></Label>
+                        <Label class="" @tap="modalCalender" :text="$props.time.modal.center.date.actual"/>
                     </FlexboxLayout>
-                    <Label class="fas" @tap="nextDay" :text="'\uf054' | unescape"></Label>
+                    <Label class="fas" @tap="nextDay" :text="'\uf054' | unescape"/>
                 </FlexboxLayout>
                 <FlexboxLayout class="calenderView">
-                    <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"></Button>
+                    <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
         </FlexboxLayout>

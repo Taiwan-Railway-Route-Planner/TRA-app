@@ -1,11 +1,11 @@
 <template>
     <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
-            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
-            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
+            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"/>
+            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="center">
-            <DatePicker v-model="$props.timeModal.selectedDate" :minDate="$props.timeModal.minDate"></DatePicker>
+            <DatePicker v-model="$props.timeModal.selectedDate" :minDate="$props.timeModal.minDate"/>
         </FlexboxLayout>
     </DockLayout>
 </template>
