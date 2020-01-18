@@ -88,7 +88,6 @@
     import handle from "../../assets/js/Vue/Select/handle"
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import modal from "../modals/modal"
-    import loadingModal from "../modals/loadingModal"
     import Counties from "./component/counties"
 
     import { isIOS } from "tns-core-modules/platform";
@@ -164,7 +163,6 @@
                 timeTable: null,
                 indexWithClosestToRealTime: null,
                 feedback: null,
-                topmost: null,
                 selectedCounty: {
                     name: {
                         縣市: null,
@@ -226,7 +224,7 @@
                 }
             },
             confirmSearch: async function () {
-                await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
+                await handle.controlValuesBeforeGoingToRoute(this);
             },
             showTime: function () {
                 this.$showModal(modal, {
