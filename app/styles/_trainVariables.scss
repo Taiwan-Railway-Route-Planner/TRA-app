@@ -1,51 +1,49 @@
-@import "variables";
-
 /**************** Train Colors **************/
 
-.normal-train{
+.normal-train {
   color: #333333;
 
-  .ns-dark &{
-    color: $dark-white;
+  .ns-dark & {
+    color: #ffffff;
   }
 }
 
-.chu-kuang{
+.chu-kuang {
   color: #FFD200;
 
-  .ns-dark &{
-
+  .ns-dark & {
+    color: #FFD200;
   }
 }
 
-.tze-chiang{
+.tze-chiang {
   color: #FF8708;
 
-  .ns-dark &{
-
+  .ns-dark & {
+    color: #FF8708;
   }
 }
 
-.fu-hsing{
+.fu-hsing {
   color: #00ACE8;
 
-  .ns-dark &{
-
+  .ns-dark & {
+    color: #00ACE8;
   }
 }
 
-.taroko{
+.taroko {
   color: #FF5000;
 
-  .ns-dark &{
-
+  .ns-dark & {
+    color: #FF5000;
   }
 }
 
-.puyuma{
+.puyuma {
   color: #D00216;
 
-  .ns-dark &{
-
+  .ns-dark & {
+    color: #D00216;
   }
 }
