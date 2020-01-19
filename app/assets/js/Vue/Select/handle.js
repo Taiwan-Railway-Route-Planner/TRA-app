@@ -17,12 +17,13 @@ export default (function () {
         await initScreen.initScreen(_self, requestBuilderForSelect);
     };
 
-    async function controlValuesBeforeGoingToRoute(_self) {
-        await handleNavigationForResults.checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute(_self, requestBuilderForSelect)
+    async function controlValuesBeforeGoingToRoute(_self, loadingModal) {
+        await handleNavigationForResults.checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute(_self, requestBuilderForSelect, loadingModal)
     }
 
     function assignVariables(_self) {
         _self.feedback = feedback;
+        // _self.topmost = frameModule;
     }
 
     const checkFirstIfTheElementsArentEmpty = async function (_self) {

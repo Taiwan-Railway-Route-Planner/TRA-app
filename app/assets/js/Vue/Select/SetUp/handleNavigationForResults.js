@@ -8,12 +8,14 @@ import {
     Mode
 } from '@nstudio/nativescript-loading-indicator';
 
+import { Frame } from "ui/frame"
+
 export default (function () {
 
-    let indicator = new LoadingIndicator();
+    const indicator = new LoadingIndicator();
 
-    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect) {
-        startLoadingModal();
+    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect, loadingModal) {
+        startLoadingModal(_self, loadingModal);
         if (_self.data.routeDetails.time.date.real === null) {
             assignTimeToRouteDetailsWhenEmpty(_self);
         }
@@ -59,23 +61,23 @@ export default (function () {
                 indexWithClosestToRealTime: _self.indexWithClosestToRealTime
             }
         });
-        stopLoadingModal();
+        stopLoadingModal(_self);
     }
 
     /***************** ERROR - MESSAGES *****************/
 
     function startOrAndEndpositionIsntFilledIn(_self) {
-        stopLoadingModal();
+        stopLoadingModal(_self);
         showError(_self, _self.data.error);
     }
 
     function showErrorMessageWhyRouteCantBeFound(_self) {
-        stopLoadingModal();
+        stopLoadingModal(_self);
         showError(_self, _self.timeTable.msg);
     }
 
     function showNoInternetConnection(_self) {
-        stopLoadingModal();
+        stopLoadingModal(_self);
         internetError(_self);
     }
 
@@ -85,17 +87,23 @@ export default (function () {
         return !obj.hasOwnProperty('routeCode')
     }
 
-    function startLoadingModal() {
-        indicator.show({
-            dimBackground: true,
-            hideBezel: true,
-            userInteractionEnabled: false,
-            mode: Mode.Indeterminate
-        });
+    function startLoadingModal(_self, loadingModal) {
+        _self.$showModal(loadingModal);
+        // indicator.show({
+        //     dimBackground: true,
+        //     hideBezel: true,
+        //     userInteractionEnabled: false,
+        //     mode: Mode.Indeterminate
+        // });
     }
 
-    function stopLoadingModal() {
-        indicator.hide();
+    function stopLoadingModal(_self) {
+        // indicator.hide();
+        const page = Frame.topmost();
+        console.log(page.modal);
+        if (page && page.modal) {
+            page.modal.closeModal()
+        }
     }
 
     function showError(_self, errorMessage) {
