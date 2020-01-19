@@ -205,10 +205,7 @@
             goBackToNormalScreen: function () {
                 this.search = false;
                 if (isIOS) {
-                    utils.ios
-                        .getter(UIApplication, UIApplication.sharedApplication)
-                        .keyWindow
-                        .endEditing(true);
+                    UIApplication.sharedApplication.keyWindow.endEditing(true);
                 }
             },
             showSearch: async function (departureOrArrival) {
