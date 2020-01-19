@@ -7,10 +7,10 @@
   "nativescript": {
     "id": "com.wingcrony.tra.app",
     "tns-ios": {
-      "version": "6.2.0"
+      "version": "6.3.2"
     },
     "tns-android": {
-      "version": "6.2.0"
+      "version": "6.3.2"
     }
   },
   "dependencies": {
@@ -23,9 +23,9 @@
     "nativescript-socketio": "^3.3.1",
     "nativescript-theme-core": "^2.0.24",
     "nativescript-toasty": "^2.0.1",
-    "nativescript-vue": "2.4.0",
+    "nativescript-vue": "2.5.0-alpha.3",
     "nativescript-vue-devtools": "^1.2.0",
-    "tns-core-modules": "~6.3.1",
+    "tns-core-modules": "~6.3.2",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
