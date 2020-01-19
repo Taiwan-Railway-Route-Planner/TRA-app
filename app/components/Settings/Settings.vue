@@ -3,50 +3,50 @@
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="title">
-                    <Label class="" :text="data.top.title"></Label>
+                    <Label class="" :text="data.top.title"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose" @tap="navToStart">
-                    <Label class="fas" :text="'\uf3c5' | unescape"></Label>
+                    <Label class="fas" :text="'\uf3c5' | unescape"/>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <!--<Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose">
-                    <Label class="fas" :text="'\uf509' | unescape"></Label>
+                    <Label class="fas" :text="'\uf509' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
                 <FlexboxLayout class="settings">
                     <FlexboxLayout class="languagesSettings">
                         <FlexboxLayout class="listPickerLanguagesSettings">
-                            <Label class="" :text="data.center.language.chooseTitle"></Label>
+                            <Label class="" :text="data.center.language.chooseTitle"/>
                             <FlexboxLayout>
-                                <ListPicker :items="possibleLanguagesArray" v-model="selectedItem"></ListPicker>
+                                <ListPicker :items="possibleLanguagesArray" v-model="selectedItem"/>
                             </FlexboxLayout>
                         </FlexboxLayout>
-                        <Button class="btn btn-wt" :text="data.center.language.button" @tap="saveNewLanguage"></Button>
+                        <Button class="btn btn-wt" :text="data.center.language.button" @tap="saveNewLanguage"/>
                     </FlexboxLayout>
                     <FlexboxLayout class="otherInfo">
                         <FlexboxLayout class="element details" @tap="openMoreInfo">
-                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.support"></Label>
-                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.support"/>
+                            <Label class="fas" :text="'\uf054' | unescape"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="element details" @tap="openGooglePlay">
-                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.rate"></Label>
-                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.rate"/>
+                            <Label class="fas" :text="'\uf054' | unescape"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="element details" @tap="openMail">
-                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.contactUs"></Label>
-                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.contactUs"/>
+                            <Label class="fas" :text="'\uf054' | unescape"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="element details" @tap="openGithub">
-                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.openSource"></Label>
-                            <Label class="fas" :text="'\uf054' | unescape"></Label>
+                            <Label :class="layoutStateLabel" :text="data.center.otherInfo.openSource"/>
+                            <Label class="fas" :text="'\uf054' | unescape"/>
                         </FlexboxLayout>
-                        <Label v-if="$store.state.language === 'ZH'" class="element" :text="currentVersion + ' ' + data.center.otherInfo.Version"></Label>
-                        <Label v-else class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"></Label>
+                        <Label v-if="$store.state.language === 'ZH'" class="element" :text="currentVersion + ' ' + data.center.otherInfo.Version"/>
+                        <Label v-else class="element" :text="data.center.otherInfo.Version + ' ' + currentVersion"/>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
