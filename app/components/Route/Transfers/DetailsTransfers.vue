@@ -56,7 +56,7 @@
                             <FlexboxLayout class="trainDetails">
                                 <FlexboxLayout class="trainTimeDetails">
                                     <Label :text="$props.selectTravelDetails.details[index].start.time"></Label>
-                                    <Label class="fas" :color="$props.language.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', $props.language.trainTypes[item.trainType].color]" :text="'\uf238' | unescape"></Label>
                                     <Label :text="$props.selectTravelDetails.details[index].end.time"></Label>
                                 </FlexboxLayout>
                                 <FlexboxLayout class="route">
@@ -169,6 +169,7 @@
 <style lang="scss" scoped>
     @import "../../../styles/_variables.scss";
     @import "../../../styles/generalStyles.scss";
+    @import "../../../styles/trainVariables.scss";
 
     .dock-top {
         height: 18%;

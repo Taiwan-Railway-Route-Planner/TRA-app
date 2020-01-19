@@ -48,27 +48,27 @@
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"></Label>
                                     <FlexboxLayout class="transfers">
                                         <Label class="fas" :text="'\uf074' | unescape"></Label>
                                         <Label :text="item.trainTypes.length"></Label>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[2]].color]" :text="'\uf238' | unescape"></Label>
                                     <FlexboxLayout class="transfers">
                                         <Label class="fas" :text="'\uf074' | unescape"></Label>
                                         <Label :text="item.trainTypes.length"></Label>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[2]].color]" :text="'\uf238' | unescape"></Label>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[3]].color]" :text="'\uf238' | unescape"></Label>
                                     <FlexboxLayout class="transfers">
                                         <Label class="fas" :text="'\uf074' | unescape"></Label>
                                         <Label :text="item.trainTypes.length"></Label>
@@ -252,11 +252,17 @@
 <style lang="scss" scoped>
     @import "../../styles/_variables.scss";
     @import "../../styles/generalStyles.scss";
+    @import "../../styles/trainVariables.scss";
 
     .dock-top {
         background-color: $primary;
         color: $white;
         height: 10%;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     /*.dock-top Label {*/
@@ -296,6 +302,11 @@
     .center {
         background-color: $white;
         color: $primary;
+
+        .ns-dark &{
+            background-color: $dark-white;
+            color: $dark-white;
+        }
     }
 
     .center .travelDetails {
