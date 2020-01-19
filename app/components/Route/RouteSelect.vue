@@ -1,6 +1,6 @@
 <template>
     <Page actionBarHidden="true">
-        <DockLayout>
+        <DockLayout id="train">
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout :class="resizeLabels">
                     <FlexboxLayout class="navDetails" @tap="navigateBackVue">
@@ -47,7 +47,7 @@
                                         <Label :text="item.travelTime"></Label>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
+                                <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain train-colors">
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"></Label>
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"></Label>
                                     <FlexboxLayout class="transfers">
@@ -55,7 +55,7 @@
                                         <Label :text="item.trainTypes.length"></Label>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
+                                <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain train-colors">
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"></Label>
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"></Label>
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[2]].color]" :text="'\uf238' | unescape"></Label>
@@ -64,7 +64,7 @@
                                         <Label :text="item.trainTypes.length"></Label>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
+                                <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain train-colors">
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"></Label>
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"></Label>
                                     <Label :class="['fas', data.trainTypes[item.trainTypes[2]].color]" :text="'\uf238' | unescape"></Label>

@@ -1,6 +1,6 @@
 <template>
     <Page actionBarHidden="true">
-        <DockLayout>
+        <DockLayout id="train">
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
@@ -49,7 +49,7 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
                 <FlexboxLayout class="trainDetails" @tap="navigateToRouteDetails">
-                    <FlexboxLayout class="trainTimeDetails">
+                    <FlexboxLayout class="trainTimeDetails train-colors">
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
                         <Label :class="['fas', $props.language.trainTypes[$props.selectTravelDetails.trainType].color]" :text="'\uf238' | unescape"></Label>
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
@@ -138,7 +138,7 @@
 <style lang="scss" scoped>
     @import "../../../styles/_variables.scss";
     @import "../../../styles/generalStyles.scss";
-    @import "../../../styles/trainVariables.scss";
+
 
     .dock-top {
         height: 18%;
@@ -247,8 +247,8 @@
 
     /*** DOCK CENTER ***/
 
-    .dock-center .trainDetails .trainDestArrDetails Label,
-    .dock-center .trainDetails .trainTimeDetails Label {
+    .trainDetails .trainDestArrDetails Label,
+    .trainDetails .trainTimeDetails Label {
         color: $primary;
     }
 
@@ -395,5 +395,7 @@
     .dock-top .top .top-title .titles .smallerTopTitle{
         font: 20;
     }
+
+    @import "../../../styles/trainVariables.scss";
 
 </style>
