@@ -102,7 +102,8 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
 
     .modal {
         background-color: white;

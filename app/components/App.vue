@@ -60,9 +60,8 @@
 </script>
 
 <style lang="scss" scoped>
-
-    $primary: #1a0dab;
-    $white: #ffffff;
+    @import "../styles/_variables.scss";
+    @import "../styles/generalStyles.scss";
 
     .page {
         background-color: $primary;
