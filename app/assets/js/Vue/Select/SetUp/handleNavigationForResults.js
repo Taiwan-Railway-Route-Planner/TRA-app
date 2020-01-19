@@ -121,7 +121,7 @@ export default (function () {
             duration: 6000
         })
     }
-    
+
     return {
         checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute,
     }
