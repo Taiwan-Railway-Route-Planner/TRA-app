@@ -4,11 +4,11 @@
 
 const requestBuilderForSelect = require("./SetUp/requestBuilderForSelect");
 const initScreen = require("./SetUp/initScreen");
+
 import handleNavigationForResults from "./SetUp/handleNavigationForResults"
 
 const FeedbackPlugin = require("nativescript-feedback");
 const feedback = new FeedbackPlugin.Feedback();
-
 
 export default (function () {
 

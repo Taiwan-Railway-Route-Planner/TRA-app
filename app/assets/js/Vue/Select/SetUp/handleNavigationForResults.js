@@ -13,7 +13,7 @@ export default (function () {
     const indicator = new LoadingIndicator();
 
     const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect) {
-        startLoadingModal(_self);
+        startLoadingModal();
         if (_self.data.routeDetails.time.date.real === null) {
             assignTimeToRouteDetailsWhenEmpty(_self);
         }
@@ -59,7 +59,7 @@ export default (function () {
                 indexWithClosestToRealTime: _self.indexWithClosestToRealTime
             }
         });
-        stopLoadingModal(_self);
+        stopLoadingModal();
     }
 
     /***************** ERROR - MESSAGES *****************/
@@ -85,7 +85,7 @@ export default (function () {
         return !obj.hasOwnProperty('routeCode')
     }
 
-    function startLoadingModal(_self) {
+    function startLoadingModal() {
         indicator.show({
             dimBackground: true,
             hideBezel: true,
@@ -94,7 +94,7 @@ export default (function () {
         });
     }
 
-    function stopLoadingModal(_self) {
+    function stopLoadingModal() {
         indicator.hide();
     }
 
