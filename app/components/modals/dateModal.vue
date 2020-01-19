@@ -1,11 +1,11 @@
 <template>
     <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
-            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
-            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
+            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"/>
+            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="center">
-            <DatePicker v-model="$props.timeModal.selectedDate" :minDate="$props.timeModal.minDate"></DatePicker>
+            <DatePicker v-model="date" :minDate="minDate"/>
         </FlexboxLayout>
     </DockLayout>
 </template>
@@ -15,7 +15,10 @@
     import moment from "moment"
 
     export default {
-        props: ['time', 'timeModal', 'formatTimeStampBasedOnLanguage'],
+        props: ['time', 'formatTimeStampBasedOnLanguage'],
+        created: function () {
+            this.date = moment(this.$props.time.modal.center.date.today).toDate();
+        },
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -26,14 +29,23 @@
                 }
             }
         },
+        data () {
+            return {
+                date: this.$props.selectedDate,
+                minDate: '06-13-2019',
+                maxDate: '01-01-2020',
+            }
+        },
         methods: {
             discard: function () {
-                this.$modal.close();
+                this.$emit('changeModal')
             },
             confirm: function () {
-                this.$props.time.modal.center.date.today = moment(this.$props.timeModal.selectedDate).format();
+                this.$props.time.modal.center.date.today = moment(this.date).format();
                 this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
-                this.$modal.close();
+                this.time.date.show = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(this, this.$props.time.modal.center.date.today);
+                this.time.date.real = moment(this.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
+                this.$emit('changeModal');
             }
         }
     }
@@ -44,10 +56,7 @@
 
     .modal {
         background-color: white;
-        height: 350;
-        /*Android*/
-        width: 280;
-        /*iOS*/
+        height: 400;
         width: 300;
         text-align: left;
         color: $dark;

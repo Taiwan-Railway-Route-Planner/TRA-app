@@ -2,31 +2,31 @@
     <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
-                <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""></Label>
-                <!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""></Label>-->
+                <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""/>
+                <!--<Label :text="$props.time.modal.top.second" class="topLabel" @tap=""/>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
-            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"></Label>
-            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"></Label>
+            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"/>
+            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeSettings">
             <FlexboxLayout class="timeSelect">
-                <TimePicker v-model="selectedTime"></TimePicker>
+                <TimePicker v-model="timeWeSelected"/>
                 <FlexboxLayout class="now">
-                    <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"></Button>
+                    <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout class="dateTimeSelect">
                 <FlexboxLayout class="dateTimeNav">
-                    <Label class="fas" @tap="previousDay" :text="'\uf053' | unescape"></Label>
+                    <Label class="fas" @tap="previousDay" :text="'\uf053' | unescape"/>
                     <FlexboxLayout class="timeStamp">
-                        <Label class="" @tap="modalCalender" :text="$props.time.modal.center.date.actual"></Label>
+                        <Label class="" @tap="modalCalender" :text="$props.time.modal.center.date.actual"/>
                     </FlexboxLayout>
-                    <Label class="fas" @tap="nextDay" :text="'\uf054' | unescape"></Label>
+                    <Label class="fas" @tap="nextDay" :text="'\uf054' | unescape"/>
                 </FlexboxLayout>
                 <FlexboxLayout class="calenderView">
-                    <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"></Button>
+                    <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
         </FlexboxLayout>
@@ -35,15 +35,11 @@
 
 <script>
 
-    import dateModal from "./dateModal"
     import handle from "../../assets/js/Vue/Modal/timeModal/handle"
     import moment from "moment"
 
     export default {
-        props: ['time', 'formatTimeStampBasedOnLanguage'],
-        created: function () {
-            handle.handle(this);
-        },
+        props: ['time', 'formatTimeStampBasedOnLanguage', 'selectedTime'],
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -56,16 +52,12 @@
         },
         data() {
             return {
-                selectedDate: '',
-                selectedTime: '',
-                minDate: '06-13-2019',
-                maxDate: '01-01-2020',
-                departureTimeOrArrivalTime: true
+                timeWeSelected: this.$props.selectedTime
             }
         },
         methods: {
             setTimeToNow: function () {
-                this.selectedTime = moment().toDate();
+                this.timeWeSelected = moment().toDate();
             },
             previousDay: function () {
                 this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).subtract(1, 'days'));
@@ -76,27 +68,15 @@
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
             },
             modalCalender: function () {
-                this.selectedDate = moment(this.time.modal.center.date.today).toDate();
-                this.$showModal(dateModal, {
-                        props: {
-                            time: this.$props.time,
-                            timeModal: {
-                                selectedDate: this.selectedDate,
-                                minDate: this.minDate,
-                                maxDate: this.maxDate
-                            },
-                            formatTimeStampBasedOnLanguage: this.$props.formatTimeStampBasedOnLanguage
-                        }
-                    }
-                );
+                this.$emit('changeModalReturnTime', this.timeWeSelected);
             },
             discard: function () {
                 handle.discard(this);
-                this.$modal.close();
+                this.$emit('close');
             },
             confirm: function () {
                 handle.save(this);
-                this.$modal.close();
+                this.$emit('close');
             }
         }
     }
@@ -116,11 +96,11 @@
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
 
     .smallerLabels.modal Label,
-    .smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel{
+    .smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel {
         font-size: 14;
     }
 
-    .smallerLabels.modal .timeSettings .timeSelect .now Button{
+    .smallerLabels.modal .timeSettings .timeSelect .now Button {
         font-size: 12;
     }
 
@@ -147,7 +127,7 @@
         width: 20%;
     }
 
-    .timeSettings .timeSelect .now Button{
+    .timeSettings .timeSelect .now Button {
         /*iOS*/
         width: 80%;
         margin-left: auto;
@@ -178,7 +158,7 @@
 
     .timeSettings .dateTimeSelect .calenderView {
         /*Android*/
-        width: 20%;
+        /*width: 20%;*/
         /*iOS*/
         width: 30%;
         height: 100px;
