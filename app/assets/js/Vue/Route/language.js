@@ -13,35 +13,35 @@ module.exports = (function () {
             "trainTypes": {
                 "Local": {
                     "name": "Local",
-                    "color": "#333333"
+                    "color": "normal-train"
                 },
                 "Other Local": {
                     "name": "Ordinary",
-                    "color": "#333333"
+                    "color": "normal-train"
                 },
                 "Fast Local": {
                     "name": "Fast Local",
-                    "color": "#333333"
+                    "color": "normal-train"
                 },
                 "Chu-kuang": {
                     "name": "Chu-kuang",
-                    "color": "#FFD200"
+                    "color": "chu-kuang"
                 },
                 "Tze-chiang": {
                     "name": "Tze-chiang",
-                    "color": "#FF8708"
+                    "color": "tze-chiang"
                 },
                 "Fu-Hsing": {
                     "name": "Fu-Hsing",
-                    "color": "#00ace8"
+                    "color": "fu-hsing"
                 },
                 "Taroko": {
                     "name": "Taroko",
-                    "color": "#FF5000"
+                    "color": "taroko"
                 },
                 "Puyuma": {
                     "name": "Puyuma",
-                    "color": "#D00216"
+                    "color": "puyuma"
                 }
             },
             "details": {
@@ -69,35 +69,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "區間",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "普快",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "區間快",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "莒光",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "自強",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "復興",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "太魯閣",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "普悠瑪",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             "details": {
@@ -125,35 +125,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
@@ -181,35 +181,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
@@ -237,35 +237,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
@@ -294,35 +294,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
@@ -351,35 +351,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
@@ -408,35 +408,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
@@ -465,35 +465,35 @@ module.exports = (function () {
             trainTypes: {
                 "Local": {
                     name: "Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Other Local": {
                     name: "Ordinary",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Fast Local": {
                     name: "Fast Local",
-                    color: "#333333"
+                    color: "normal-train"
                 },
                 "Chu-kuang": {
                     name: "Chu-kuang",
-                    color: "#FFD200"
+                    color: "chu-kuang"
                 },
                 "Tze-chiang": {
                     name: "Tze-chiang",
-                    color: "#FF8708"
+                    color: "tze-chiang"
                 },
                 "Fu-Hsing": {
                     name: "Fu-Hsing",
-                    color: "#00ace8"
+                    color: "fu-hsing"
                 },
                 "Taroko": {
                     name: "Taroko",
-                    color: "#FF5000"
+                    color: "taroko"
                 },
                 "Puyuma": {
                     name: "Puyuma",
-                    color: "#D00216"
+                    color: "puyuma"
                 }
             },
             details: {
