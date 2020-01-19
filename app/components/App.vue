@@ -2,16 +2,16 @@
     <Page actionBarHidden="true">
         <DockLayout class="page">
             <FlexboxLayout dock="top" class="mainMenu">
-                <Label class="title" text="TRA Route Planner"></Label>
+                <Label class="title" text="TRA Route Planner"/>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="menu-bottom">
-                <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"></Button>
+                <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"/>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
                 <ListView for="(item, index) in languages" ref="listview" class="listView" @itemTap="onItemTap" @itemLoading="onItemLoading">
                     <v-template>
                         <FlexboxLayout class="element">
-                            <Label class="top-text" :text="item.nameNative"></Label>
+                            <Label class="top-text" :text="item.nameNative"/>
                         </FlexboxLayout>
                     </v-template>
                 </ListView>

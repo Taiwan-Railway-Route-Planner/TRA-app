@@ -4,27 +4,27 @@
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title" @tap="navigateBackVue">
-                        <Label class="fas" :text="'\uf060' | unescape"></Label>
-                        <Label :text="$props.language.stopDetails.top.title"></Label>
+                        <Label class="fas" :text="'\uf060' | unescape"/>
+                        <Label :text="$props.language.stopDetails.top.title"/>
                     </FlexboxLayout>
                     <FlexboxLayout class="trainGeneral">
                         <FlexboxLayout class="element">
-                            <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
+                            <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="element">
-                            <Label class="title" :text="$props.language.stopDetails.top.type"></Label>
-                            <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name"></Label>
+                            <Label class="title" :text="$props.language.stopDetails.top.type"/>
+                            <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="element last">
-                            <Label class="title" :text="$props.language.stopDetails.top.number"></Label>
-                            <Label :text="$props.selectTravelDetails.Train"></Label>
+                            <Label class="title" :text="$props.language.stopDetails.top.number"/>
+                            <Label :text="$props.selectTravelDetails.Train"/>
                         </FlexboxLayout>
                     </FlexboxLayout>
                     <FlexboxLayout class="trainIcons">
-                        <Label v-if="$props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
-                        <Label v-if="$props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
-                        <Label v-if="$props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
-                        <Label v-if="$props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                        <Label v-if="$props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"/>
+                        <Label v-if="$props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"/>
+                        <Label v-if="$props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"/>
+                        <Label v-if="$props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"/>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
@@ -33,30 +33,30 @@
                     <v-template>
                         <FlexboxLayout class="oneRouteDetail">
                             <FlexboxLayout class="time">
-                                <Label class="" :text="item.ArrTime"></Label>
-                                <Label class="" :text="item.DepTime"></Label>
+                                <Label class="" :text="item.ArrTime"/>
+                                <Label class="" :text="item.DepTime"/>
                             </FlexboxLayout>
                             <FlexboxLayout class="route" v-if="item.alreadyPassed">
                                 <FlexboxLayout class="template-line">
-                                    <Label class="line"></Label>
+                                    <Label class="line"/>
                                 </FlexboxLayout>
-                                <Label class="far" :text="'\uf111' | unescape"></Label>
+                                <Label class="far" :text="'\uf111' | unescape"/>
                                 <FlexboxLayout class="template-line">
-                                    <Label class="line"></Label>
+                                    <Label class="line"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="route" v-else>
                                 <FlexboxLayout class="template-line">
-                                    <Label class="line passed"></Label>
+                                    <Label class="line passed"/>
                                 </FlexboxLayout>
-                                <Label class="far passed" :text="'\uf111' | unescape"></Label>
+                                <Label class="far passed" :text="'\uf111' | unescape"/>
                                 <FlexboxLayout class="template-line">
-                                    <Label class="line passed"></Label>
+                                    <Label class="line passed"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="stationName">
-                                <Label v-if="$store.state.language === 'ZH'" class="" :text="item.站名"></Label>
-                                <Label v-else class="" :text="item.eng站名"></Label>
+                                <Label v-if="$store.state.language === 'ZH'" class="" :text="item.站名"/>
+                                <Label v-else class="" :text="item.eng站名"/>
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </v-template>

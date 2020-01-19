@@ -3,42 +3,42 @@
         <DockLayout>
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="title" @tap="navigateBackVue">
-                    <Label class="fas" :text="'\uf060' | unescape"></Label>
-                    <Label class="" :text="data.top.title"></Label>
+                    <Label class="fas" :text="'\uf060' | unescape"/>
+                    <Label class="" :text="data.top.title"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose" @tap="navToStart">
-                    <Label class="fas" :text="'\uf3c5' | unescape"></Label>
+                    <Label class="fas" :text="'\uf3c5' | unescape"/>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <!--<Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose">
-                    <Label class="fas" :text="'\uf509' | unescape"></Label>
+                    <Label class="fas" :text="'\uf509' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="dock-center">
                 <FlexboxLayout class="information">
-                    <Label class="message" textWrap="true" :text="data.information.intro"></Label>
+                    <Label class="message" textWrap="true" :text="data.information.intro"/>
                     <ListView class="listGroup" for="item in languages" separatorColor="transparent">
                         <v-template>
                             <FlexboxLayout class="languageDetails">
-                                <Label :text="item.name"></Label>
+                                <Label :text="item.name"/>
                             </FlexboxLayout>
                         </v-template>
                     </ListView>
                     <FlexboxLayout class="button">
-                        <Button class="btn btn-wt" :text="data.information.btn" @tap="goToTranslatingPage"></Button>
+                        <Button class="btn btn-wt" :text="data.information.btn" @tap="goToTranslatingPage"/>
                     </FlexboxLayout>
                 </FlexboxLayout>
                 <FlexboxLayout class="thankyou">
-                    <Label class="message" textWrap="true" :text="data.thanks.intro"></Label>
+                    <Label class="message" textWrap="true" :text="data.thanks.intro"/>
                     <ListView class="listGroup" for="item in persons" separatorColor="transparent">
                         <v-template>
                             <FlexboxLayout class="detailsPerson">
-                                <Label class="" :text="item.name"></Label>
-                                <Label class="spaceAround" :text="item.language"></Label>
+                                <Label class="" :text="item.name"/>
+                                <Label class="spaceAround" :text="item.language"/>
                             </FlexboxLayout>
                         </v-template>
                     </ListView>
