@@ -1,0 +1,51 @@
+@import "variables";
+
+/**************** Train Colors **************/
+
+.normal-train{
+  color: #333333;
+
+  .ns-dark &{
+    color: $dark-white;
+  }
+}
+
+.chu-kuang{
+  color: #FFD200;
+
+  .ns-dark &{
+
+  }
+}
+
+.tze-chiang{
+  color: #FF8708;
+
+  .ns-dark &{
+
+  }
+}
+
+.fu-hsing{
+  color: #00ACE8;
+
+  .ns-dark &{
+
+  }
+}
+
+.taroko{
+  color: #FF5000;
+
+  .ns-dark &{
+
+  }
+}
+
+.puyuma{
+  color: #D00216;
+
+  .ns-dark &{
+
+  }
+}
