@@ -68,8 +68,8 @@
         color: $white;
 
         .ns-dark & {
-            background-color: dark($primary);
-            color: dark($white);
+            background-color: $dark-primary;
+            color: $dark-white;
         }
     }
 
@@ -91,6 +91,10 @@
 
     .menu-center .listView{
         background-color: $primary;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+        }
     }
 
     .menu-center .element{
@@ -98,6 +102,10 @@
         flex-direction: column;
         align-items: center;
         background-color: $primary;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+        }
     }
 
     .menu-center .element .top-text{
