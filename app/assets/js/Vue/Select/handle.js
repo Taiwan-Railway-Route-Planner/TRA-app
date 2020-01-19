@@ -4,12 +4,10 @@
 
 const requestBuilderForSelect = require("./SetUp/requestBuilderForSelect");
 const initScreen = require("./SetUp/initScreen");
-const handleNavigationForResults = require("./SetUp/handleNavigationForResults");
+import handleNavigationForResults from "./SetUp/handleNavigationForResults"
 
 const FeedbackPlugin = require("nativescript-feedback");
 const feedback = new FeedbackPlugin.Feedback();
-
-import {topmost} from "ui/frame"
 
 export default (function () {
 
@@ -18,13 +16,12 @@ export default (function () {
         await initScreen.initScreen(_self, requestBuilderForSelect);
     };
 
-    async function controlValuesBeforeGoingToRoute(_self, loadingModal) {
-        await handleNavigationForResults.checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute(_self, loadingModal, requestBuilderForSelect)
+    async function controlValuesBeforeGoingToRoute(_self) {
+        await handleNavigationForResults.checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute(_self, requestBuilderForSelect)
     }
 
     function assignVariables(_self) {
         _self.feedback = feedback;
-        _self.topmost = topmost;
     }
 
     const checkFirstIfTheElementsArentEmpty = async function (_self) {

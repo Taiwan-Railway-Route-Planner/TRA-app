@@ -4,10 +4,17 @@
 
 const moment = require('moment');
 
-module.exports = (function () {
+import {
+    LoadingIndicator,
+    Mode
+} from '@nstudio/nativescript-loading-indicator';
 
-    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, loadingModal, requestBuilderForSelect) {
-        startLoadingModal(_self, loadingModal);
+export default (function () {
+
+    const indicator = new LoadingIndicator();
+
+    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect) {
+        startLoadingModal();
         if (_self.data.routeDetails.time.date.real === null) {
             assignTimeToRouteDetailsWhenEmpty(_self);
         }
@@ -53,7 +60,7 @@ module.exports = (function () {
                 indexWithClosestToRealTime: _self.indexWithClosestToRealTime
             }
         });
-        stopLoadingModal(_self);
+        stopLoadingModal();
     }
 
     /***************** ERROR - MESSAGES *****************/
@@ -79,15 +86,17 @@ module.exports = (function () {
         return !obj.hasOwnProperty('routeCode')
     }
 
-    function startLoadingModal(_self, loadingModal) {
-        // _self.$showModal(loadingModal);
+    function startLoadingModal() {
+        indicator.show({
+            dimBackground: true,
+            hideBezel: true,
+            userInteractionEnabled: false,
+            mode: Mode.Indeterminate
+        });
     }
 
-    function stopLoadingModal(_self) {
-        // const page = _self.topmost().currentPage;
-        // if (page && page.modal) {
-        //     page.modal.closeModal()
-        // }
+    function stopLoadingModal() {
+        indicator.hide();
     }
 
     function showError(_self, errorMessage) {
