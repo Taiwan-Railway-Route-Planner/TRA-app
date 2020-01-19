@@ -1,49 +1,53 @@
 /**************** Train Colors **************/
 
-.normal-train {
-  color: #333333;
+#train .center .train-colors {
 
-  .ns-dark & {
-    color: #ffffff;
+  .normal-train {
+    color: #333333;
+
+    .ns-dark & {
+      color: #ffffff;
+    }
   }
-}
 
-.chu-kuang {
-  color: #FFD200;
-
-  .ns-dark & {
+  .chu-kuang {
     color: #FFD200;
+
+    .ns-dark & {
+      color: #FFD200;
+    }
   }
-}
 
-.tze-chiang {
-  color: #FF8708;
-
-  .ns-dark & {
+  .tze-chiang {
     color: #FF8708;
+
+    .ns-dark & {
+      color: #FF8708;
+    }
   }
-}
 
-.fu-hsing {
-  color: #00ACE8;
-
-  .ns-dark & {
+  .fu-hsing {
     color: #00ACE8;
+
+    .ns-dark & {
+      color: #00ACE8;
+    }
   }
-}
 
-.taroko {
-  color: #FF5000;
-
-  .ns-dark & {
+  .taroko {
     color: #FF5000;
+
+    .ns-dark & {
+      color: #FF5000;
+    }
   }
-}
 
-.puyuma {
-  color: #D00216;
-
-  .ns-dark & {
+  .puyuma {
     color: #D00216;
+
+    .ns-dark & {
+      color: #D00216;
+    }
   }
+
 }
