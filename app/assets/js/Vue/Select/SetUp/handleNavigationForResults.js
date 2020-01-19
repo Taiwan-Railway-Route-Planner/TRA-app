@@ -1,12 +1,20 @@
 /**
  Created by svend on 23/08/2019.
  **/
-
 const moment = require('moment');
 
-module.exports = (function () {
+import {
+    LoadingIndicator,
+    Mode
+} from '@nstudio/nativescript-loading-indicator';
 
-    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, loadingModal, requestBuilderForSelect) {
+import { Frame } from "ui/frame"
+
+export default (function () {
+
+    const indicator = new LoadingIndicator();
+
+    const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect, loadingModal) {
         startLoadingModal(_self, loadingModal);
         if (_self.data.routeDetails.time.date.real === null) {
             assignTimeToRouteDetailsWhenEmpty(_self);
@@ -80,14 +88,21 @@ module.exports = (function () {
     }
 
     function startLoadingModal(_self, loadingModal) {
-        // _self.$showModal(loadingModal);
+        _self.$showModal(loadingModal);
+        // indicator.show({
+        //     dimBackground: true,
+        //     hideBezel: true,
+        //     userInteractionEnabled: false,
+        //     mode: Mode.Indeterminate
+        // });
     }
 
     function stopLoadingModal(_self) {
-        // const page = _self.topmost().currentPage;
-        // if (page && page.modal) {
-        //     page.modal.closeModal()
-        // }
+        // indicator.hide();
+        const page = Frame.topmost();
+        if (page && page.modal) {
+            page.modal.closeModal()
+        }
     }
 
     function showError(_self, errorMessage) {
@@ -109,6 +124,4 @@ module.exports = (function () {
     return {
         checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute,
     }
-
 })();
-
