@@ -10,7 +10,7 @@ import {
 
 export default (function () {
 
-    const indicator = new LoadingIndicator();
+    let indicator = new LoadingIndicator();
 
     const checkIfTheValuesAreCorrectBeforeWeCanStartSearchingAfterPossibleRoute = async function (_self, requestBuilderForSelect) {
         startLoadingModal();
@@ -65,17 +65,17 @@ export default (function () {
     /***************** ERROR - MESSAGES *****************/
 
     function startOrAndEndpositionIsntFilledIn(_self) {
-        stopLoadingModal(_self);
+        stopLoadingModal();
         showError(_self, _self.data.error);
     }
 
     function showErrorMessageWhyRouteCantBeFound(_self) {
-        stopLoadingModal(_self);
+        stopLoadingModal();
         showError(_self, _self.timeTable.msg);
     }
 
     function showNoInternetConnection(_self) {
-        stopLoadingModal(_self);
+        stopLoadingModal();
         internetError(_self);
     }
 
