@@ -4,31 +4,31 @@
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout :class="resizeLabels">
                     <FlexboxLayout class="navDetails" @tap="navigateBackVue">
-                        <Label class="fas" :text="'\uf060' | unescape"></Label>
+                        <Label class="fas" :text="'\uf060' | unescape"/>
                         <FlexboxLayout :class="[smallerTitleRoom, 'top-title']">
-                            <Label  :text="data.top.first + ':'"></Label>
-                            <Label  :text="data.top.second + ':'"></Label>
+                            <Label :text="data.top.first + ':'"/>
+                            <Label :text="data.top.second + ':'"/>
                         </FlexboxLayout>
                         <FlexboxLayout v-if="$store.state.language === 'ZH'" class="biggerTopDataForZH top-data">
-                            <Label :text="$props.routeDetails.departure.details.站名"></Label>
-                            <Label :text="$props.routeDetails.arrival.details.站名"></Label>
+                            <Label :text="$props.routeDetails.departure.details.站名"/>
+                            <Label :text="$props.routeDetails.arrival.details.站名"/>
                         </FlexboxLayout>
                         <FlexboxLayout v-else :class="[biggerDestinationDetails, 'top-data']">
-                            <Label :class="makeDestinationSmaller" :text="$props.routeDetails.departure.details.eng站名"></Label>
-                            <Label :class="makeDestinationSmaller" :text="$props.routeDetails.arrival.details.eng站名"></Label>
+                            <Label :class="makeDestinationSmaller" :text="$props.routeDetails.departure.details.eng站名"/>
+                            <Label :class="makeDestinationSmaller" :text="$props.routeDetails.arrival.details.eng站名"/>
                         </FlexboxLayout>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="bottom-menu">
                 <FlexboxLayout class="menu-choose" @tap="navToStart">
-                    <Label class="fas" :text="'\uf3c5' | unescape"></Label>
+                    <Label class="fas" :text="'\uf3c5' | unescape"/>
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToStar">
                     <!--<Label class="fas" :text="'\uf005' | unescape"></Label>-->
                 </FlexboxLayout>
                 <FlexboxLayout class="menu-choose" @tap="navToSet">
-                    <Label class="fas" :text="'\uf509' | unescape"></Label>
+                    <Label class="fas" :text="'\uf509' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="center">
@@ -37,52 +37,52 @@
                         <FlexboxLayout class="travelDetails">
                             <FlexboxLayout class="travelDetailsNoFare">
                                 <FlexboxLayout class="timeDetails">
-                                    <Label class="timeStamps" :text="item.startTime"></Label>
-                                    <Label class="fas" :text="'\uf061'| unescape"></Label>
-                                    <Label class="timeStamps" :text="item.endTime"></Label>
+                                    <Label class="timeStamps" :text="item.startTime"/>
+                                    <Label class="fas" :text="'\uf061'| unescape"/>
+                                    <Label class="timeStamps" :text="item.endTime"/>
                                 </FlexboxLayout>
                                 <FlexboxLayout class="travelTime">
                                     <FlexboxLayout>
-                                        <Label class="far" :text="'\uf017' | unescape"></Label>
-                                        <Label :text="item.travelTime"></Label>
+                                        <Label class="far" :text="'\uf017' | unescape"/>
+                                        <Label :text="item.travelTime"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"/>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"/>
                                     <FlexboxLayout class="transfers">
-                                        <Label class="fas" :text="'\uf074' | unescape"></Label>
-                                        <Label :text="item.trainTypes.length"></Label>
+                                        <Label class="fas" :text="'\uf074' | unescape"/>
+                                        <Label :text="item.trainTypes.length"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"/>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"/>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"/>
                                     <FlexboxLayout class="transfers">
-                                        <Label class="fas" :text="'\uf074' | unescape"></Label>
-                                        <Label :text="item.trainTypes.length"></Label>
+                                        <Label class="fas" :text="'\uf074' | unescape"/>
+                                        <Label :text="item.trainTypes.length"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"></Label>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"/>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"/>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"/>
+                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"/>
                                     <FlexboxLayout class="transfers">
-                                        <Label class="fas" :text="'\uf074' | unescape"></Label>
-                                        <Label :text="item.trainTypes.length"></Label>
+                                        <Label class="fas" :text="'\uf074' | unescape"/>
+                                        <Label :text="item.trainTypes.length"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="fareDetails">
                                 <FlexboxLayout class="prices">
-                                    <Label class="fas" :text="'\uf3ff' | unescape"></Label>
-                                    <Label class="text" :text="item.prices.singlePrice"></Label>
+                                    <Label class="fas" :text="'\uf3ff' | unescape"/>
+                                    <Label class="text" :text="item.prices.singlePrice"/>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.prices.ePrice !== null" class="prices">
-                                    <Image src="~/assets/images/easycard.png" stretch="none"></Image>
-                                    <Label class="text" :text="item.prices.ePrice"></Label>
+                                    <Image src="~/assets/images/easycard.png" stretch="none"/>
+                                    <Label class="text" :text="item.prices.ePrice"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                         </FlexboxLayout>
@@ -93,27 +93,27 @@
                         <FlexboxLayout class="travelDetails">
                             <FlexboxLayout class="travelDetailsNoFare">
                                 <FlexboxLayout class="timeDetails">
-                                    <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
-                                    <Label class="fas" :text="'\uf061'| unescape"></Label>
-                                    <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                                    <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"/>
+                                    <Label class="fas" :text="'\uf061'| unescape"/>
+                                    <Label class="timeStamps" :text="item.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"/>
                                 </FlexboxLayout>
                                 <FlexboxLayout class="travelTime">
-                                    <Label class="far" :text="'\uf017' | unescape"></Label>
-                                    <Label :text="item.travelTime"></Label>
+                                    <Label class="far" :text="'\uf017' | unescape"/>
+                                    <Label :text="item.travelTime"/>
                                 </FlexboxLayout>
                                 <FlexboxLayout class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainType].color" :text="'\uf238' | unescape"></Label>
-                                    <Label :text="data.trainTypes[item.trainType].name + ' ' + item.Train"></Label>
+                                    <Label class="fas" :color="data.trainTypes[item.trainType].color" :text="'\uf238' | unescape"/>
+                                    <Label :text="data.trainTypes[item.trainType].name + ' ' + item.Train"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="fareDetails">
                                 <FlexboxLayout class="prices">
-                                    <Label class="fas" :text="'\uf3ff' | unescape"></Label>
-                                    <Label class="text" :text="item.singlePrice"></Label>
+                                    <Label class="fas" :text="'\uf3ff' | unescape"/>
+                                    <Label class="text" :text="item.singlePrice"/>
                                 </FlexboxLayout>
                                 <FlexboxLayout v-if="item.ePrice !== null" class="prices">
-                                    <Image src="~/assets/images/easycard.png" stretch="none"></Image>
-                                    <Label class="text" :text="item.ePrice"></Label>
+                                    <Image src="~/assets/images/easycard.png" stretch="none"/>
+                                    <Label class="text" :text="item.ePrice"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                         </FlexboxLayout>
