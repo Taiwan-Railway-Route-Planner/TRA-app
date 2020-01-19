@@ -118,8 +118,8 @@
     }
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
     }
 
     .dock-top .top {
@@ -138,12 +138,12 @@
         flex-direction: row;
         justify-content: space-between;
         height: 40%;
-        color: #1a0dab;
-        background-color: #ffffff;
+        color: $primary;
+        background-color: $white;
         border-radius: 20;
         border-style: solid;
         border-width: 1;
-        border-color: #1a0dab;
+        border-color: $primary;
         padding-right: 12;
         padding-left: 12;
         margin-bottom: 4%;
@@ -225,11 +225,11 @@
 
     .dock-center .oneRouteDetail .route .far {
         font-size: 16;
-        color: #1a0dab;
+        color: $primary;
     }
 
     .dock-center .oneRouteDetail .route .far.passed {
-        color: #FF9A00;
+        color: $orange;
     }
 
     .dock-center .oneRouteDetail .route .template-line {
@@ -237,7 +237,7 @@
     }
 
     .dock-center .oneRouteDetail .route .template-line .line {
-        border-left-color: #1a0dab;
+        border-left-color: $primary;
         border-left-style: solid;
         border-left-width: 4px;
         width: 4px;
@@ -245,7 +245,7 @@
     }
 
     .dock-center .oneRouteDetail .route .template-line .line.passed {
-        border-left-color: #FF9A00;
+        border-left-color: $orange;
     }
 
     .dock-center .oneRouteDetail .stationName {

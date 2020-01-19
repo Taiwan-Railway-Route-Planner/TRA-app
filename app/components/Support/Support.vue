@@ -122,8 +122,8 @@
 
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
         height: 10%;
     }
 

@@ -81,7 +81,7 @@
 
     .title {
         font-size: 25;
-        color: #ffffff;
+        color: $white;
         margin-top: 5%;
     }
 

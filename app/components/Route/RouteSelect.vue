@@ -254,8 +254,8 @@
     @import "../../styles/generalStyles.scss";
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
         height: 10%;
     }
 
@@ -294,8 +294,8 @@
     }
 
     .center {
-        background-color: #fff;
-        color: #1a0dab;
+        background-color: $white;
+        color: $primary;
     }
 
     .center .travelDetails {

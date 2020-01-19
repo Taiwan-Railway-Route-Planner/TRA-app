@@ -185,8 +185,8 @@
     }
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
     }
 
     .dock-top .top .top-title {
@@ -248,7 +248,7 @@
 
     .dock-center .trainDetails .trainDestArrDetails Label,
     .dock-center .trainDetails .trainTimeDetails Label {
-        color: #1a0dab;
+        color: $primary;
     }
 
     .dock-center {
@@ -294,7 +294,7 @@
 
     .dock-center .trainDetails .route .far {
         font-size: 16;
-        color: #1a0dab;
+        color: $primary;
     }
 
     .dock-center .trainDetails .route .template-line {
@@ -303,7 +303,7 @@
     }
 
     .dock-center .trainDetails .route .template-line .line {
-        border-left-color: #1a0dab;
+        border-left-color: $primary;
         border-left-style: solid;
         border-left-width: 4px;
         /*Ios*/
@@ -318,14 +318,14 @@
 
     .dock-center .trainDetails .trainDestArrDetails .departure {
         padding-bottom: 8%;
-        border-bottom-color: #D3D3D3;
+        border-bottom-color: $white;
         border-bottom-style: solid;
         border-bottom-width: 3px;
     }
 
     .dock-center .trainDetails .trainDestArrDetails .arrival {
         padding-top: 8%;
-        border-top-color: #D3D3D3;
+        border-top-color: $white;
         border-top-style: solid;
         border-top-width: 3px;
     }
@@ -361,7 +361,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        color: #1a0dab;
+        color: $primary;
         margin-left: 2%;
         margin-right: 2%;
     }

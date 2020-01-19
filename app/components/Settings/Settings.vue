@@ -129,8 +129,8 @@
     @import "../../styles/generalStyles.scss";
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
         height: 10%;
     }
 
@@ -182,7 +182,7 @@
 
     .dock-center .settings .otherInfo .element {
         border-bottom-width: 2px;
-        border-bottom-color: #D3D3D3;
+        border-bottom-color: $white;
         border-bottom-style: solid;
         padding-bottom: 10%;
         padding-top: 10%;

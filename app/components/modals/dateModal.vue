@@ -50,7 +50,7 @@
         /*iOS*/
         width: 300;
         text-align: left;
-        color: #000;
+        color: $dark;
     }
 
     .center{
