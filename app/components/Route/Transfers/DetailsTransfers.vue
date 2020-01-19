@@ -71,13 +71,13 @@
                                     <ScalingLabel v-else class="departure" :text="$store.state.searchFile[$props.selectTravelDetails.details[index].start.code].eng站名"/>
                                     <FlexboxLayout class="trainDetailsIcons">
                                         <FlexboxLayout class="information">
-                                            <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"/>
-                                                <FlexboxLayout class="trainIcons">
-                                                    <Label v-if="item.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"/>
-                                                    <Label v-if="item.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"/>
-                                                    <Label v-if="item.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"/>
-                                                    <Label v-if="item.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"/>
-                                                </FlexboxLayout>
+                                            <Label :text="$props.language.trainTypes[item.trainType].name + ' ' + item.Train"/
+                                            <FlexboxLayout class="trainIcons">
+                                                <Label v-if="item.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"/>
+                                                <Label v-if="item.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"/>
+                                                <Label v-if="item.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"/>
+                                                <Label v-if="item.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"/>
+                                            </FlexboxLayout>
                                         </FlexboxLayout>
                                         <FlexboxLayout class="fareDetails">
                                             <FlexboxLayout class="prices">
@@ -110,7 +110,6 @@
         </DockLayout>
     </Page>
 </template>
-
 <script>
 
     import handle from "../../../assets/js/Vue/Route/TransfersOrNot/handle"
