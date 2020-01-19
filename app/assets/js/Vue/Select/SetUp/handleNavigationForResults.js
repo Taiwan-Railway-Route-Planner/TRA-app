@@ -100,7 +100,6 @@ export default (function () {
     function stopLoadingModal(_self) {
         // indicator.hide();
         const page = Frame.topmost();
-        console.log(page.modal);
         if (page && page.modal) {
             page.modal.closeModal()
         }
