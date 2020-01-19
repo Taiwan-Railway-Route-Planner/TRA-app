@@ -87,6 +87,7 @@
 
     import handle from "../../assets/js/Vue/Select/handle"
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
+    import loadingModal from '../modals/LoadingModal';
     import modal from "../modals/modal"
     import Counties from "./component/counties"
 
@@ -224,7 +225,7 @@
                 }
             },
             confirmSearch: async function () {
-                await handle.controlValuesBeforeGoingToRoute(this);
+                await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
                 this.$showModal(modal, {
