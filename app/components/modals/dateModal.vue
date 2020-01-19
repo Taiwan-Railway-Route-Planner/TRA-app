@@ -52,10 +52,11 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../styles/generalStyles.scss";
     @import "../../styles/_variables.scss";
 
     .modal {
-        background-color: white;
+        background-color: $white;
         height: 400;
         width: 300;
         text-align: left;
