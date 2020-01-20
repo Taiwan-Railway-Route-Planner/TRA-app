@@ -9,7 +9,7 @@
                     </FlexboxLayout>
                     <FlexboxLayout class="trainGeneral">
                         <FlexboxLayout class="element">
-                            <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
+                            <Label :class="['fas', $props.language.trainTypes[$props.selectTravelDetails.trainType].color]" :text="'\uf238' | unescape"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="element">
                             <Label class="title" :text="$props.language.stopDetails.top.type"></Label>
@@ -120,6 +120,11 @@
     .dock-top {
         background-color: $primary;
         color: $white;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     .dock-top .top {
@@ -147,6 +152,12 @@
         padding-right: 12;
         padding-left: 12;
         margin-bottom: 4%;
+
+        .ns-dark &{
+            color: $white;
+            background-color: $dark;
+            border-color: $dark;
+        }
     }
 
     .dock-top .top .trainGeneral .element {
@@ -226,6 +237,10 @@
     .dock-center .oneRouteDetail .route .far {
         font-size: 16;
         color: $primary;
+
+        .ns-dark &{
+            color: $white;
+        }
     }
 
     .dock-center .oneRouteDetail .route .far.passed {
@@ -241,7 +256,11 @@
         border-left-style: solid;
         border-left-width: 4px;
         width: 4px;
-        height: 68px
+        height: 68px;
+
+        .ns-dark &{
+            border-left-color: $white;
+        }
     }
 
     .dock-center .oneRouteDetail .route .template-line .line.passed {
@@ -253,5 +272,6 @@
         justify-content: center;
     }
 
+    @import "../../styles/trainVariables.scss";
 
 </style>
