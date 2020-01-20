@@ -205,10 +205,7 @@
             goBackToNormalScreen: function () {
                 this.search = false;
                 if (isIOS) {
-                    utils.ios
-                        .getter(UIApplication, UIApplication.sharedApplication)
-                        .keyWindow
-                        .endEditing(true);
+                    UIApplication.sharedApplication.keyWindow.endEditing(true);
                 }
             },
             showSearch: async function (departureOrArrival) {
@@ -271,7 +268,43 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
+    @import "../../styles/generalStyles.scss";
+
+    .routeDetailsChoice,
+    .timeDetails{
+        Label,
+        TextField{
+
+            .ns-dark &{
+                color: $white;
+            }
+        }
+    }
+
+    .topRouteDetails .InfoDetails{
+
+        .fas{
+
+            .ns-dark &{
+                color: $white;
+            }
+        }
+
+        .ns-dark &{
+            background-color: black;
+        }
+    }
+
+    .confirmBtn{
+
+        .ns-dark &{
+            border-color: $white;
+            background-color: $dark;
+            color: $white;
+        }
+    }
 
     .mainMenu {
         flex-direction: column;
@@ -279,7 +312,7 @@
 
     .title {
         font-size: 25;
-        color: #ffffff;
+        color: $white;
         align-self: center;
         margin-top: 5%;
     }
@@ -320,7 +353,7 @@
     }
 
     .routeDetails {
-        background-color: #1a0dab;
+        background-color: $primary;
     }
 
     .topRouteDetails {
@@ -328,12 +361,12 @@
     }
 
     .topRouteDetails .InfoDetails {
-        border-color: #1a0dab;
+        border-color: $primary;
         border-radius: 20;
         border-style: solid;
         border-width: 1;
         flex-direction: column;
-        background-color: white;
+        background-color: $white;
         width: 90%;
         /*Android*/
         padding: 12 4;
@@ -355,7 +388,7 @@
     }
 
     .topRouteDetails .InfoDetails .fas {
-        color: #1a0dab;
+        color: $primary;
         align-self: center;
     }
 
@@ -370,7 +403,7 @@
         justify-content: center;
         width: 80%;
         margin-top: 8%;
-        border-color: #fff;
+        border-color: $white;
         border-style: solid;
         border-width: 2px;
     }

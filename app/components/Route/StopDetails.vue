@@ -9,7 +9,7 @@
                     </FlexboxLayout>
                     <FlexboxLayout class="trainGeneral">
                         <FlexboxLayout class="element">
-                            <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"></Label>
+                            <Label :class="['fas', $props.language.trainTypes[$props.selectTravelDetails.trainType].color]" :text="'\uf238' | unescape"></Label>
                         </FlexboxLayout>
                         <FlexboxLayout class="element">
                             <Label class="title" :text="$props.language.stopDetails.top.type"></Label>
@@ -92,7 +92,9 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
+    @import "../../styles/generalStyles.scss";
 
     .dock-top {
         height: 26%;
@@ -116,8 +118,13 @@
     }
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     .dock-top .top {
@@ -136,15 +143,21 @@
         flex-direction: row;
         justify-content: space-between;
         height: 40%;
-        color: #1a0dab;
-        background-color: #ffffff;
+        color: $primary;
+        background-color: $white;
         border-radius: 20;
         border-style: solid;
         border-width: 1;
-        border-color: #1a0dab;
+        border-color: $primary;
         padding-right: 12;
         padding-left: 12;
         margin-bottom: 4%;
+
+        .ns-dark &{
+            color: $white;
+            background-color: $dark;
+            border-color: $dark;
+        }
     }
 
     .dock-top .top .trainGeneral .element {
@@ -223,11 +236,15 @@
 
     .dock-center .oneRouteDetail .route .far {
         font-size: 16;
-        color: #1a0dab;
+        color: $primary;
+
+        .ns-dark &{
+            color: $white;
+        }
     }
 
     .dock-center .oneRouteDetail .route .far.passed {
-        color: #FF9A00;
+        color: $orange;
     }
 
     .dock-center .oneRouteDetail .route .template-line {
@@ -235,15 +252,19 @@
     }
 
     .dock-center .oneRouteDetail .route .template-line .line {
-        border-left-color: #1a0dab;
+        border-left-color: $primary;
         border-left-style: solid;
         border-left-width: 4px;
         width: 4px;
-        height: 68px
+        height: 68px;
+
+        .ns-dark &{
+            border-left-color: $white;
+        }
     }
 
     .dock-center .oneRouteDetail .route .template-line .line.passed {
-        border-left-color: #FF9A00;
+        border-left-color: $orange;
     }
 
     .dock-center .oneRouteDetail .stationName {
@@ -251,5 +272,6 @@
         justify-content: center;
     }
 
+    @import "../../styles/trainVariables.scss";
 
 </style>
