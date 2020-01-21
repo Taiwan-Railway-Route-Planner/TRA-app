@@ -59,11 +59,18 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../styles/_variables.scss";
+    @import "../styles/generalStyles.scss";
 
-    .page{
-        background-color: #1a0dab;
-        color: #ffffff;
+    .page {
+        background-color: $primary;
+        color: $white;
+
+        .ns-dark & {
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     .mainMenu {
@@ -74,7 +81,7 @@
 
     .title {
         font-size: 25;
-        color: #ffffff;
+        color: $white;
         margin-top: 5%;
     }
 
@@ -83,14 +90,22 @@
     }
 
     .menu-center .listView{
-        background-color: #1a0dab;
+        background-color: $primary;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+        }
     }
 
     .menu-center .element{
         padding-top: 20%;
         flex-direction: column;
         align-items: center;
-        background-color: #1a0dab;
+        background-color: $primary;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+        }
     }
 
     .menu-center .element .top-text{
@@ -104,8 +119,8 @@
     .menu-bottom .btn{
         height: 10%;
         width: 80%;
-        background-color: #ffffff;
-        color: #1a0dab;
+        background-color: $white;
+        color: $primary;
         margin-bottom: 3%;
     }
 

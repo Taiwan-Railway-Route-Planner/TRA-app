@@ -1,5 +1,5 @@
 <template>
-    <flexboxlayout>
+    <Docklayout>
         <time-modal v-if="showTimeModal"
                     @changeModalReturnTime="changeModalReturnTime"
                     @close="close"
@@ -8,7 +8,7 @@
         <date-modal v-else
                     @changeModal="changeModal"
                     :time="$props.time" :format-time-stamp-based-on-language="$props.formatTimeStampBasedOnLanguage"/>
-    </flexboxlayout>
+    </Docklayout>
 </template>
 
 
@@ -25,7 +25,7 @@
             DateModal
         },
         created: function () {
-           handle.init(this);
+            handle.init(this);
         },
         data () {
             return {

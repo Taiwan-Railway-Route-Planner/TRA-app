@@ -4,7 +4,6 @@
 
 const requestBuilderForSelect = require("./SetUp/requestBuilderForSelect");
 const initScreen = require("./SetUp/initScreen");
-
 import handleNavigationForResults from "./SetUp/handleNavigationForResults"
 
 const FeedbackPlugin = require("nativescript-feedback");
@@ -23,7 +22,6 @@ export default (function () {
 
     function assignVariables(_self) {
         _self.feedback = feedback;
-        // _self.topmost = frameModule;
     }
 
     const checkFirstIfTheElementsArentEmpty = async function (_self) {

@@ -3,7 +3,7 @@
         <FlexboxLayout dock="top" class="departureOrArrival">
             <FlexboxLayout class="smaller-departureOrArrival">
                 <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""/>
-<!--                <Label :text="$props.time.modal.top.second" class="topLabel" @tap=""/>-->
+                <!--<Label :text="$props.time.modal.top.second" class="topLabel" @tap=""/>-->
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
@@ -82,14 +82,16 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/generalStyles.scss";
+    @import "../../styles/_variables.scss";
 
     .modal {
-        background-color: white;
+        background-color: $white;
         height: 400;
         width: 300;
         text-align: left;
-        color: #000;
+        color: $dark;
     }
 
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
@@ -128,9 +130,9 @@
 
     .timeSettings .timeSelect .now Button {
         /*iOS*/
-        /*width: 80%;*/
-        /*margin-left: auto;*/
-        /*margin-right: auto;*/
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .timeSettings .dateTimeSelect {
@@ -147,7 +149,7 @@
     }
 
     .timeSettings .dateTimeSelect .dateTimeNav .fas {
-        color: #1a0dab;
+        color: $primary;
     }
 
     .timeSettings .dateTimeSelect .dateTimeNav .timeStamp {
@@ -157,10 +159,10 @@
 
     .timeSettings .dateTimeSelect .calenderView {
         /*Android*/
-        width: 20%;
+        /*width: 20%;*/
         /*iOS*/
-        /*width: 30%;*/
-        /*height: 100px;*/
+        width: 30%;
+        height: 100px;
     }
 
     .timeSettings .dateTimeSelect .calenderView .far {
@@ -176,7 +178,7 @@
     .departureOrArrival .smaller-departureOrArrival {
         width: 80%;
         border-bottom-width: 3px;
-        border-bottom-color: #D3D3D3;
+        border-bottom-color: $white;
         border-bottom-style: solid;
         text-align: center;
     }
@@ -190,7 +192,7 @@
 
     .departureOrArrival .smaller-departureOrArrival .active {
         border-bottom-width: 6px;
-        border-bottom-color: #1a0dab;
+        border-bottom-color: $primary;
         border-bottom-style: solid;
     }
 

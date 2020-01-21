@@ -1,6 +1,6 @@
 <template>
     <Page actionBarHidden="true">
-        <DockLayout>
+        <DockLayout id="train">
             <FlexboxLayout dock="top" class="dock-top">
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
@@ -49,9 +49,9 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
                 <FlexboxLayout class="trainDetails" @tap="navigateToRouteDetails">
-                    <FlexboxLayout class="trainTimeDetails">
+                    <FlexboxLayout class="trainTimeDetails train-colors">
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"/>
-                        <Label class="fas" :color="$props.language.trainTypes[$props.selectTravelDetails.trainType].color" :text="'\uf238' | unescape"/>
+                        <Label :class="['fas', $props.language.trainTypes[$props.selectTravelDetails.trainType].color]" :text="'\uf238' | unescape"/>
                         <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"/>
                     </FlexboxLayout>
                     <FlexboxLayout class="route">
@@ -86,7 +86,6 @@
         </DockLayout>
     </Page>
 </template>
-
 
 <script>
 
@@ -136,7 +135,10 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../../styles/_variables.scss";
+    @import "../../../styles/generalStyles.scss";
+
 
     .dock-top {
         height: 18%;
@@ -184,8 +186,13 @@
     }
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     .dock-top .top .top-title {
@@ -245,9 +252,13 @@
 
     /*** DOCK CENTER ***/
 
-    .dock-center .trainDetails .trainDestArrDetails Label,
-    .dock-center .trainDetails .trainTimeDetails Label {
-        color: #1a0dab;
+    .trainDetails .trainDestArrDetails Label,
+    .trainDetails .trainTimeDetails Label {
+        color: $primary;
+
+        .ns-dark &{
+            color: $white;
+        }
     }
 
     .dock-center {
@@ -293,7 +304,11 @@
 
     .dock-center .trainDetails .route .far {
         font-size: 16;
-        color: #1a0dab;
+        color: $primary;
+
+        .ns-dark &{
+            color: $white;
+        }
     }
 
     .dock-center .trainDetails .route .template-line {
@@ -302,11 +317,15 @@
     }
 
     .dock-center .trainDetails .route .template-line .line {
-        border-left-color: #1a0dab;
+        border-left-color: $primary;
         border-left-style: solid;
         border-left-width: 4px;
         /*Ios*/
         width: 4px;
+
+        .ns-dark &{
+            border-left-color: $white;
+        }
     }
 
     .dock-center .trainDetails .trainDestArrDetails {
@@ -317,14 +336,14 @@
 
     .dock-center .trainDetails .trainDestArrDetails .departure {
         padding-bottom: 8%;
-        border-bottom-color: #D3D3D3;
+        border-bottom-color: $white;
         border-bottom-style: solid;
         border-bottom-width: 3px;
     }
 
     .dock-center .trainDetails .trainDestArrDetails .arrival {
         padding-top: 8%;
-        border-top-color: #D3D3D3;
+        border-top-color: $white;
         border-top-style: solid;
         border-top-width: 3px;
     }
@@ -360,9 +379,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        color: #1a0dab;
+        color: $primary;
         margin-left: 2%;
         margin-right: 2%;
+
+        .ns-dark &{
+            color: $white;
+        }
     }
 
     .dock-center .extraDetails .prices {
@@ -393,5 +416,7 @@
     .dock-top .top .top-title .titles .smallerTopTitle{
         font: 20;
     }
+
+    @import "../../../styles/trainVariables.scss";
 
 </style>

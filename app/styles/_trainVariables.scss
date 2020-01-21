@@ -1,0 +1,55 @@
+/**************** Train Colors **************/
+
+#train .center .train-colors,
+#train .dock-center .train-colors,
+.dock-top .top .trainGeneral .element{
+
+  .normal-train {
+    color: #333333;
+
+    .ns-dark & {
+      color: #ffffff;
+    }
+  }
+
+  .chu-kuang {
+    color: #FFD200;
+
+    .ns-dark & {
+      color: #FFD200;
+    }
+  }
+
+  .tze-chiang {
+    color: #FF8708;
+
+    .ns-dark & {
+      color: #FF8708;
+    }
+  }
+
+  .fu-hsing {
+    color: #00ACE8;
+
+    .ns-dark & {
+      color: #00ACE8;
+    }
+  }
+
+  .taroko {
+    color: #FF5000;
+
+    .ns-dark & {
+      color: #FF5000;
+    }
+  }
+
+  .puyuma {
+    color: #D00216;
+
+    .ns-dark & {
+      color: #D00216;
+    }
+  }
+
+}
