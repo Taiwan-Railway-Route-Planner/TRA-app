@@ -205,10 +205,8 @@
             goBackToNormalScreen: function () {
                 this.search = false;
                 if (isIOS) {
-                    utils.ios
-                        .getter(UIApplication, UIApplication.sharedApplication)
-                        .keyWindow
-                        .endEditing(true);                }
+                    UIApplication.sharedApplication.keyWindow.endEditing(true);
+                }
             },
             showSearch: async function (departureOrArrival) {
                 const isntEmpty = await handle.checkFirstIfTheElementsArentEmpty(this);
@@ -350,8 +348,8 @@
         padding-bottom: 4;
         padding-top: 4;
         /*Ios*/
-        /*padding-bottom: 8;*/
-        /*padding-top: 8;*/
+        padding-bottom: 8;
+        padding-top: 8;
     }
 
     .routeDetails {

@@ -314,7 +314,7 @@
         padding-top: 15%;
         padding-left: 15%;
         /*iOS*/
-        /*padding-right: 10%;*/
+        padding-right: 10%;
     }
 
     .center .travelDetails .travelDetailsNoFare {
