@@ -1,6 +1,6 @@
 <template>
     <StackLayout class="modal">
-        <Gif src="~/assets/images/train.gif"></Gif>
+        <Gif src="~/assets/images/train.gif"/>
     </StackLayout>
 </template>
 

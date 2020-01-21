@@ -5,27 +5,27 @@
                 <FlexboxLayout class="top">
                     <FlexboxLayout class="top-title">
                         <FlexboxLayout class="titles" @tap="navigateBackVue">
-                            <Label class="fas" :text="'\uf060' | unescape"></Label>
-                            <Label :class="smallerTopTitle" :text="$props.language.details.top.title"></Label>
+                            <Label class="fas" :text="'\uf060' | unescape"/>
+                            <Label :class="smallerTopTitle" :text="$props.language.details.top.title"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="shareOptions">
-                            <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"></Label>
+                            <Label class="fas" @tap="shareToTheWorld" :text="'\uf1e0' | unescape"/>
                             <!--<Label class="far" :text="'\uf005' | unescape"></Label>-->
                         </FlexboxLayout>
                     </FlexboxLayout>
                     <FlexboxLayout class="routeDetails">
                         <FlexboxLayout class="timeDetails">
-                            <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
-                            <Label class="fas" :text="'\uf061' | unescape"></Label>
-                            <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                            <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"/>
+                            <Label class="fas" :text="'\uf061' | unescape"/>
+                            <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="dateDetails">
                             <FlexboxLayout class="dateDetails">
-                                <Label :text="$props.routeDetails.time.date.show"></Label>
+                                <Label :text="$props.routeDetails.time.date.show"/>
                             </FlexboxLayout>
                             <FlexboxLayout class="otherDetails">
-                                <Label class="far" :text="'\uf017' | unescape"></Label>
-                                <Label :text="$props.selectTravelDetails.travelTime"></Label>
+                                <Label class="far" :text="'\uf017' | unescape"/>
+                                <Label :text="$props.selectTravelDetails.travelTime"/>
                             </FlexboxLayout>
                         </FlexboxLayout>
                     </FlexboxLayout>
@@ -34,52 +34,52 @@
             <FlexboxLayout dock="center" class="dock-center">
                 <FlexboxLayout class="extraDetails">
                     <FlexboxLayout class="prices">
-                        <Label class="fas" :text="'\uf3ff' | unescape"></Label>
-                        <Label class="text" :text="'NT$ ' + $props.selectTravelDetails.singlePrice"></Label>
-                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.single"></Label>
+                        <Label class="fas" :text="'\uf3ff' | unescape"/>
+                        <Label class="text" :text="'NT$ ' + $props.selectTravelDetails.singlePrice"/>
+                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.single"/>
                     </FlexboxLayout>
                     <FlexboxLayout v-if="$props.selectTravelDetails.ePrice !== null" class="prices">
-                        <Image src="~/assets/images/easycard.png" stretch="none"></Image>
-                        <Label class="text" :text="'NT$ ' +$props.selectTravelDetails.ePrice"></Label>
-                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.ePrice"></Label>
+                        <Image src="~/assets/images/easycard.png" stretch="none"/>
+                        <Label class="text" :text="'NT$ ' +$props.selectTravelDetails.ePrice"/>
+                        <Label :class="[smallerTextPrices, 'text']" :text="$props.language.details.price.ePrice"/>
                     </FlexboxLayout>
                     <FlexboxLayout class="prices">
-                        <Label class="fas" :text="'\uf4d7' | unescape"></Label>
-                        <Label class="text" :text="$props.selectTravelDetails.distance + ' km'"></Label>
+                        <Label class="fas" :text="'\uf4d7' | unescape"/>
+                        <Label class="text" :text="$props.selectTravelDetails.distance + ' km'"/>
                     </FlexboxLayout>
                 </FlexboxLayout>
                 <FlexboxLayout class="trainDetails" @tap="navigateToRouteDetails">
                     <FlexboxLayout class="trainTimeDetails train-colors">
-                        <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"></Label>
-                        <Label :class="['fas', $props.language.trainTypes[$props.selectTravelDetails.trainType].color]" :text="'\uf238' | unescape"></Label>
-                        <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"></Label>
+                        <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.departure.details.時刻表編號].DepTime"/>
+                        <Label :class="['fas', $props.language.trainTypes[$props.selectTravelDetails.trainType].color]" :text="'\uf238' | unescape"/>
+                        <Label :text="$props.selectTravelDetails.TimeInfos[$props.routeDetails.arrival.details.時刻表編號].ArrTime"/>
                     </FlexboxLayout>
                     <FlexboxLayout class="route">
-                        <Label class="far" :text="'\uf111' | unescape"></Label>
+                        <Label class="far" :text="'\uf111' | unescape"/>
                         <FlexboxLayout class="template-line">
-                            <Label class="line"></Label>
+                            <Label class="line"/>
                         </FlexboxLayout>
-                        <Label class="far" :text="'\uf111' | unescape"></Label>
+                        <Label class="far" :text="'\uf111' | unescape"/>
                     </FlexboxLayout>
                     <FlexboxLayout class="trainDestArrDetails">
-                        <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"></Label>
-                        <ScalingLabel v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"></ScalingLabel>
+                        <Label v-if="$store.state.language === 'ZH'" class="departure" :text="$props.routeDetails.departure.details.站名"/>
+                        <ScalingLabel v-else class="departure" :text="$props.routeDetails.departure.details.eng站名"/>
                         <FlexboxLayout class="trainDetailsIcons">
                             <FlexboxLayout class="information">
-                                <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name + ' ' + $props.selectTravelDetails.Train"></Label>
+                                <Label :text="$props.language.trainTypes[$props.selectTravelDetails.trainType].name + ' ' + $props.selectTravelDetails.Train"/>
                                 <FlexboxLayout class="trainIcons">
-                                    <Label v-if="$props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"></Label>
-                                    <Label v-if="$props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"></Label>
-                                    <Label v-if="$props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"></Label>
-                                    <Label v-if="$props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"></Label>
+                                    <Label v-if="$props.selectTravelDetails.BreastFeed === 'Y'" class="fas" :text="'\uf77c' | unescape"/>
+                                    <Label v-if="$props.selectTravelDetails.Dinning === 'Y'" class="fas" :text="'\uf2e7' | unescape"/>
+                                    <Label v-if="$props.selectTravelDetails.Cripple === 'Y'" class="fas" :text="'\uf193' | unescape"/>
+                                    <Label v-if="$props.selectTravelDetails.Bike === 'Y'" class="fas" :text="'\uf206' | unescape"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
                             <FlexboxLayout class="navigation">
-                                <Label class="fas" :text="'\uf054' | unescape"></Label>
+                                <Label class="fas" :text="'\uf054' | unescape"/>
                             </FlexboxLayout>
                         </FlexboxLayout>
-                        <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"></Label>
-                        <ScalingLabel v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"></ScalingLabel>
+                        <Label v-if="$store.state.language === 'ZH'" class="arrival" :text="$props.routeDetails.arrival.details.站名"/>
+                        <ScalingLabel v-else class="arrival" :text="$props.routeDetails.arrival.details.eng站名"/>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </FlexboxLayout>

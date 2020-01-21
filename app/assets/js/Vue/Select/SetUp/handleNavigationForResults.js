@@ -2,13 +2,10 @@
  Created by svend on 23/08/2019.
  **/
 const moment = require('moment');
-
 import {
     LoadingIndicator,
     Mode
 } from '@nstudio/nativescript-loading-indicator';
-
-import { Frame } from "ui/frame"
 
 export default (function () {
 
