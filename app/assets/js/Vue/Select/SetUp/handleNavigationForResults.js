@@ -88,21 +88,21 @@ export default (function () {
     }
 
     function startLoadingModal(_self, loadingModal) {
-        _self.$showModal(loadingModal);
-        // indicator.show({
-        //     dimBackground: true,
-        //     hideBezel: true,
-        //     userInteractionEnabled: false,
-        //     mode: Mode.Indeterminate
-        // });
+        // _self.$showModal(loadingModal);
+        indicator.show({
+            dimBackground: true,
+            hideBezel: true,
+            userInteractionEnabled: false,
+            mode: Mode.Indeterminate
+        });
     }
 
     function stopLoadingModal(_self) {
-        // indicator.hide();
-        const page = Frame.topmost();
-        if (page && page.modal) {
-            page.modal.closeModal()
-        }
+        indicator.hide();
+        // const page = Frame.topmost();
+        // if (page && page.modal) {
+        //     page.modal.closeModal()
+        // }
     }
 
     function showError(_self, errorMessage) {
