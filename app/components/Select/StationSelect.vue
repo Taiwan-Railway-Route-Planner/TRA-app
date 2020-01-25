@@ -3,7 +3,12 @@
         <DockLayout>
             <DockLayout v-show="search">
                 <FlexboxLayout dock="top" class="searchBar">
-                    <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search" :text="data.searchBar.search" @textChange="onTextChanged" @clear="goBackToNormalScreen"/>
+                    <FlexboxLayout>
+                        <Label class="fas" :text="'\uf060' | unescape" @tap="goBackToNormalScreen"/>
+                        <SearchBar :hint="data.searchBar.hintText.now" v-model="data.searchBar.search"
+                                   :text="data.searchBar.search" @textChange="onTextChanged"
+                                   @clear="goBackToNormalScreen"/>
+                    </FlexboxLayout>
                     <Counties v-if="!isFetching" ref="counties" :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"/>
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
@@ -323,10 +328,14 @@
         display: flex;
         flex-flow: column;
         text-align: center;
-    }
 
-    .searchBar SearchBar {
-        flex: 0 1 auto;
+        Label{
+            margin-left: 5;
+        }
+
+        SearchBar {
+            flex: 0 1 auto;
+        }
     }
 
     .listView {
@@ -345,8 +354,8 @@
 
     .listGroup Label{
         /*Android*/
-        padding-bottom: 4;
-        padding-top: 4;
+        /*padding-bottom: 4;*/
+        /*padding-top: 4;*/
         /*Ios*/
         padding-bottom: 8;
         padding-top: 8;
@@ -369,7 +378,7 @@
         background-color: $white;
         width: 90%;
         /*Android*/
-        padding: 12 4;
+        /*padding: 12 4;*/
         /*Ios*/
         padding: 24 8;
     }
