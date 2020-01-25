@@ -132,6 +132,11 @@
         background-color: $primary;
         color: $white;
         height: 10%;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     .dock-center .settings {
@@ -157,6 +162,20 @@
         flex-direction: column;
         width: 100%;
         height: 55%;
+    }
+
+    .dock-center .settings .languagesSettings .btn.btn-wt{
+
+        .ns-dark &{
+            align-self: center;
+            width: 80%;
+            margin-top: 8%;
+            border-color: $white;
+            border-style: solid;
+            border-width: 2px;
+            padding-top: 8;
+            padding-bottom: 8;
+        }
     }
 
     .dock-center .settings .languagesSettings .listPickerLanguagesSettings {

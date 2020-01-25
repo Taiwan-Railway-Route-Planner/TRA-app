@@ -126,6 +126,11 @@
         background-color: $primary;
         color: $white;
         height: 10%;
+
+        .ns-dark &{
+            background-color: $dark-primary;
+            color: $dark-white
+        }
     }
 
     .dock-top .title {
