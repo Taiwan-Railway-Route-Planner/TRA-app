@@ -103,7 +103,7 @@
                 background-color: $primary;
             }
 
-            .ns-dark &{
+            .ns-dark & {
                 background-color: $dark-primary;
             }
 
@@ -113,7 +113,7 @@
                 align-items: center;
                 background-color: $primary;
 
-                .ns-dark &{
+                .ns-dark & {
                     background-color: $dark-primary;
                 }
 
