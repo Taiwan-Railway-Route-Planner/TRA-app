@@ -61,7 +61,8 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../../styles/_variables.scss";
 
     .county {
         margin-top: 3%;
@@ -71,18 +72,18 @@
     .county Label {
         border-radius: 50%;
         border-width: 1;
-        border-color: #1a0dab;
+        border-color: $primary;
         border-style: solid;
         margin-left: 8;
         padding: 4%;
     }
 
     .county .filled {
-        background-color: #1a0dab;
-        color: #ffffff;
+        background-color: $primary;
+        color: $white;
     }
 
-    .county Label.fas{
+    .county Label.fas {
         vertical-align: middle;
         font-size: 20;
     }
