@@ -23,7 +23,7 @@
 <script>
 
     import handle from "../assets/js/Vue/BootUp/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import {isIOS} from "tns-core-modules/platform";
 
     export default {
         created() {
@@ -47,8 +47,8 @@
                 this.$store.commit('updateLanguage', this.saveAbbr);
                 this.$goto("Select");
             },
-            onItemLoading: function(args) {
-                if (isIOS){
+            onItemLoading: function (args) {
+                if (isIOS) {
                     const cell = args.ios;
                     if (cell) {
                         cell.selectionStyle = UITableViewCellSelectionStyle.UITableViewCellSelectionStyleNone;
@@ -59,54 +59,69 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../styles/_variables.scss";
+    @import "../styles/generalStyles.scss";
 
-    .page{
-        background-color: #1a0dab;
-        color: #ffffff;
+    .page {
+        background-color: $primary;
+        color: $white;
+
+        .ns-dark & {
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
+
+        .mainMenu {
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 10%;
+
+            .title {
+                font-size: 25;
+                color: $white;
+                margin-top: 5%;
+            }
+        }
+
+        .menu-bottom {
+            justify-content: center;
+
+            .btn {
+                height: 10%;
+                width: 80%;
+                background-color: $white;
+                color: $primary;
+                margin-bottom: 3%;
+            }
+        }
+
+        .menu-center {
+            flex-direction: column;
+
+            .listView {
+                background-color: $primary;
+            }
+
+            .ns-dark &{
+                background-color: $dark-primary;
+            }
+
+            .element {
+                padding-top: 20%;
+                flex-direction: column;
+                align-items: center;
+                background-color: $primary;
+
+                .ns-dark &{
+                    background-color: $dark-primary;
+                }
+
+                .top-text {
+                    font-size: 20;
+                }
+
+            }
+        }
     }
-
-    .mainMenu {
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 10%;
-    }
-
-    .title {
-        font-size: 25;
-        color: #ffffff;
-        margin-top: 5%;
-    }
-
-    .menu-center{
-        flex-direction: column;
-    }
-
-    .menu-center .listView{
-        background-color: #1a0dab;
-    }
-
-    .menu-center .element{
-        padding-top: 20%;
-        flex-direction: column;
-        align-items: center;
-        background-color: #1a0dab;
-    }
-
-    .menu-center .element .top-text{
-        font-size: 20;
-    }
-
-    .menu-bottom{
-        justify-content: center;
-    }
-
-    .menu-bottom .btn{
-        height: 10%;
-        width: 80%;
-        background-color: #ffffff;
-        color: #1a0dab;
-        margin-bottom: 3%;
-    }
-
 </style>
