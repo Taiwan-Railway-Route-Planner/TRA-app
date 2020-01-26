@@ -55,6 +55,8 @@
     @import "../../styles/generalStyles.scss";
     @import "../../styles/_variables.scss";
 
+    /**** modal ****/
+
     .modal {
         background-color: $white;
         height: 400;
@@ -63,8 +65,12 @@
         color: $dark;
     }
 
-    .center{
-        justify-content: center;
+    /**** modal > Center ****/
+
+    .modal {
+        .center{
+            justify-content: center;
+        }
     }
 
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
