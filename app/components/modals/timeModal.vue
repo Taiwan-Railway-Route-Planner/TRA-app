@@ -82,14 +82,16 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/generalStyles.scss";
+    @import "../../styles/_variables.scss";
 
     .modal {
-        background-color: white;
+        background-color: $white;
         height: 400;
         width: 300;
         text-align: left;
-        color: #000;
+        color: $dark;
     }
 
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
@@ -147,7 +149,7 @@
     }
 
     .timeSettings .dateTimeSelect .dateTimeNav .fas {
-        color: #1a0dab;
+        color: $primary;
     }
 
     .timeSettings .dateTimeSelect .dateTimeNav .timeStamp {
@@ -176,7 +178,7 @@
     .departureOrArrival .smaller-departureOrArrival {
         width: 80%;
         border-bottom-width: 3px;
-        border-bottom-color: #D3D3D3;
+        border-bottom-color: $white;
         border-bottom-style: solid;
         text-align: center;
     }
@@ -190,7 +192,7 @@
 
     .departureOrArrival .smaller-departureOrArrival .active {
         border-bottom-width: 6px;
-        border-bottom-color: #1a0dab;
+        border-bottom-color: $primary;
         border-bottom-style: solid;
     }
 
