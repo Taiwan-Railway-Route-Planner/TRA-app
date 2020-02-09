@@ -101,8 +101,8 @@
                                     <Label class="far" :text="'\uf017' | unescape"/>
                                     <Label :text="item.travelTime"/>
                                 </FlexboxLayout>
-                                <FlexboxLayout class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainType].color" :text="'\uf238' | unescape"/>
+                                <FlexboxLayout class="typeOfTrain train-colors">
+                                    <Label :class="['fas', data.trainTypes[item.trainType].color]" :text="'\uf238' | unescape"/>
                                     <Label :text="data.trainTypes[item.trainType].name + ' ' + item.Train"/>
                                 </FlexboxLayout>
                             </FlexboxLayout>
