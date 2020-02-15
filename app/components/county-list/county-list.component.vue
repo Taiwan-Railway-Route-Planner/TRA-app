@@ -62,7 +62,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/variables";
+    @import "../../theme/variables";
 
     .county {
         margin-top: 3%;

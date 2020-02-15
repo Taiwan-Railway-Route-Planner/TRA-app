@@ -83,8 +83,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/generalStyles.scss";
-    @import "../../styles/_variables.scss";
+    @import "../../theme/generalStyles.scss";
+    @import "../../theme/_variables.scss";
 
     .modal {
         background-color: $white;

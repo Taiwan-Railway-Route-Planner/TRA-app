@@ -166,8 +166,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/variables";
-    @import "../../styles/generalStyles";
+    @import "../../theme/variables";
+    @import "../../theme/generalStyles";
 
     .dock-top {
         height: 18%;
@@ -483,6 +483,6 @@
         font: 20;
     }
 
-    @import "../../styles/trainVariables";
+    @import "../../theme/trainVariables";
 
 </style>
