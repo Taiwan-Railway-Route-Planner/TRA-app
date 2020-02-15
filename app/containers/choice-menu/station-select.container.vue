@@ -92,9 +92,9 @@
 
     import handle from "../../assets/js/Vue/Select/handle"
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
-    import modal from "../modals/modal"
-    import loadingModal from "../modals/LoadingModal"
-    import Counties from "./component/counties"
+    import modal from "../../components/modals/modal.component"
+    import loadingModal from "../../components/loading-modal/loading-modal.component"
+    import Counties from "../../components/county-list/county-list.component"
 
     import { isIOS } from "tns-core-modules/platform";
     let application = require('application');
@@ -274,8 +274,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/_variables.scss";
-    @import "../../styles/generalStyles.scss";
+    @import "../../theme/variables";
+    @import "../../theme/generalStyles";
 
     .routeDetailsChoice,
     .timeDetails{
@@ -329,12 +329,13 @@
         flex-flow: column;
         text-align: center;
 
-        Label{
+        Label {
             margin-left: 5;
+            width: 6%;
         }
 
         SearchBar {
-            flex: 0 1 auto;
+            width: 94%;
         }
     }
 

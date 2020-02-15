@@ -125,8 +125,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/_variables.scss";
-    @import "../../styles/generalStyles.scss";
+    @import "../../theme/variables";
+    @import "../../theme/generalStyles";
 
     .dock-top {
         background-color: $primary;

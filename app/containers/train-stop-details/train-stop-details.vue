@@ -93,8 +93,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/_variables.scss";
-    @import "../../styles/generalStyles.scss";
+    @import "../../theme/variables";
+    @import "../../theme/generalStyles";
 
     .dock-top {
         height: 26%;
@@ -272,6 +272,6 @@
         justify-content: center;
     }
 
-    @import "../../styles/trainVariables.scss";
+    @import "../../theme/trainVariables";
 
 </style>

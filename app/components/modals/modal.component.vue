@@ -14,8 +14,8 @@
 
 <script>
 
-    import DateModal from "./dateModal";
-    import TimeModal from "./timeModal";
+    import DateModal from "./date-modal";
+    import TimeModal from "./time-modal";
     import handle from "../../assets/js/Vue/Modal/handle"
 
     export default {

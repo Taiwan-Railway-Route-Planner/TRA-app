@@ -22,7 +22,7 @@
 
 <script>
 
-    import handle from "../assets/js/Vue/BootUp/handle";
+    import handle from "../../assets/js/Vue/BootUp/handle";
     import { isIOS } from "tns-core-modules/platform";
 
     export default {
@@ -60,8 +60,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../styles/_variables.scss";
-    @import "../styles/generalStyles.scss";
+    @import "../../theme/variables";
+    @import "../../theme/generalStyles";
 
     .page {
         background-color: $primary;
