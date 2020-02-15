@@ -329,12 +329,13 @@
         flex-flow: column;
         text-align: center;
 
-        Label{
+        Label {
             margin-left: 5;
+            width: 6%;
         }
 
         SearchBar {
-            flex: 0 1 auto;
+            width: 94%;
         }
     }
 
