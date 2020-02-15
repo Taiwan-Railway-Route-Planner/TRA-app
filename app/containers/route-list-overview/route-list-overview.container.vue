@@ -250,9 +250,9 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/_variables.scss";
-    @import "../../styles/generalStyles.scss";
-    @import "../../styles/trainVariables.scss";
+    @import "../../styles/variables";
+    @import "../../styles/generalStyles";
+    @import "../../styles/trainVariables";
 
     .dock-top {
         background-color: $primary;

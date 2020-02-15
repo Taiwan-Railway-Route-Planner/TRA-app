@@ -112,7 +112,7 @@
 </template>
 <script>
 
-    import handle from "../../../assets/js/Vue/Route/TransfersOrNot/handle"
+    import handle from "../../assets/js/Vue/Route/TransfersOrNot/handle"
 
     export default {
         props: ['routeDetails', 'selectTravelDetails', 'language'],
@@ -166,8 +166,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../../styles/_variables.scss";
-    @import "../../../styles/generalStyles.scss";
+    @import "../../styles/variables";
+    @import "../../styles/generalStyles";
 
     .dock-top {
         height: 18%;
@@ -483,6 +483,6 @@
         font: 20;
     }
 
-    @import "../../../styles/trainVariables.scss";
+    @import "../../styles/trainVariables";
 
 </style>
