@@ -5,8 +5,8 @@ import Route from "./components/Route/RouteSelect"
 import RouteDetails from "./components/Route/SingleTrain/Details"
 import MultiRouteDetails from "./components/Route/Transfers/DetailsTransfers"
 import RouteStopDetails from "./components/Route/StopDetails"
-import Settings from "./components/Settings/Settings"
-import Support from "./components/Support/Support"
+import Settings from "./containers/settings/settings.container"
+import Support from "./containers/support/support.container"
 import store from './store';
 
 import {Gif} from "nativescript-gif";

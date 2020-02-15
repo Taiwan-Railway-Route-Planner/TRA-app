@@ -118,8 +118,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/_variables.scss";
-    @import "../../styles/generalStyles.scss";
+    @import "../../styles/variables";
+    @import "../../styles/generalStyles";
 
 
     .dock-top {
