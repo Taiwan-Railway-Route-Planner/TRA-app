@@ -1,5 +1,5 @@
 import Vue from 'nativescript-vue'
-import Bootup from './containers/app/App'
+import Bootup from './containers/app/app.container'
 import Select from './components/Select/StationSelect'
 import Route from "./components/Route/RouteSelect"
 import RouteDetails from "./components/Route/SingleTrain/Details"
