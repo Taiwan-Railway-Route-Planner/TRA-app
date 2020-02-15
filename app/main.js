@@ -1,6 +1,6 @@
 import Vue from 'nativescript-vue'
 import Bootup from './containers/app/app.container'
-import Select from './components/Select/StationSelect'
+import Select from './containers/choice-menu/station-select.container'
 import Route from "./components/Route/RouteSelect"
 import RouteDetails from "./components/Route/SingleTrain/Details"
 import MultiRouteDetails from "./components/Route/Transfers/DetailsTransfers"
