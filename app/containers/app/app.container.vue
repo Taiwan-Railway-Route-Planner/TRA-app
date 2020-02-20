@@ -45,7 +45,8 @@
             },
             confirm: function () {
                 this.$store.commit('updateLanguage', this.saveAbbr);
-                this.$goto("Select");
+                // Isn't needed in iOS
+                // this.$goto("Select");
             },
             onItemLoading: function(args) {
                 if (isIOS){
