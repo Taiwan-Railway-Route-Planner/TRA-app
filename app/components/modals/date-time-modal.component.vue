@@ -9,6 +9,13 @@
             <Label class="btn discardBtn" @tap="close" :text="$props.time.modal.bottom.leftBtn"/>
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
+        <FlexboxLayout dock="center" class="timeDateDetails">
+            <time-modal :selected-time="selectedTime"
+                        :time="$props.time"
+                        :format-time-stamp-based-on-language="$props.formatTimeStampBasedOnLanguage"/>
+            <date-modal :time="$props.time"
+                        :format-time-stamp-based-on-language="$props.formatTimeStampBasedOnLanguage"/>/>
+        </FlexboxLayout>
     </DockLayout>
 </template>
 
@@ -37,7 +44,7 @@
         created: function () {
             handle.init(this);
         },
-        data () {
+        data() {
             return {
                 selectedTime: '',
                 showTimeModal: true
@@ -98,8 +105,12 @@
                 }
             }
         }
-    }
 
+        .timeDateDetails {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
 
 
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
