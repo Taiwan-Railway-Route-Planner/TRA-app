@@ -35,17 +35,6 @@
             setTimeToNow: function () {
                 this.timeWeSelected = moment().toDate();
             },
-            previousDay: function () {
-                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).subtract(1, 'days'));
-                this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).subtract(1, 'days');
-            },
-            nextDay: function () {
-                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).add(1, 'days'));
-                this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
-            },
-            modalCalender: function () {
-                this.$emit('changeModalReturnTime', this.timeWeSelected);
-            },
             discard: function () {
                 handle.discard(this);
                 this.$emit('close');

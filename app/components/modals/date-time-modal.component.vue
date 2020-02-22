@@ -60,6 +60,9 @@
             },
             close: function () {
                 this.$modal.close();
+            },
+            confirm: function () {
+                this.handle.save();
             }
         }
     }
@@ -112,7 +115,6 @@
         }
     }
 
-
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
 
     .smallerLabels.modal Label,
@@ -123,6 +125,5 @@
     .smallerLabels.modal .timeSettings .timeSelect .now Button {
         font-size: 12;
     }
-
 
 </style>

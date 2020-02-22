@@ -1,6 +1,6 @@
 <template>
     <Flexboxlayout :class="[smallerLabels, 'center']">
-            <DatePicker :minDate="minDate" :maxDate="maxDate"/>
+            <DatePicker :minDate="minDate" :maxDate="maxDate" v-model="currentDate"/>
     </Flexboxlayout>
 </template>
 
@@ -33,19 +33,19 @@
                 currentDate: new Date()
             }
         },
-        methods: {
-            discard: function () {
-                this.$emit('changeModal')
-            },
-            confirm: function () {
-                this.$props.time.modal.center.date.today = moment(this.date).format();
-                this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
-                this.time.date.show = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(this, this.$props.time.modal.center.date.today);
-                this.time.date.real = moment(this.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
-                console.log(this.time.data.real);
-                this.$emit('changeModal');
-            }
-        }
+        // methods: {
+        //     discard: function () {
+        //         this.$emit('changeModal')
+        //     },
+        //     confirm: function () {
+        //         this.$props.time.modal.center.date.today = moment(this.date).format();
+        //         this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
+        //         this.time.date.show = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(this, this.$props.time.modal.center.date.today);
+        //         this.time.date.real = moment(this.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
+        //         console.log(this.time.data.real);
+        //         this.$emit('changeModal');
+        //     }
+        // }
     }
 </script>
 
