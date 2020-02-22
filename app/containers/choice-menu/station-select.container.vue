@@ -111,6 +111,7 @@
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
     import modal from "../../components/modals/modal.component"
     import loadingModal from "../../components/loading-modal/loading-modal.component"
+    import datTimeModal from "../../components/modals/date-time-modal.component"
     import Counties from "../../components/county-list/county-list.component"
 
     import { isIOS } from "tns-core-modules/platform";
@@ -248,7 +249,7 @@
                 await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
-                this.$showModal(modal, {
+                this.$showModal(datTimeModal, {
                         fullscreen: true,
                         props: {
                             time: this.data.routeDetails.time,
