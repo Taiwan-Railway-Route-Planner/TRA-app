@@ -7,8 +7,9 @@
             <FlexboxLayout dock="bottom" class="menu-bottom">
                 <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"/>
             </FlexboxLayout>
-            <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
-                <ListView for="(item, index) in languages" ref="listview" class="listView" @itemTap="onItemTap" @itemLoading="onItemLoading">
+            <FlexboxLayout dock="center" class="menu-center">
+                <ListView for="(item, index) in languages" separatorColor="transparent"
+                          ref="listview" class="listView" @itemTap="onItemTap" @itemLoading="onItemLoading">
                     <v-template>
                         <FlexboxLayout class="element">
                             <Label class="top-text" :text="item.nameNative"/>
@@ -48,8 +49,8 @@
                 // Isn't needed in iOS
                 // this.$goto("Select");
             },
-            onItemLoading: function(args) {
-                if (isIOS){
+            onItemLoading: function (args) {
+                if (isIOS) {
                     const cell = args.ios;
                     if (cell) {
                         cell.selectionStyle = UITableViewCellSelectionStyle.UITableViewCellSelectionStyleNone;
@@ -86,43 +87,48 @@
         margin-top: 5%;
     }
 
-    .menu-center{
+    .menu-center {
         flex-direction: column;
     }
 
-    .menu-center .listView{
+    .menu-center .listView {
         background-color: $primary;
 
-        .ns-dark &{
+        .ns-dark & {
             background-color: $dark-primary;
         }
     }
 
-    .menu-center .element{
+    .menu-center .element {
         padding-top: 20%;
         flex-direction: column;
         align-items: center;
         background-color: $primary;
 
-        .ns-dark &{
+        .ns-dark & {
             background-color: $dark-primary;
         }
     }
 
-    .menu-center .element .top-text{
+    .menu-center .element .top-text {
         font-size: 20;
     }
 
-    .menu-bottom{
+    .menu-bottom {
         justify-content: center;
     }
 
-    .menu-bottom .btn{
+    .menu-bottom .btn {
         height: 10%;
         width: 80%;
         background-color: $white;
         color: $primary;
         margin-bottom: 3%;
+
+        .ns-dark & {
+            background-color: $dark-white;
+            color: $dark-primary;
+        }
     }
 
 </style>
