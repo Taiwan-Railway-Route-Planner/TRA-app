@@ -9,16 +9,19 @@
                                    :text="data.searchBar.search" @textChange="onTextChanged"
                                    @clear="goBackToNormalScreen"/>
                     </FlexboxLayout>
-                    <Counties v-if="!isFetching" ref="counties" :data="data" :selectedCounty="selectedCounty" :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"/>
+                    <Counties v-if="!isFetching" ref="counties" :data="data" :selectedCounty="selectedCounty"
+                              :hideThis="hideThis" @changeTheSelectedOne="changeTheSelectedOne"/>
                 </FlexboxLayout>
                 <FlexboxLayout dock="center" class="listView">
                     <ScrollView>
-                        <ListView v-if="$store.state.language === 'ZH'" class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
+                        <ListView v-if="$store.state.language === 'ZH'" class="listGroup" for="item in filteredStations"
+                                  @itemTap="onItemTap" separatorColor="transparent">
                             <v-template>
                                 <Label :text="item.站名 + ' (' + item.traWebsiteCode + ')' "/>
                             </v-template>
                         </ListView>
-                        <ListView v-else class="listGroup" for="item in filteredStations" @itemTap="onItemTap" separatorColor="transparent">
+                        <ListView v-else class="listGroup" for="item in filteredStations" @itemTap="onItemTap"
+                                  separatorColor="transparent">
                             <v-template>
                                 <ScalingLabel :text="item.eng站名 + ' (' + item.站名 + ')' +  ' - ' + item.traWebsiteCode"/>
                             </v-template>
@@ -46,12 +49,18 @@
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="text">
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                        <Label class="labelForStandard" @tap="showSearch(true)" :text="data.routeDetails.departure.label"/>
-                                        <TextField class="textFieldForStandard" @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.站名" :hint="data.routeDetails.departure.hint"/>
+                                        <Label class="labelForStandard" @tap="showSearch(true)"
+                                               :text="data.routeDetails.departure.label"/>
+                                        <TextField class="textFieldForStandard" @tap="showSearch(true)" editable="false"
+                                                   v-model="data.routeDetails.departure.details.站名"
+                                                   :hint="data.routeDetails.departure.hint"/>
                                     </FlexboxLayout>
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                        <Label class="labelForStandard" @tap="showSearch(false)" :text="data.routeDetails.arrival.label"/>
-                                        <TextField class="textFieldForStandard" @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.站名" :hint="data.routeDetails.arrival.hint"/>
+                                        <Label class="labelForStandard" @tap="showSearch(false)"
+                                               :text="data.routeDetails.arrival.label"/>
+                                        <TextField class="textFieldForStandard" @tap="showSearch(false)"
+                                                   editable="false" v-model="data.routeDetails.arrival.details.站名"
+                                                   :hint="data.routeDetails.arrival.hint"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"/>
@@ -62,12 +71,18 @@
                             <FlexboxLayout class="InfoDetails">
                                 <FlexboxLayout class="text">
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(true)">
-                                        <Label :class="layoutStateLabel" @tap="showSearch(true)" :text="data.routeDetails.departure.label"/>
-                                        <TextField :class="layoutStateTextField" @tap="showSearch(true)" editable="false" v-model="data.routeDetails.departure.details.eng站名" :hint="data.routeDetails.departure.hint"/>
+                                        <Label :class="layoutStateLabel" @tap="showSearch(true)"
+                                               :text="data.routeDetails.departure.label"/>
+                                        <TextField :class="layoutStateTextField" @tap="showSearch(true)"
+                                                   editable="false" v-model="data.routeDetails.departure.details.eng站名"
+                                                   :hint="data.routeDetails.departure.hint"/>
                                     </FlexboxLayout>
                                     <FlexboxLayout class="NavigateIn" @tap="showSearch(false)">
-                                        <Label :class="layoutStateLabel" @tap="showSearch(false)" :text="data.routeDetails.arrival.label"/>
-                                        <TextField :class="layoutStateTextField" @tap="showSearch(false)" editable="false" v-model="data.routeDetails.arrival.details.eng站名" :hint="data.routeDetails.arrival.hint"/>
+                                        <Label :class="layoutStateLabel" @tap="showSearch(false)"
+                                               :text="data.routeDetails.arrival.label"/>
+                                        <TextField :class="layoutStateTextField" @tap="showSearch(false)"
+                                                   editable="false" v-model="data.routeDetails.arrival.details.eng站名"
+                                                   :hint="data.routeDetails.arrival.hint"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
                                 <Label class="fas" @tap="switchDestinationAndArrival" :text="'\uf362' | unescape"/>
@@ -76,7 +91,9 @@
 
                         <FlexboxLayout class="InfoDetails timeDetails">
                             <Label :class="layoutStateLabelForTimeStamp" :text="data.routeDetails.time.label"/>
-                            <TextField :class="layoutStateTextFieldForTimeStamp" @tap="showTime" editable="false" :hint="data.routeDetails.time.hint" :text="data.routeDetails.time.date.show + data.routeDetails.time.time"/>
+                            <TextField :class="layoutStateTextFieldForTimeStamp" @tap="showTime" editable="false"
+                                       :hint="data.routeDetails.time.hint"
+                                       :text="data.routeDetails.time.date.show + data.routeDetails.time.time"/>
                         </FlexboxLayout>
                         <FlexboxLayout class="confirmBtn" @tap="confirmSearch">
                             <Button class="btn btn-sq btn-wt" :text="data.routeDetails.button" @tap="confirmSearch"/>
@@ -97,6 +114,7 @@
     import Counties from "../../components/county-list/county-list.component"
 
     import { isIOS } from "tns-core-modules/platform";
+
     let application = require('application');
     const utils = require('utils/utils');
 
@@ -182,7 +200,7 @@
             }
         },
         methods: {
-            changeTheSelectedOne: function (prop, ref=this.$refs.counties.$refs){
+            changeTheSelectedOne: function (prop, ref = this.$refs.counties.$refs) {
                 handle.changeTheDefaultCounty(this, prop, ref);
                 handle.filterCountiesOutOfTheListOfStations(this);
             },
@@ -231,6 +249,7 @@
             },
             showTime: function () {
                 this.$showModal(modal, {
+                        fullscreen: true,
                         props: {
                             time: this.data.routeDetails.time,
                             formatTimeStampBasedOnLanguage: this.formatTimeStampBasedOnLanguage
@@ -278,33 +297,33 @@
     @import "../../theme/generalStyles";
 
     .routeDetailsChoice,
-    .timeDetails{
+    .timeDetails {
         Label,
-        TextField{
+        TextField {
 
-            .ns-dark &{
+            .ns-dark & {
                 color: $white;
             }
         }
     }
 
-    .topRouteDetails .InfoDetails{
+    .topRouteDetails .InfoDetails {
 
-        .fas{
+        .fas {
 
-            .ns-dark &{
+            .ns-dark & {
                 color: $white;
             }
         }
 
-        .ns-dark &{
+        .ns-dark & {
             background-color: black;
         }
     }
 
-    .confirmBtn{
+    .confirmBtn {
 
-        .ns-dark &{
+        .ns-dark & {
             border-color: $white;
             background-color: $dark;
             color: $white;
@@ -353,7 +372,7 @@
         flex: 1 1 auto;
     }
 
-    .listGroup Label{
+    .listGroup Label {
         /*Android*/
         /*padding-bottom: 4;*/
         /*padding-top: 4;*/
@@ -436,7 +455,7 @@
         align-self: center;
     }
 
-    .labelForArmenian{
+    .labelForArmenian {
         width: 28%;
         align-self: center;
     }
@@ -459,7 +478,7 @@
         margin-right: 6%;
     }
 
-    .textFieldForArmenian{
+    .textFieldForArmenian {
         width: 62%;
         margin-right: 6%;
     }
