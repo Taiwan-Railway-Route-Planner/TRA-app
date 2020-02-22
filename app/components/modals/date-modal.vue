@@ -9,7 +9,7 @@
     import moment from "moment"
 
     export default {
-        props: ['time', 'formatTimeStampBasedOnLanguage'],
+        props: ['time'],
         created: function () {
             this.date = moment(this.$props.time.modal.center.date.today).toDate();
             console.log('this.date', this.date);
@@ -32,20 +32,7 @@
                 maxDate: new Date(2021, 1, 31),
                 currentDate: new Date()
             }
-        },
-        // methods: {
-        //     discard: function () {
-        //         this.$emit('changeModal')
-        //     },
-        //     confirm: function () {
-        //         this.$props.time.modal.center.date.today = moment(this.date).format();
-        //         this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
-        //         this.time.date.show = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(this, this.$props.time.modal.center.date.today);
-        //         this.time.date.real = moment(this.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
-        //         console.log(this.time.data.real);
-        //         this.$emit('changeModal');
-        //     }
-        // }
+        }
     }
 </script>
 

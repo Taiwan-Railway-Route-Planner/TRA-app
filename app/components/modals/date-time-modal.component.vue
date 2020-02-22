@@ -10,11 +10,8 @@
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeDateDetails">
-            <time-modal :selected-time="selectedTime"
-                        :time="$props.time"
-                        :format-time-stamp-based-on-language="$props.formatTimeStampBasedOnLanguage"/>
-            <date-modal :time="$props.time"
-                        :format-time-stamp-based-on-language="$props.formatTimeStampBasedOnLanguage"/>/>
+            <time-modal :selected-time="selectedTime" :time="$props.time"/>
+            <date-modal :time="$props.time"/>/>
         </FlexboxLayout>
     </DockLayout>
 </template>
@@ -53,16 +50,13 @@
         methods: {
             changeModalReturnTime: function (returnTimeStamp) {
                 this.selectedTime = returnTimeStamp;
-                this.changeModal();
-            },
-            changeModal: function () {
-                this.showTimeModal = !this.showTimeModal;
             },
             close: function () {
                 this.$modal.close();
             },
             confirm: function () {
                 this.handle.save();
+                this.close();
             }
         }
     }

@@ -11,11 +11,10 @@
 
 <script>
 
-    import handle from "../../assets/js/Vue/Modal/timeModal/handle"
     import moment from "moment"
 
     export default {
-        props: ['time', 'formatTimeStampBasedOnLanguage', 'selectedTime'],
+        props: ['time', 'selectedTime'],
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -34,14 +33,6 @@
         methods: {
             setTimeToNow: function () {
                 this.timeWeSelected = moment().toDate();
-            },
-            discard: function () {
-                handle.discard(this);
-                this.$emit('close');
-            },
-            confirm: function () {
-                handle.save(this);
-                this.$emit('close');
             }
         }
     }
