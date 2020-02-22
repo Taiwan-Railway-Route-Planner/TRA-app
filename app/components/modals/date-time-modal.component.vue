@@ -11,7 +11,7 @@
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeDateDetails">
             <time-modal :selected-time="selectedTime" :time="$props.time"/>
-            <date-modal :time="$props.time"/>/>
+            <date-modal :selectedDate="selectedDate"/>
         </FlexboxLayout>
     </DockLayout>
 </template>
@@ -44,7 +44,7 @@
         data() {
             return {
                 selectedTime: '',
-                showTimeModal: true
+                selectedDate: new Date()
             }
         },
         methods: {
