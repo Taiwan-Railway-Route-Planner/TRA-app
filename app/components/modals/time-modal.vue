@@ -88,8 +88,6 @@
 
     .modal {
         background-color: $white;
-        height: 400;
-        width: 300;
         text-align: left;
         color: $dark;
     }
