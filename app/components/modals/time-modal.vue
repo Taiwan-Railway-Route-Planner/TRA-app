@@ -1,36 +1,12 @@
 <template>
-    <DockLayout :class="[smallerLabels, 'modal']">
-        <FlexboxLayout dock="top" class="departureOrArrival">
-            <FlexboxLayout class="smaller-departureOrArrival">
-                <Label :text="$props.time.modal.top.first" class="topLabel active" @tap=""/>
-                <!--<Label :text="$props.time.modal.top.second" class="topLabel" @tap=""/>-->
+    <flexboxlayout :class="[smallerLabels, 'timeSettings']">
+        <FlexboxLayout class="timeSelect">
+            <TimePicker v-model="timeWeSelected"/>
+            <FlexboxLayout class="now">
+                <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
             </FlexboxLayout>
         </FlexboxLayout>
-        <FlexboxLayout dock="bottom" class="confirmOrDiscard">
-            <Label class="btn discardBtn" @tap="discard" :text="$props.time.modal.bottom.leftBtn"/>
-            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
-        </FlexboxLayout>
-        <FlexboxLayout dock="center" class="timeSettings">
-            <FlexboxLayout class="timeSelect">
-                <TimePicker v-model="timeWeSelected"/>
-                <FlexboxLayout class="now">
-                    <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
-                </FlexboxLayout>
-            </FlexboxLayout>
-            <FlexboxLayout class="dateTimeSelect">
-                <FlexboxLayout class="dateTimeNav">
-                    <Label class="fas" @tap="previousDay" :text="'\uf053' | unescape"/>
-                    <FlexboxLayout class="timeStamp">
-                        <Label class="" @tap="modalCalender" :text="$props.time.modal.center.date.actual"/>
-                    </FlexboxLayout>
-                    <Label class="fas" @tap="nextDay" :text="'\uf054' | unescape"/>
-                </FlexboxLayout>
-                <FlexboxLayout class="calenderView">
-                    <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"/>
-                </FlexboxLayout>
-            </FlexboxLayout>
-        </FlexboxLayout>
-    </DockLayout>
+    </flexboxlayout>
 </template>
 
 <script>
@@ -86,30 +62,65 @@
     @import "../../theme/generalStyles.scss";
     @import "../../theme/_variables.scss";
 
-    .modal {
+    /*.modal {
         background-color: $white;
         text-align: left;
         color: $dark;
-    }
+    }*/
 
     /****** GENERATE FROM COMPUTED smallerLabels() ******/
 
-    .smallerLabels.modal Label,
-    .smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel {
-        font-size: 14;
-    }
-
-    .smallerLabels.modal .timeSettings .timeSelect .now Button {
-        font-size: 12;
-    }
+    /*.smallerLabels.modal Label,*/
+    /*.smallerLabels.modal .departureOrArrival .smaller-departureOrArrival .topLabel {*/
+    /*    font-size: 14;*/
+    /*}*/
 
     .timeSettings {
         flex-direction: column;
         width: 100%;
-        height: 60%;
+
+        &.smallerLabels {
+            .now Button {
+                font-size: 12;
+            }
+        }
+
+        .timeSelect {
+            flex-direction: row;
+            align-self: center;
+            margin-bottom: -20;
+            padding-top: -20;
+
+            TimePicker {
+                width: 70%;
+            }
+
+            .now {
+                flex-direction: column;
+                align-self: center;
+                width: 30%;
+
+                Button {
+                    /*iOS*/
+                    width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
     }
 
-    .timeSettings .timeSelect {
+    /*.smallerLabels.timeSettings .timeSelect .now Button {*/
+    /*    font-size: 12;*/
+    /*}*/
+
+    /*.timeSettings {
+        flex-direction: column;
+        width: 100%;
+        height: 60%;
+    }*/
+
+    /*.timeSettings .timeSelect {
         flex-direction: row;
         align-self: center;
         margin-bottom: -20;
@@ -127,13 +138,13 @@
     }
 
     .timeSettings .timeSelect .now Button {
-        /*iOS*/
+        !*iOS*!
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-    }
+    }*/
 
-    .timeSettings .dateTimeSelect {
+    /*.timeSettings .dateTimeSelect {
         flex-direction: row;
         width: 100%;
         align-items: center;
@@ -156,9 +167,9 @@
     }
 
     .timeSettings .dateTimeSelect .calenderView {
-        /*Android*/
-        /*width: 20%;*/
-        /*iOS*/
+        !*Android*!
+        !*width: 20%;*!
+        !*iOS*!
         width: 30%;
         height: 100px;
     }
@@ -192,6 +203,6 @@
         border-bottom-width: 6px;
         border-bottom-color: $primary;
         border-bottom-style: solid;
-    }
+    }*/
 
 </style>
