@@ -1,19 +1,15 @@
 <template>
     <Flexboxlayout :class="[smallerLabels, 'center']">
-            <DatePicker :minDate="minDate" :maxDate="maxDate" v-model="currentDate"/>
+            <DatePicker :minDate="minDate" :maxDate="maxDate" v-model="$props.selectedDate"/>
     </Flexboxlayout>
 </template>
 
 <script>
 
-    import moment from "moment"
-
     export default {
-        props: ['time'],
+        props: ['selectedDate'],
         created: function () {
-            this.date = moment(this.$props.time.modal.center.date.today).toDate();
-            console.log('this.date', this.date);
-            console.log(new Date());
+
         },
         computed: {
             smallerLabels() {
@@ -27,10 +23,8 @@
         },
         data () {
             return {
-                date: '',
                 minDate: new Date(2019, 6, 13),
                 maxDate: new Date(2021, 1, 31),
-                currentDate: new Date()
             }
         }
     }
