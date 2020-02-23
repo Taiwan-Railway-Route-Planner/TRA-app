@@ -11,7 +11,7 @@
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeDateDetails">
             <time-modal :selected-time="selectedTime" :time="$props.time" @updateTime="updateTime"/>
-            <date-modal :selectedDate="selectedDate" @updateDate="updateDate"/>
+            <date-modal @updateDate="updateDate"/>
         </FlexboxLayout>
     </DockLayout>
 </template>
@@ -21,6 +21,7 @@
     import DateModal from "./date-modal";
     import TimeModal from "./time-modal";
     import handle from "../../assets/js/Vue/Modal/handle"
+    import moment from "moment";
 
     export default {
         props: ['time', 'formatTimeStampBasedOnLanguage'],
@@ -44,21 +45,21 @@
         data() {
             return {
                 selectedTime: '',
-                selectedDate: ''
+                selectedDate: new Date()
             }
         },
         methods: {
             updateTime: function(timeToUpdate) {
                 this.selectedTime = timeToUpdate;
             },
-            updateDate: function(dateToUpdate) {
-              this.selectedDate = dateToUpdate;
+            updateDate: function (dateToUpdate) {
+                this.selectedDate = dateToUpdate;
             },
             close: function () {
                 this.$modal.close();
             },
             confirm: function () {
-                this.handle.save();
+                handle.save(this);
                 this.close();
             }
         }
