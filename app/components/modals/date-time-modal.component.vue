@@ -2,7 +2,7 @@
     <DockLayout :class="[smallerLabels, 'modal']">
         <FlexboxLayout dock="top" class="departureOrArrivalWrapper">
             <FlexboxLayout class="smaller-departureOrArrivalTitle">
-                <Label :text="$props.time.modal.top.first" class="title active" @tap=""/>
+                <Label :text="$props.time.modal.top.first" class="title active"/>
             </FlexboxLayout>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="confirmOrDiscard">
@@ -10,8 +10,8 @@
             <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeDateDetails">
-            <time-modal :selected-time="selectedTime" :time="$props.time"/>
-            <date-modal :selectedDate="selectedDate"/>
+            <time-modal :selected-time="selectedTime" :time="$props.time" @updateTime="updateTime"/>
+            <date-modal :selectedDate="selectedDate" @updateDate="updateDate"/>
         </FlexboxLayout>
     </DockLayout>
 </template>
@@ -44,12 +44,15 @@
         data() {
             return {
                 selectedTime: '',
-                selectedDate: new Date()
+                selectedDate: ''
             }
         },
         methods: {
-            changeModalReturnTime: function (returnTimeStamp) {
-                this.selectedTime = returnTimeStamp;
+            updateTime: function(timeToUpdate) {
+                this.selectedTime = timeToUpdate;
+            },
+            updateDate: function(dateToUpdate) {
+              this.selectedDate = dateToUpdate;
             },
             close: function () {
                 this.$modal.close();
