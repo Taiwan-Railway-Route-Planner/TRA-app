@@ -109,7 +109,7 @@
 
     import handle from "../../assets/js/Vue/Select/handle"
     import formatTimeStampBasedOnLanguage from "../../assets/js/Vue/formatTimeStampBasedOnLanguage"
-    import modal from "../../components/modals/modal.component"
+    import dateTimeModal from "../../components/modals/date-time-modal.component"
     import loadingModal from "../../components/loading-modal/loading-modal.component"
     import Counties from "../../components/county-list/county-list.component"
 
@@ -248,7 +248,7 @@
                 await handle.controlValuesBeforeGoingToRoute(this, loadingModal);
             },
             showTime: function () {
-                this.$showModal(modal, {
+                this.$showModal(dateTimeModal, {
                         fullscreen: true,
                         props: {
                             time: this.data.routeDetails.time,
