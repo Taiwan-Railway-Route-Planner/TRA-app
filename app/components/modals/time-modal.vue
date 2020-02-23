@@ -1,7 +1,7 @@
 <template>
     <flexboxlayout :class="[smallerLabels, 'timeSettings']">
         <FlexboxLayout class="timeSelect">
-            <TimePicker v-model="timeWeSelected" @timeChange="updateTime"/>
+            <TimePicker v-model="timeWeSelected"></TimePicker>
             <FlexboxLayout class="now">
                 <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
             </FlexboxLayout>
@@ -14,7 +14,7 @@
     import moment from "moment"
 
     export default {
-        props: ['time', 'selectedTime'],
+        props: ['time'],
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -27,15 +27,22 @@
         },
         data() {
             return {
-                timeWeSelected: this.$props.selectedTime
+                timeWeSelected: ''
             }
         },
         methods: {
             setTimeToNow: function () {
+                console.log('set back to default');
                 this.timeWeSelected = moment().toDate();
             },
             updateTime: function () {
+                console.log('time change');
                 this.$emit('updateTime', this.timeWeSelected);
+            }
+        },
+        watch: {
+            timeWeSelected: function () {
+                this.updateTime();
             }
         }
     }
