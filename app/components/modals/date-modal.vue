@@ -7,10 +7,6 @@
 <script>
 
     export default {
-        props: ['selectedDate'],
-        created: function () {
-
-        },
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -25,7 +21,7 @@
             return {
                 minDate: new Date(2019, 6, 13),
                 maxDate: new Date(2021, 1, 31),
-                currentDate: this.$props.selectedDate
+                currentDate: new Date()
             }
         },
         methods: {
