@@ -1,7 +1,7 @@
 <template>
     <flexboxlayout :class="[smallerLabels, 'timeSettings']">
         <FlexboxLayout class="timeSelect">
-            <TimePicker v-model="timeWeSelected"/>
+            <TimePicker v-model="timeWeSelected" @timeChange="updateTime"/>
             <FlexboxLayout class="now">
                 <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
             </FlexboxLayout>
@@ -33,6 +33,9 @@
         methods: {
             setTimeToNow: function () {
                 this.timeWeSelected = moment().toDate();
+            },
+            updateTime: function () {
+                this.$emit('updateTime', this.timeWeSelected);
             }
         }
     }
