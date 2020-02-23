@@ -1,6 +1,6 @@
 <template>
     <Flexboxlayout :class="[smallerLabels, 'center']">
-            <DatePicker :minDate="minDate" :maxDate="maxDate" v-model="$props.selectedDate"/>
+            <DatePicker :minDate="minDate" :maxDate="maxDate" v-model="currentDate" @dateChange="changeDate"/>
     </Flexboxlayout>
 </template>
 
@@ -25,6 +25,12 @@
             return {
                 minDate: new Date(2019, 6, 13),
                 maxDate: new Date(2021, 1, 31),
+                currentDate: this.$props.selectedDate
+            }
+        },
+        methods: {
+            changeDate: function () {
+                this.$emit('updateDate', this.currentDate)
             }
         }
     }
