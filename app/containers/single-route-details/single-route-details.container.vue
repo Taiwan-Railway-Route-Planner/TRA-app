@@ -336,16 +336,24 @@
 
     .dock-center .trainDetails .trainDestArrDetails .departure {
         padding-bottom: 8%;
-        border-bottom-color: $white;
+        border-bottom-color: $primary;
         border-bottom-style: solid;
         border-bottom-width: 3px;
+
+        .ns-dark &{
+            border-bottom-color: $dark-white;
+        }
     }
 
     .dock-center .trainDetails .trainDestArrDetails .arrival {
         padding-top: 8%;
-        border-top-color: $white;
+        border-top-color: $primary;
         border-top-style: solid;
         border-top-width: 3px;
+
+        .ns-dark &{
+            border-top-color: $dark-white;
+        }
     }
 
     .dock-center .trainDetails .trainDestArrDetails .trainDetailsIcons {
