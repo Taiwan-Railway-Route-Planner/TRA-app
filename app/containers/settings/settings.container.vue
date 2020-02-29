@@ -165,16 +165,17 @@
     }
 
     .dock-center .settings .languagesSettings .btn.btn-wt{
+        align-self: center;
+        width: 80%;
+        margin-top: 8%;
+        padding-top: 8;
+        padding-bottom: 8;
 
         .ns-dark &{
-            align-self: center;
-            width: 80%;
-            margin-top: 8%;
             border-color: $white;
             border-style: solid;
             border-width: 2px;
-            padding-top: 8;
-            padding-bottom: 8;
+
         }
     }
 
