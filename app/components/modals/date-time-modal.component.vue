@@ -104,6 +104,10 @@
                 border-bottom-style: solid;
                 text-align: center;
 
+                .ns-dark & {
+                    border-bottom-color: $dark-dark;
+                }
+
                 .title {
                     width: 50%;
                     font-size: 18;
@@ -114,6 +118,10 @@
                         border-bottom-width: 6px;
                         border-bottom-color: $primary;
                         border-bottom-style: solid;
+
+                        .ns-dark & {
+                            border-bottom-color: $dark-white;
+                        }
                     }
                 }
             }
