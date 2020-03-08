@@ -1,19 +1,21 @@
 <template>
-    <DockLayout :class="[smallerLabels, 'modal']">
-        <FlexboxLayout dock="top" class="departureOrArrivalWrapper">
-            <FlexboxLayout class="smaller-departureOrArrivalTitle">
-                <Label :text="$props.time.modal.top.first" class="title active"/>
+    <Page class="background-color-modal">
+        <DockLayout :class="[smallerLabels, 'modal']">
+            <FlexboxLayout dock="top" class="departureOrArrivalWrapper">
+                <FlexboxLayout class="smaller-departureOrArrivalTitle">
+                    <Label :text="$props.time.modal.top.first" class="title active"/>
+                </FlexboxLayout>
             </FlexboxLayout>
-        </FlexboxLayout>
-        <FlexboxLayout dock="bottom" class="confirmOrDiscard">
-            <Label class="btn discardBtn" @tap="close" :text="$props.time.modal.bottom.leftBtn"/>
-            <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
-        </FlexboxLayout>
-        <FlexboxLayout dock="center" class="timeDateDetails">
-            <time-modal :selected-time="selectedTime" :time="$props.time" @updateTime="updateTime"/>
-            <date-modal @updateDate="updateDate"/>
-        </FlexboxLayout>
-    </DockLayout>
+            <FlexboxLayout dock="bottom" class="confirmOrDiscard">
+                <Label class="btn discardBtn" @tap="close" :text="$props.time.modal.bottom.leftBtn"/>
+                <Label class="btn confirmBtn" @tap="confirm" :text="$props.time.modal.bottom.rightBtn"/>
+            </FlexboxLayout>
+            <FlexboxLayout dock="center" class="timeDateDetails">
+                <time-modal :selected-time="selectedTime" :time="$props.time" @updateTime="updateTime"/>
+                <date-modal @updateDate="updateDate"/>
+            </FlexboxLayout>
+        </DockLayout>
+    </Page>
 </template>
 
 <script>
@@ -49,7 +51,7 @@
             }
         },
         methods: {
-            updateTime: function(timeToUpdate) {
+            updateTime: function (timeToUpdate) {
                 this.selectedTime = timeToUpdate;
             },
             updateDate: function (dateToUpdate) {
@@ -70,6 +72,16 @@
 <style lang="scss" scoped>
     @import "../../theme/generalStyles.scss";
     @import "../../theme/_variables.scss";
+
+    .background-color-modal {
+        background-color: $white;
+        color: $dark;
+
+        .ns-dark & {
+            background-color: $dark-dark;
+            color: $dark-white
+        }
+    }
 
     .modal {
         background-color: $white;
@@ -104,6 +116,14 @@
                         border-bottom-style: solid;
                     }
                 }
+            }
+        }
+
+        .btn {
+            .ns-dark & {
+                border-color: $white;
+                border-style: solid;
+                border-width: 2px;
             }
         }
 

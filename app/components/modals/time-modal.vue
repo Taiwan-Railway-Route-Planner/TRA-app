@@ -82,6 +82,12 @@
                     width: 80%;
                     margin-left: auto;
                     margin-right: auto;
+
+                    .ns-dark & {
+                        border-color: $white;
+                        border-style: solid;
+                        border-width: 2px;
+                    }
                 }
             }
         }
