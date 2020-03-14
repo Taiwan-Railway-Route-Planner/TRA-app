@@ -76,6 +76,7 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 
 <a href="https://play.google.com/store/apps/details?id=com.wingcrony.tra.app" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
 
+<a href="https://apps.apple.com/us/app/taiwan-railway-route-planner/id1494012063" target="_blank" ><img src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-03-12&kind=iossoftware&bubble=apple_music" alt="Get it on App Store" height="40px" width="135px"/></a>
 
 ## Privacy notice
 
