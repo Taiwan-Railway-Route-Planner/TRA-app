@@ -57,7 +57,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/Settings/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import { isIOS } from "@nativescript/core/platform";
 
     const utils = require('utils/utils');
 

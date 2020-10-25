@@ -2,7 +2,7 @@
  Created by svend on 11/08/2019.
  **/
 
-const connectivityModule = require("tns-core-modules/connectivity");
+const connectivityModule = require("@nativescript/core/connectivity");
 
 module.exports = (function () {
 

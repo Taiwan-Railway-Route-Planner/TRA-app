@@ -24,7 +24,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/BootUp/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import { isIOS } from "@nativescript/core/platform";
 
     export default {
         created() {
@@ -47,7 +47,7 @@
             confirm: function () {
                 this.$store.commit('updateLanguage', this.saveAbbr);
                 // Isn't needed in iOS
-                // this.$goto("Select");
+                this.$goto("Select");
             },
             onItemLoading: function (args) {
                 if (isIOS) {
