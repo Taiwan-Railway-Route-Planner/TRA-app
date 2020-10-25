@@ -24,7 +24,7 @@ Vue.filter('unescape', v => unescape(v));
 
 Vue.registerElement("Gif", () => Gif);
 
-import {Label} from "tns-core-modules/ui/label";
+import {Label} from "@nativescript/core/ui/label";
 
 class ScalingLabel extends Label {
     initNativeView() {
