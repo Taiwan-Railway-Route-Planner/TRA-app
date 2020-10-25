@@ -99,7 +99,7 @@
                 this.updateProp();
             },
             openMail: function () {
-                utils.openUrl("mailto:support@traapp.tk");
+                utils.openUrl("mailto:support@taiwanrailwayapp.com");
             },
             openGooglePlay: function () {
                 if (isIOS){
