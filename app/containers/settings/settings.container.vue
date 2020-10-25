@@ -84,7 +84,7 @@
                 possibleLanguages: null,
                 possibleLanguagesArray: null,
                 selectedItem: null,
-                currentVersion: '0.0.1'
+                currentVersion: '1.1.0'
             }
         },
         methods: {
@@ -103,7 +103,7 @@
             },
             openGooglePlay: function () {
                 if (isIOS){
-                    // TODO
+                    utils.openUrl("https://itunes.apple.com/gb/app/id1494012063?action=write-review&mt=8")
                 } else {
                     utils.openUrl("market://details?id=com.wingcrony.tra.app");
                 }
