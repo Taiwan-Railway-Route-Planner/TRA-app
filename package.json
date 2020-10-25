@@ -4,15 +4,6 @@
   "description": "A native application built with NativeScript-Vue",
   "author": "wingcrowny@gmail.com",
   "license": "AGPL-3.0",
-  "nativescript": {
-    "id": "com.wingcrony.tra.app",
-    "tns-ios": {
-      "version": "6.5.0"
-    },
-    "tns-android": {
-      "version": "6.5.0"
-    }
-  },
   "dependencies": {
     "@nativescript/theme": "^3.0.0",
     "@nstudio/nativescript-loading-indicator": "^3.0.1",
@@ -25,8 +16,8 @@
     "nativescript-toasty": "^3.0.0-alpha.2",
     "nativescript-vue": "^2.8.1",
     "nativescript-vue-devtools": "^1.2.0",
-    "tns-core-modules": "~6.5.0",
-    "vuex": "^3.1.2"
+    "vuex": "^3.1.2",
+    "@nativescript/core": "7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -51,5 +42,6 @@
     "webpack": "^4.41.4",
     "webpack-bundle-analyzer": "~3.6.0",
     "webpack-cli": "^3.3.10"
-  }
+  },
+  "main": "main"
 }
