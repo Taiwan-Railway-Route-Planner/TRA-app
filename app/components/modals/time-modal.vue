@@ -1,7 +1,7 @@
 <template>
     <flexboxlayout :class="[smallerLabels, 'timeSettings']">
         <FlexboxLayout class="timeSelect">
-            <TimePicker v-model="timeWeSelected"/>
+          <TimePicker v-model="timeWeSelected" iosPreferredDatePickerStyle="1"></TimePicker>
             <FlexboxLayout class="now">
                 <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
             </FlexboxLayout>

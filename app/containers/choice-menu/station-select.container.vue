@@ -113,7 +113,7 @@
     import loadingModal from "../../components/loading-modal/loading-modal.component"
     import Counties from "../../components/county-list/county-list.component"
 
-    import { isIOS } from "tns-core-modules/platform";
+    import { isIOS } from "@nativescript/core/platform";
 
     let application = require('application');
     const utils = require('utils/utils');

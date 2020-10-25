@@ -1,12 +1,12 @@
 <template>
     <Flexboxlayout :class="[smallerLabels, 'center']">
-            <DatePicker :minDate="minDate" :maxDate="maxDate" v-model="currentDate" @dateChange="changeDate"/>
+      <DatePicker iosPreferredDatePickerStyle="1" :minDate="minDate" :maxDate="maxDate" v-model="currentDate" @dateChange="changeDate"></DatePicker>
     </Flexboxlayout>
 </template>
 
 <script>
 
-    export default {
+export default {
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {

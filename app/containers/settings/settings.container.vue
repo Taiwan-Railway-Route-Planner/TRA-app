@@ -57,7 +57,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/Settings/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import { isIOS } from "@nativescript/core/platform";
 
     const utils = require('utils/utils');
 
@@ -84,7 +84,7 @@
                 possibleLanguages: null,
                 possibleLanguagesArray: null,
                 selectedItem: null,
-                currentVersion: '0.0.1'
+                currentVersion: '1.1.0'
             }
         },
         methods: {
@@ -99,11 +99,11 @@
                 this.updateProp();
             },
             openMail: function () {
-                utils.openUrl("mailto:support@traapp.tk");
+                utils.openUrl("mailto:support@taiwanrailwayapp.com");
             },
             openGooglePlay: function () {
                 if (isIOS){
-                    // TODO
+                    utils.openUrl("https://itunes.apple.com/gb/app/id1494012063?action=write-review&mt=8")
                 } else {
                     utils.openUrl("market://details?id=com.wingcrony.tra.app");
                 }
