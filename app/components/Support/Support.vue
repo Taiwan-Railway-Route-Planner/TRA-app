@@ -117,12 +117,20 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
+    @import "../../styles/generalStyles.scss";
+
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
         height: 10%;
+
+    .ns-dark &{
+        background-color: $dark-primary;
+        color: $dark-white
+    }
     }
 
     .dock-top .title {

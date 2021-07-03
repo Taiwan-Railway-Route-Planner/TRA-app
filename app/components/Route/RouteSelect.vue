@@ -47,28 +47,28 @@
                                         <Label :text="item.travelTime"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"/>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"/>
+                                <FlexboxLayout v-if="item.trainTypes.length === 2" class="typeOfTrain train-colors">
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"/>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"/>
                                     <FlexboxLayout class="transfers">
                                         <Label class="fas" :text="'\uf074' | unescape"/>
                                         <Label :text="item.trainTypes.length"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"/>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"/>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"/>
+                                <FlexboxLayout v-if="item.trainTypes.length === 3" class="typeOfTrain train-colors">
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"/>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"/>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[2]].color]" :text="'\uf238' | unescape"/>
                                     <FlexboxLayout class="transfers">
                                         <Label class="fas" :text="'\uf074' | unescape"/>
                                         <Label :text="item.trainTypes.length"/>
                                     </FlexboxLayout>
                                 </FlexboxLayout>
-                                <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain">
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[0]].color" :text="'\uf238' | unescape"/>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[1]].color" :text="'\uf238' | unescape"/>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[2]].color" :text="'\uf238' | unescape"/>
-                                    <Label class="fas" :color="data.trainTypes[item.trainTypes[3]].color" :text="'\uf238' | unescape"/>
+                                <FlexboxLayout v-if="item.trainTypes.length === 4" class="typeOfTrain train-colors">
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[0]].color]" :text="'\uf238' | unescape"/>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[1]].color]" :text="'\uf238' | unescape"/>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[2]].color]" :text="'\uf238' | unescape"/>
+                                    <Label :class="['fas', data.trainTypes[item.trainTypes[3]].color]" :text="'\uf238' | unescape"/>
                                     <FlexboxLayout class="transfers">
                                         <Label class="fas" :text="'\uf074' | unescape"/>
                                         <Label :text="item.trainTypes.length"/>
@@ -147,15 +147,15 @@
                         return 'standardLabels';
                 }
             },
-            makeDestinationSmaller(){
+            makeDestinationSmaller() {
                 if (this.$props.routeDetails.departure.details.eng站名.length > 19
-                    || this.$props.routeDetails.arrival.details.eng站名.length > 19){
+                    || this.$props.routeDetails.arrival.details.eng站名.length > 19) {
                     return 'extraSmall';
                 } else {
                     return ''
                 }
             },
-            smallerTitleRoom(){
+            smallerTitleRoom() {
                 switch (this.$store.state.language) {
                     case 'KO':
                         return 'smallerTopTitleForKorean';
@@ -178,7 +178,7 @@
                         return '';
                 }
             },
-            biggerDestinationDetails(){
+            biggerDestinationDetails() {
                 switch (this.$store.state.language) {
                     case 'KO':
                         return 'biggerTopDataForKorean';
@@ -249,12 +249,20 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
+    @import "../../styles/generalStyles.scss";
+    @import "../../styles/trainVariables.scss";
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
         height: 10%;
+
+        .ns-dark & {
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     /*.dock-top Label {*/
@@ -292,8 +300,13 @@
     }
 
     .center {
-        background-color: #fff;
-        color: #1a0dab;
+        background-color: $white;
+        color: $primary;
+
+        .ns-dark & {
+            background-color: $dark-white;
+            color: $dark-white;
+        }
     }
 
     .center .travelDetails {
@@ -382,21 +395,21 @@
         font-size: 14;
     }
 
-    .smallerLabels .navDetails .top-data Label{
+    .smallerLabels .navDetails .top-data Label {
         font-size: 14;
     }
 
-    .smallerLabels .navDetails .fas{
+    .smallerLabels .navDetails .fas {
         margin-right: 2%;
     }
 
-    .standardLabels .navDetails Label{
+    .standardLabels .navDetails Label {
         font-size: 16;
     }
 
     /****** GENERATE FROM COMPUTED makeDestinationSmaller() ******/
 
-    .dock-top .navDetails .top-data .extraSmall{
+    .dock-top .navDetails .top-data .extraSmall {
         font-size: 10;
         padding-bottom: 3%;
         padding-top: 3%;
@@ -405,73 +418,73 @@
 
     /****** GENERATE FROM COMPUTED biggerDestinationDetails() ******/
 
-    .dock-top .navDetails .top-data.biggerTopDataForKorean{
+    .dock-top .navDetails .top-data.biggerTopDataForKorean {
         width: 64%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForZH{
+    .dock-top .navDetails .top-data.biggerTopDataForZH {
         width: 62%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForDutch{
+    .dock-top .navDetails .top-data.biggerTopDataForDutch {
         width: 67%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForSpanish{
+    .dock-top .navDetails .top-data.biggerTopDataForSpanish {
         width: 40%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForFrench{
+    .dock-top .navDetails .top-data.biggerTopDataForFrench {
         width: 50%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForEnglish{
+    .dock-top .navDetails .top-data.biggerTopDataForEnglish {
         width: 45%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForRussian{
+    .dock-top .navDetails .top-data.biggerTopDataForRussian {
         width: 38%;
     }
 
-    .dock-top .navDetails .top-data.biggerTopDataForArmenian{
+    .dock-top .navDetails .top-data.biggerTopDataForArmenian {
         width: 37%;
     }
 
     /****** GENERATE FROM COMPUTED smallerTitleRoom() ******/
 
-    .dock-top .navDetails .top-title.smallerTopTitleForKorean{
+    .dock-top .navDetails .top-title.smallerTopTitleForKorean {
         width: 16%;
     }
 
-    .dock-top .navDetails .top-title.smallerTopTitleForZH{
+    .dock-top .navDetails .top-title.smallerTopTitleForZH {
         width: 18%;
     }
 
-    .dock-top .navDetails .top-title.smallerTopTitleForDutch{
+    .dock-top .navDetails .top-title.smallerTopTitleForDutch {
         width: 13%;
     }
 
-    .dock-top .navDetails .top-title.biggerTopTitleForSpanish{
+    .dock-top .navDetails .top-title.biggerTopTitleForSpanish {
         width: 42%;
     }
 
-    .dock-top .navDetails .top-title.biggerTopTitleForFrench{
+    .dock-top .navDetails .top-title.biggerTopTitleForFrench {
         width: 32%;
     }
 
-    .dock-top .navDetails .top-title.biggerTopTitleForEnglish{
+    .dock-top .navDetails .top-title.biggerTopTitleForEnglish {
         width: 37%;
     }
 
-    .dock-top .navDetails .top-title.biggerTopTitleForRussian{
+    .dock-top .navDetails .top-title.biggerTopTitleForRussian {
         width: 45%;
     }
 
-    .dock-top .navDetails .top-title.biggerTopTitleForArmenian{
+    .dock-top .navDetails .top-title.biggerTopTitleForArmenian {
         width: 46%;
     }
 
-    .dock-top .smallerLabels .navDetails .top-title.biggerTopTitleForArmenian Label{
+    .dock-top .smallerLabels .navDetails .top-title.biggerTopTitleForArmenian Label {
         font-size: 13;
     }
 

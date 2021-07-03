@@ -91,7 +91,8 @@
     import loadingModal from "../modals/LoadingModal"
     import Counties from "./component/counties"
 
-    import { isIOS } from "tns-core-modules/platform";
+    import {isIOS} from "tns-core-modules/platform";
+
     let application = require('application');
     const utils = require('utils/utils');
 
@@ -177,7 +178,7 @@
             }
         },
         methods: {
-            changeTheSelectedOne: function (prop, ref=this.$refs.counties.$refs){
+            changeTheSelectedOne: function (prop, ref = this.$refs.counties.$refs) {
                 handle.changeTheDefaultCounty(this, prop, ref);
                 handle.filterCountiesOutOfTheListOfStations(this);
             },
@@ -271,7 +272,43 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
+    @import "../../styles/generalStyles.scss";
+
+    .routeDetailsChoice,
+    .timeDetails {
+        Label,
+        TextField {
+
+            .ns-dark & {
+                color: $white;
+            }
+        }
+    }
+
+    .topRouteDetails .InfoDetails {
+
+        .fas {
+
+            .ns-dark & {
+                color: $white;
+            }
+        }
+
+        .ns-dark & {
+            background-color: black;
+        }
+    }
+
+    .confirmBtn {
+
+        .ns-dark & {
+            border-color: $white;
+            background-color: $dark;
+            color: $white;
+        }
+    }
 
     .mainMenu {
         flex-direction: column;
@@ -279,7 +316,7 @@
 
     .title {
         font-size: 25;
-        color: #ffffff;
+        color: $white;
         align-self: center;
         margin-top: 5%;
     }
@@ -290,10 +327,14 @@
         display: flex;
         flex-flow: column;
         text-align: center;
-    }
 
-    .searchBar SearchBar {
-        flex: 0 1 auto;
+        Label {
+            margin-left: 5;
+        }
+
+        SearchBar {
+            flex: 0 1 auto;
+        }
     }
 
     .listView {
@@ -310,7 +351,7 @@
         flex: 1 1 auto;
     }
 
-    .listGroup Label{
+    .listGroup Label {
         /*Android*/
         padding-bottom: 4;
         padding-top: 4;
@@ -320,7 +361,7 @@
     }
 
     .routeDetails {
-        background-color: #1a0dab;
+        background-color: $primary;
     }
 
     .topRouteDetails {
@@ -328,12 +369,12 @@
     }
 
     .topRouteDetails .InfoDetails {
-        border-color: #1a0dab;
+        border-color: $primary;
         border-radius: 20;
         border-style: solid;
         border-width: 1;
         flex-direction: column;
-        background-color: white;
+        background-color: $white;
         width: 90%;
         /*Android*/
         padding: 12 4;
@@ -355,7 +396,7 @@
     }
 
     .topRouteDetails .InfoDetails .fas {
-        color: #1a0dab;
+        color: $primary;
         align-self: center;
     }
 
@@ -370,7 +411,7 @@
         justify-content: center;
         width: 80%;
         margin-top: 8%;
-        border-color: #fff;
+        border-color: $white;
         border-style: solid;
         border-width: 2px;
     }
@@ -393,7 +434,7 @@
         align-self: center;
     }
 
-    .labelForArmenian{
+    .labelForArmenian {
         width: 28%;
         align-self: center;
     }
@@ -416,7 +457,7 @@
         margin-right: 6%;
     }
 
-    .textFieldForArmenian{
+    .textFieldForArmenian {
         width: 62%;
         margin-right: 6%;
     }

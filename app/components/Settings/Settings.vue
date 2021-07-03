@@ -57,7 +57,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/Settings/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import {isIOS} from "tns-core-modules/platform";
 
     const utils = require('utils/utils');
 
@@ -102,7 +102,7 @@
                 utils.openUrl("mailto:support@traapp.tk");
             },
             openGooglePlay: function () {
-                if (isIOS){
+                if (isIOS) {
                     // TODO
                 } else {
                     utils.openUrl("market://details?id=com.wingcrony.tra.app");
@@ -115,7 +115,7 @@
                 this.$goto("Support");
             },
             updateProp: function () {
-                if (isIOS){
+                if (isIOS) {
                     this.data.center.otherInfo.rate = this.data.center.otherInfo.rate.replace('Google Play', 'App Store');
                 }
             }
@@ -124,12 +124,19 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "../../styles/_variables.scss";
+    @import "../../styles/generalStyles.scss";
 
     .dock-top {
-        background-color: #1a0dab;
-        color: #fff;
+        background-color: $primary;
+        color: $white;
         height: 10%;
+
+        .ns-dark & {
+            background-color: $dark-primary;
+            color: $dark-white;
+        }
     }
 
     .dock-center .settings {
@@ -157,6 +164,20 @@
         height: 55%;
     }
 
+    .dock-center .settings .languagesSettings .btn.btn-wt {
+
+        .ns-dark & {
+            align-self: center;
+            width: 80%;
+            margin-top: 8%;
+            border-color: $white;
+            border-style: solid;
+            border-width: 2px;
+            padding-top: 8;
+            padding-bottom: 8;
+        }
+    }
+
     .dock-center .settings .languagesSettings .listPickerLanguagesSettings {
         flex-direction: row;
         justify-content: center;
@@ -180,7 +201,7 @@
 
     .dock-center .settings .otherInfo .element {
         border-bottom-width: 2px;
-        border-bottom-color: #D3D3D3;
+        border-bottom-color: $white;
         border-bottom-style: solid;
         padding-bottom: 10%;
         padding-top: 10%;
@@ -205,7 +226,7 @@
         font-size: 16;
     }
 
-    .labelForArmenian{
+    .labelForArmenian {
         font-size: 14;
     }
 
