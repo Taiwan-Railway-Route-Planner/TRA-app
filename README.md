@@ -35,24 +35,24 @@ I want also to thank my friends to help translate!
 The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) on Dribbble
 
 
-# 台灣鐵路路線圖規劃表
+# 臺灣鐵路路線圖規劃表
 
-計劃您在台灣鐵路的火車之旅
+計劃您在臺灣鐵路的火車之旅
 
 
 您可以在不選擇轉運站的情況下從任何車站前往其他車站。\
 我們為您做到這一點，想想讓您在搭程火車時不用擔心轉程的問題。\
 高枕無憂。
 
-支持以下語言：
+支援以下語言：
 - 中文
 - 英語
 - 韓國語
 - 荷蘭語
 - 西班牙語
 - 德語
-- 法國人
-- 亞美尼亞人
+- 法語
+- 亞美尼亞語
 - 俄語
 
 即將推出更多語言！
@@ -61,15 +61,15 @@ The loading gif in the app comes from [Fayeliew](https://dribbble.com/fayeliew) 
 
 
 
-### 信息
+### 資訊
 
-數據由 [DATA.GOV.TW](https://data.gov.tw/dataset/6138#r1)提供
+資料由 [DATA.GOV.TW](https://data.gov.tw/dataset/6138#r1)提供
 
-該應用程序是開源檢查應用程序中的Github鏈接。
+該應用程式是開源檢查應用程式中的Github連結。
 
 我還要感謝我的朋友們幫忙翻譯。
 
-應用程序中的加載GIF來自Dribbble上的 [Fayeliew](https://dribbble.com/fayeliew)
+應用程式中載入的GIF來自Dribbble上的 [Fayeliew](https://dribbble.com/fayeliew)
 
 
 ## Download
