@@ -31,13 +31,13 @@ module.exports = (function () {
             "center": {
                 "language": {
                     "chooseTitle": "選擇你的語言",
-                    "button": "保存"
+                    "button": "儲存"
                 },
                 "otherInfo": {
-                    "support": "更多信息",
+                    "support": "更多訊息",
                     "rate": "在Google Play上為我們評分",
-                    "contactUs": "電郵我們",
-                    "openSource": "訪問Github上的項目",
+                    "contactUs": "E-mail 我們",
+                    "openSource": "造訪Github上的專案",
                     "Version": "版"
                 }
             }
